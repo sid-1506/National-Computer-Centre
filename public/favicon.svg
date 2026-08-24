@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Desktop / Lab Terminal Monitor Frame in Ink Black -->
+  <rect x="6" y="8" width="52" height="38" rx="6" fill="#111111" />
+  <rect x="11" y="13" width="42" height="28" rx="3" fill="#EFEDE8" />
+  
+  <!-- Monitor Stand -->
+  <rect x="27" y="46" width="10" height="6" fill="#111111" />
+  <rect x="18" y="52" width="28" height="5" rx="2.5" fill="#111111" />
+
+  <!-- Code Bracket < -->
+  <path d="M19 21.5 L15 27 L19 32.5" stroke="#111111" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- NCC Initials in Screen -->
+  <!-- N -->
+  <path d="M24 33 L24 21 L29.5 33 L29.5 21" stroke="#111111" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- C -->
+  <path d="M37.5 22.5 C34.5 21.5 33 23.5 33 27 C33 30.5 34.5 32.5 37.5 31.5" stroke="#111111" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <!-- C -->
+  <path d="M45.5 22.5 C42.5 21.5 41 23.5 41 27 C41 30.5 42.5 32.5 45.5 31.5" stroke="#111111" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+</svg>
