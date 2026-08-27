@@ -1,8 +1,10 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
+import { gsap } from 'gsap';
 import classroomImg from '../assets/classroom-logo.png';
 import mscitImg from '../assets/courses/certificate-course-in-ms-cit.jpg';
 import devImg from '../assets/courses/full-stack-with-mern-stack-web-development.jpg';
 import CompactEnquiryForm from './CompactEnquiryForm';
+import { isReducedMotion } from '../hooks/useMotionReveal';
 
 const SLIDES = [
   {
@@ -33,6 +35,11 @@ const SLIDES = [
 
 export default function HeroSlider({ onOpenModal }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const heroRef = useRef(null);
+  const headlineRef = useRef(null);
+  const sublineRef = useRef(null);
+  const formCardRef = useRef(null);
+  const bgImgRef = useRef(null);
 
   const nextSlide = useCallback(() => {
     setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
@@ -45,8 +52,62 @@ export default function HeroSlider({ onOpenModal }) {
     return () => clearInterval(timer);
   }, [nextSlide]);
 
+  // Opening / Page Load Animation (First paint of session only)
+  useEffect(() => {
+    if (typeof window === 'undefined' || isReducedMotion()) return;
+
+    const hasPlayed = sessionStorage.getItem('natc_intro_played');
+    if (hasPlayed) return;
+
+    sessionStorage.setItem('natc_intro_played', 'true');
+
+    const navbarEl = document.querySelector('header');
+    const headlineLines = headlineRef.current?.querySelectorAll('.hero-line');
+    const sublineEl = sublineRef.current;
+    const formCardEl = formCardRef.current;
+    const bgImgEl = bgImgRef.current;
+
+    const animElements = [navbarEl, ...(headlineLines ? Array.from(headlineLines) : []), sublineEl, formCardEl, bgImgEl].filter(Boolean);
+    animElements.forEach((el) => {
+      el.style.willChange = 'transform, opacity';
+    });
+
+    const tl = gsap.timeline({
+      defaults: { ease: 'power3.out' },
+      onComplete: () => {
+        animElements.forEach((el) => {
+          el.style.willChange = '';
+          gsap.set(el, { clearProps: 'will-change' });
+        });
+      },
+    });
+
+    // a) Navbar: fade + 8px slide down, 0.5s
+    if (navbarEl) {
+      tl.fromTo(navbarEl, { y: -8, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 }, 0);
+    }
+
+    // b) Hero headline lines: staggered fade + 20px rise, 0.06s stagger, 0.6s each
+    if (headlineLines && headlineLines.length) {
+      tl.fromTo(headlineLines, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.06 }, 0.05);
+    }
+
+    // d) Hero background image: gentle scale 1.06 -> 1.0 over 1.1s, same start as (b)
+    if (bgImgEl) {
+      tl.fromTo(bgImgEl, { scale: 1.06 }, { scale: 1.0, duration: 1.1 }, 0.05);
+    }
+
+    // c) Hero subline + form card: fade + 16px rise, 0.15s after headline
+    const sublineGroup = [sublineEl, formCardEl].filter(Boolean);
+    if (sublineGroup.length) {
+      tl.fromTo(sublineGroup, { y: 16, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, stagger: 0.08 }, 0.2);
+    }
+
+    return () => tl.kill();
+  }, []);
+
   return (
-    <section className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[620px] overflow-hidden bg-[#030A15]">
+    <section ref={heroRef} className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[620px] overflow-hidden bg-[#030A15]">
       {/* Background Slides */}
       {SLIDES.map((slide, idx) => {
         const isActive = idx === currentSlide;
@@ -59,6 +120,7 @@ export default function HeroSlider({ onOpenModal }) {
           >
             {/* Background Image */}
             <img
+              ref={idx === 0 ? bgImgRef : undefined}
               src={slide.image}
               alt={slide.alt}
               className="absolute inset-0 w-full h-full object-cover object-center"
@@ -86,31 +148,34 @@ export default function HeroSlider({ onOpenModal }) {
           {/* Left Column: Headlines & CTA */}
           <div className="lg:col-span-7 xl:col-span-8 text-left max-w-[680px]">
             <h1
+              ref={headlineRef}
               className="text-white font-bold tracking-tight mb-4 sm:mb-5 leading-[1.15]"
               style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3.4rem)' }}
             >
-              <span className="block">{SLIDES[currentSlide].headingLine1}</span>
-              <span className="block">{SLIDES[currentSlide].headingLine2}</span>
+              <span className="hero-line block">{SLIDES[currentSlide].headingLine1}</span>
+              <span className="hero-line block">{SLIDES[currentSlide].headingLine2}</span>
             </h1>
 
-            <p className="text-white/90 text-[16px] sm:text-[18px] font-normal mb-6 sm:mb-8 leading-relaxed max-w-[540px]">
-              {SLIDES[currentSlide].subline}
-            </p>
+            <div ref={sublineRef}>
+              <p className="text-white/90 text-[16px] sm:text-[18px] font-normal mb-6 sm:mb-8 leading-relaxed max-w-[540px]">
+                {SLIDES[currentSlide].subline}
+              </p>
 
-            {onOpenModal && (
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={() => onOpenModal('MS-CIT')}
-                  className="rounded-full bg-[#0B6AA8] hover:bg-[#095A90] text-white px-7 py-3 text-[14px] sm:text-[15px] font-semibold transition-all shadow-lg hover:shadow-cyan-500/20 cursor-pointer inline-flex items-center gap-2"
-                >
-                  Book Free Trial Class
-                </button>
-              </div>
-            )}
+              {onOpenModal && (
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={() => onOpenModal('MS-CIT')}
+                    className="rounded-full bg-[#0B6AA8] hover:bg-[#095A90] text-white px-7 py-3 text-[14px] sm:text-[15px] font-semibold transition-all shadow-lg hover:shadow-cyan-500/20 cursor-pointer inline-flex items-center gap-2 btn-hover"
+                  >
+                    Book Free Trial Class
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Desktop Right Column: Compact Enquiry Form Card (overlapping photo, vertically centered) */}
-          <div className="hidden lg:flex lg:col-span-5 xl:col-span-4 justify-end">
+          <div ref={formCardRef} className="hidden lg:flex lg:col-span-5 xl:col-span-4 justify-end">
             <CompactEnquiryForm />
           </div>
 

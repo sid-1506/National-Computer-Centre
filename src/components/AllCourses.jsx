@@ -1,11 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { categories, courses } from '../data/courses';
 import CourseCard from './CourseCard';
+import { useSectionReveal } from '../hooks/useMotionReveal';
 
 export default function AllCourses() {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeCategory = searchParams.get('category') || 'all';
+  const heroRef = useRef(null);
+  const gridRef = useRef(null);
+
+  useSectionReveal(heroRef);
+  useSectionReveal(gridRef, [activeCategory]);
 
   const handleFilterChange = (slug) => {
     if (slug === 'all') {
@@ -39,7 +45,7 @@ export default function AllCourses() {
   return (
     <div className="bg-background min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-28 sm:pt-32 pb-10 bg-gradient-to-b from-[#F0F7FF] to-white">
+      <section ref={heroRef} className="relative pt-12 sm:pt-16 pb-10 bg-gradient-to-b from-[#F0F7FF] to-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-[13px] text-muted-foreground mb-6 font-medium">
@@ -50,17 +56,17 @@ export default function AllCourses() {
 
           {/* Eyebrow + heading */}
           <div className="text-center mb-8">
-            <span className="eyebrow-chip mb-3 inline-block">Full Catalogue · 56 Courses</span>
-            <h1 className="font-bold text-foreground" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', letterSpacing: '-0.01em', lineHeight: 1.15 }}>
+            <span className="reveal-eyebrow eyebrow-chip mb-3 inline-block">Full Catalogue · 56 Courses</span>
+            <h1 className="reveal-heading font-bold text-foreground" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', letterSpacing: '-0.01em', lineHeight: 1.15 }}>
               Our <span className="text-primary">Courses</span>
             </h1>
-            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto text-[16px] leading-relaxed">
+            <p className="reveal-body mt-3 text-muted-foreground max-w-2xl mx-auto text-[16px] leading-relaxed">
               From essential office fundamentals to enterprise software engineering — discover industry-aligned programs taught 1-on-1 on dedicated computer terminals.
             </p>
           </div>
 
           {/* Category filter pills */}
-          <div className="overflow-x-auto scrollbar-hide">
+          <div className="reveal-item overflow-x-auto scrollbar-hide">
             <div className="flex items-center gap-2 whitespace-nowrap pb-1 justify-center flex-wrap min-w-max mx-auto">
               <button
                 onClick={() => handleFilterChange('all')}
@@ -94,11 +100,13 @@ export default function AllCourses() {
       </section>
 
       {/* Course Grid */}
-      <section className="py-12 lg:py-16 bg-background">
+      <section ref={gridRef} className="py-12 lg:py-16 bg-background">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div key={activeCategory} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredCourses.map((course) => (
-              <CourseCard key={course.slug} course={course} categoryName={getCategoryName(course.categorySlug)} />
+              <div key={course.slug} className="reveal-item">
+                <CourseCard course={course} categoryName={getCategoryName(course.categorySlug)} />
+              </div>
             ))}
           </div>
           {filteredCourses.length === 0 && (

@@ -1,24 +1,22 @@
 import { useRef, useState, useEffect } from 'react';
 import { STATS } from '../data/nccData';
+import { useSectionReveal, isReducedMotion } from '../hooks/useMotionReveal';
 
 export default function Stats() {
   const sectionRef = useRef(null);
   const [counts, setCounts] = useState(() => {
-    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    if (isReducedMotion()) {
       return STATS.map((s) => s.value);
     }
     return STATS.map(() => 0);
   });
   const hasAnimated = useRef(false);
 
+  useSectionReveal(sectionRef);
+
   useEffect(() => {
     const el = sectionRef.current;
-    if (!el) return;
-
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      return;
-    }
+    if (!el || isReducedMotion()) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -62,11 +60,11 @@ export default function Stats() {
     <section ref={sectionRef} className="py-16 sm:py-20 lg:py-24 bg-[#F7F9FC] border-b border-slate-100">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="text-center mb-12 sm:mb-16">
-          <span className="inline-block bg-[#E4F4FB] text-[#0B6AA8] text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider px-5 py-2 rounded-full mb-3">
+          <span className="reveal-eyebrow inline-block bg-[#E4F4FB] text-[#0B6AA8] text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider px-5 py-2 rounded-full mb-3">
             VERIFIED METRICS
           </span>
           <h2
-            className="font-bold text-[#0F172A] leading-tight tracking-tight mt-1"
+            className="reveal-heading font-bold text-[#0F172A] leading-tight tracking-tight mt-1"
             style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
           >
             Numbers That <span className="text-[#0B6AA8]">Speak</span>
@@ -77,7 +75,7 @@ export default function Stats() {
           {STATS.map((stat, idx) => (
             <div
               key={idx}
-              className="text-center p-6 sm:p-8 bg-white rounded-[20px] border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:-translate-y-1 transition-transform duration-300"
+              className="reveal-item text-center p-6 sm:p-8 bg-white rounded-[20px] border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:-translate-y-1 transition-transform duration-300"
             >
               <div
                 className="font-bold text-[#0B6AA8]"

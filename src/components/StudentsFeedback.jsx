@@ -1,5 +1,6 @@
 import { useRef, useState, useCallback } from 'react';
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useSectionReveal } from '../hooks/useMotionReveal';
 
 const REVIEWS = [
   {
@@ -35,8 +36,11 @@ const REVIEWS = [
 ];
 
 export default function StudentsFeedback() {
+  const sectionRef = useRef(null);
   const carouselRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useSectionReveal(sectionRef);
 
   const scrollToReview = useCallback((idx) => {
     const carousel = carouselRef.current;
@@ -75,17 +79,17 @@ export default function StudentsFeedback() {
   };
 
   return (
-    <section id="testimonials" className="bg-[#F7F9FC] py-16 sm:py-20 lg:py-24 border-b border-slate-100 overflow-hidden">
+    <section ref={sectionRef} id="testimonials" className="bg-[#F7F9FC] py-16 sm:py-20 lg:py-24 border-b border-slate-100 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         
-        {/* Centered Heading with Eyebrow matching Screenshot 3 */}
+        {/* Centered Heading with Eyebrow */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="inline-block bg-[#E4F4FB] text-[#0B6AA8] text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider px-5 py-2 rounded-full mb-3">
+          <span className="reveal-eyebrow inline-block bg-[#E4F4FB] text-[#0B6AA8] text-[13px] sm:text-[14px] font-semibold uppercase tracking-wider px-5 py-2 rounded-full mb-3">
             EDUCATION FOR EVERYONE
           </span>
 
           <h2
-            className="font-bold text-[#0F172A] leading-tight tracking-tight mt-2"
+            className="reveal-heading font-bold text-[#0F172A] leading-tight tracking-tight mt-2"
             style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.4rem)' }}
           >
             Students <span className="text-[#0B6AA8]">Feedback</span>
@@ -101,7 +105,7 @@ export default function StudentsFeedback() {
           {REVIEWS.map((review, idx) => (
             <div
               key={idx}
-              className="review-slide-item flex-none w-[min(350px,90vw)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
+              className="reveal-item review-slide-item flex-none w-[min(350px,90vw)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
             >
               <div className="bg-white rounded-[20px] p-7 sm:p-8 border border-slate-100 shadow-[0_4px_25px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(11,106,168,0.08)] transition-all duration-300 h-full flex flex-col justify-between">
                 
@@ -150,7 +154,7 @@ export default function StudentsFeedback() {
         </div>
 
         {/* Bottom Navigation: Prev/Next Buttons + Dot Pager with Elongated Pill */}
-        <div className="flex items-center justify-center gap-4 mt-10">
+        <div className="reveal-item flex items-center justify-center gap-4 mt-10">
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}

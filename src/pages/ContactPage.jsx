@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, MapPin, MessageSquare, ChevronDown, CheckCircle2, Navigation } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/nccData';
 import { categories, courses } from '../data/courses';
+import { useSectionReveal } from '../hooks/useMotionReveal';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -15,6 +16,9 @@ export default function ContactPage() {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const containerRef = useRef(null);
+
+  useSectionReveal(containerRef);
 
   useEffect(() => {
     document.title = 'Contact & Admissions | National Computer Centre Mulund West';
@@ -53,7 +57,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="pt-28 sm:pt-32 pb-20 bg-background text-foreground min-h-screen">
+    <div ref={containerRef} className="pt-12 sm:pt-16 pb-20 bg-background text-foreground min-h-screen">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="flex items-center gap-2 text-[13px] font-medium text-muted-foreground mb-6">
@@ -64,11 +68,11 @@ export default function ContactPage() {
 
         {/* Heading */}
         <div className="mb-10">
-          <span className="eyebrow-chip mb-3 inline-block">Admissions & Location</span>
-          <h1 className="font-bold text-foreground leading-tight" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)', letterSpacing: '-0.01em' }}>
+          <span className="reveal-eyebrow eyebrow-chip mb-3 inline-block">Admissions & Location</span>
+          <h1 className="reveal-heading font-bold text-foreground leading-tight" style={{ fontSize: 'clamp(2.2rem, 4.5vw, 3.2rem)', letterSpacing: '-0.01em' }}>
             Visit Our <span className="text-primary">Mulund West</span> Centre
           </h1>
-          <p className="mt-3 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
+          <p className="reveal-body mt-3 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
             Conveniently located 2 minutes from Mulund Railway Station on Zaver Road. Walk in for counselling or book your 1-day free computer trial.
           </p>
         </div>
@@ -76,7 +80,7 @@ export default function ContactPage() {
         {/* 2-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Left Column: Form Card */}
-          <div className="lg:col-span-7">
+          <div className="reveal-item lg:col-span-7">
             <div className="bg-white rounded-[20px] shadow-[0_4px_24px_rgba(11,106,168,0.08)] border border-border p-6 sm:p-8">
               <div className="mb-6">
                 <span className="eyebrow-chip mb-2 inline-block">Book Free Practical Trial</span>
@@ -94,7 +98,7 @@ export default function ContactPage() {
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="text-[13px] font-semibold text-primary underline underline-offset-4 hover:text-[#095A90]"
+                    className="text-[13px] font-semibold text-primary underline underline-offset-4 hover:text-[#095A90] cursor-pointer"
                   >
                     Submit Another Inquiry
                   </button>
@@ -237,7 +241,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right Column: Address & Map */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="reveal-item lg:col-span-5 space-y-6">
             {/* Address Block */}
             <div className="p-6 sm:p-7 rounded-2xl bg-white border border-border shadow-sm space-y-3">
               <span className="eyebrow-chip mb-1 inline-flex items-center gap-1.5">

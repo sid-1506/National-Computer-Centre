@@ -55,7 +55,6 @@
 .text-muted   { color: var(--muted-foreground); }
 
 /* ─── Section Eyebrow Pill ───────────────────────────────────────────── */
-/* Disha "TOP POPULAR COURSE" / "EDUCATION FOR EVERYONE" pill eyebrow */
 .eyebrow-chip {
   display: inline-block;
   background-color: var(--accent-soft);
@@ -75,11 +74,47 @@
   border-radius: 16px;
   border: 1px solid var(--border-light);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  transition: transform 300ms ease, box-shadow 300ms ease;
+  transition: transform 250ms ease-out, box-shadow 250ms ease-out;
 }
-.card-base:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(11, 106, 168, 0.1);
+
+/* ─── Hover & Focus-Visible Micro-interactions (Pointer devices only) ─── */
+@media (hover: hover) and (pointer: fine) {
+  .course-card-hover {
+    transition: transform 250ms ease-out, box-shadow 250ms ease-out;
+  }
+  .course-card-hover:hover,
+  .course-card-hover:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 34px rgba(11, 106, 168, 0.12);
+  }
+  .course-card-hover:hover .course-thumb-img,
+  .course-card-hover:focus-visible .course-thumb-img {
+    transform: scale(1.06);
+  }
+  .course-card-hover:hover .course-arrow-icon,
+  .course-card-hover:focus-visible .course-arrow-icon {
+    transform: translateX(4px);
+  }
+
+  .btn-hover {
+    transition: transform 200ms ease-out, background-color 200ms ease-out, box-shadow 200ms ease-out;
+  }
+  .btn-hover:hover {
+    transform: translateY(-2px);
+  }
+
+  .social-hover {
+    transition: transform 200ms ease-out, background-color 200ms ease-out;
+  }
+  .social-hover:hover {
+    transform: scale(1.08);
+  }
+}
+
+/* Accessible focus ring for all interactive elements */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 /* ─── Button base ────────────────────────────────────────────────────── */
@@ -144,5 +179,6 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+    transform: none !important;
   }
 }

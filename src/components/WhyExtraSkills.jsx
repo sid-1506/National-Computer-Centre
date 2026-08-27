@@ -1,4 +1,6 @@
+import { useRef } from 'react';
 import classroomImg from '../assets/classroom-logo.png';
+import { useSectionReveal } from '../hooks/useMotionReveal';
 
 const STAT_CARDS = [
   {
@@ -28,13 +30,16 @@ const STAT_CARDS = [
 ];
 
 export default function WhyExtraSkills() {
+  const sectionRef = useRef(null);
+  useSectionReveal(sectionRef);
+
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24 border-b border-slate-100">
+    <section ref={sectionRef} className="bg-white py-16 sm:py-20 lg:py-24 border-b border-slate-100">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
           {/* Left Column: Rounded Corner Image */}
-          <div className="lg:col-span-5 order-1 lg:order-1">
+          <div className="reveal-item lg:col-span-5 order-1 lg:order-1">
             <div className="relative rounded-[24px] overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.06)] border border-slate-100 aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5]">
               <img
                 src={classroomImg}
@@ -61,12 +66,12 @@ export default function WhyExtraSkills() {
             {/* Two-tone Heading */}
             <div>
               <h2
-                className="font-bold text-[#0F172A] leading-tight tracking-tight mb-4"
+                className="reveal-heading font-bold text-[#0F172A] leading-tight tracking-tight mb-4"
                 style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
               >
                 Why Extra <span className="text-[#0B6AA8]">Skills Matter</span>
               </h2>
-              <p className="text-[16px] sm:text-[17px] text-[#5B6472] leading-relaxed max-w-2xl">
+              <p className="reveal-body text-[16px] sm:text-[17px] text-[#5B6472] leading-relaxed max-w-2xl">
                 Degrees provide knowledge, but job-oriented practical skills build careers. At National Computer Centre, our structured courses bridge the gap between academic theory and real industry demands.
               </p>
             </div>
@@ -76,7 +81,7 @@ export default function WhyExtraSkills() {
               {STAT_CARDS.map((card) => (
                 <div
                   key={card.letter}
-                  className="bg-[#EFF1F4] rounded-[18px] p-5 sm:p-6 flex items-start gap-4 sm:gap-5 transition-all duration-300 hover:bg-[#EAF0F6] hover:shadow-sm"
+                  className="reveal-item bg-[#EFF1F4] rounded-[18px] p-5 sm:p-6 flex items-start gap-4 sm:gap-5 transition-all duration-300 hover:bg-[#EAF0F6] hover:shadow-sm"
                 >
                   {/* Solid Blue Rounded Square with White Capital Letter */}
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-[14px] bg-[#0B6AA8] flex items-center justify-center shrink-0 text-white font-extrabold text-[20px] sm:text-[22px] shadow-sm">

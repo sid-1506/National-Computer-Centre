@@ -7,12 +7,22 @@ import { categories, courses } from '../data/courses';
 import CourseEnquiryForm from './CourseEnquiryForm';
 import CourseThumbnail from './CourseThumbnail';
 import CourseCard from './CourseCard';
+import { useSectionReveal, isReducedMotion } from '../hooks/useMotionReveal';
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export default function CourseDetail({ onOpenModal }) {
   const { slug } = useParams();
+  const mainSecRef = useRef(null);
+  const overviewSecRef = useRef(null);
+  const relatedSecRef = useRef(null);
   const syllabusRef = useRef(null);
+
+  useSectionReveal(mainSecRef);
+  useSectionReveal(overviewSecRef);
+  useSectionReveal(relatedSecRef);
 
   const course = courses.find((c) => c.slug === slug);
   const category = course ? categories.find((c) => c.slug === course.categorySlug) : null;
@@ -40,14 +50,12 @@ export default function CourseDetail({ onOpenModal }) {
 
   // Syllabus animation
   useEffect(() => {
-    if (!course) return;
-    const pref = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (pref) return;
+    if (!course || isReducedMotion()) return;
     const ctx = gsap.context(() => {
       if (syllabusRef.current) {
         gsap.fromTo(syllabusRef.current.children, { y: 12, opacity: 0 }, {
           y: 0, opacity: 1, duration: 0.5, stagger: 0.04, ease: 'power2.out',
-          scrollTrigger: { trigger: syllabusRef.current, start: 'top 85%' },
+          scrollTrigger: { trigger: syllabusRef.current, start: 'top 85%', once: true },
         });
       }
     }, syllabusRef);
@@ -87,12 +95,12 @@ export default function CourseDetail({ onOpenModal }) {
   ];
 
   return (
-    <div className="bg-background pt-24 sm:pt-28">
+    <div className="bg-background pt-8 sm:pt-12">
       {/* Light hero band */}
-      <section className="bg-gradient-to-b from-[#F0F7FF] to-white py-8 border-b border-border">
+      <section className="bg-gradient-to-b from-[#F0F7FF] to-white py-6 border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
-          <nav className="flex flex-wrap items-center gap-2 text-[13px] font-medium text-muted-foreground mb-5">
+          <nav className="flex flex-wrap items-center gap-2 text-[13px] font-medium text-muted-foreground">
             <Link to="/" className="hover:text-primary transition-colors">Home</Link>
             <span>/</span>
             <Link to="/courses" className="hover:text-primary transition-colors">Courses</Link>
@@ -105,13 +113,13 @@ export default function CourseDetail({ onOpenModal }) {
       </section>
 
       {/* Main two-column */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <section ref={mainSecRef} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-14 items-start">
 
           {/* Left: Course info */}
           <div className="space-y-6">
             {/* Category chip + duration */}
-            <div className="flex flex-wrap items-center gap-2">
+            <div className="reveal-eyebrow flex flex-wrap items-center gap-2">
               <span className="eyebrow-chip">{category?.name || course.categorySlug}</span>
               {course.featured && (
                 <span className="bg-accent-soft text-primary text-[11px] font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Featured</span>
@@ -119,12 +127,12 @@ export default function CourseDetail({ onOpenModal }) {
             </div>
 
             {/* Title */}
-            <h1 className="font-bold text-foreground leading-tight" style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)', letterSpacing: '-0.01em' }}>
+            <h1 className="reveal-heading font-bold text-foreground leading-tight" style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)', letterSpacing: '-0.01em' }}>
               {course.title}
             </h1>
 
             {/* Star rating */}
-            <div className="flex items-center gap-2">
+            <div className="reveal-body flex items-center gap-2">
               <div className="flex items-center gap-0.5">
                 {[1,2,3,4,5].map((i) => <Star key={i} className="w-4 h-4 fill-[#F5A623] text-[#F5A623]" />)}
               </div>
@@ -132,12 +140,12 @@ export default function CourseDetail({ onOpenModal }) {
             </div>
 
             {/* Highlight */}
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+            <p className="reveal-body text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
               {course.highlight}
             </p>
 
             {/* Fact chips */}
-            <div className="flex flex-wrap gap-2">
+            <div className="reveal-item flex flex-wrap gap-2">
               {factChips.map(({ Icon, label, value }) => (
                 <div key={label} className="flex items-center gap-2 bg-accent-soft text-foreground rounded-lg px-3 py-2">
                   <Icon className="w-4 h-4 text-primary shrink-0" strokeWidth={1.5} />
@@ -150,30 +158,30 @@ export default function CourseDetail({ onOpenModal }) {
             </div>
 
             {/* Thumbnail */}
-            <div className="rounded-[20px] overflow-hidden border border-border group">
+            <div className="reveal-item rounded-[20px] overflow-hidden border border-border group">
               <CourseThumbnail slug={course.slug} title={course.title} categoryName={category?.name || course.categorySlug} aspectRatio="aspect-[16/9]" priority={true} />
             </div>
           </div>
 
           {/* Right: Sticky form */}
-          <div className="lg:sticky lg:top-28 w-full">
+          <div className="reveal-item lg:sticky lg:top-24 w-full">
             <CourseEnquiryForm courseTitle={course.title} />
           </div>
         </div>
       </section>
 
       {/* Overview + Syllabus */}
-      <section className="bg-surface border-t border-border py-14">
+      <section ref={overviewSecRef} className="bg-surface border-t border-border py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left: Overview */}
             <div className="lg:col-span-5 space-y-5">
-              <span className="eyebrow-chip inline-block">Overview</span>
-              <h2 className="font-bold text-foreground" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+              <span className="reveal-eyebrow eyebrow-chip inline-block">Overview</span>
+              <h2 className="reveal-heading font-bold text-foreground" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
                 About This <span className="text-primary">Course</span>
               </h2>
-              <p className="text-[15px] sm:text-base leading-relaxed text-muted-foreground">{course.description}</p>
-              <div className="p-5 border border-border rounded-xl bg-white">
+              <p className="reveal-body text-[15px] sm:text-base leading-relaxed text-muted-foreground">{course.description}</p>
+              <div className="reveal-item p-5 border border-border rounded-xl bg-white">
                 <span className="eyebrow-chip mb-2 inline-block">Learning Environment</span>
                 <p className="text-[14px] text-muted-foreground leading-relaxed">
                   Every student is assigned an individual high-speed desktop terminal with uninterrupted practice time and bilingual faculty guidance in Marathi, Hindi, and English.
@@ -183,11 +191,11 @@ export default function CourseDetail({ onOpenModal }) {
 
             {/* Right: Syllabus */}
             <div className="lg:col-span-7 space-y-5">
-              <div className="flex items-center justify-between">
+              <div className="reveal-eyebrow flex items-center justify-between">
                 <span className="eyebrow-chip inline-block">Curriculum</span>
                 <span className="text-[12px] text-muted-foreground font-medium uppercase tracking-wider">{course.syllabus.length} Modules</span>
               </div>
-              <h2 className="font-bold text-foreground" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+              <h2 className="reveal-heading font-bold text-foreground" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
                 Complete <span className="text-primary">Syllabus</span>
               </h2>
               <div ref={syllabusRef} className="space-y-2">
@@ -218,12 +226,12 @@ export default function CourseDetail({ onOpenModal }) {
             </p>
             <div className="pt-2 flex flex-wrap items-center gap-4">
               <button onClick={() => onOpenModal(course.title)}
-                className="rounded-full bg-white px-8 py-3.5 text-[14px] font-semibold text-primary hover:bg-accent-soft btn-swiss cursor-pointer flex items-center gap-2">
+                className="rounded-full bg-white px-8 py-3.5 text-[14px] font-semibold text-primary hover:bg-accent-soft btn-swiss cursor-pointer flex items-center gap-2 btn-hover">
                 <CalendarCheck className="w-4 h-4" />
                 <span>Book Free Trial</span>
               </button>
               <a href={`https://wa.me/919821115699?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer"
-                className="rounded-full border-2 border-white/40 px-8 py-3.5 text-[14px] font-semibold text-white hover:bg-white hover:text-primary btn-swiss flex items-center gap-2">
+                className="rounded-full border-2 border-white/40 px-8 py-3.5 text-[14px] font-semibold text-white hover:bg-white hover:text-primary btn-swiss flex items-center gap-2 btn-hover">
                 <MessageSquare className="w-4 h-4" />
                 <span>WhatsApp Enquiry</span>
               </a>
@@ -240,20 +248,22 @@ export default function CourseDetail({ onOpenModal }) {
       </section>
 
       {/* Related Courses */}
-      <section className="py-14 bg-background border-t border-border">
+      <section ref={relatedSecRef} className="py-14 bg-background border-t border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="font-bold text-foreground text-[22px]">
+            <h2 className="reveal-heading font-bold text-foreground text-[22px]">
               Related <span className="text-primary">Courses</span>
             </h2>
             <Link to={`/courses?category=${course.categorySlug}`}
-              className="text-[13px] font-semibold text-primary hover:text-accent underline underline-offset-4">
+              className="reveal-body text-[13px] font-semibold text-primary hover:text-accent underline underline-offset-4">
               View all in {category?.name || course.categorySlug}
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedCourses.map((rel) => (
-              <CourseCard key={rel.slug} course={rel} categoryName={getCategoryName(rel.categorySlug)} />
+              <div key={rel.slug} className="reveal-item">
+                <CourseCard course={rel} categoryName={getCategoryName(rel.categorySlug)} />
+              </div>
             ))}
           </div>
         </div>

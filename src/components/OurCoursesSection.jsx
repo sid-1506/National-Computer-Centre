@@ -2,11 +2,15 @@ import { useState, useRef, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { categories, courses } from '../data/courses';
 import CourseCard from './CourseCard';
+import { useSectionReveal } from '../hooks/useMotionReveal';
 
 export default function OurCoursesSection() {
   const [activeCategory, setActiveCategory] = useState('all');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const sectionRef = useRef(null);
   const carouselRef = useRef(null);
+
+  useSectionReveal(sectionRef);
 
   const filteredCourses = activeCategory === 'all'
     ? courses
@@ -62,11 +66,11 @@ export default function OurCoursesSection() {
   };
 
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24 overflow-hidden border-b border-slate-100">
+    <section ref={sectionRef} className="bg-white py-16 sm:py-20 lg:py-24 overflow-hidden border-b border-slate-100">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         
-        {/* Giant Centred Wide-Tracked Grey Two-Line Title exactly like Screenshot 1 */}
-        <div className="text-center mb-4 sm:mb-6 select-none">
+        {/* Giant Centred Wide-Tracked Grey Two-Line Title */}
+        <div className="reveal-heading text-center mb-4 sm:mb-6 select-none">
           <h2
             className="font-bold text-[#6C757D] uppercase tracking-[6px] sm:tracking-[8px] leading-tight"
             style={{ fontSize: 'clamp(2.5rem, 8vw, 5.5rem)' }}
@@ -76,19 +80,19 @@ export default function OurCoursesSection() {
         </div>
 
         {/* Sub-title */}
-        <div className="text-center mb-8 sm:mb-12">
+        <div className="reveal-body text-center mb-8 sm:mb-12">
           <p className="text-[26px] sm:text-[34px] font-bold text-[#0F172A] tracking-tight">
             For Working Professionals
           </p>
         </div>
 
         {/* Horizontal Scrollable Pill Filter Row */}
-        <div className="relative mb-12">
+        <div className="reveal-item relative mb-12">
           <div className="overflow-x-auto scrollbar-hide flex items-center justify-start sm:justify-center gap-3 px-2 py-1 scroll-smooth snap-x">
             {/* All Pill */}
             <button
               onClick={() => handleCategorySelect('all')}
-              className={`rounded-full px-7 py-3 text-[15px] font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer snap-start shrink-0 ${
+              className={`rounded-full px-7 py-3 text-[15px] font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer snap-start shrink-0 btn-hover ${
                 activeCategory === 'all'
                   ? 'bg-[#0B6AA8] text-white shadow-md'
                   : 'bg-white text-[#0F172A] border border-slate-200 hover:border-[#0B6AA8] hover:text-[#0B6AA8]'
@@ -104,7 +108,7 @@ export default function OurCoursesSection() {
                 <button
                   key={cat.slug}
                   onClick={() => handleCategorySelect(cat.slug)}
-                  className={`rounded-full px-6 py-3 text-[15px] font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer snap-start shrink-0 ${
+                  className={`rounded-full px-6 py-3 text-[15px] font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer snap-start shrink-0 btn-hover ${
                     isActive
                       ? 'bg-[#0B6AA8] text-white shadow-md'
                       : 'bg-white text-[#0F172A] border border-slate-200 hover:border-[#0B6AA8] hover:text-[#0B6AA8]'
@@ -126,7 +130,7 @@ export default function OurCoursesSection() {
           {filteredCourses.map((course) => (
             <div
               key={course.slug}
-              className="course-slide-item flex-none w-[min(340px,88vw)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
+              className="reveal-item course-slide-item flex-none w-[min(340px,88vw)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] snap-start"
             >
               <CourseCard
                 course={course}
@@ -138,7 +142,7 @@ export default function OurCoursesSection() {
         </div>
 
         {/* Centred Prev/Next Circular Buttons */}
-        <div className="flex items-center justify-center gap-5 mt-10">
+        <div className="reveal-item flex items-center justify-center gap-5 mt-10">
           <button
             onClick={handlePrev}
             disabled={currentIndex === 0}
