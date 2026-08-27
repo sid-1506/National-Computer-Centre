@@ -19,7 +19,7 @@ export default function MobileActionBar({ onOpenModal }) {
           href={BUSINESS_INFO.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-[#1B3FAE] py-2.5 px-3 text-xs font-semibold text-white active:bg-[#2A54D4] transition-colors"
+          className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-primary py-2.5 px-3 text-xs font-semibold text-white active:bg-primary/90 transition-colors"
         >
           <MessageSquare className="h-4 w-4 text-white" />
           <span>WhatsApp</span>
@@ -31,7 +31,7 @@ export default function MobileActionBar({ onOpenModal }) {
           className="flex items-center justify-center rounded-xl bg-white text-[#0C0C0C] py-2.5 px-3 text-xs font-bold active:bg-white/90 transition-colors"
           aria-label="Book Free Trial"
         >
-          <Sparkles className="h-4 w-4 text-[#1B3FAE]" />
+          <Sparkles className="h-4 w-4 text-primary" />
         </button>
       </div>
     </div>

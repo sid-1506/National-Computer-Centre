@@ -82,10 +82,10 @@ export default function WhyNCC() {
               >
                 {/* Number + Icon */}
                 <div className="md:col-span-3 flex items-center gap-4">
-                  <span className="font-mono text-sm sm:text-base font-semibold text-[#111111]/40 group-hover:text-[#1B3FAE] transition-colors">
+                  <span className="font-mono text-sm sm:text-base font-semibold text-[#111111]/40 group-hover:text-primary transition-colors">
                     {row.number}
                   </span>
-                  <Icon className="w-5 h-5 text-[#111111] stroke-[1.5] group-hover:text-[#1B3FAE] transition-colors shrink-0" />
+                  <Icon className="w-5 h-5 text-[#111111] stroke-[1.5] group-hover:text-primary transition-colors shrink-0" />
                 </div>
 
                 {/* Title */}

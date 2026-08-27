@@ -71,7 +71,7 @@ export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT'
 
         {/* Modal Header */}
         <div className="pb-6 border-b border-[#111111]/15 pr-8">
-          <span className="section-label text-[#1B3FAE] block mb-1">
+          <span className="section-label text-primary block mb-1">
             ONE DAY FREE TRIAL BOOKING
           </span>
           <h2 className="font-display text-2xl sm:text-3xl uppercase tracking-[-0.02em] leading-[1.02] md:leading-[0.98] text-[#111111] pb-[0.04em]">
@@ -84,7 +84,7 @@ export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT'
 
         {submitted ? (
           <div className="py-8 space-y-4">
-            <div className="flex items-center gap-3 text-[#1B3FAE]">
+            <div className="flex items-center gap-3 text-primary">
               <CheckCircle2 className="w-6 h-6" />
               <span className="font-display text-2xl uppercase tracking-[-0.02em] leading-[1.02] md:leading-[0.98] text-[#111111] pb-[0.04em]">
                 BOOKING SENT VIA WHATSAPP
@@ -95,7 +95,7 @@ export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT'
             </p>
             <button
               onClick={onClose}
-              className="rounded-full bg-[#111111] px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#EFEDE8] hover:bg-[#1B3FAE] btn-swiss"
+              className="rounded-full bg-[#111111] px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#EFEDE8] hover:bg-primary btn-swiss"
             >
               CLOSE
             </button>
@@ -115,7 +115,7 @@ export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT'
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Your full name"
-                className="w-full bg-transparent py-2.5 border-b border-[#111111]/30 text-sm sm:text-base text-[#111111] focus:border-[#111111] focus:outline-none"
+                className="w-full bg-transparent py-2.5 border-b border-[#111111]/30 text-sm sm:text-base text-[#111111] focus:border-brand-cyan focus:outline-none"
               />
             </div>
 
@@ -132,7 +132,7 @@ export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT'
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="+91 98211 15699"
-                className="w-full bg-transparent py-2.5 border-b border-[#111111]/30 text-sm sm:text-base text-[#111111] focus:border-[#111111] focus:outline-none"
+                className="w-full bg-transparent py-2.5 border-b border-[#111111]/30 text-sm sm:text-base text-[#111111] focus:border-brand-cyan focus:outline-none"
               />
             </div>
 
@@ -146,7 +146,7 @@ export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT'
                 name="course"
                 value={formData.course}
                 onChange={handleChange}
-                className="w-full bg-transparent py-2.5 border-b border-[#111111]/30 text-sm sm:text-base text-[#111111] focus:border-[#111111] focus:outline-none cursor-pointer"
+                className="w-full bg-transparent py-2.5 border-b border-[#111111]/30 text-sm sm:text-base text-[#111111] focus:border-brand-cyan focus:outline-none cursor-pointer"
               >
                 {COURSES.map((c) => (
                   <option key={c.id} value={c.name} className="bg-[#EFEDE8]">
@@ -169,7 +169,7 @@ export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT'
                 name="timing"
                 value={formData.timing}
                 onChange={handleChange}
-                className="w-full bg-transparent py-2.5 border-b border-[#111111]/30 text-sm sm:text-base text-[#111111] focus:border-[#111111] focus:outline-none cursor-pointer"
+                className="w-full bg-transparent py-2.5 border-b border-[#111111]/30 text-sm sm:text-base text-[#111111] focus:border-brand-cyan focus:outline-none cursor-pointer"
               >
                 <option value="Morning (07:00 AM – 11:00 AM)">Morning (07:00 AM – 11:00 AM)</option>
                 <option value="Afternoon (11:00 AM – 04:00 PM)">Afternoon (11:00 AM – 04:00 PM)</option>
@@ -182,7 +182,7 @@ export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT'
             <div className="pt-4 flex items-center justify-between">
               <button
                 type="submit"
-                className="rounded-full bg-[#111111] px-7 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-[#EFEDE8] hover:bg-[#1B3FAE] btn-swiss flex items-center gap-2 cursor-pointer w-full justify-center"
+                className="rounded-full bg-[#111111] px-7 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-[#EFEDE8] hover:bg-primary btn-swiss flex items-center gap-2 cursor-pointer w-full justify-center"
               >
                 <span>CONFIRM TRIAL VIA WHATSAPP</span>
                 <ArrowRight className="w-4 h-4" />

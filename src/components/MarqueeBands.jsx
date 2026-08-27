@@ -25,7 +25,7 @@ export default function MarqueeBands() {
               <span className="font-display text-lg sm:text-xl tracking-tight text-[#111111] uppercase">
                 {item}
               </span>
-              <Asterisk className="w-3.5 h-3.5 ml-4 sm:ml-6 text-[#1B3FAE] shrink-0 stroke-[2.5]" />
+              <Asterisk className="w-3.5 h-3.5 ml-4 sm:ml-6 text-brand-cyan shrink-0 stroke-[2.5]" />
             </div>
           ))}
         </div>

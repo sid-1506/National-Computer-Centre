@@ -72,8 +72,8 @@ export default function Testimonials() {
                   <div className="font-display text-lg sm:text-xl uppercase tracking-[-0.02em] text-white leading-[1.02] md:leading-[0.98] pb-[0.04em]">
                     {t.name}
                   </div>
-                  <div className="section-label text-[#1B3FAE] mt-1">
-                    {t.course}
+                  <div className="section-label text-brand-cyan mt-1">
+                    {t.role} · {t.course}
                   </div>
                 </div>
               </div>

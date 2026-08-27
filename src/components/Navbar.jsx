@@ -1,12 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X } from 'lucide-react';
 import { gsap } from 'gsap';
 import { BUSINESS_INFO } from '../data/nccData';
+import nccLogo from '../assets/ncc-logo.png';
 
 export default function Navbar({ onOpenModal }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
+  const location = useLocation();
 
   const panelRef = useRef(null);
   const linksRef = useRef([]);
@@ -18,7 +21,7 @@ export default function Navbar({ onOpenModal }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
+      if (window.scrollY > 30) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -57,7 +60,7 @@ export default function Navbar({ onOpenModal }) {
     }
   };
 
-  // Animate hamburger icon swap (0 -> 90deg with opacity crossfade)
+  // Animate hamburger icon swap
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
@@ -115,28 +118,25 @@ export default function Navbar({ onOpenModal }) {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
       tlRef.current = tl;
 
-      // Panel wipe down
       tl.fromTo(
         panelRef.current,
         { clipPath: 'inset(0% 0% 100% 0%)' },
-        { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.55 }
+        { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.45 }
       );
 
-      // Links stagger in from y: 24, opacity: 0
       const activeLinks = linksRef.current.filter(Boolean);
       tl.fromTo(
         activeLinks,
-        { y: 24, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.45, stagger: 0.06 },
-        '-=0.3'
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.4, stagger: 0.05 },
+        '-=0.25'
       );
 
-      // Divider + phone row fade in
       if (footerRowRef.current) {
         tl.fromTo(
           footerRowRef.current,
-          { y: 12, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.4 },
+          { y: 10, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.35 },
           '-=0.2'
         );
       }
@@ -156,142 +156,156 @@ export default function Navbar({ onOpenModal }) {
       });
       tlRef.current = tl;
 
-      // Links fade/slide out
       const activeLinks = linksRef.current.filter(Boolean);
       tl.to(activeLinks, {
-        y: -12,
+        y: -10,
         opacity: 0,
-        duration: 0.25,
+        duration: 0.2,
         stagger: 0.03,
       });
 
-      // Divider + phone row fade out
       if (footerRowRef.current) {
-        tl.to(footerRowRef.current, { opacity: 0, duration: 0.2 }, '<');
+        tl.to(footerRowRef.current, { opacity: 0, duration: 0.15 }, '<');
       }
 
-      // Panel collapses clipPath
       tl.to(
         panelRef.current,
         {
           clipPath: 'inset(0% 0% 100% 0%)',
-          duration: 0.4,
+          duration: 0.35,
         },
-        '-=0.15'
+        '-=0.1'
       );
     }
   }, [mobileMenuOpen, shouldRender]);
 
   const navLinks = [
-    { label: 'COURSES', href: '#courses' },
-    { label: 'ABOUT', href: '#about' },
-    { label: 'WHY NCC', href: '#why-ncc' },
-    { label: 'REVIEWS', href: '#testimonials' },
-    { label: 'CONTACT', href: '#contact' },
+    { label: 'COURSES', to: '/courses' },
+    { label: 'ABOUT', to: '/about' },
+    { label: 'CONTACT', to: '/contact' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#EFEDE8]/90 backdrop-blur-md py-3.5 border-b border-[#111111]/15'
-          : 'bg-transparent py-6'
+          ? 'bg-[#EFEDE8]/95 backdrop-blur-md py-2.5 sm:py-3 lg:py-3.5 border-b border-[#111111]/15'
+          : 'bg-[#EFEDE8]/90 backdrop-blur-sm py-3.5 sm:py-4 lg:py-5'
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Left: Brand Identity Wordmark */}
-        <a
-          href="#"
-          className="flex items-baseline gap-2 font-display text-2xl tracking-[-0.02em] leading-[1.02] md:leading-[0.98] text-[#111111] uppercase hover:text-[#1B3FAE] transition-colors"
+        {/* Left: Responsive Brand Lockup */}
+        <Link
+          to="/"
+          className="flex items-center gap-2.5 sm:gap-3 lg:gap-3.5 group shrink-0 select-none"
         >
-          <span>NATIONAL COMPUTER CENTRE</span>
-          <span className="text-[10px] font-sans font-semibold tracking-widest text-[#111111]/40 hidden sm:inline">
-            / 1998
-          </span>
-        </a>
+          {/* Logo Mark */}
+          <img
+            src={nccLogo}
+            alt="National Computer Centre"
+            className="h-11 sm:h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+          />
 
-        {/* Center: Max 5 Nav Links (Desktop) */}
+          {/* Brand Text in Anton */}
+          <div className="flex items-center leading-none">
+            <span className="font-display uppercase text-[#111111] text-[11px] sm:text-[13px] lg:text-[15px] tracking-tight whitespace-nowrap">
+              NATIONAL COMPUTER CENTRE
+            </span>
+          </div>
+        </Link>
+
+        {/* Center: Dedicated Route Nav Links (Desktop) */}
         <nav className="hidden md:flex items-center gap-8 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#111111]">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="hover:text-[#1B3FAE] transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.to;
+            return (
+              <Link
+                key={link.label}
+                to={link.to}
+                className={`hover:text-primary transition-colors ${
+                  isActive ? 'text-primary border-b border-primary pb-0.5' : ''
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* Right: Phone Number + One Black Pill CTA Button (Max 2 CTAs) */}
+        {/* Right: Direct Phone + One Black Pill CTA */}
         <div className="hidden lg:flex items-center gap-6">
           <a
             href={`tel:${BUSINESS_INFO.phone.raw}`}
-            className="text-[12px] font-medium tracking-wider text-[#111111] hover:text-[#1B3FAE] transition-colors flex items-center gap-1.5"
+            className="text-[12px] font-medium tracking-wider text-[#111111] hover:text-primary transition-colors flex items-center gap-1.5"
           >
-            <Phone className="w-3.5 h-3.5" />
+            <Phone className="w-3.5 h-3.5 text-primary" />
             <span>98211 15699</span>
           </a>
 
           <button
             onClick={() => onOpenModal('MS-CIT')}
-            className="rounded-full bg-[#111111] px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#EFEDE8] hover:bg-[#1B3FAE] btn-swiss cursor-pointer"
+            className="rounded-full bg-[#111111] px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#EFEDE8] hover:bg-primary btn-swiss cursor-pointer"
           >
             FREE TRIAL
           </button>
         </div>
 
-        {/* Mobile Hamburger Toggle */}
-        <div className="flex md:hidden items-center gap-3">
+        {/* Mobile Actions (< 1024px) */}
+        <div className="flex md:hidden items-center gap-2 sm:gap-3">
           <button
             onClick={() => onOpenModal('MS-CIT')}
-            className="rounded-full bg-[#111111] px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#EFEDE8] hover:bg-[#1B3FAE] btn-swiss"
+            className="rounded-full bg-[#111111] px-3 sm:px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#EFEDE8] hover:bg-primary btn-swiss shrink-0"
           >
             FREE TRIAL
           </button>
 
           <button
             onClick={toggleMobileMenu}
-            className="relative p-2 text-[#111111] w-10 h-10 flex items-center justify-center cursor-pointer"
+            className="relative p-1.5 text-[#111111] w-9 h-9 flex items-center justify-center cursor-pointer shrink-0"
             aria-label="Toggle navigation menu"
           >
             <span
               ref={iconMenuRef}
               className="absolute inset-0 flex items-center justify-center pointer-events-none"
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             </span>
             <span
               ref={iconCloseRef}
               className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5" />
             </span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer with GSAP Dropdown & Exit Animation */}
+      {/* Mobile Drawer */}
       {shouldRender && (
         <div
           ref={panelRef}
           className="md:hidden bg-[#EFEDE8] border-b border-[#111111]/15 px-6 py-6 space-y-4 overflow-hidden"
           style={{ clipPath: 'inset(0% 0% 100% 0%)' }}
         >
-          {navLinks.map((link, idx) => (
-            <div
-              key={link.label}
-              ref={(el) => (linksRef.current[idx] = el)}
-            >
-              <a
-                href={link.href}
-                onClick={closeMobileMenu}
-                className="block text-sm font-bold tracking-[0.18em] uppercase text-[#111111] hover:text-[#1B3FAE] transition-colors"
+          {navLinks.map((link, idx) => {
+            const isActive = location.pathname === link.to;
+            return (
+              <div
+                key={link.label}
+                ref={(el) => (linksRef.current[idx] = el)}
               >
-                {link.label}
-              </a>
-            </div>
-          ))}
+                <Link
+                  to={link.to}
+                  onClick={closeMobileMenu}
+                  className={`block text-sm font-bold tracking-[0.18em] uppercase transition-colors ${
+                    isActive ? 'text-primary' : 'text-[#111111] hover:text-primary'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              </div>
+            );
+          })}
 
           <div
             ref={footerRowRef}
@@ -301,7 +315,7 @@ export default function Navbar({ onOpenModal }) {
               href={`tel:${BUSINESS_INFO.phone.raw}`}
               className="text-xs font-semibold text-[#111111] flex items-center gap-2"
             >
-              <Phone className="w-3.5 h-3.5 text-[#1B3FAE]" />
+              <Phone className="w-3.5 h-3.5 text-primary" />
               <span>98211 15699</span>
             </a>
           </div>

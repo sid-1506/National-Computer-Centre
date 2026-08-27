@@ -53,7 +53,7 @@ export default function Contact() {
           <div className="lg:col-span-6">
             {submitted ? (
               <div className="p-8 border border-[#111111]/20 rounded-2xl bg-white space-y-4">
-                <div className="flex items-center gap-3 text-[#1B3FAE]">
+                <div className="flex items-center gap-3 text-primary">
                   <CheckCircle2 className="w-6 h-6" />
                   <span className="font-display text-2xl uppercase tracking-[-0.02em] text-[#111111] leading-[1.02] md:leading-[0.98] pb-[0.04em]">
                     TRIAL REQUEST INITIATED
@@ -64,7 +64,7 @@ export default function Contact() {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="text-xs font-bold uppercase tracking-wider text-[#1B3FAE] underline underline-offset-4"
+                  className="text-xs font-bold uppercase tracking-wider text-primary underline underline-offset-4"
                 >
                   SUBMIT ANOTHER INQUIRY
                 </button>
@@ -84,7 +84,7 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Enter your full name"
-                    className="w-full bg-transparent py-3 border-b border-[#111111]/30 text-base sm:text-lg text-[#111111] placeholder:text-[#111111]/30 focus:border-[#111111] focus:outline-none transition-colors"
+                    className="w-full bg-transparent py-3 border-b border-[#111111]/30 text-base sm:text-lg text-[#111111] placeholder:text-[#111111]/30 focus:border-brand-cyan focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -101,7 +101,7 @@ export default function Contact() {
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+91 98211 15699"
-                    className="w-full bg-transparent py-3 border-b border-[#111111]/30 text-base sm:text-lg text-[#111111] placeholder:text-[#111111]/30 focus:border-[#111111] focus:outline-none transition-colors"
+                    className="w-full bg-transparent py-3 border-b border-[#111111]/30 text-base sm:text-lg text-[#111111] placeholder:text-[#111111]/30 focus:border-brand-cyan focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -117,7 +117,7 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="name@example.com"
-                    className="w-full bg-transparent py-3 border-b border-[#111111]/30 text-base sm:text-lg text-[#111111] placeholder:text-[#111111]/30 focus:border-[#111111] focus:outline-none transition-colors"
+                    className="w-full bg-transparent py-3 border-b border-[#111111]/30 text-base sm:text-lg text-[#111111] placeholder:text-[#111111]/30 focus:border-brand-cyan focus:outline-none transition-colors"
                   />
                 </div>
 
@@ -131,7 +131,7 @@ export default function Contact() {
                     name="course"
                     value={formData.course}
                     onChange={handleChange}
-                    className="w-full bg-transparent py-3 border-b border-[#111111]/30 text-base sm:text-lg text-[#111111] focus:border-[#111111] focus:outline-none transition-colors cursor-pointer"
+                    className="w-full bg-transparent py-3 border-b border-[#111111]/30 text-base sm:text-lg text-[#111111] focus:border-brand-cyan focus:outline-none transition-colors cursor-pointer"
                   >
                     {COURSES.map((c) => (
                       <option key={c.id} value={c.name} className="bg-[#EFEDE8] text-[#111111]">
@@ -148,7 +148,7 @@ export default function Contact() {
                 <div className="pt-4">
                   <button
                     type="submit"
-                    className="rounded-full bg-[#111111] px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] text-[#EFEDE8] hover:bg-[#1B3FAE] btn-swiss flex items-center justify-center gap-3 w-full sm:w-auto cursor-pointer"
+                    className="rounded-full bg-[#111111] px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] text-[#EFEDE8] hover:bg-primary btn-swiss flex items-center justify-center gap-3 w-full sm:w-auto cursor-pointer"
                   >
                     <span>SEND TRIAL REQUEST TO WHATSAPP</span>
                     <ArrowRight className="w-4 h-4" />
@@ -164,7 +164,7 @@ export default function Contact() {
               {/* Address Block */}
               <div className="space-y-2">
                 <span className="section-label text-[#111111]/50 block flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#1B3FAE]" />
+                  <MapPin className="w-3.5 h-3.5 text-primary" />
                   CENTRE LOCATION
                 </span>
                 <p className="font-display text-xl sm:text-2xl text-[#111111] uppercase tracking-tight">
@@ -178,7 +178,7 @@ export default function Contact() {
               {/* Timings */}
               <div className="space-y-2 pt-6 border-t border-[#111111]/15">
                 <span className="section-label text-[#111111]/50 block flex items-center gap-1.5">
-                  <Clock className="w-3.5 h-3.5 text-[#1B3FAE]" />
+                  <Clock className="w-3.5 h-3.5 text-primary" />
                   CENTRE TIMINGS
                 </span>
                 <p className="text-sm text-[#111111]/80">
@@ -192,20 +192,20 @@ export default function Contact() {
               {/* Phone Numbers */}
               <div className="space-y-2 pt-6 border-t border-[#111111]/15">
                 <span className="section-label text-[#111111]/50 block flex items-center gap-1.5">
-                  <Phone className="w-3.5 h-3.5 text-[#1B3FAE]" />
+                  <Phone className="w-3.5 h-3.5 text-primary" />
                   DIRECT CONTACT
                 </span>
                 <div className="flex flex-wrap gap-4 pt-1">
                   <a
                     href={`tel:${BUSINESS_INFO.phone.raw}`}
-                    className="font-display text-lg sm:text-xl text-[#111111] hover:text-[#1B3FAE] transition-colors"
+                    className="font-display text-lg sm:text-xl text-[#111111] hover:text-primary transition-colors"
                   >
                     {BUSINESS_INFO.phone.display}
                   </a>
                   <span className="text-[#111111]/30">/</span>
                   <a
                     href="tel:+919820615699"
-                    className="font-display text-lg sm:text-xl text-[#111111] hover:text-[#1B3FAE] transition-colors"
+                    className="font-display text-lg sm:text-xl text-[#111111] hover:text-primary transition-colors"
                   >
                     98206 15699
                   </a>

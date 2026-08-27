@@ -52,7 +52,7 @@ export default function Stats() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Label */}
         <div className="flex items-center justify-between pb-6 border-b border-[#111111]/15 mb-12">
-          <span className="section-label text-[#111111]">04 — VERIFIED METRICS</span>
+          <span className="section-label text-[#111111]">05 — VERIFIED METRICS</span>
           <span className="section-label text-[#111111]/60">1998 — 2026</span>
         </div>
 
@@ -62,7 +62,7 @@ export default function Stats() {
             <div key={idx} className="space-y-2 border-l border-[#111111]/15 pl-4 sm:pl-6">
               <div className="font-display text-5xl sm:text-7xl lg:text-8xl tracking-[-0.02em] text-[#111111] leading-[1.02] md:leading-[0.98] pb-[0.04em]">
                 {stat.isDecimal ? counts[idx].toFixed(1) : counts[idx].toLocaleString()}
-                <span className="text-[#1B3FAE]">{stat.suffix}</span>
+                <span className="text-primary">{stat.suffix}</span>
               </div>
               <div className="section-label text-[#111111] pt-2">
                 {stat.label}

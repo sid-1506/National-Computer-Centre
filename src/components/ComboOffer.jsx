@@ -1,6 +1,6 @@
 export default function ComboOffer({ onOpenModal }) {
   return (
-    <section className="py-20 lg:py-28 bg-[#1B3FAE] text-white">
+    <section className="py-20 lg:py-28 bg-primary text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Top Section Label */}
         <div className="flex items-center justify-between pb-6 border-b border-white/20 mb-8">
@@ -21,7 +21,7 @@ export default function ComboOffer({ onOpenModal }) {
           <div className="pt-4">
             <button
               onClick={() => onOpenModal('Tally + Advanced Excel Combo')}
-              className="rounded-full bg-white px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] text-[#1B3FAE] hover:bg-[#111111] hover:text-white btn-swiss cursor-pointer"
+              className="rounded-full bg-white px-8 py-4 text-xs font-bold uppercase tracking-[0.15em] text-primary hover:bg-[#111111] hover:text-white btn-swiss cursor-pointer"
             >
               CLAIM ANNIVERSARY OFFER
             </button>

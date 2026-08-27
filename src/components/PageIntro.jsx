@@ -56,7 +56,7 @@ export default function PageIntro({ onComplete }) {
 
           {/* Center Brand */}
           <div className="my-auto max-w-4xl">
-            <p className="font-sans text-xs md:text-sm tracking-[0.25em] text-[#1B3FAE] uppercase mb-4 font-semibold">
+            <p className="font-sans text-xs md:text-sm tracking-[0.25em] text-brand-cyan uppercase mb-4 font-semibold">
               Government Recognised Institute
             </p>
             <h1 className="font-display text-5xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight text-white uppercase">

@@ -1,18 +1,16 @@
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import MarqueeBands from './components/MarqueeBands';
-import Courses from './components/Courses';
-import About from './components/About';
-import WhyNCC from './components/WhyNCC';
-import Stats from './components/Stats';
-import ComboOffer from './components/ComboOffer';
-import Testimonials from './components/Testimonials';
-import Gallery from './components/Gallery';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
+import ScrollToTop from './components/ScrollToTop';
+
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import AllCourses from './components/AllCourses';
+import CourseDetail from './components/CourseDetail';
 
 export default function App() {
   // Lenis smooth scroll synced with GSAP
@@ -31,52 +29,33 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#EFEDE8] text-[#111111] font-sans antialiased selection:bg-[#1B3FAE] selection:text-white">
-      {/* 00. Navigation (Fixed Swiss Minimal Nav) */}
-      <Navbar onOpenModal={handleOpenModal} />
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="relative min-h-screen bg-[#EFEDE8] text-[#111111] font-sans antialiased selection:bg-primary selection:text-white flex flex-col justify-between">
+        {/* 00. Fixed Swiss Minimal Nav with Responsive Logo Lockup */}
+        <Navbar onOpenModal={handleOpenModal} />
 
-      {/* Main Single Page Content Sections (Strictly in Spec Order) */}
-      <main>
-        {/* 01. Hero */}
-        <Hero onOpenModal={handleOpenModal} />
+        {/* Dynamic Route Content */}
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<HomePage onOpenModal={handleOpenModal} />} />
+            <Route path="/courses" element={<AllCourses onOpenModal={handleOpenModal} />} />
+            <Route path="/courses/:slug" element={<CourseDetail onOpenModal={handleOpenModal} />} />
+            <Route path="/about" element={<AboutPage onOpenModal={handleOpenModal} />} />
+            <Route path="/contact" element={<ContactPage onOpenModal={handleOpenModal} />} />
+          </Routes>
+        </div>
 
-        {/* 02. Marquee Ticker */}
-        <MarqueeBands />
+        {/* 11. Footer */}
+        <Footer onOpenModal={handleOpenModal} />
 
-        {/* 03. Courses */}
-        <Courses onOpenModal={handleOpenModal} />
-
-        {/* 04. About */}
-        <About onOpenModal={handleOpenModal} />
-
-        {/* 05. Why NCC */}
-        <WhyNCC />
-
-        {/* 06. Stats */}
-        <Stats />
-
-        {/* 07. Anniversary Offer */}
-        <ComboOffer onOpenModal={handleOpenModal} />
-
-        {/* 08. Testimonials */}
-        <Testimonials />
-
-        {/* 09. Gallery */}
-        <Gallery />
-
-        {/* 10. Contact */}
-        <Contact />
-      </main>
-
-      {/* 11. Footer */}
-      <Footer onOpenModal={handleOpenModal} />
-
-      {/* Booking Modal */}
-      <EnquiryModal
-        isOpen={modalOpen}
-        onClose={handleCloseModal}
-        defaultCourse={selectedCourse}
-      />
-    </div>
+        {/* Quick Booking Modal */}
+        <EnquiryModal
+          isOpen={modalOpen}
+          onClose={handleCloseModal}
+          defaultCourse={selectedCourse}
+        />
+      </div>
+    </BrowserRouter>
   );
 }

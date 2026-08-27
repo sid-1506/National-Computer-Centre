@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --primary: oklch(0.508 0.126 245.7); /* #0B6AA8 Deep NCC Blue */
+  --primary-foreground: #FFFFFF;
+  --accent: oklch(0.508 0.126 245.7); /* #0B6AA8 Deep NCC Blue */
+  --accent-foreground: #FFFFFF;
+  --ring: oklch(0.718 0.129 227.8); /* #2DB3E3 Bright Cyan */
+
+  --brand-cyan: oklch(0.718 0.129 227.8); /* #2DB3E3 Bright Cyan */
+  --brand-cyan-soft: oklch(0.957 0.019 225.7); /* #E4F4FB Soft Cyan Tint */
+  --brand-green: oklch(0.725 0.175 136.3); /* #6FBE44 Globe Green */
+}
+
+@theme {
+  --color-canvas: #EFEDE8;
+  --color-ink: #111111;
+  --color-ink-muted: #666666;
+  --color-ink-light: #999999;
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ring: var(--ring);
+
+  --color-brand-cyan: var(--brand-cyan);
+  --color-brand-cyan-soft: var(--brand-cyan-soft);
+  --color-brand-green: var(--brand-green);
+
+  --color-hairline: rgba(17, 17, 17, 0.15);
+  --color-hairline-dark: rgba(255, 255, 255, 0.15);
+  
+  --font-display: 'Anton', sans-serif;
+  --font-sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

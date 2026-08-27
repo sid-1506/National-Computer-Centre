@@ -1,7 +1,8 @@
 import { useRef, useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BUSINESS_INFO } from '../data/nccData';
+import FounderSection from './FounderSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,7 +29,7 @@ export default function About({ onOpenModal }) {
         },
       });
 
-      // Image clip-path wipe reveal
+      // Story image clip-path wipe reveal
       if (imageRef.current) {
         gsap.fromTo(
           imageRef.current,
@@ -53,21 +54,28 @@ export default function About({ onOpenModal }) {
     <section
       id="about"
       ref={sectionRef}
-      className="py-20 lg:py-32 bg-[#EFEDE8] text-[#111111] border-b border-[#111111]/15"
+      className="pt-32 sm:pt-36 pb-20 lg:pb-32 bg-[#EFEDE8] text-[#111111] border-b border-[#111111]/15"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Breadcrumb */}
+        <nav className="text-[11px] font-mono tracking-widest uppercase text-[#111111]/50 mb-8 flex items-center gap-2">
+          <Link to="/" className="hover:text-[#111111] transition-colors">HOME</Link>
+          <span>/</span>
+          <span className="text-[#111111] font-semibold">ABOUT</span>
+        </nav>
+
         {/* Section Header */}
         <div className="flex items-center justify-between pb-6 border-b border-[#111111]/15 mb-12">
           <span className="section-label text-[#111111]">02 — ABOUT</span>
           <span className="section-label text-[#111111]/60">ESTABLISHED 15 AUGUST 1998</span>
         </div>
 
-        {/* Two Column Layout */}
+        {/* Two Column Story Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Heading with last line in #1B3FAE & Editorial Copy */}
+          {/* Left Column: Heading with last line in text-primary & Editorial Copy */}
           <div ref={textRef} className="lg:col-span-7 space-y-6">
             <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl uppercase tracking-[-0.02em] leading-[1.02] md:leading-[0.98] text-[#111111] pb-[0.08em]">
-              TWENTY-EIGHT YEARS OF DISCIPLINED COMPUTER EDUCATION IN <span className="text-[#1B3FAE]">MULUND WEST.</span>
+              TWENTY-EIGHT YEARS OF DISCIPLINED COMPUTER EDUCATION IN <span className="text-primary">MULUND WEST.</span>
             </h2>
 
             <div className="space-y-4 text-base sm:text-lg text-[#111111]/80 leading-relaxed font-normal pt-4 border-t border-[#111111]/15">
@@ -97,7 +105,7 @@ export default function About({ onOpenModal }) {
             <div className="pt-4">
               <button
                 onClick={() => onOpenModal('MS-CIT')}
-                className="rounded-full bg-[#111111] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-[#EFEDE8] hover:bg-[#1B3FAE] btn-swiss cursor-pointer"
+                className="rounded-full bg-[#111111] px-8 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-[#EFEDE8] hover:bg-primary btn-swiss cursor-pointer"
               >
                 VISIT THE CENTRE
               </button>
@@ -123,6 +131,9 @@ export default function About({ onOpenModal }) {
             </div>
           </div>
         </div>
+
+        {/* Reusable Founder / Director Block */}
+        <FounderSection isStandalone={false} />
       </div>
     </section>
   );
