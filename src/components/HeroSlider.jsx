@@ -39,10 +39,7 @@ export default function HeroSlider({ onOpenModal }) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [introFinished, setIntroFinished] = useState(() => {
     if (typeof window !== 'undefined') {
-      return (
-        Boolean(sessionStorage.getItem('natc_landing_intro_played')) ||
-        isReducedMotion()
-      );
+      return isReducedMotion();
     }
     return false;
   });
@@ -61,19 +58,15 @@ export default function HeroSlider({ onOpenModal }) {
     return () => clearInterval(timer);
   }, [introFinished, nextSlide]);
 
-  // Master Page-Load Animation Timeline
+  // Master Page-Load Animation Timeline (Plays on every reload / page visit)
   useIsomorphicLayoutEffect(() => {
     if (typeof window === 'undefined') return;
 
     const reduced = isReducedMotion();
-    const hasPlayed = sessionStorage.getItem('natc_landing_intro_played');
-
-    if (hasPlayed || reduced) {
+    if (reduced) {
       setIntroFinished(true);
       return;
     }
-
-    sessionStorage.setItem('natc_landing_intro_played', 'true');
 
     const ctx = gsap.context(() => {
       const isMobile = window.innerWidth < 1024;
