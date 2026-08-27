@@ -50,9 +50,9 @@ export default function Stats() {
       className="py-20 lg:py-28 bg-[#EFEDE8] text-[#111111] border-b border-[#111111]/15"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Label */}
+        {/* Section Header */}
         <div className="flex items-center justify-between pb-6 border-b border-[#111111]/15 mb-12">
-          <span className="section-label text-[#111111]">05 — VERIFIED METRICS</span>
+          <span className="section-label text-[#111111]">VERIFIED METRICS</span>
           <span className="section-label text-[#111111]/60">1998 — 2026</span>
         </div>
 

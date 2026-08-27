@@ -66,7 +66,7 @@ export default function About({ onOpenModal }) {
 
         {/* Section Header */}
         <div className="flex items-center justify-between pb-6 border-b border-[#111111]/15 mb-12">
-          <span className="section-label text-[#111111]">02 — ABOUT</span>
+          <span className="section-label text-[#111111]">ABOUT</span>
           <span className="section-label text-[#111111]/60">ESTABLISHED 15 AUGUST 1998</span>
         </div>
 

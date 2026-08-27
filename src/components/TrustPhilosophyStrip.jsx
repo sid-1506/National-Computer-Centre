@@ -5,8 +5,8 @@ export default function TrustPhilosophyStrip() {
   return (
     <section className="py-20 bg-[#EFEDE8] text-[#111111] border-b border-[#111111]/15">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between pb-6 border-b border-[#111111]/15 mb-10">
-          <span className="section-label text-[#111111]">06 — THE NCC STANDARD</span>
+        <div className="flex items-center justify-between pb-6 border-b border-[#111111]/15 mb-12">
+          <span className="section-label text-[#111111]">THE NCC STANDARD</span>
           <span className="section-label text-[#111111]/60">SINCE 15 AUGUST 1998</span>
         </div>
 

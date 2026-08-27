@@ -33,7 +33,7 @@ export default function Contact() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex items-center justify-between pb-6 border-b border-[#111111]/15 mb-12">
-          <span className="section-label text-[#111111]">08 — ADMISSIONS & TRIAL</span>
+          <span className="section-label text-[#111111]">ADMISSIONS & TRIAL</span>
           <span className="section-label text-[#111111]/60">NO OBLIGATION · 1-ON-1 PC</span>
         </div>
 

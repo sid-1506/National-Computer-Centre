@@ -38,8 +38,8 @@ export default function Testimonials() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex items-center justify-between pb-6 border-b border-white/15 mb-16">
-          <span className="section-label text-white/60">06 — STUDENT ALUMNI</span>
+        <div className="flex items-center justify-between pb-6 border-b border-white/15 mb-12">
+          <span className="section-label text-white/60">STUDENT ALUMNI</span>
           <span className="section-label text-white/40">4.7 / 5.0 RATED · 275+ REVIEWS</span>
         </div>
 

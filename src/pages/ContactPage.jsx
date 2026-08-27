@@ -69,7 +69,7 @@ ${formData.message.trim() ? `Notes: ${formData.message.trim()}` : ''}`;
 
         {/* Section Header */}
         <div className="flex items-center justify-between pb-6 border-b border-[#111111]/15 mb-8">
-          <span className="section-label text-[#111111]">08 — ADMISSIONS & LOCATION</span>
+          <span className="section-label text-[#111111]">ADMISSIONS & LOCATION</span>
           <span className="section-label text-[#111111]/60">NO OBLIGATION · 1-ON-1 TRIAL</span>
         </div>
 

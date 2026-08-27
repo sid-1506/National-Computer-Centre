@@ -83,7 +83,7 @@ export default function AllCourses() {
 
           {/* Section Header */}
           <div className="flex items-center justify-between pb-6 border-b border-white/15">
-            <span className="section-label text-[#F8F9FA]">01 — FULL CATALOGUE</span>
+            <span className="section-label text-[#F8F9FA]">FULL CATALOGUE</span>
             <span className="section-label text-[#F8F9FA]/60">56 COURSES · 9 CATEGORIES</span>
           </div>
 

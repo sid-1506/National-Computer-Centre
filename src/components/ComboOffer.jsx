@@ -2,9 +2,9 @@ export default function ComboOffer({ onOpenModal }) {
   return (
     <section className="py-20 lg:py-28 bg-primary text-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Top Section Label */}
-        <div className="flex items-center justify-between pb-6 border-b border-white/20 mb-8">
-          <span className="section-label text-white/80">05 — SPECIAL ANNIVERSARY ADMISSIONS</span>
+        {/* Section Header */}
+        <div className="flex items-center justify-between pb-6 border-b border-white/15 mb-10">
+          <span className="section-label text-white/80">SPECIAL ANNIVERSARY ADMISSIONS</span>
           <span className="section-label text-white/60">EST. 15 AUG 1998</span>
         </div>
 

@@ -56,7 +56,7 @@ export default function WhyNCC() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex items-center justify-between pb-6 border-b border-[#111111]/15 mb-12">
-          <span className="section-label text-[#111111]">03 — WHY NCC</span>
+          <span className="section-label text-[#111111]">WHY NCC</span>
           <span className="section-label text-[#111111]/60">SIX CORE STANDARDS</span>
         </div>
 

@@ -17,7 +17,7 @@ export default function FeaturedCourses() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex items-center justify-between pb-6 border-b border-white/15 mb-12">
-          <span className="section-label text-white/50">03 — FEATURED COURSES</span>
+          <span className="section-label text-white/50">FEATURED COURSES</span>
           <span className="section-label text-white/50">6 FLAGSHIP PROGRAMS</span>
         </div>
 

@@ -29,8 +29,8 @@ export default function HomePage({ onOpenModal }) {
       {/* 03. Featured Courses (Curated 6 Tracks + Link to /courses) */}
       <FeaturedCourses />
 
-      {/* 04. Founder & Leadership */}
-      <FounderSection sectionNumber="04" />
+      {/* Founder & Leadership */}
+      <FounderSection />
 
       {/* 05. Stats / Verified Metrics */}
       <Stats />

@@ -6,7 +6,6 @@ import ownerImg from '../assets/Owner.jpeg';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function FounderSection({
-  sectionNumber = '04',
   isStandalone = true,
   className = '',
 }) {
@@ -126,7 +125,7 @@ export default function FounderSection({
         {/* Section Eyebrow Header */}
         <div className="flex items-center justify-between pb-6 border-b border-[#111111]/15 mb-12">
           <span className="section-label text-[#111111]">
-            {sectionNumber} — FOUNDER
+            FOUNDER
           </span>
           <span className="section-label text-[#111111]/60">
             SINCE 15 AUGUST 1998
