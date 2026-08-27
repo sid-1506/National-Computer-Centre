@@ -1,42 +1,49 @@
-import { useState, useEffect, useLayoutEffect, useCallback } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { courses } from '../data/courses';
+import { getCourseImage } from '../utils/courseImages';
 import classroomImg from '../assets/classroom-logo.png';
-import mscitImg from '../assets/courses/certificate-course-in-ms-cit.jpg';
-import devImg from '../assets/courses/full-stack-with-mern-stack-web-development.jpg';
 import CompactEnquiryForm from './CompactEnquiryForm';
 import { isReducedMotion } from '../hooks/useMotionReveal';
 
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
-const SLIDES = [
-  {
-    id: 1,
-    image: classroomImg,
-    alt: 'Master In-Demand Computer Skills Build a High-Paying Career',
-    headingLine1: 'Master In-Demand Computer Skills',
-    headingLine2: 'Build a High-Paying Career',
-    subline: 'Explore career-defining courses across various domains',
-  },
-  {
-    id: 2,
-    image: mscitImg,
-    alt: 'Government Recognised Training In Mulund West Since 1998',
-    headingLine1: 'Government Recognised Training',
-    headingLine2: 'In Mulund West Since 1998',
-    subline: 'MS-CIT, Tally with GST, Advanced Excel, DTP, Python and more',
-  },
-  {
-    id: 3,
-    image: devImg,
-    alt: 'One Day Free Trial Class Learn Before You Enrol',
-    headingLine1: 'One Day Free Trial Class',
-    headingLine2: 'Learn Before You Enrol',
-    subline: 'Offline batches on real machines, in Marathi, Hindi or English',
-  },
-];
+// Clean short display titles for typewriter headline
+const COURSE_NAMES = courses.map((c) => {
+  return c.title
+    .replace(/^Certificate Course in /i, '')
+    .replace(/^Advanced Diploma in /i, 'Adv. Diploma in ')
+    .replace(/^Diploma in /i, 'Diploma in ')
+    .replace(/^Adv\. /i, 'Advanced ')
+    .replace(/ with MERN Stack Web Development/i, ' (MERN Stack)')
+    .replace(/ with Dashboard/i, '')
+    .replace(/ with GST/i, ' & GST');
+});
+
+// Curated pool of high-quality background images for the 4s cycle
+const BG_IMAGES = Array.from(
+  new Set([
+    classroomImg,
+    getCourseImage('certificate-course-in-ms-cit'),
+    getCourseImage('full-stack-with-mern-stack-web-development'),
+    getCourseImage('certificate-course-in-adv-tally-erp-9-with-prime'),
+    getCourseImage('diploma-in-graphics-designing'),
+    getCourseImage('certificate-course-in-python'),
+    getCourseImage('advance-excel-with-dashboard'),
+    getCourseImage('certificate-course-in-ai-ml'),
+    getCourseImage('diploma-in-3d-max'),
+    getCourseImage('adv-diploma-in-hardware-engineering'),
+  ])
+);
 
 export default function HeroSlider({ onOpenModal }) {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [courseIndex, setCourseIndex] = useState(0);
+  const [displayText, setDisplayText] = useState(() => COURSE_NAMES[0]);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  const [bgIndex, setBgIndex] = useState(0);
+  const [prevBgIndex, setPrevBgIndex] = useState(0);
+
   const [introFinished, setIntroFinished] = useState(() => {
     if (typeof window !== 'undefined') {
       return isReducedMotion();
@@ -44,21 +51,97 @@ export default function HeroSlider({ onOpenModal }) {
     return false;
   });
 
-  const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
-  }, []);
+  const bgTimerRef = useRef(null);
 
-  // Slider auto-advance interval: starts ONLY AFTER the master intro completes
+  // 1. Independent 4-Second Background Crossfade Cycle
   useEffect(() => {
-    if (!introFinished) return;
+    if (isReducedMotion() || !introFinished) return;
 
-    const timer = setInterval(() => {
-      nextSlide();
-    }, 5500);
-    return () => clearInterval(timer);
-  }, [introFinished, nextSlide]);
+    const startBgCycle = () => {
+      if (bgTimerRef.current) clearInterval(bgTimerRef.current);
+      bgTimerRef.current = setInterval(() => {
+        setBgIndex((prev) => {
+          setPrevBgIndex(prev);
+          const next = (prev + 1) % BG_IMAGES.length;
+          
+          // Preload upcoming image to avoid pop-in
+          const preloadNext = (next + 1) % BG_IMAGES.length;
+          const img = new Image();
+          img.src = BG_IMAGES[preloadNext];
 
-  // Master Page-Load Animation Timeline (Plays on every reload / page visit)
+          return next;
+        });
+      }, 4000);
+    };
+
+    const handleBgVisibility = () => {
+      if (document.hidden) {
+        if (bgTimerRef.current) clearInterval(bgTimerRef.current);
+      } else {
+        startBgCycle();
+      }
+    };
+
+    startBgCycle();
+    document.addEventListener('visibilitychange', handleBgVisibility);
+
+    return () => {
+      if (bgTimerRef.current) clearInterval(bgTimerRef.current);
+      document.removeEventListener('visibilitychange', handleBgVisibility);
+    };
+  }, [introFinished]);
+
+  // 2. Typewriter Effect (Typing ~40ms/char, Hold 1.5s, Backspacing ~22ms/char)
+  useEffect(() => {
+    if (isReducedMotion() || !introFinished) return;
+
+    let timeoutId = null;
+    const currentWord = COURSE_NAMES[courseIndex];
+
+    const tick = () => {
+      if (!isDeleting) {
+        // Typing forward
+        if (displayText.length < currentWord.length) {
+          setDisplayText(currentWord.slice(0, displayText.length + 1));
+          timeoutId = setTimeout(tick, 40);
+        } else {
+          // Hold full word for 1.5 seconds
+          timeoutId = setTimeout(() => {
+            setIsDeleting(true);
+          }, 1500);
+        }
+      } else {
+        // Backspacing
+        if (displayText.length > 0) {
+          setDisplayText(currentWord.slice(0, displayText.length - 1));
+          timeoutId = setTimeout(tick, 22);
+        } else {
+          // Finished deleting -> move to next course
+          setIsDeleting(false);
+          setCourseIndex((prev) => (prev + 1) % COURSE_NAMES.length);
+        }
+      }
+    };
+
+    timeoutId = setTimeout(tick, isDeleting ? 22 : 40);
+
+    const handleVisibility = () => {
+      if (document.hidden) {
+        if (timeoutId) clearTimeout(timeoutId);
+      } else {
+        timeoutId = setTimeout(tick, 40);
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibility);
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      document.removeEventListener('visibilitychange', handleVisibility);
+    };
+  }, [displayText, isDeleting, courseIndex, introFinished]);
+
+  // 3. Master Page-Load Animation Timeline
   useIsomorphicLayoutEffect(() => {
     if (typeof window === 'undefined') return;
 
@@ -87,9 +170,8 @@ export default function HeroSlider({ onOpenModal }) {
         ? document.querySelector('.intro-mobile-enquire-card')
         : document.querySelector('.intro-enquire-card');
       const cardRows = enquireCard ? enquireCard.querySelectorAll('.intro-card-row') : [];
-      const dotPager = document.querySelector('.intro-dot-pager');
 
-      // 1. Initial states set via gsap.set so no flash of visible content
+      // Initial states set via gsap.set so no flash of visible content
       if (bgImg) gsap.set(bgImg, { scale: 1.08, opacity: 0, transformOrigin: 'center center' });
       if (scrim) gsap.set(scrim, { opacity: 0 });
       if (headerBar) gsap.set(headerBar, { opacity: 0, y: -12 });
@@ -103,9 +185,7 @@ export default function HeroSlider({ onOpenModal }) {
       if (ctaBtn) gsap.set(ctaBtn, { opacity: 0, y: 14 * yMultiplier, scale: 0.97 });
       if (enquireCard) gsap.set(enquireCard, { opacity: 0, y: 28 * yMultiplier, scale: 0.98 });
       if (cardRows.length) gsap.set(cardRows, { opacity: 0, y: 12 * yMultiplier });
-      if (dotPager) gsap.set(dotPager, { opacity: 0 });
 
-      // 2. Master Timeline with exact timings
       const masterTl = gsap.timeline({
         defaults: { ease: 'power3.out' },
         onComplete: () => {
@@ -125,7 +205,6 @@ export default function HeroSlider({ onOpenModal }) {
               ctaBtn,
               enquireCard,
               ...Array.from(cardRows),
-              dotPager,
             ].filter(Boolean),
             { clearProps: 'will-change,transform' }
           );
@@ -185,78 +264,99 @@ export default function HeroSlider({ onOpenModal }) {
       if (ctaBtn) {
         masterTl.to(ctaBtn, { opacity: 1, y: 0, scale: 1, duration: 0.5 }, 0.80);
       }
-
-      // 1.05s Slider dot pager: opacity 0 -> 1, 0.4s.
-      if (dotPager) {
-        masterTl.to(dotPager, { opacity: 1, duration: 0.4 }, 1.05);
-      }
     });
 
     return () => ctx.revert();
   }, []);
 
+  const currentBg = BG_IMAGES[bgIndex] || BG_IMAGES[0];
+  const prevBg = BG_IMAGES[prevBgIndex] || BG_IMAGES[0];
+  const currentCourseFullName = courses[courseIndex]?.title || 'Certificate Course in MS-CIT';
+
   return (
     <section className="relative w-full min-h-[480px] sm:min-h-[520px] lg:h-[620px] overflow-hidden bg-[#030A15]">
-      {/* Background Slides */}
-      {SLIDES.map((slide, idx) => {
-        const isActive = idx === currentSlide;
-        return (
-          <div
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              isActive ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
-            }`}
-          >
-            {/* Background Image */}
-            <img
-              src={slide.image}
-              alt={slide.alt}
-              className={`${idx === 0 ? 'intro-bg-img' : ''} absolute inset-0 w-full h-full object-cover object-center`}
-              style={{ transformOrigin: 'center center' }}
-              loading={idx === 0 ? 'eager' : 'lazy'}
-              decoding={idx === 0 ? 'sync' : 'async'}
-              fetchPriority={idx === 0 ? 'high' : 'low'}
-            />
+      {/* Background Stack with Independent 4s Cycle (~700ms ease-out crossfade) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Outgoing Background Layer */}
+        {prevBg !== currentBg && (
+          <img
+            key={`prev-${prevBgIndex}`}
+            src={prevBg}
+            alt="National Computer Centre"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{ transformOrigin: 'center center' }}
+            decoding="async"
+            width="1440"
+            height="620"
+          />
+        )}
 
-            {/* Dark Left-to-Right Gradient Scrim */}
-            <div
-              className={`${idx === 0 ? 'intro-scrim' : ''} absolute inset-0`}
-              style={{
-                background:
-                  'linear-gradient(90deg, rgba(3,10,21,0.92) 0%, rgba(3,10,21,0.72) 55%, rgba(3,10,21,0.3) 85%, transparent 100%)',
-              }}
-            />
-          </div>
-        );
-      })}
+        {/* Current Active Background Layer */}
+        <img
+          key={`curr-${bgIndex}`}
+          src={currentBg}
+          alt="National Computer Centre Classroom"
+          className="intro-bg-img absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-700 ease-out"
+          style={{ transformOrigin: 'center center' }}
+          loading="eager"
+          decoding="async"
+          width="1440"
+          height="620"
+        />
 
-      {/* Main Hero Content: Left Column Copy + Desktop Right Column Compact Enquiry Form */}
+        {/* Dark Left-to-Right Gradient Scrim for Readability */}
+        <div
+          className="intro-scrim absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(90deg, rgba(3,10,21,0.95) 0%, rgba(3,10,21,0.82) 55%, rgba(3,10,21,0.45) 85%, rgba(3,10,21,0.25) 100%)',
+          }}
+        />
+      </div>
+
+      {/* Main Hero Content: Left Column Headline & CTA + Desktop Right Column Compact Enquiry Form */}
       <div className="relative z-20 h-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 py-12 lg:py-0 flex items-center">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Headlines & CTA */}
-          <div className="lg:col-span-7 xl:col-span-8 text-left max-w-[680px]">
+          <div className="lg:col-span-7 xl:col-span-8 text-left max-w-[720px]">
+            
+            {/* Line 1: "Want to Learn" | Line 2: <ROTATING COURSE NAME> */}
             <h1
-              className="text-white font-bold tracking-tight mb-4 sm:mb-5 leading-[1.15]"
-              style={{ fontSize: 'clamp(1.9rem, 4.2vw, 3.4rem)' }}
+              className="text-white font-bold tracking-tight mb-4 sm:mb-5 leading-[1.18]"
+              style={{ fontSize: 'clamp(2rem, 4.4vw, 3.6rem)' }}
             >
+              {/* Line 1: "Want to Learn" */}
               <span className="block overflow-hidden py-0.5">
-                <span className="intro-headline-1 block">{SLIDES[currentSlide].headingLine1}</span>
+                <span className="intro-headline-1 block text-white font-bold">
+                  Want to Learn
+                </span>
               </span>
-              <span className="block overflow-hidden py-0.5">
-                <span className="intro-headline-2 block">{SLIDES[currentSlide].headingLine2}</span>
+
+              {/* Line 2: <ROTATING COURSE NAME> (Typewriter with Cyan Blinking Cursor, 1.5s Hold) */}
+              <span className="block py-0.5 min-h-[1.22em]">
+                <span className="intro-headline-2 block text-[#2DB3E3] font-extrabold tracking-tight">
+                  <span>{displayText || '\u00A0'}</span>
+                  {!isReducedMotion() && (
+                    <span
+                      className="inline-block w-[3px] sm:w-[4px] h-[0.82em] bg-[#2DB3E3] ml-1.5 align-baseline animate-cursor-blink rounded-xs"
+                      aria-hidden="true"
+                    />
+                  )}
+                </span>
               </span>
             </h1>
 
+            {/* Line 3: Subline + CTA Button */}
             <div>
-              <p className="intro-subline text-white/90 text-[16px] sm:text-[18px] font-normal mb-6 sm:mb-8 leading-relaxed max-w-[540px]">
-                {SLIDES[currentSlide].subline}
+              <p className="intro-subline text-white/85 text-[15px] sm:text-[17px] font-normal mb-6 sm:mb-8 leading-relaxed max-w-[560px]">
+                Explore career-defining courses with 100% practical 1-on-1 terminal training in Marathi, Hindi, and English.
               </p>
 
               {onOpenModal && (
                 <div className="flex items-center gap-4">
                   <button
-                    onClick={() => onOpenModal('MS-CIT')}
+                    onClick={() => onOpenModal(currentCourseFullName)}
                     className="intro-cta-btn rounded-full bg-[#0B6AA8] hover:bg-[#095A90] text-white px-7 py-3 text-[14px] sm:text-[15px] font-semibold transition-all shadow-lg hover:shadow-cyan-500/20 cursor-pointer inline-flex items-center gap-2 btn-hover"
                   >
                     Book Free Trial Class
@@ -266,28 +366,12 @@ export default function HeroSlider({ onOpenModal }) {
             </div>
           </div>
 
-          {/* Desktop Right Column: Compact Enquiry Form Card (overlapping photo, vertically centered) */}
+          {/* Desktop Right Column: Compact Enquiry Form Card */}
           <div className="intro-enquire-card hidden lg:flex lg:col-span-5 xl:col-span-4 justify-end">
-            <CompactEnquiryForm />
+            <CompactEnquiryForm defaultCourse={currentCourseFullName} />
           </div>
 
         </div>
-      </div>
-
-      {/* Slide Indicators (bottom left on desktop, bottom center on mobile) */}
-      <div className="intro-dot-pager absolute bottom-6 left-4 sm:left-6 lg:left-12 flex items-center gap-2.5 z-30">
-        {SLIDES.map((slide, idx) => (
-          <button
-            key={slide.id}
-            onClick={() => setCurrentSlide(idx)}
-            aria-label={`Go to slide ${idx + 1}`}
-            className={`border-none p-0 cursor-pointer transition-all duration-400 ${
-              idx === currentSlide
-                ? 'w-8 h-2.5 rounded-full bg-[#0B6AA8]'
-                : 'w-2.5 h-2.5 rounded-full bg-white/50 hover:bg-white/80'
-            }`}
-          />
-        ))}
       </div>
     </section>
   );

@@ -126,10 +126,10 @@ export default function Footer({ onOpenModal }) {
               <p className="m-0 text-[15px] leading-relaxed">
                 <strong className="text-[#111827]">Email:</strong>{' '}
                 <a
-                  href="mailto:nationalcomputercentre.mulund@gmail.com"
+                  href="mailto:Info@nationalcomputercentre.com"
                   className="hover:text-[#0B6AA8] transition-colors"
                 >
-                  nationalcomputercentre.mulund@gmail.com
+                  Info@nationalcomputercentre.com
                 </a>
               </p>
 

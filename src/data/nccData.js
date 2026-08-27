@@ -21,6 +21,7 @@ export const BUSINESS_INFO = {
     secondary: "+91 98206 15699",
     landline: "022 2560 8746"
   },
+  email: "Info@nationalcomputercentre.com",
   rating: {
     score: "4.7",
     scale: "5.0",

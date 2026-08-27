@@ -54,6 +54,26 @@
 .text-accent  { color: var(--accent); }
 .text-muted   { color: var(--muted-foreground); }
 
+/* ─── Hero Typewriter Blinking Cursor ────────────────────────────────── */
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor-blink {
+  animation: cursorBlink 0.9s step-end infinite;
+}
+
+/* ─── Scrollbar Hide Utility ─────────────────────────────────────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* ─── Section Eyebrow Pill ───────────────────────────────────────────── */
 .eyebrow-chip {
   display: inline-block;

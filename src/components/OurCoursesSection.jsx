@@ -6,6 +6,7 @@ import { useSectionReveal } from '../hooks/useMotionReveal';
 
 export default function OurCoursesSection() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [audience, setAudience] = useState('working-professionals');
   const [currentIndex, setCurrentIndex] = useState(0);
   const sectionRef = useRef(null);
   const carouselRef = useRef(null);
@@ -66,36 +67,55 @@ export default function OurCoursesSection() {
   };
 
   return (
-    <section ref={sectionRef} className="bg-white py-16 sm:py-20 lg:py-24 overflow-hidden border-b border-slate-100">
+    <section ref={sectionRef} className="bg-white py-14 sm:py-18 lg:py-20 overflow-hidden border-b border-slate-100">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12">
         
         {/* Giant Centred Wide-Tracked Grey Two-Line Title */}
-        <div className="reveal-heading text-center mb-4 sm:mb-6 select-none">
+        <div className="reveal-heading text-center mb-3 sm:mb-4 select-none">
           <h2
             className="font-bold text-[#6C757D] uppercase tracking-[6px] sm:tracking-[8px] leading-tight"
-            style={{ fontSize: 'clamp(2.5rem, 8vw, 5.5rem)' }}
+            style={{ fontSize: 'clamp(2.4rem, 7.5vw, 5.2rem)' }}
           >
             OUR<br />COURSES
           </h2>
         </div>
 
-        {/* Sub-title */}
-        <div className="reveal-body text-center mb-8 sm:mb-12">
-          <p className="text-[26px] sm:text-[34px] font-bold text-[#0F172A] tracking-tight">
-            For Working Professionals
-          </p>
+        {/* Compact Centered Audience Filter Pill Toggle: For Working Professionals / For Students */}
+        <div className="reveal-body text-center mb-5 sm:mb-6">
+          <div className="inline-flex items-center bg-[#F1F5F9] p-1 rounded-full border border-slate-200/80 shadow-2xs max-w-full overflow-x-auto scrollbar-hide">
+            <button
+              onClick={() => setAudience('working-professionals')}
+              className={`px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-[13px] sm:text-[14px] font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                audience === 'working-professionals'
+                  ? 'bg-[#0B6AA8] text-white shadow-xs'
+                  : 'text-[#475569] hover:text-[#0B6AA8]'
+              }`}
+            >
+              For Working Professionals
+            </button>
+            <button
+              onClick={() => setAudience('students')}
+              className={`px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-[13px] sm:text-[14px] font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                audience === 'students'
+                  ? 'bg-[#0B6AA8] text-white shadow-xs'
+                  : 'text-[#475569] hover:text-[#0B6AA8]'
+              }`}
+            >
+              For Students
+            </button>
+          </div>
         </div>
 
-        {/* Horizontal Scrollable Pill Filter Row */}
-        <div className="reveal-item relative mb-12">
-          <div className="overflow-x-auto scrollbar-hide flex items-center justify-start sm:justify-center gap-3 px-2 py-1 scroll-smooth snap-x">
+        {/* Compact Centered Category Filter Pills Row (Max-w-5xl, smaller font, hairline border, no edge cut) */}
+        <div className="reveal-item max-w-5xl mx-auto mb-8 sm:mb-10 px-2 sm:px-4">
+          <div className="flex items-center justify-start md:justify-center flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible scrollbar-hide py-1 px-2 sm:px-3 gap-2 sm:gap-2.5 snap-x snap-mandatory scroll-smooth w-full">
             {/* All Pill */}
             <button
               onClick={() => handleCategorySelect('all')}
-              className={`rounded-full px-7 py-3 text-[15px] font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer snap-start shrink-0 btn-hover ${
+              className={`rounded-full px-3.5 sm:px-4.5 py-1.5 sm:py-2 text-[13px] sm:text-[14px] font-medium whitespace-nowrap border transition-all duration-200 cursor-pointer snap-start shrink-0 btn-hover ${
                 activeCategory === 'all'
-                  ? 'bg-[#0B6AA8] text-white shadow-md'
-                  : 'bg-white text-[#0F172A] border border-slate-200 hover:border-[#0B6AA8] hover:text-[#0B6AA8]'
+                  ? 'bg-[#0B6AA8] border-[#0B6AA8] text-white shadow-xs'
+                  : 'bg-white text-[#1E293B] border-slate-200/90 hover:border-[#0B6AA8] hover:text-[#0B6AA8]'
               }`}
             >
               All
@@ -108,10 +128,10 @@ export default function OurCoursesSection() {
                 <button
                   key={cat.slug}
                   onClick={() => handleCategorySelect(cat.slug)}
-                  className={`rounded-full px-6 py-3 text-[15px] font-semibold whitespace-nowrap transition-all duration-300 cursor-pointer snap-start shrink-0 btn-hover ${
+                  className={`rounded-full px-3.5 sm:px-4.5 py-1.5 sm:py-2 text-[13px] sm:text-[14px] font-medium whitespace-nowrap border transition-all duration-200 cursor-pointer snap-start shrink-0 btn-hover ${
                     isActive
-                      ? 'bg-[#0B6AA8] text-white shadow-md'
-                      : 'bg-white text-[#0F172A] border border-slate-200 hover:border-[#0B6AA8] hover:text-[#0B6AA8]'
+                      ? 'bg-[#0B6AA8] border-[#0B6AA8] text-white shadow-xs'
+                      : 'bg-white text-[#1E293B] border-slate-200/90 hover:border-[#0B6AA8] hover:text-[#0B6AA8]'
                   }`}
                 >
                   {cat.name}

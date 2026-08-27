@@ -269,7 +269,7 @@ export default function ContactPage() {
             <div className="p-6 sm:p-7 rounded-2xl bg-white border border-border shadow-sm space-y-4">
               <div>
                 <span className="text-[12px] font-semibold text-muted-foreground uppercase tracking-wider block mb-2">
-                  Telephone Lines
+                  Telephone & Email
                 </span>
                 <div className="space-y-1.5 text-[15px]">
                   <a href="tel:+919821115699" className="block text-foreground font-semibold hover:text-primary transition-colors">
@@ -277,6 +277,9 @@ export default function ContactPage() {
                   </a>
                   <a href="tel:+919820615699" className="block text-foreground font-semibold hover:text-primary transition-colors">
                     +91 98206 15699 (Director Direct)
+                  </a>
+                  <a href="mailto:Info@nationalcomputercentre.com" className="block text-foreground font-semibold hover:text-primary transition-colors pt-1">
+                    Info@nationalcomputercentre.com
                   </a>
                 </div>
               </div>

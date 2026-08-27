@@ -41,7 +41,7 @@ export default function CourseDetail({ onOpenModal }) {
     if (!scriptEl) { scriptEl = document.createElement('script'); scriptEl.id = scriptId; scriptEl.type = 'application/ld+json'; document.head.appendChild(scriptEl); }
     scriptEl.textContent = JSON.stringify({
       '@context': 'https://schema.org', '@type': 'Course', 'name': course.title, 'description': course.description,
-      'provider': { '@type': 'EducationalOrganization', 'name': 'National Computer Centre', 'sameAs': 'https://nationalcomputers.co.in',
+      'provider': { '@type': 'EducationalOrganization', 'name': 'National Computer Centre', 'email': 'Info@nationalcomputercentre.com', 'telephone': '+91-98211-15699',
         'address': { '@type': 'PostalAddress', 'streetAddress': 'Shop No. 7, Anubhav Building, Zaver Road, Near Railway Station', 'addressLocality': 'Mulund West', 'addressRegion': 'Maharashtra', 'postalCode': '400080', 'addressCountry': 'IN' }},
       'timeRequired': course.duration, 'educationalCredentialAwarded': 'Government Recognised Certificate',
     });
