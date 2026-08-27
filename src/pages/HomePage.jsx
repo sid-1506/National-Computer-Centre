@@ -27,7 +27,7 @@ export default function HomePage({ onOpenModal }) {
       <HeroSlider onOpenModal={onOpenModal} />
 
       {/* Mobile / Tablet: Compact Enquiry Form stacked directly under Hero before Our Courses */}
-      <div className="block lg:hidden bg-[#F7F9FC] py-8 px-4 sm:px-6 border-b border-slate-100">
+      <div className="intro-mobile-enquire-card block lg:hidden bg-[#F7F9FC] py-8 px-4 sm:px-6 border-b border-slate-100">
         <div className="max-w-[440px] mx-auto">
           <CompactEnquiryForm className="max-w-none shadow-md" />
         </div>

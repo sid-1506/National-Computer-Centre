@@ -29,7 +29,7 @@ export default function Navbar({ onOpenModal }) {
   const iconCloseRef = useRef(null);
   const iconTlRef = useRef(null);
 
-  // Throttled passive scroll listener for navbar shadow elevation
+  // Throttled passive scroll listener for navbar elevation
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
@@ -45,7 +45,7 @@ export default function Navbar({ onOpenModal }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // IntersectionObserver to track when #testimonials is in view on homepage
+  // IntersectionObserver to accurately track when #testimonials is in view on homepage
   useEffect(() => {
     if (location.pathname !== '/') {
       return;
@@ -126,16 +126,16 @@ export default function Navbar({ onOpenModal }) {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-white transition-all duration-300 border-b border-slate-100 ${
+      className={`intro-header sticky top-0 z-50 w-full bg-white transition-all duration-300 border-b border-slate-100 ${
         scrolled ? 'shadow-sm' : 'shadow-none'
       }`}
       style={{ backgroundColor: '#ffffff' }}
     >
-      {/* Header Bar — Content-driven compact height (~60-64px mobile, ~68-72px desktop) */}
+      {/* Header Bar — Compact ~60-64px on mobile, ~68-72px on desktop */}
       <div className="mx-auto max-w-[1400px] w-full flex items-center justify-between px-3.5 sm:px-6 lg:px-12 py-2.5 sm:py-3 lg:py-3.5 box-border">
         
         {/* Left: Minimal Clean Logo + Brand Text Lockup */}
-        <div className="flex-shrink-0 flex items-center">
+        <div className="intro-logo flex-shrink-0 flex items-center">
           <Link
             to="/"
             aria-label="National Computer Centre Home"
@@ -162,7 +162,7 @@ export default function Navbar({ onOpenModal }) {
               <Link
                 key={link.label}
                 to={link.to}
-                className="relative py-1 text-[15px] xl:text-[16px] font-medium transition-colors duration-300 group text-slate-800 hover:text-[#0B6AA8] whitespace-nowrap leading-tight"
+                className="intro-nav-link relative py-1 text-[15px] xl:text-[16px] font-medium transition-colors duration-300 group text-slate-800 hover:text-[#0B6AA8] whitespace-nowrap leading-tight"
                 style={{ color: active ? '#0B6AA8' : '#1C1D1F' }}
               >
                 {link.label}
@@ -186,7 +186,7 @@ export default function Navbar({ onOpenModal }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="w-9 h-9 rounded-full bg-[#0B6AA8] flex items-center justify-center text-white hover:bg-[#095A90] hover:scale-105 transition-all duration-300 shadow-xs"
+                className="intro-social-icon w-9 h-9 rounded-full bg-[#0B6AA8] flex items-center justify-center text-white hover:bg-[#095A90] hover:scale-105 transition-all duration-300 shadow-xs"
               >
                 <Icon />
               </a>
@@ -196,7 +196,7 @@ export default function Navbar({ onOpenModal }) {
           <button
             onClick={() => onOpenModal('MS-CIT')}
             id="nav-free-trial-btn"
-            className="hidden sm:inline-flex rounded-full bg-[#0B6AA8] px-5 py-2 text-[14px] font-semibold text-white hover:bg-[#095A90] hover:shadow-md transition-all duration-300 cursor-pointer whitespace-nowrap"
+            className="intro-free-trial hidden sm:inline-flex rounded-full bg-[#0B6AA8] px-5 py-2 text-[14px] font-semibold text-white hover:bg-[#095A90] hover:shadow-md transition-all duration-300 cursor-pointer whitespace-nowrap"
           >
             Free Trial
           </button>
@@ -204,7 +204,7 @@ export default function Navbar({ onOpenModal }) {
           {/* Mobile Hamburger Button */}
           <button
             onClick={toggleMobileMenu}
-            className="lg:hidden p-1.5 text-slate-700 hover:text-[#0B6AA8] rounded-xl cursor-pointer transition-colors relative w-9 h-9 flex items-center justify-center shrink-0"
+            className="intro-hamburger lg:hidden p-1.5 text-slate-700 hover:text-[#0B6AA8] rounded-xl cursor-pointer transition-colors relative w-9 h-9 flex items-center justify-center shrink-0"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
           >

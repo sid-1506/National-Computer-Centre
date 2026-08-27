@@ -92,7 +92,7 @@ export default function CompactEnquiryForm({ defaultCourse = 'Certificate Course
       ) : (
         <>
           {/* Card Header */}
-          <div className="mb-5">
+          <div className="intro-card-row mb-5">
             <h3 className="text-[20px] font-bold text-[#0F172A] leading-tight mb-1">
               Enquire Now
             </h3>
@@ -103,7 +103,7 @@ export default function CompactEnquiryForm({ defaultCourse = 'Certificate Course
 
           <form onSubmit={handleSubmit} noValidate className="space-y-3.5">
             {/* Field 1: Name */}
-            <div>
+            <div className="intro-card-row">
               <label htmlFor="compact-name" className="block text-[11px] font-bold text-[#5B6472] uppercase tracking-wider mb-1">
                 Name *
               </label>
@@ -127,7 +127,7 @@ export default function CompactEnquiryForm({ defaultCourse = 'Certificate Course
             </div>
 
             {/* Field 2: Mobile Number */}
-            <div>
+            <div className="intro-card-row">
               <label htmlFor="compact-phone" className="block text-[11px] font-bold text-[#5B6472] uppercase tracking-wider mb-1">
                 Mobile Number *
               </label>
@@ -151,7 +151,7 @@ export default function CompactEnquiryForm({ defaultCourse = 'Certificate Course
             </div>
 
             {/* Field 3: Select Course */}
-            <div className="relative">
+            <div className="intro-card-row relative">
               <label htmlFor="compact-course" className="block text-[11px] font-bold text-[#5B6472] uppercase tracking-wider mb-1">
                 Select Course *
               </label>
@@ -190,7 +190,7 @@ export default function CompactEnquiryForm({ defaultCourse = 'Certificate Course
             <div className="pt-1.5 space-y-2.5">
               <button
                 type="submit"
-                className="w-full rounded-full bg-[#0B6AA8] hover:bg-[#095A90] text-white py-3 px-5 text-[14px] font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer"
+                className="intro-card-row w-full rounded-full bg-[#0B6AA8] hover:bg-[#095A90] text-white py-3 px-5 text-[14px] font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer btn-hover"
               >
                 <MessageCircle className="w-4 h-4 text-[#6FBE44] shrink-0" />
                 <span>Send on WhatsApp</span>
@@ -199,7 +199,7 @@ export default function CompactEnquiryForm({ defaultCourse = 'Certificate Course
               {/* Secondary Button: Call Us */}
               <a
                 href="tel:+919821115699"
-                className="w-full rounded-full border border-[#0B6AA8] text-[#0B6AA8] hover:bg-[#0B6AA8] hover:text-white py-2.5 px-5 text-[13px] font-bold flex items-center justify-center gap-2 transition-all"
+                className="intro-card-row w-full rounded-full border border-[#0B6AA8] text-[#0B6AA8] hover:bg-[#0B6AA8] hover:text-white py-2.5 px-5 text-[13px] font-bold flex items-center justify-center gap-2 transition-all btn-hover"
               >
                 <Phone className="w-3.5 h-3.5 shrink-0" />
                 <span>Call Us (+91 98211 15699)</span>
