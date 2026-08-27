@@ -1,52 +1,91 @@
 @import "tailwindcss";
 
+/* ─── NCC Brand Semantic Token System (Light Theme) ─────────────────── */
 :root {
-  --primary: oklch(0.508 0.126 245.7); /* #0B6AA8 Deep NCC Blue */
-  --primary-foreground: #FFFFFF;
-  --accent: oklch(0.508 0.126 245.7); /* #0B6AA8 Deep NCC Blue */
-  --accent-foreground: #FFFFFF;
-  --ring: oklch(0.718 0.129 227.8); /* #2DB3E3 Bright Cyan */
+  /* Surface / Background */
+  --background:        #FFFFFF;
+  --surface:           #F7F9FC;
+  --surface-alt:       #EFF1F4;
+  --card:              #FFFFFF;
 
-  --brand-cyan: oklch(0.718 0.129 227.8); /* #2DB3E3 Bright Cyan */
-  --brand-cyan-soft: oklch(0.957 0.019 225.7); /* #E4F4FB Soft Cyan Tint */
-  --brand-green: oklch(0.725 0.175 136.3); /* #6FBE44 Globe Green */
+  /* Text */
+  --foreground:        #0F172A;
+  --heading:           #0F172A;
+  --muted-foreground:  #5B6472;
+  --muted-light:       #64748B;
+
+  /* Borders */
+  --border:            #E2E8F0;
+  --border-light:      #F1F5F9;
+
+  /* NCC Deep Blue (Primary Solid Accent) */
+  --primary:           #0B6AA8;
+  --primary-hover:     #095A90;
+  --primary-foreground:#FFFFFF;
+
+  /* NCC Bright Cyan (Active / Hover / Accent) */
+  --accent:            #2DB3E3;
+  --accent-hover:      #1F9FCD;
+  --accent-soft:       #E4F4FB;
+  --accent-foreground: #0B6AA8;
+
+  /* NCC Globe Green (Rare highlight only) */
+  --success:           #6FBE44;
+
+  /* Rating stars only */
+  --star:              #F5A623;
+
+  /* Ring / Focus */
+  --ring:              #0B6AA8;
 }
 
 @theme {
-  --color-canvas: #EFEDE8;
-  --color-ink: #111111;
-  --color-ink-muted: #666666;
-  --color-ink-light: #999999;
-  
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-accent: var(--accent);
+  /* Background & surface */
+  --color-background:        var(--background);
+  --color-surface:           var(--surface);
+  --color-surface-alt:       var(--surface-alt);
+  --color-card:              var(--card);
+
+  /* Text */
+  --color-foreground:        var(--foreground);
+  --color-heading:           var(--heading);
+  --color-muted-foreground:  var(--muted-foreground);
+  --color-muted-light:       var(--muted-light);
+
+  /* Border */
+  --color-border:            var(--border);
+  --color-border-light:      var(--border-light);
+
+  /* Primary (NCC Deep Blue) */
+  --color-primary:           var(--primary);
+  --color-primary-hover:     var(--primary-hover);
+  --color-primary-foreground:var(--primary-foreground);
+
+  /* Accent (NCC Cyan) */
+  --color-accent:            var(--accent);
+  --color-accent-hover:      var(--accent-hover);
+  --color-accent-soft:       var(--accent-soft);
   --color-accent-foreground: var(--accent-foreground);
-  --color-ring: var(--ring);
 
-  --color-brand-cyan: var(--brand-cyan);
-  --color-brand-cyan-soft: var(--brand-cyan-soft);
-  --color-brand-green: var(--brand-green);
+  /* State */
+  --color-success:           var(--success);
+  --color-star:              var(--star);
+  --color-ring:              var(--ring);
 
-  --color-hairline: rgba(17, 17, 17, 0.15);
-  --color-hairline-dark: rgba(255, 255, 255, 0.15);
-  
-  --font-display: 'Anton', sans-serif;
-  --font-sans: 'Inter Tight', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography — Poppins throughout */
+  --font-display: "Poppins", sans-serif;
+  --font-sans:    "Poppins", sans-serif;
 }
 
+/* ─── Scrollbar utilities ───────────────────────────────────────────── */
 @utility scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  &::-webkit-scrollbar { display: none; }
 }
 
 @utility no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  &::-webkit-scrollbar { display: none; }
 }

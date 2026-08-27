@@ -1,21 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import {
-  Clock,
-  Layers,
-  Monitor,
-  Award,
-  Phone,
-  MessageSquare,
-  ArrowLeft,
-  CalendarCheck,
-} from 'lucide-react';
+import { Clock, Layers, Monitor, Award, Phone, MessageSquare, CalendarCheck, Star } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { categories, courses } from '../data/courses';
-import CourseIcon from './CourseIcon';
 import CourseEnquiryForm from './CourseEnquiryForm';
 import CourseThumbnail from './CourseThumbnail';
+import CourseCard from './CourseCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,405 +15,247 @@ export default function CourseDetail({ onOpenModal }) {
   const syllabusRef = useRef(null);
 
   const course = courses.find((c) => c.slug === slug);
+  const category = course ? categories.find((c) => c.slug === course.categorySlug) : null;
+  const getCategoryName = (catSlug) => { const cat = categories.find((c) => c.slug === catSlug); return cat ? cat.name : catSlug; };
 
-  const category = course
-    ? categories.find((c) => c.slug === course.categorySlug)
-    : null;
-
-  const getCategoryName = (catSlug) => {
-    const cat = categories.find((c) => c.slug === catSlug);
-    return cat ? cat.name : catSlug;
-  };
-
-  // SEO & Structured Data
+  // SEO & JSON-LD
   useEffect(() => {
     if (!course) return;
-
-    // Document Title
     document.title = `${course.title} in Mulund West | National Computer Centre`;
-
-    // Meta Description
     let metaDesc = document.querySelector('meta[name="description"]');
-    if (!metaDesc) {
-      metaDesc = document.createElement('meta');
-      metaDesc.name = 'description';
-      document.head.appendChild(metaDesc);
-    }
+    if (!metaDesc) { metaDesc = document.createElement('meta'); metaDesc.name = 'description'; document.head.appendChild(metaDesc); }
     metaDesc.content = course.highlight;
 
-    // JSON-LD Course Schema
     const scriptId = 'course-json-ld';
     let scriptEl = document.getElementById(scriptId);
-    if (!scriptEl) {
-      scriptEl = document.createElement('script');
-      scriptEl.id = scriptId;
-      scriptEl.type = 'application/ld+json';
-      document.head.appendChild(scriptEl);
-    }
-
-    const schemaData = {
-      '@context': 'https://schema.org',
-      '@type': 'Course',
-      'name': course.title,
-      'description': course.description,
-      'provider': {
-        '@type': 'EducationalOrganization',
-        'name': 'National Computer Centre',
-        'sameAs': 'https://nationalcomputers.co.in',
-        'address': {
-          '@type': 'PostalAddress',
-          'streetAddress': 'Shop No. 7, Anubhav Building, Zaver Road, Near Railway Station',
-          'addressLocality': 'Mulund West',
-          'addressRegion': 'Maharashtra',
-          'postalCode': '400080',
-          'addressCountry': 'IN',
-        },
-      },
-      'timeRequired': course.duration,
-      'educationalCredentialAwarded': 'Government Recognised Certificate',
-    };
-
-    scriptEl.textContent = JSON.stringify(schemaData);
-
-    return () => {
-      const el = document.getElementById(scriptId);
-      if (el) el.remove();
-    };
+    if (!scriptEl) { scriptEl = document.createElement('script'); scriptEl.id = scriptId; scriptEl.type = 'application/ld+json'; document.head.appendChild(scriptEl); }
+    scriptEl.textContent = JSON.stringify({
+      '@context': 'https://schema.org', '@type': 'Course', 'name': course.title, 'description': course.description,
+      'provider': { '@type': 'EducationalOrganization', 'name': 'National Computer Centre', 'sameAs': 'https://nationalcomputers.co.in',
+        'address': { '@type': 'PostalAddress', 'streetAddress': 'Shop No. 7, Anubhav Building, Zaver Road, Near Railway Station', 'addressLocality': 'Mulund West', 'addressRegion': 'Maharashtra', 'postalCode': '400080', 'addressCountry': 'IN' }},
+      'timeRequired': course.duration, 'educationalCredentialAwarded': 'Government Recognised Certificate',
+    });
+    return () => { const el = document.getElementById(scriptId); if (el) el.remove(); };
   }, [course]);
 
-  // Syllabus Stagger Animation
+  // Syllabus animation
   useEffect(() => {
     if (!course) return;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
+    const pref = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (pref) return;
     const ctx = gsap.context(() => {
       if (syllabusRef.current) {
-        gsap.fromTo(
-          syllabusRef.current.children,
-          { y: 12, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.5,
-            stagger: 0.04,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: syllabusRef.current,
-              start: 'top 85%',
-            },
-          }
-        );
+        gsap.fromTo(syllabusRef.current.children, { y: 12, opacity: 0 }, {
+          y: 0, opacity: 1, duration: 0.5, stagger: 0.04, ease: 'power2.out',
+          scrollTrigger: { trigger: syllabusRef.current, start: 'top 85%' },
+        });
       }
     }, syllabusRef);
-
     return () => ctx.revert();
   }, [course]);
 
-  // 404 handler if slug not found
   if (!course) {
     return (
-      <div className="min-h-screen bg-[#EFEDE8] text-[#111111] pt-36 pb-24 flex items-center justify-center">
+      <div className="min-h-screen bg-background pt-36 pb-24 flex items-center justify-center">
         <div className="mx-auto max-w-xl px-4 text-center">
-          <span className="section-label text-[#111111]/50 block mb-4">404 — COURSE NOT FOUND</span>
-          <h1 className="font-display text-4xl sm:text-6xl uppercase tracking-[-0.02em] leading-[1.02] pb-[0.08em] mb-6">
-            THIS COURSE DOES NOT EXIST
-          </h1>
-          <p className="text-sm sm:text-base text-[#111111]/70 mb-8 leading-relaxed">
-            The course you are looking for may have been updated or moved. Please explore our complete catalogue of 56 certified courses.
-          </p>
-          <Link
-            to="/courses"
-            className="inline-flex items-center gap-2 rounded-full bg-[#111111] px-7 py-3 text-xs font-bold uppercase tracking-[0.15em] text-[#EFEDE8] hover:bg-primary btn-swiss"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>VIEW ALL 56 COURSES</span>
+          <span className="eyebrow-chip mb-4 inline-block">404 — Course Not Found</span>
+          <h1 className="font-bold text-foreground mb-4" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>This course does not exist</h1>
+          <p className="text-muted-foreground mb-8 leading-relaxed">The course you are looking for may have been updated or moved. Please explore our complete catalogue.</p>
+          <Link to="/courses" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-[14px] font-semibold text-white hover:bg-[#095A90] btn-swiss">
+            View All 56 Courses
           </Link>
         </div>
       </div>
     );
   }
 
-  // Related courses (3 from same category, or backfilled)
-  const categoryCourses = courses.filter(
-    (c) => c.categorySlug === course.categorySlug && c.slug !== course.slug
-  );
+  // Related courses
+  const categoryCourses = courses.filter((c) => c.categorySlug === course.categorySlug && c.slug !== course.slug);
   let relatedCourses = categoryCourses.slice(0, 3);
   if (relatedCourses.length < 3) {
-    const otherCourses = courses.filter(
-      (c) => c.slug !== course.slug && !relatedCourses.some((rc) => rc.slug === c.slug)
-    );
+    const otherCourses = courses.filter((c) => c.slug !== course.slug && !relatedCourses.some((rc) => rc.slug === c.slug));
     relatedCourses = [...relatedCourses, ...otherCourses.slice(0, 3 - relatedCourses.length)];
   }
 
-  const whatsappMessage = encodeURIComponent(
-    `Hi National Computer Centre, I would like details about the ${course.title} course.`
-  );
+  const whatsappMessage = encodeURIComponent(`Hi National Computer Centre, I would like details about the ${course.title} course.`);
+
+  const factChips = [
+    { Icon: Clock, label: 'Duration', value: course.duration },
+    { Icon: Layers, label: 'Category', value: category?.name || course.categorySlug },
+    { Icon: Monitor, label: 'Mode', value: 'Offline · 1:1 PC' },
+    { Icon: Award, label: 'Certificate', value: 'Govt Recognised' },
+  ];
 
   return (
-    <div className="bg-[#EFEDE8] text-[#111111] pt-28 sm:pt-32">
-      {/* 1. Hero & Top Two-Column Section with Sticky Enquiry Form */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4 pb-16">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-12 items-start">
-          {/* Left Column: Thumbnail Banner, Breadcrumbs, Title, Highlight, Facts Strip */}
+    <div className="bg-background pt-24 sm:pt-28">
+      {/* Light hero band */}
+      <section className="bg-gradient-to-b from-[#F0F7FF] to-white py-8 border-b border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumb */}
+          <nav className="flex flex-wrap items-center gap-2 text-[13px] font-medium text-muted-foreground mb-5">
+            <Link to="/" className="hover:text-primary transition-colors">Home</Link>
+            <span>/</span>
+            <Link to="/courses" className="hover:text-primary transition-colors">Courses</Link>
+            <span>/</span>
+            <Link to={`/courses?category=${course.categorySlug}`} className="hover:text-primary transition-colors text-foreground font-semibold">
+              {category?.name || course.categorySlug}
+            </Link>
+          </nav>
+        </div>
+      </section>
+
+      {/* Main two-column */}
+      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-14 items-start">
+
+          {/* Left: Course info */}
           <div className="space-y-6">
-            {/* Breadcrumb */}
-            <nav className="text-[11px] font-mono tracking-widest uppercase text-[#111111]/50 flex flex-wrap items-center gap-2">
-              <Link to="/" className="hover:text-[#111111] transition-colors">HOME</Link>
-              <span>/</span>
-              <Link to="/courses" className="hover:text-[#111111] transition-colors">COURSES</Link>
-              <span>/</span>
-              <Link
-                to={`/courses?category=${course.categorySlug}`}
-                className="text-[#111111] font-semibold hover:text-primary transition-colors"
-              >
-                {category?.name || course.categorySlug}
-              </Link>
-            </nav>
-
-            {/* Course Thumbnail Wide Banner with NCC Branding Overlay */}
-            <div className="rounded-2xl overflow-hidden border border-[#111111]/15 group">
-              <CourseThumbnail
-                slug={course.slug}
-                title={course.title}
-                categoryName={category?.name || course.categorySlug}
-                aspectRatio="aspect-[16/9]"
-                priority={true}
-              />
-            </div>
-
-            {/* Category Label + Duration Meta Line */}
-            <div className="flex items-center gap-3 pt-1">
-              <span className="section-label text-primary font-bold">
-                {category?.name || course.categorySlug}
-              </span>
-              <span className="text-[#111111]/30">·</span>
-              <span className="text-xs font-mono tracking-wider uppercase text-[#111111]/60">
-                {course.duration}
-              </span>
+            {/* Category chip + duration */}
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="eyebrow-chip">{category?.name || course.categorySlug}</span>
               {course.featured && (
-                <>
-                  <span className="text-[#111111]/30">·</span>
-                  <span className="text-[10px] font-mono tracking-widest uppercase text-primary bg-brand-cyan-soft px-1.5 py-0.5 rounded font-bold">
-                    FEATURED
-                  </span>
-                </>
+                <span className="bg-accent-soft text-primary text-[11px] font-semibold px-3 py-1 rounded-full uppercase tracking-wide">Featured</span>
               )}
             </div>
 
-            {/* Giant Anton Title */}
-            <h1
-              className="font-display tracking-[-0.02em] uppercase text-[#111111] leading-[1.02] md:leading-[0.98] pb-[0.08em] text-left select-none"
-              style={{ fontSize: 'clamp(2.4rem, 5.5vw, 5.5rem)' }}
-            >
+            {/* Title */}
+            <h1 className="font-bold text-foreground leading-tight" style={{ fontSize: 'clamp(2rem, 4.5vw, 3rem)', letterSpacing: '-0.01em' }}>
               {course.title}
             </h1>
 
-            {/* Highlight in Larger Body Text */}
-            <p className="text-base sm:text-lg lg:text-xl text-[#111111]/80 font-normal leading-relaxed max-w-2xl">
+            {/* Star rating */}
+            <div className="flex items-center gap-2">
+              <div className="flex items-center gap-0.5">
+                {[1,2,3,4,5].map((i) => <Star key={i} className="w-4 h-4 fill-[#F5A623] text-[#F5A623]" />)}
+              </div>
+              <span className="text-[14px] text-muted-foreground font-medium">4.9 · 512 reviews</span>
+            </div>
+
+            {/* Highlight */}
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
               {course.highlight}
             </p>
 
-            {/* Quick Facts Strip (Hairline-separated inline items) */}
-            <div className="pt-6 pb-6 border-y border-[#111111]/15 grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs sm:text-sm font-medium text-[#111111]">
-              <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-primary shrink-0" strokeWidth={1.5} />
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#111111]/50 block">DURATION</span>
-                  <span>{course.duration}</span>
+            {/* Fact chips */}
+            <div className="flex flex-wrap gap-2">
+              {factChips.map(({ Icon, label, value }) => (
+                <div key={label} className="flex items-center gap-2 bg-accent-soft text-foreground rounded-lg px-3 py-2">
+                  <Icon className="w-4 h-4 text-primary shrink-0" strokeWidth={1.5} />
+                  <div>
+                    <span className="text-[10px] text-primary font-semibold uppercase tracking-wide block leading-none">{label}</span>
+                    <span className="text-[13px] font-medium">{value}</span>
+                  </div>
                 </div>
-              </div>
+              ))}
+            </div>
 
-              <div className="flex items-center gap-2.5">
-                <Layers className="w-4 h-4 text-primary shrink-0" strokeWidth={1.5} />
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#111111]/50 block">CATEGORY</span>
-                  <span className="truncate">{category?.name || course.categorySlug}</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2.5">
-                <Monitor className="w-4 h-4 text-primary shrink-0" strokeWidth={1.5} />
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#111111]/50 block">MODE</span>
-                  <span>Offline · 1:1 PC</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2.5">
-                <Award className="w-4 h-4 text-primary shrink-0" strokeWidth={1.5} />
-                <div>
-                  <span className="text-[10px] font-mono uppercase tracking-wider text-[#111111]/50 block">CERTIFICATE</span>
-                  <span>Govt Recognised</span>
-                </div>
-              </div>
+            {/* Thumbnail */}
+            <div className="rounded-[20px] overflow-hidden border border-border group">
+              <CourseThumbnail slug={course.slug} title={course.title} categoryName={category?.name || course.categorySlug} aspectRatio="aspect-[16/9]" priority={true} />
             </div>
           </div>
 
-          {/* Right Column: Sticky Quick Course Enquiry Form */}
+          {/* Right: Sticky form */}
           <div className="lg:sticky lg:top-28 w-full">
             <CourseEnquiryForm courseTitle={course.title} />
           </div>
         </div>
       </section>
 
-      {/* 2. Course Overview & Complete Syllabus Section */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 border-t border-[#111111]/15">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: About This Course */}
-          <div className="lg:col-span-5 space-y-6">
-            <span className="section-label text-[#111111]/50 block">OVERVIEW</span>
-            <h2 className="font-display text-3xl sm:text-4xl uppercase tracking-[-0.02em] leading-[1.02] text-[#111111] pb-[0.04em]">
-              ABOUT THIS COURSE
-            </h2>
-            <p className="text-base sm:text-lg leading-relaxed text-[#111111]/85 max-w-[65ch]">
-              {course.description}
-            </p>
-
-            <div className="pt-4 p-6 border border-[#111111]/15 rounded-2xl bg-[#EFEDE8] space-y-3">
-              <span className="section-label text-primary block">LEARNING ENVIRONMENT</span>
-              <p className="text-xs sm:text-sm text-[#111111]/70 leading-relaxed">
-                Every student is assigned an individual high-speed desktop terminal with uninterrupted practice time and bilingual faculty guidance in Marathi, Hindi, and English.
-              </p>
-            </div>
-          </div>
-
-          {/* Right Column: Complete Syllabus */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="flex items-center justify-between">
-              <span className="section-label text-[#111111]/50 block">CURRICULUM</span>
-              <span className="text-xs font-mono text-[#111111]/40 uppercase tracking-widest">
-                {course.syllabus.length} MODULES
-              </span>
+      {/* Overview + Syllabus */}
+      <section className="bg-surface border-t border-border py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Left: Overview */}
+            <div className="lg:col-span-5 space-y-5">
+              <span className="eyebrow-chip inline-block">Overview</span>
+              <h2 className="font-bold text-foreground" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+                About This <span className="text-primary">Course</span>
+              </h2>
+              <p className="text-[15px] sm:text-base leading-relaxed text-muted-foreground">{course.description}</p>
+              <div className="p-5 border border-border rounded-xl bg-white">
+                <span className="eyebrow-chip mb-2 inline-block">Learning Environment</span>
+                <p className="text-[14px] text-muted-foreground leading-relaxed">
+                  Every student is assigned an individual high-speed desktop terminal with uninterrupted practice time and bilingual faculty guidance in Marathi, Hindi, and English.
+                </p>
+              </div>
             </div>
 
-            <h2 className="font-display text-3xl sm:text-4xl uppercase tracking-[-0.02em] leading-[1.02] text-[#111111] pb-[0.04em]">
-              COMPLETE SYLLABUS
-            </h2>
-
-            <div ref={syllabusRef} className="space-y-0 pt-2 border-b border-[#111111]/15">
-              {course.syllabus.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="py-4 border-t border-[#111111]/15 flex items-start gap-4 sm:gap-6 hover:bg-[#111111]/[0.02] transition-colors px-2 rounded-lg"
-                >
-                  <span className="font-mono text-xs text-[#111111]/40 w-7 shrink-0 pt-0.5">
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-                  <span className="text-sm sm:text-base font-medium text-[#111111] leading-relaxed">
-                    {item}
-                  </span>
-                </div>
-              ))}
+            {/* Right: Syllabus */}
+            <div className="lg:col-span-7 space-y-5">
+              <div className="flex items-center justify-between">
+                <span className="eyebrow-chip inline-block">Curriculum</span>
+                <span className="text-[12px] text-muted-foreground font-medium uppercase tracking-wider">{course.syllabus.length} Modules</span>
+              </div>
+              <h2 className="font-bold text-foreground" style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>
+                Complete <span className="text-primary">Syllabus</span>
+              </h2>
+              <div ref={syllabusRef} className="space-y-2">
+                {course.syllabus.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4 bg-white rounded-xl p-4 border border-border hover:border-accent-soft hover:shadow-sm transition-all duration-200">
+                    <div className="w-8 h-8 rounded-full bg-accent-soft flex items-center justify-center shrink-0 mt-0.5">
+                      <span className="text-primary font-bold text-[13px]">{String(idx + 1).padStart(2, '0')}</span>
+                    </div>
+                    <span className="text-[15px] font-medium text-foreground leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 3. Full-Bleed Ink Black Enquiry CTA Band */}
-      <section className="bg-[#111111] text-[#EFEDE8] py-20 lg:py-28">
+      {/* CTA Band — light primary */}
+      <section className="bg-primary py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl space-y-6">
-            <span className="section-label text-white/50 block">ADMISSIONS & COUNSELLING</span>
-            <h2 className="font-display text-4xl sm:text-6xl uppercase tracking-[-0.02em] text-white leading-[1.02] md:leading-[0.98] pb-[0.08em]">
-              READY TO MASTER {course.title}?
+          <div className="max-w-3xl space-y-5">
+            <span className="inline-block bg-white/20 text-white text-[11px] font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider">Admissions & Counselling</span>
+            <h2 className="font-bold text-white" style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', lineHeight: 1.2 }}>
+              Ready to master {course.title}?
             </h2>
-            <p className="text-base sm:text-lg text-white/70 leading-relaxed max-w-2xl">
+            <p className="text-white/80 text-base sm:text-lg leading-relaxed max-w-2xl">
               Book a 1-day free practical trial at our Mulund West centre. Experience 1-on-1 terminal mentoring with zero obligation.
             </p>
-
-            <div className="pt-4 flex flex-wrap items-center gap-4">
-              <button
-                onClick={() => onOpenModal(course.title)}
-                className="rounded-full bg-white px-8 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-[#111111] hover:bg-primary hover:text-white btn-swiss cursor-pointer flex items-center gap-2"
-              >
+            <div className="pt-2 flex flex-wrap items-center gap-4">
+              <button onClick={() => onOpenModal(course.title)}
+                className="rounded-full bg-white px-8 py-3.5 text-[14px] font-semibold text-primary hover:bg-accent-soft btn-swiss cursor-pointer flex items-center gap-2">
                 <CalendarCheck className="w-4 h-4" />
-                <span>BOOK FREE TRIAL</span>
+                <span>Book Free Trial</span>
               </button>
-
-              <a
-                href={`https://wa.me/919821115699?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-white/30 px-8 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-white hover:bg-white hover:text-[#111111] btn-swiss flex items-center gap-2"
-              >
-                <MessageSquare className="w-4 h-4 text-brand-green" />
-                <span>WHATSAPP ENQUIRY</span>
+              <a href={`https://wa.me/919821115699?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer"
+                className="rounded-full border-2 border-white/40 px-8 py-3.5 text-[14px] font-semibold text-white hover:bg-white hover:text-primary btn-swiss flex items-center gap-2">
+                <MessageSquare className="w-4 h-4" />
+                <span>WhatsApp Enquiry</span>
               </a>
             </div>
-
-            <div className="pt-6 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs font-mono text-white/60">
+            <div className="pt-4 border-t border-white/20 flex flex-wrap items-center gap-5 text-[13px] text-white/70">
               <span className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-brand-cyan" />
-                Call Admissions:
-                <a href="tel:+919821115699" className="text-white hover:text-brand-cyan transition-colors underline underline-offset-2">
-                  +91 98211 15699
-                </a>
+                <Phone className="w-3.5 h-3.5 text-white" />
+                <a href="tel:+919821115699" className="text-white hover:text-white/80 underline underline-offset-2">+91 98211 15699</a>
               </span>
-              <span>·</span>
               <span>Shop No. 7, Anubhav Bldg, Zaver Road, Mulund (W)</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. Related Courses Section */}
-      <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 border-t border-[#111111]/15">
-        <div className="flex items-center justify-between pb-6 border-b border-[#111111]/15 mb-10">
-          <span className="section-label text-[#111111]">RELATED COURSES</span>
-          <Link
-            to={`/courses?category=${course.categorySlug}`}
-            className="section-label text-primary hover:text-brand-cyan hover:underline"
-          >
-            VIEW ALL IN {category?.name || course.categorySlug} →
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {relatedCourses.map((rel, idx) => (
-            <Link
-              key={rel.slug}
-              to={`/courses/${rel.slug}`}
-              className="border border-[#111111]/15 bg-[#EFEDE8] rounded-2xl flex flex-col justify-between hover:border-[#111111]/60 hover:-translate-y-1 transition-all duration-200 group cursor-pointer overflow-hidden"
-            >
-              {/* Card Top Thumbnail Image */}
-              <CourseThumbnail
-                slug={rel.slug}
-                title={rel.title}
-                categoryName={getCategoryName(rel.categorySlug)}
-              />
-
-              <div className="p-6 flex flex-col justify-between flex-grow">
-                <div>
-                  <div className="flex items-start justify-between pb-4 border-b border-[#111111]/15">
-                    <CourseIcon
-                      name={rel.icon}
-                      className="w-5 h-5 text-primary"
-                      strokeWidth={1.25}
-                    />
-                    <span className="font-mono text-xs text-[#111111]/40 tracking-widest">
-                      {String(idx + 1).padStart(2, '0')}
-                    </span>
-                  </div>
-
-                  <h3 className="font-display text-xl text-[#111111] uppercase tracking-[-0.02em] mt-4 leading-[1.02] pb-[0.04em] group-hover:text-primary transition-colors">
-                    {rel.title}
-                  </h3>
-
-                  <p className="mt-2 text-xs text-[#111111]/70 leading-relaxed line-clamp-2">
-                    {rel.highlight}
-                  </p>
-                </div>
-
-                <div className="pt-4 mt-4 border-t border-[#111111]/15 flex items-center justify-between text-[11px] font-mono text-[#111111]/50">
-                  <span>{rel.duration}</span>
-                  <span className="text-[#111111] font-sans font-bold flex items-center gap-1 group-hover:text-primary">
-                    VIEW ↗
-                  </span>
-                </div>
-              </div>
+      {/* Related Courses */}
+      <section className="py-14 bg-background border-t border-border">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="font-bold text-foreground text-[22px]">
+              Related <span className="text-primary">Courses</span>
+            </h2>
+            <Link to={`/courses?category=${course.categorySlug}`}
+              className="text-[13px] font-semibold text-primary hover:text-accent underline underline-offset-4">
+              View all in {category?.name || course.categorySlug}
             </Link>
-          ))}
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {relatedCourses.map((rel) => (
+              <CourseCard key={rel.slug} course={rel} categoryName={getCategoryName(rel.categorySlug)} />
+            ))}
+          </div>
         </div>
       </section>
     </div>

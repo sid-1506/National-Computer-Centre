@@ -1,42 +1,55 @@
 import { useEffect } from 'react';
-import Hero from '../components/Hero';
-import MarqueeBands from '../components/MarqueeBands';
-import FeaturedCourses from '../components/FeaturedCourses';
+import HeroSlider from '../components/HeroSlider';
+import CompactEnquiryForm from '../components/CompactEnquiryForm';
+import OurCoursesSection from '../components/OurCoursesSection';
+import WhyExtraSkills from '../components/WhyExtraSkills';
+import MostPopularCourses from '../components/MostPopularCourses';
 import FounderSection from '../components/FounderSection';
 import Stats from '../components/Stats';
-import TrustPhilosophyStrip from '../components/TrustPhilosophyStrip';
+import StudentsFeedback from '../components/StudentsFeedback';
 
 export default function HomePage({ onOpenModal }) {
   useEffect(() => {
-    document.title = 'Computer Classes in Mulund West | National Computer Centre';
+    document.title = 'National Computer Centre | Computer Training Institute in Mulund West';
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
       metaDesc = document.createElement('meta');
       metaDesc.name = 'description';
       document.head.appendChild(metaDesc);
     }
-    metaDesc.content = 'Govt-recognised computer institute in Mulund West since 1998. MS-CIT, Tally Prime with GST, Advanced Excel, DTP, Python, AI-ML & Full Stack. Book 1-day free trial!';
+    metaDesc.content =
+      'National Computer Centre is Mulund West’s leading government-recognised computer institute since 1998. Learn MS-CIT, Tally Prime with GST, Advanced Excel, DTP, Python, and Full Stack with 100% practical 1-on-1 terminal training.';
   }, []);
 
   return (
-    <main>
-      {/* 01. Hero with Reduced Typography & Quick Enquiry Form */}
-      <Hero onOpenModal={onOpenModal} />
+    <main className="w-full overflow-x-hidden bg-white">
+      {/* 01. Hero Slider (Full-Bleed 3-Slide Carousel with Desktop Right Form) */}
+      <HeroSlider onOpenModal={onOpenModal} />
 
-      {/* 02. Marquee Ticker */}
-      <MarqueeBands />
+      {/* Mobile / Tablet: Compact Enquiry Form stacked directly under Hero before Our Courses */}
+      <div className="block lg:hidden bg-[#F7F9FC] py-8 px-4 sm:px-6 border-b border-slate-100">
+        <div className="max-w-[440px] mx-auto">
+          <CompactEnquiryForm className="max-w-none shadow-md" />
+        </div>
+      </div>
 
-      {/* 03. Featured Courses (Curated 6 Tracks + Link to /courses) */}
-      <FeaturedCourses />
+      {/* 02. "OUR COURSES" Block (Wide Title + Category Pills + Carousel) */}
+      <OurCoursesSection />
 
-      {/* Founder & Leadership */}
+      {/* 03. "WHY EXTRA SKILLS MATTER" Section */}
+      <WhyExtraSkills />
+
+      {/* 04. "MOST POPULAR COURSES" Section */}
+      <MostPopularCourses />
+
+      {/* 05. "FOUNDER & DIRECTOR" Section (Placed just above the stats / metrics section) */}
       <FounderSection />
 
-      {/* 05. Stats / Verified Metrics */}
+      {/* 06. "VERIFIED METRICS" / Numbers That Speak Section */}
       <Stats />
 
-      {/* 06. Trust & Philosophy Strip with Links to /about and /contact */}
-      <TrustPhilosophyStrip />
+      {/* 07. "STUDENTS FEEDBACK" Section (Review Carousel) */}
+      <StudentsFeedback />
     </main>
   );
 }

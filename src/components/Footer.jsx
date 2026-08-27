@@ -1,133 +1,195 @@
 import { Link } from 'react-router-dom';
-import { Phone, MapPin, ArrowUp } from 'lucide-react';
-import { BUSINESS_INFO } from '../data/nccData';
+import { ArrowRight } from 'lucide-react';
 import logo2 from '../assets/Logo-2.jpeg';
+import { BUSINESS_INFO } from '../data/nccData';
+
+/* ─── Social Icons ───────────────────────────────────────────────────── */
+const FacebookIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+  </svg>
+);
+
+const InstagramIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+  </svg>
+);
+
+
 
 export default function Footer({ onOpenModal }) {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <footer className="bg-[#111111] text-[#EFEDE8] pt-16 sm:pt-20 pb-12 border-t border-white/15">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Top Logo Container */}
-        <div className="pb-12 border-b border-white/15 flex flex-wrap items-center justify-between gap-6">
-          <Link to="/" className="inline-block group" aria-label="National Computer Centre Home">
-            <div className="bg-white rounded-2xl p-2.5 sm:p-3.5 inline-flex items-center justify-center shadow-sm hover:opacity-95 transition-opacity">
+    <footer className="bg-white pt-16 sm:pt-20 pb-8 border-t border-slate-100 w-full overflow-x-hidden">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 box-border">
+        
+        {/* 4-Column Grid matching Disha screenshot 2 & HTML */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12">
+          
+          {/* Column 1: Logo & Blurb */}
+          <div className="flex flex-col gap-5">
+            <Link to="/" aria-label="National Computer Centre Home">
               <img
                 src={logo2}
-                alt="National Computer Centre logo"
+                alt="National Computer Centre Logo"
+                className="h-12 w-auto object-contain"
                 loading="lazy"
-                className="h-14 sm:h-16 lg:h-20 w-auto object-contain max-w-[260px] sm:max-w-xs"
               />
-            </div>
-          </Link>
-          <div className="flex items-center gap-3 text-[11px] sm:text-xs font-mono tracking-widest uppercase text-white/40">
-            <span>EST. 15 AUGUST 1998</span>
-            <span>·</span>
-            <span>MULUND WEST, MUMBAI</span>
-          </div>
-        </div>
-
-        {/* 4-Column Directory Grid */}
-        <div className="py-16 grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-white/15">
-          {/* Col 1: Institute Info */}
-          <div className="md:col-span-4 space-y-4">
-            <span className="section-label text-white/50 block">ESTABLISHED 1998</span>
-            <p className="text-sm text-white/70 leading-relaxed max-w-sm">
-              Government-recognised computer training institute delivering practical, 1-on-1 career education in Mulund West for 28 continuous years.
+            </Link>
+            <p className="text-[#6B7280] text-[15px] leading-[1.6] max-w-[300px]">
+              We’re always in search for talented and motivated people. Don’t be shy introduce yourself!
             </p>
-            <div className="pt-2">
-              <button
-                onClick={() => onOpenModal('MS-CIT')}
-                className="rounded-full bg-white px-6 py-2.5 text-xs font-bold uppercase tracking-[0.15em] text-[#111111] hover:bg-primary hover:text-white btn-swiss cursor-pointer"
-              >
-                BOOK FREE TRIAL
-              </button>
-            </div>
           </div>
 
-          {/* Col 2: Navigation Links */}
-          <div className="md:col-span-3 space-y-3">
-            <span className="section-label text-white/50 block mb-4">DIRECTORY</span>
-            <ul className="space-y-2.5 text-xs uppercase tracking-wider font-semibold">
+          {/* Column 2: Useful Links */}
+          <div>
+            <h4 className="text-[18px] font-bold text-[#111827] mb-6">
+              Useful Links
+            </h4>
+            <ul className="space-y-3.5 list-none p-0 m-0">
               <li>
-                <Link to="/courses" className="hover:text-brand-cyan transition-colors">
-                  01 / Courses Catalog (56)
+                <Link
+                  to="/courses"
+                  className="text-[#6B7280] hover:text-[#0B6AA8] text-[15px] transition-colors inline-block"
+                >
+                  Courses
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-brand-cyan transition-colors">
-                  02 / About Legacy & Founder
+                <button
+                  onClick={() => onOpenModal && onOpenModal('MS-CIT')}
+                  className="text-[#6B7280] hover:text-[#0B6AA8] text-[15px] transition-colors inline-block bg-transparent border-none p-0 cursor-pointer text-left"
+                >
+                  Free Trial Class
+                </button>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-[#6B7280] hover:text-[#0B6AA8] text-[15px] transition-colors inline-block"
+                >
+                  Franchise & Enquiry
                 </Link>
               </li>
               <li>
-                <Link to="/about#why-ncc" className="hover:text-brand-cyan transition-colors">
-                  03 / Why NCC & Pedagogy
-                </Link>
-              </li>
-              <li>
-                <Link to="/about#testimonials" className="hover:text-brand-cyan transition-colors">
-                  04 / Student Reviews
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-brand-cyan transition-colors">
-                  05 / Admissions & Contact
+                <Link
+                  to="/contact"
+                  className="text-[#6B7280] hover:text-[#0B6AA8] text-[15px] transition-colors inline-block"
+                >
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: Address & Landmark */}
-          <div className="md:col-span-3 space-y-3">
-            <span className="section-label text-white/50 block mb-4 flex items-center gap-1.5">
-              <MapPin className="w-3 h-3 text-brand-cyan" />
-              LOCATION
-            </span>
-            <p className="text-xs text-white/80 leading-relaxed font-mono">
-              {BUSINESS_INFO.address.shop}<br />
-              {BUSINESS_INFO.address.street}<br />
-              {BUSINESS_INFO.address.landmark}<br />
-              {BUSINESS_INFO.address.area}, {BUSINESS_INFO.address.city} {BUSINESS_INFO.address.pincode}
-            </p>
+          {/* Column 3: Explore */}
+          <div>
+            <h4 className="text-[18px] font-bold text-[#111827] mb-6">
+              Explore
+            </h4>
+            <ul className="space-y-3.5 list-none p-0 m-0">
+              <li>
+                <a
+                  href="/#founder"
+                  className="text-[#6B7280] hover:text-[#0B6AA8] text-[15px] transition-colors inline-block"
+                >
+                  Founder & Leadership
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#testimonials"
+                  className="text-[#6B7280] hover:text-[#0B6AA8] text-[15px] transition-colors inline-block"
+                >
+                  Student Reviews
+                </a>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-[#6B7280] hover:text-[#0B6AA8] text-[15px] transition-colors inline-block"
+                >
+                  Visit Mulund Lab
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          {/* Col 4: Timings & Direct Phone */}
-          <div className="md:col-span-2 space-y-3">
-            <span className="section-label text-white/50 block mb-4 flex items-center gap-1.5">
-              <Phone className="w-3 h-3 text-brand-cyan" />
-              CONTACT
-            </span>
-            <p className="text-xs font-mono text-white/80">
-              <a href={`tel:${BUSINESS_INFO.phone.raw}`} className="hover:text-brand-cyan transition-colors block">
-                {BUSINESS_INFO.phone.display}
-              </a>
-              <a href="tel:+919820615699" className="hover:text-brand-cyan transition-colors block mt-1">
-                +91 98206 15699
-              </a>
-            </p>
-            <div className="pt-2 text-[11px] text-white/50 font-mono">
-              <span>Mon–Sat: 7 AM – 9 PM</span><br />
-              <span>Sun: 8 AM – 1 PM</span>
+          {/* Column 4: Get Contact & Social Buttons & CTA */}
+          <div>
+            <h4 className="text-[18px] font-bold text-[#111827] mb-6">
+              Get Contact
+            </h4>
+            <div className="text-[#6B7280] flex flex-col gap-5">
+              <p className="m-0 text-[15px] leading-relaxed">
+                <strong className="text-[#111827]">Email:</strong>{' '}
+                <a
+                  href="mailto:nationalcomputercentre.mulund@gmail.com"
+                  className="hover:text-[#0B6AA8] transition-colors"
+                >
+                  nationalcomputercentre.mulund@gmail.com
+                </a>
+              </p>
+
+              <p className="m-0 text-[15px] leading-relaxed">
+                <strong className="text-[#111827]">Phone:</strong>{' '}
+                <a
+                  href={`tel:${BUSINESS_INFO.phone.raw}`}
+                  className="hover:text-[#0B6AA8] transition-colors"
+                >
+                  {BUSINESS_INFO.phone.display}
+                </a>
+              </p>
+
+              {/* Social Icon Row */}
+              <div className="flex items-center gap-3 pt-1">
+                <a
+                  href="https://www.facebook.com/nationalcomputercentre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-10 h-10 rounded-full bg-[#0B6AA8] flex items-center justify-center text-white hover:scale-105 hover:bg-[#095A90] transition-all"
+                >
+                  <FacebookIcon />
+                </a>
+                <a
+                  href="https://www.instagram.com/nationalcomputercentre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-10 h-10 rounded-full bg-[#0B6AA8] flex items-center justify-center text-white hover:scale-105 hover:bg-[#095A90] transition-all"
+                >
+                  <InstagramIcon />
+                </a>
+              </div>
+
+              {/* Full-width / Pill Solid Blue CTA Button "Contact With Us →" */}
+              <div className="pt-2">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-white bg-[#0B6AA8] hover:bg-[#095A90] hover:-translate-y-0.5 transition-all duration-300 shadow-md"
+                >
+                  <span>Contact With Us</span>
+                  <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+                </Link>
+              </div>
+
             </div>
           </div>
+
         </div>
 
-        {/* Bottom Bar: Copyright & Back to Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-white/50">
-          <div>
-            © 1998–2026 National Computer Centre. All Rights Reserved. Mulund West, Mumbai.
-          </div>
-          <button
-            onClick={scrollToTop}
-            className="flex items-center gap-1.5 hover:text-white transition-colors cursor-pointer uppercase tracking-widest"
-          >
-            <span>BACK TO TOP</span>
-            <ArrowUp className="w-3.5 h-3.5" />
-          </button>
+        {/* Bottom Copyright Line */}
+        <div className="pt-8 border-t border-slate-100 text-center">
+          <p className="text-[#6B7280] text-[14px] m-0">
+            Copyright © 2026{' '}
+            <span className="text-[#111827] font-bold">National Computer Centre</span>{' '}
+            All Rights Reserved
+          </p>
         </div>
+
       </div>
     </footer>
   );

@@ -1,323 +1,278 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { gsap } from 'gsap';
-import { BUSINESS_INFO } from '../data/nccData';
 import nccLogo from '../assets/ncc-logo.png';
+
+/* ─── Social SVG Icons (Only Facebook & Instagram) ───────────────────── */
+const InstagramIcon = () => (
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+  </svg>
+);
 
 export default function Navbar({ onOpenModal }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [shouldRender, setShouldRender] = useState(false);
+  const [inTestimonialsView, setInTestimonialsView] = useState(false);
   const location = useLocation();
 
-  const panelRef = useRef(null);
-  const linksRef = useRef([]);
-  const footerRowRef = useRef(null);
   const iconMenuRef = useRef(null);
   const iconCloseRef = useRef(null);
-  const tlRef = useRef(null);
   const iconTlRef = useRef(null);
 
+  // Throttled passive scroll listener for navbar shadow elevation
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (window.scrollY > 30) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Lock / unlock body scroll
+  // IntersectionObserver to track when #testimonials is in view on homepage
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
+    if (location.pathname !== '/') {
+      return;
     }
-    return () => {
-      document.body.style.overflow = '';
-    };
+
+    const testimonialsEl = document.getElementById('testimonials');
+    if (!testimonialsEl) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setInTestimonialsView(entry.isIntersecting);
+      },
+      { rootMargin: '-20% 0px -40% 0px', threshold: 0.1 }
+    );
+
+    observer.observe(testimonialsEl);
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
   }, [mobileMenuOpen]);
 
-  // Handle Hamburger Toggle
   const toggleMobileMenu = () => {
-    if (!mobileMenuOpen) {
-      setShouldRender(true);
-      setMobileMenuOpen(true);
-    } else {
-      setMobileMenuOpen(false);
-    }
+    setMobileMenuOpen((prev) => !prev);
   };
 
   const closeMobileMenu = () => {
-    if (mobileMenuOpen) {
-      setMobileMenuOpen(false);
-    }
+    setMobileMenuOpen(false);
   };
 
-  // Animate hamburger icon swap
   useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) return;
-
+    const pref = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (pref) return;
     iconTlRef.current?.kill();
     const tl = gsap.timeline();
     iconTlRef.current = tl;
-
     if (mobileMenuOpen) {
-      tl.to(iconMenuRef.current, {
-        rotate: 90,
-        opacity: 0,
-        duration: 0.3,
-        ease: 'power2.inOut',
-      }, 0);
-      tl.fromTo(
-        iconCloseRef.current,
-        { rotate: -90, opacity: 0 },
-        { rotate: 0, opacity: 1, duration: 0.3, ease: 'power2.inOut' },
-        0
-      );
+      tl.to(iconMenuRef.current, { rotate: 90, opacity: 0, duration: 0.3, ease: 'power2.inOut' }, 0);
+      tl.fromTo(iconCloseRef.current, { rotate: -90, opacity: 0 }, { rotate: 0, opacity: 1, duration: 0.3, ease: 'power2.inOut' }, 0);
     } else {
-      tl.to(iconCloseRef.current, {
-        rotate: -90,
-        opacity: 0,
-        duration: 0.3,
-        ease: 'power2.inOut',
-      }, 0);
-      tl.to(
-        iconMenuRef.current,
-        { rotate: 0, opacity: 1, duration: 0.3, ease: 'power2.inOut' },
-        0
-      );
+      tl.to(iconCloseRef.current, { rotate: -90, opacity: 0, duration: 0.3, ease: 'power2.inOut' }, 0);
+      tl.to(iconMenuRef.current, { rotate: 0, opacity: 1, duration: 0.3, ease: 'power2.inOut' }, 0);
     }
-
-    return () => {
-      tl.kill();
-    };
+    return () => tl.kill();
   }, [mobileMenuOpen]);
 
-  // Animate mobile drawer opening / closing
-  useEffect(() => {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (mobileMenuOpen && shouldRender) {
-      tlRef.current?.kill();
-
-      if (prefersReducedMotion) {
-        if (panelRef.current) gsap.set(panelRef.current, { clipPath: 'inset(0% 0% 0% 0%)' });
-        if (linksRef.current) gsap.set(linksRef.current, { y: 0, opacity: 1 });
-        if (footerRowRef.current) gsap.set(footerRowRef.current, { y: 0, opacity: 1 });
-        return;
-      }
-
-      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-      tlRef.current = tl;
-
-      tl.fromTo(
-        panelRef.current,
-        { clipPath: 'inset(0% 0% 100% 0%)' },
-        { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.45 }
-      );
-
-      const activeLinks = linksRef.current.filter(Boolean);
-      tl.fromTo(
-        activeLinks,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4, stagger: 0.05 },
-        '-=0.25'
-      );
-
-      if (footerRowRef.current) {
-        tl.fromTo(
-          footerRowRef.current,
-          { y: 10, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.35 },
-          '-=0.2'
-        );
-      }
-    } else if (!mobileMenuOpen && shouldRender) {
-      tlRef.current?.kill();
-
-      if (prefersReducedMotion) {
-        setShouldRender(false);
-        return;
-      }
-
-      const tl = gsap.timeline({
-        defaults: { ease: 'power2.inOut' },
-        onComplete: () => {
-          setShouldRender(false);
-        },
-      });
-      tlRef.current = tl;
-
-      const activeLinks = linksRef.current.filter(Boolean);
-      tl.to(activeLinks, {
-        y: -10,
-        opacity: 0,
-        duration: 0.2,
-        stagger: 0.03,
-      });
-
-      if (footerRowRef.current) {
-        tl.to(footerRowRef.current, { opacity: 0, duration: 0.15 }, '<');
-      }
-
-      tl.to(
-        panelRef.current,
-        {
-          clipPath: 'inset(0% 0% 100% 0%)',
-          duration: 0.35,
-        },
-        '-=0.1'
-      );
-    }
-  }, [mobileMenuOpen, shouldRender]);
-
   const navLinks = [
-    { label: 'COURSES', to: '/courses' },
-    { label: 'ABOUT', to: '/about' },
-    { label: 'CONTACT', to: '/contact' },
+    { label: 'Home', to: '/', key: 'home' },
+    { label: 'Courses', to: '/courses', key: 'courses' },
+    { label: 'Reviews', to: '/#testimonials', key: 'reviews' },
+    { label: 'Contact', to: '/contact', key: 'contact' },
   ];
+
+  const socialLinks = [
+    { Icon: FacebookIcon, href: 'https://www.facebook.com/nationalcomputercentre', label: 'Facebook' },
+    { Icon: InstagramIcon, href: 'https://www.instagram.com/nationalcomputercentre', label: 'Instagram' },
+  ];
+
+  // Helper to determine active state strictly
+  const isLinkActive = (link) => {
+    if (link.key === 'reviews') {
+      return location.pathname === '/' && inTestimonialsView;
+    }
+    if (link.key === 'home') {
+      return location.pathname === '/' && !inTestimonialsView;
+    }
+    if (link.key === 'courses') {
+      return location.pathname.startsWith('/courses');
+    }
+    if (link.key === 'contact') {
+      return location.pathname.startsWith('/contact');
+    }
+    return false;
+  };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-[#EFEDE8]/95 backdrop-blur-md py-2.5 sm:py-3 lg:py-3.5 border-b border-[#111111]/15'
-          : 'bg-[#EFEDE8]/90 backdrop-blur-sm py-3.5 sm:py-4 lg:py-5'
+      className={`sticky top-0 z-50 w-full bg-white transition-all duration-300 border-b border-slate-100 ${
+        scrolled ? 'shadow-sm' : 'shadow-none'
       }`}
+      style={{ backgroundColor: '#ffffff' }}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Left: Responsive Brand Lockup */}
-        <Link
-          to="/"
-          className="flex items-center gap-2.5 sm:gap-3 lg:gap-3.5 group shrink-0 select-none"
-        >
-          {/* Logo Mark */}
-          <img
-            src={nccLogo}
-            alt="National Computer Centre"
-            className="h-11 sm:h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-[1.02]"
-          />
-
-          {/* Brand Text in Anton */}
-          <div className="flex items-center leading-none">
-            <span className="font-display uppercase text-[#111111] text-[11px] sm:text-[13px] lg:text-[15px] tracking-tight whitespace-nowrap">
-              NATIONAL COMPUTER CENTRE
+      {/* Header Bar — Content-driven compact height (~60-64px mobile, ~68-72px desktop) */}
+      <div className="mx-auto max-w-[1400px] w-full flex items-center justify-between px-3.5 sm:px-6 lg:px-12 py-2.5 sm:py-3 lg:py-3.5 box-border">
+        
+        {/* Left: Minimal Clean Logo + Brand Text Lockup */}
+        <div className="flex-shrink-0 flex items-center">
+          <Link
+            to="/"
+            aria-label="National Computer Centre Home"
+            className="flex items-center gap-2 sm:gap-2.5 lg:gap-3 group"
+          >
+            <img
+              src={nccLogo}
+              alt="National Computer Centre Logo"
+              className="h-9 sm:h-10 lg:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02] shrink-0"
+              loading="eager"
+            />
+            <span className="font-bold text-[#111827] text-[14px] xs:text-[15px] sm:text-[17px] lg:text-[19px] xl:text-[20px] tracking-tight leading-none group-hover:text-[#0B6AA8] transition-colors whitespace-nowrap">
+              National Computer Centre
             </span>
-          </div>
-        </Link>
+          </Link>
+        </div>
 
-        {/* Center: Dedicated Route Nav Links (Desktop) */}
-        <nav className="hidden md:flex items-center gap-8 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#111111]">
+        {/* Center: Desktop Horizontal Navigation */}
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 mx-4 xl:mx-8" aria-label="Main navigation">
           {navLinks.map((link) => {
-            const isActive = location.pathname === link.to;
+            const active = isLinkActive(link);
+
             return (
               <Link
                 key={link.label}
                 to={link.to}
-                className={`hover:text-primary transition-colors ${
-                  isActive ? 'text-primary border-b border-primary pb-0.5' : ''
-                }`}
+                className="relative py-1 text-[15px] xl:text-[16px] font-medium transition-colors duration-300 group text-slate-800 hover:text-[#0B6AA8] whitespace-nowrap leading-tight"
+                style={{ color: active ? '#0B6AA8' : '#1C1D1F' }}
               >
                 {link.label}
+                {/* Active underline bar */}
+                <span
+                  className="absolute -bottom-1.5 left-0 w-full h-[2px] bg-[#0B6AA8] transition-transform duration-300 origin-left"
+                  style={{ transform: active ? 'scaleX(1)' : 'scaleX(0)' }}
+                />
               </Link>
             );
           })}
         </nav>
 
-        {/* Right: Direct Phone + One Black Pill CTA */}
-        <div className="hidden lg:flex items-center gap-6">
-          <a
-            href={`tel:${BUSINESS_INFO.phone.raw}`}
-            className="text-[12px] font-medium tracking-wider text-[#111111] hover:text-primary transition-colors flex items-center gap-1.5"
-          >
-            <Phone className="w-3.5 h-3.5 text-primary" />
-            <span>98211 15699</span>
-          </a>
+        {/* Right: Desktop Social Icons (Facebook + Instagram) + Free Trial CTA */}
+        <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+          <div className="hidden xl:flex items-center gap-2.5">
+            {socialLinks.map(({ Icon, href, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                className="w-9 h-9 rounded-full bg-[#0B6AA8] flex items-center justify-center text-white hover:bg-[#095A90] hover:scale-105 transition-all duration-300 shadow-xs"
+              >
+                <Icon />
+              </a>
+            ))}
+          </div>
 
           <button
             onClick={() => onOpenModal('MS-CIT')}
-            className="rounded-full bg-[#111111] px-5 py-2.5 text-[11px] font-bold uppercase tracking-[0.15em] text-[#EFEDE8] hover:bg-primary btn-swiss cursor-pointer"
+            id="nav-free-trial-btn"
+            className="hidden sm:inline-flex rounded-full bg-[#0B6AA8] px-5 py-2 text-[14px] font-semibold text-white hover:bg-[#095A90] hover:shadow-md transition-all duration-300 cursor-pointer whitespace-nowrap"
           >
-            FREE TRIAL
-          </button>
-        </div>
-
-        {/* Mobile Actions (< 1024px) */}
-        <div className="flex md:hidden items-center gap-2 sm:gap-3">
-          <button
-            onClick={() => onOpenModal('MS-CIT')}
-            className="rounded-full bg-[#111111] px-3 sm:px-3.5 py-1.5 text-[10px] font-bold uppercase tracking-wider text-[#EFEDE8] hover:bg-primary btn-swiss shrink-0"
-          >
-            FREE TRIAL
+            Free Trial
           </button>
 
+          {/* Mobile Hamburger Button */}
           <button
             onClick={toggleMobileMenu}
-            className="relative p-1.5 text-[#111111] w-9 h-9 flex items-center justify-center cursor-pointer shrink-0"
+            className="lg:hidden p-1.5 text-slate-700 hover:text-[#0B6AA8] rounded-xl cursor-pointer transition-colors relative w-9 h-9 flex items-center justify-center shrink-0"
             aria-label="Toggle navigation menu"
+            aria-expanded={mobileMenuOpen}
           >
-            <span
-              ref={iconMenuRef}
-              className="absolute inset-0 flex items-center justify-center pointer-events-none"
-            >
-              <Menu className="w-5 h-5" />
+            <span ref={iconMenuRef} className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <Menu className="w-6 h-6" />
             </span>
-            <span
-              ref={iconCloseRef}
-              className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0"
-            >
-              <X className="w-5 h-5" />
+            <span ref={iconCloseRef} className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-0">
+              <X className="w-6 h-6" />
             </span>
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
-      {shouldRender && (
+      {/* Mobile Drawer (Absolute overlay — zero layout shift on closed navbar) */}
+      {mobileMenuOpen && (
         <div
-          ref={panelRef}
-          className="md:hidden bg-[#EFEDE8] border-b border-[#111111]/15 px-6 py-6 space-y-4 overflow-hidden"
-          style={{ clipPath: 'inset(0% 0% 100% 0%)' }}
+          className="lg:hidden absolute top-full left-0 right-0 w-full bg-white border-t border-slate-100 px-6 pt-4 pb-8 shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 duration-200"
         >
-          {navLinks.map((link, idx) => {
-            const isActive = location.pathname === link.to;
-            return (
-              <div
-                key={link.label}
-                ref={(el) => (linksRef.current[idx] = el)}
-              >
-                <Link
-                  to={link.to}
-                  onClick={closeMobileMenu}
-                  className={`block text-sm font-bold tracking-[0.18em] uppercase transition-colors ${
-                    isActive ? 'text-primary' : 'text-[#111111] hover:text-primary'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              </div>
-            );
-          })}
+          <nav className="space-y-1" aria-label="Mobile navigation">
+            {navLinks.map((link) => {
+              const active = isLinkActive(link);
 
-          <div
-            ref={footerRowRef}
-            className="pt-4 border-t border-[#111111]/15 flex items-center justify-between"
-          >
-            <a
-              href={`tel:${BUSINESS_INFO.phone.raw}`}
-              className="text-xs font-semibold text-[#111111] flex items-center gap-2"
+              return (
+                <div key={link.label}>
+                  <Link
+                    to={link.to}
+                    onClick={closeMobileMenu}
+                    className={`block text-[16px] font-semibold py-3 border-b border-slate-100 transition-colors ${
+                      active ? 'text-[#0B6AA8]' : 'text-slate-800 hover:text-[#0B6AA8]'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                </div>
+              );
+            })}
+          </nav>
+
+          <div className="mt-6 pt-2 flex flex-col gap-4">
+            <div className="flex items-center justify-between">
+              <span className="text-[13px] text-slate-400 font-semibold uppercase tracking-wider">
+                Follow Us:
+              </span>
+              <div className="flex items-center gap-3">
+                {socialLinks.map(({ Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className="w-10 h-10 rounded-full bg-[#0B6AA8] flex items-center justify-center text-white hover:bg-[#095A90]"
+                  >
+                    <Icon />
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <button
+              onClick={() => {
+                onOpenModal('MS-CIT');
+                closeMobileMenu();
+              }}
+              className="w-full rounded-full bg-[#0B6AA8] py-3.5 text-[15px] font-bold text-white hover:bg-[#095A90] transition-all shadow-md cursor-pointer"
             >
-              <Phone className="w-3.5 h-3.5 text-primary" />
-              <span>98211 15699</span>
-            </a>
+              Book One Day Free Trial
+            </button>
           </div>
         </div>
       )}

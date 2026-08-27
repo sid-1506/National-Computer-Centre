@@ -1,21 +1,17 @@
 import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useSmoothScroll } from './hooks/useSmoothScroll';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
 import ScrollToTop from './components/ScrollToTop';
+import ScrollToTopFAB from './components/ScrollToTopFAB';
 
 import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import AllCourses from './components/AllCourses';
 import CourseDetail from './components/CourseDetail';
 
 export default function App() {
-  // Lenis smooth scroll synced with GSAP
-  useSmoothScroll();
-
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState('MS-CIT');
 
@@ -30,9 +26,11 @@ export default function App() {
 
   return (
     <BrowserRouter>
+      {/* Route change scroll-to-top handler */}
       <ScrollToTop />
-      <div className="relative min-h-screen bg-[#EFEDE8] text-[#111111] font-sans antialiased selection:bg-primary selection:text-white flex flex-col justify-between">
-        {/* 00. Fixed Swiss Minimal Nav with Responsive Logo Lockup */}
+      
+      <div className="relative min-h-screen bg-white text-[#0F172A] font-sans antialiased flex flex-col justify-between overflow-x-hidden">
+        {/* Sticky Navbar */}
         <Navbar onOpenModal={handleOpenModal} />
 
         {/* Dynamic Route Content */}
@@ -41,13 +39,15 @@ export default function App() {
             <Route path="/" element={<HomePage onOpenModal={handleOpenModal} />} />
             <Route path="/courses" element={<AllCourses onOpenModal={handleOpenModal} />} />
             <Route path="/courses/:slug" element={<CourseDetail onOpenModal={handleOpenModal} />} />
-            <Route path="/about" element={<AboutPage onOpenModal={handleOpenModal} />} />
             <Route path="/contact" element={<ContactPage onOpenModal={handleOpenModal} />} />
           </Routes>
         </div>
 
-        {/* 11. Footer */}
+        {/* Footer */}
         <Footer onOpenModal={handleOpenModal} />
+
+        {/* Scroll-to-Top Floating Progress FAB */}
+        <ScrollToTopFAB />
 
         {/* Quick Booking Modal */}
         <EnquiryModal
