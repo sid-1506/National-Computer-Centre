@@ -98,6 +98,7 @@ export default function Navbar({ onOpenModal }) {
   const navLinks = [
     { label: 'Home', to: '/', key: 'home' },
     { label: 'Courses', to: '/courses', key: 'courses' },
+    { label: 'Online Courses', to: '/online-courses', key: 'online-courses' },
     { label: 'Reviews', to: '/#testimonials', key: 'reviews' },
     { label: 'Contact', to: '/contact', key: 'contact' },
   ];
@@ -114,6 +115,9 @@ export default function Navbar({ onOpenModal }) {
     }
     if (link.key === 'home') {
       return location.pathname === '/' && !inTestimonialsView;
+    }
+    if (link.key === 'online-courses') {
+      return location.pathname.startsWith('/online-courses');
     }
     if (link.key === 'courses') {
       return location.pathname.startsWith('/courses');

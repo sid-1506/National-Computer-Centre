@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useSearchParams, useLocation } from 'react-router-dom';
 import { Clock, Layers, Monitor, Award, Phone, MessageSquare, CalendarCheck, Star } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -13,8 +13,15 @@ if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-export default function CourseDetail({ onOpenModal }) {
+export default function CourseDetail({ onOpenModal, isOnline: isOnlineProp = false }) {
   const { slug } = useParams();
+  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const isOnline =
+    isOnlineProp ||
+    searchParams.get('mode') === 'online' ||
+    location.pathname.startsWith('/online-courses');
+
   const mainSecRef = useRef(null);
   const overviewSecRef = useRef(null);
   const relatedSecRef = useRef(null);
@@ -31,7 +38,9 @@ export default function CourseDetail({ onOpenModal }) {
   // SEO & JSON-LD
   useEffect(() => {
     if (!course) return;
-    document.title = `${course.title} in Mulund West | National Computer Centre`;
+    document.title = isOnline
+      ? `${course.title} Online Course | National Computer Centre`
+      : `${course.title} in Mulund West | National Computer Centre`;
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) { metaDesc = document.createElement('meta'); metaDesc.name = 'description'; document.head.appendChild(metaDesc); }
     metaDesc.content = course.highlight;
@@ -69,7 +78,7 @@ export default function CourseDetail({ onOpenModal }) {
           <span className="eyebrow-chip mb-4 inline-block">404 — Course Not Found</span>
           <h1 className="font-bold text-foreground mb-4" style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)' }}>This course does not exist</h1>
           <p className="text-muted-foreground mb-8 leading-relaxed">The course you are looking for may have been updated or moved. Please explore our complete catalogue.</p>
-          <Link to="/courses" className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-[14px] font-semibold text-white hover:bg-[#095A90] btn-swiss">
+          <Link to={isOnline ? "/online-courses" : "/courses"} className="inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-[14px] font-semibold text-white hover:bg-[#095A90] btn-swiss">
             View All 56 Courses
           </Link>
         </div>
@@ -85,12 +94,14 @@ export default function CourseDetail({ onOpenModal }) {
     relatedCourses = [...relatedCourses, ...otherCourses.slice(0, 3 - relatedCourses.length)];
   }
 
-  const whatsappMessage = encodeURIComponent(`Hi National Computer Centre, I would like details about the ${course.title} course.`);
+  const whatsappMessage = isOnline
+    ? encodeURIComponent(`Hi National Computer Centre, I would like details about the ${course.title} online course.`)
+    : encodeURIComponent(`Hi National Computer Centre, I would like details about the ${course.title} course.`);
 
   const factChips = [
     { Icon: Clock, label: 'Duration', value: course.duration },
     { Icon: Layers, label: 'Category', value: category?.name || course.categorySlug },
-    { Icon: Monitor, label: 'Mode', value: 'Offline · 1:1 PC' },
+    { Icon: Monitor, label: 'Mode', value: isOnline ? 'Online · Live Interactive' : 'Offline · 1:1 PC' },
     { Icon: Award, label: 'Certificate', value: 'Govt Recognised' },
   ];
 
@@ -103,9 +114,14 @@ export default function CourseDetail({ onOpenModal }) {
           <nav className="flex flex-wrap items-center gap-2 text-[13px] font-medium text-muted-foreground">
             <Link to="/" className="hover:text-primary transition-colors">Home</Link>
             <span>/</span>
-            <Link to="/courses" className="hover:text-primary transition-colors">Courses</Link>
+            <Link to={isOnline ? "/online-courses" : "/courses"} className="hover:text-primary transition-colors">
+              {isOnline ? "Online Courses" : "Courses"}
+            </Link>
             <span>/</span>
-            <Link to={`/courses?category=${course.categorySlug}`} className="hover:text-primary transition-colors text-foreground font-semibold">
+            <Link
+              to={isOnline ? `/online-courses?category=${course.categorySlug}` : `/courses?category=${course.categorySlug}`}
+              className="hover:text-primary transition-colors text-foreground font-semibold"
+            >
               {category?.name || course.categorySlug}
             </Link>
           </nav>
@@ -254,15 +270,21 @@ export default function CourseDetail({ onOpenModal }) {
             <h2 className="reveal-heading font-bold text-foreground text-[22px]">
               Related <span className="text-primary">Courses</span>
             </h2>
-            <Link to={`/courses?category=${course.categorySlug}`}
-              className="reveal-body text-[13px] font-semibold text-primary hover:text-accent underline underline-offset-4">
+            <Link
+              to={isOnline ? `/online-courses?category=${course.categorySlug}` : `/courses?category=${course.categorySlug}`}
+              className="reveal-body text-[13px] font-semibold text-primary hover:text-accent underline underline-offset-4"
+            >
               View all in {category?.name || course.categorySlug}
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedCourses.map((rel) => (
               <div key={rel.slug} className="reveal-item">
-                <CourseCard course={rel} categoryName={getCategoryName(rel.categorySlug)} />
+                <CourseCard
+                  course={rel}
+                  categoryName={getCategoryName(rel.categorySlug)}
+                  isOnline={isOnline}
+                />
               </div>
             ))}
           </div>

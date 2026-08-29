@@ -9,6 +9,7 @@ import ScrollToTopFAB from './components/ScrollToTopFAB';
 import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
 import AllCourses from './components/AllCourses';
+import OnlineCourses from './components/OnlineCourses';
 import CourseDetail from './components/CourseDetail';
 
 export default function App() {
@@ -39,6 +40,8 @@ export default function App() {
             <Route path="/" element={<HomePage onOpenModal={handleOpenModal} />} />
             <Route path="/courses" element={<AllCourses onOpenModal={handleOpenModal} />} />
             <Route path="/courses/:slug" element={<CourseDetail onOpenModal={handleOpenModal} />} />
+            <Route path="/online-courses" element={<OnlineCourses onOpenModal={handleOpenModal} />} />
+            <Route path="/online-courses/:slug" element={<CourseDetail onOpenModal={handleOpenModal} isOnline={true} />} />
             <Route path="/contact" element={<ContactPage onOpenModal={handleOpenModal} />} />
           </Routes>
         </div>

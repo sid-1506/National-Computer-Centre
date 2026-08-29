@@ -7,10 +7,11 @@ export default function CourseCard({
   categoryName = '',
   showRating = true,
   reviewCount = '3',
+  isOnline = false,
 }) {
   return (
     <Link
-      to={`/courses/${course.slug}`}
+      to={isOnline ? `/courses/${course.slug}?mode=online` : `/courses/${course.slug}`}
       className="course-card-hover group flex flex-col bg-white rounded-2xl border border-[#F1F5F9] overflow-hidden cursor-pointer
         shadow-[0_4px_20px_rgba(0,0,0,0.03)]
         h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B6AA8] focus-visible:ring-offset-2"
