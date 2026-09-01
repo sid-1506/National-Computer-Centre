@@ -97,7 +97,7 @@ export default function Navbar({ onOpenModal }) {
 
   const navLinks = [
     { label: 'Home', to: '/', key: 'home' },
-    { label: 'Courses', to: '/courses', key: 'courses' },
+    { label: 'All Courses', to: '/courses', key: 'courses' },
     { label: 'Online Courses', to: '/online-courses', key: 'online-courses' },
     { label: 'Reviews', to: '/#testimonials', key: 'reviews' },
     { label: 'Contact', to: '/contact', key: 'contact' },
@@ -151,7 +151,7 @@ export default function Navbar({ onOpenModal }) {
               className="h-9 sm:h-10 lg:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02] shrink-0"
               loading="eager"
             />
-            <span className="font-bold text-[#111827] text-[14px] xs:text-[15px] sm:text-[17px] lg:text-[19px] xl:text-[20px] tracking-tight leading-none group-hover:text-[#0B6AA8] transition-colors whitespace-nowrap">
+            <span className="uppercase font-bold text-primary text-[14px] xs:text-[15px] sm:text-[17px] lg:text-[19px] xl:text-[20px] tracking-tight leading-none group-hover:text-primary-hover transition-colors whitespace-nowrap">
               National Computer Centre
             </span>
           </Link>
@@ -180,8 +180,16 @@ export default function Navbar({ onOpenModal }) {
           })}
         </nav>
 
-        {/* Right: Desktop Social Icons (Facebook + Instagram) + Free Trial CTA */}
+        {/* Right: Desktop Free Trial CTA + Social Icons (Facebook + Instagram) */}
         <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+          <button
+            onClick={() => onOpenModal('MS-CIT')}
+            id="nav-free-trial-btn"
+            className="intro-free-trial hidden sm:inline-flex rounded-full bg-[#0B6AA8] px-5 py-2 text-[14px] font-semibold text-white hover:bg-[#095A90] hover:shadow-md transition-all duration-300 cursor-pointer whitespace-nowrap"
+          >
+            Free Trial
+          </button>
+
           <div className="hidden xl:flex items-center gap-2.5">
             {socialLinks.map(({ Icon, href, label }) => (
               <a
@@ -196,14 +204,6 @@ export default function Navbar({ onOpenModal }) {
               </a>
             ))}
           </div>
-
-          <button
-            onClick={() => onOpenModal('MS-CIT')}
-            id="nav-free-trial-btn"
-            className="intro-free-trial hidden sm:inline-flex rounded-full bg-[#0B6AA8] px-5 py-2 text-[14px] font-semibold text-white hover:bg-[#095A90] hover:shadow-md transition-all duration-300 cursor-pointer whitespace-nowrap"
-          >
-            Free Trial
-          </button>
 
           {/* Mobile Hamburger Button */}
           <button
@@ -248,6 +248,16 @@ export default function Navbar({ onOpenModal }) {
           </nav>
 
           <div className="mt-6 pt-2 flex flex-col gap-4">
+            <button
+              onClick={() => {
+                onOpenModal('MS-CIT');
+                closeMobileMenu();
+              }}
+              className="w-full rounded-full bg-[#0B6AA8] py-3.5 text-[15px] font-bold text-white hover:bg-[#095A90] transition-all shadow-md cursor-pointer"
+            >
+              Book One Day Free Trial
+            </button>
+
             <div className="flex items-center justify-between">
               <span className="text-[13px] text-slate-400 font-semibold uppercase tracking-wider">
                 Follow Us:
@@ -267,16 +277,6 @@ export default function Navbar({ onOpenModal }) {
                 ))}
               </div>
             </div>
-
-            <button
-              onClick={() => {
-                onOpenModal('MS-CIT');
-                closeMobileMenu();
-              }}
-              className="w-full rounded-full bg-[#0B6AA8] py-3.5 text-[15px] font-bold text-white hover:bg-[#095A90] transition-all shadow-md cursor-pointer"
-            >
-              Book One Day Free Trial
-            </button>
           </div>
         </div>
       )}
