@@ -1,1035 +1,1759 @@
 export const categories = [
-  { slug: "office-basics",        name: "Office & Basics" },
-  { slug: "accounting",           name: "Accounting & Data" },
-  { slug: "programming",          name: "Software & Programming" },
-  { slug: "design",               name: "Design & DTP" },
-  { slug: "animation",            name: "Animation & Multimedia" },
-  { slug: "digital-marketing",    name: "Digital Marketing" },
-  { slug: "hardware-networking",  name: "Hardware & Networking" },
-  { slug: "personality-english",  name: "Personality & English" },
-  { slug: "school-special",       name: "School & Special" },
+  { slug: "digital-marketing",    name: "Digital & Marketing" },
+  { slug: "data-analytics",       name: "Data & Analytics" },
+  { slug: "programming",          name: "Programming" },
+  { slug: "design-multimedia",    name: "Design & Multimedia" },
+  { slug: "cad-3d",               name: "CAD & 3D" },
+  { slug: "accounting-office",    name: "Accounting & Office" },
+  { slug: "typing",               name: "Typing" },
+  { slug: "it-hardware",          name: "IT & Hardware" },
+  { slug: "personal-development",  name: "Personal Development" },
+  { slug: "academic",             name: "Academic" },
 ];
 
 export const courses = [
   {
-    slug: "diploma-in-computer-operating",
-    title: "Diploma in Computer Operating",
-    categorySlug: "office-basics",
-    duration: "2 Months",
-    featured: false,
-    highlight: "Fundamental computer skills, Windows navigation, MS Office suite, and safe Internet communication.",
-    description: "The Diploma in Computer Operating at National Computer Centre builds solid computing fundamentals for beginners and professionals. Students gain 100% practical hands-on experience in Windows operating systems, Microsoft Word, Excel, and PowerPoint, along with essential internet emailing protocols. This government-recognised diploma prepares you for modern administrative and office desk roles.",
-    syllabus: [
-      "Computer Fundamentals & Hardware Overview",
-      "Windows OS & File Management",
-      "MS Word: Documentation & Formatting",
-      "MS Excel: Worksheets, Formulas & Basic Charts",
-      "MS PowerPoint: Slide Presentations",
-      "Internet, Email Etiquette & Online Safety"
-    ],
-    icon: "Monitor"
-  },
-  {
-    slug: "certificate-course-in-ms-cit",
-    title: "Certificate Course in MS-CIT",
-    categorySlug: "office-basics",
-    duration: "2 Months",
+    slug: "certificate-course-in-advanced-digital-marketing",
+    name: "Certificate Course in Advanced Digital Marketing",
+    title: "Certificate Course in Advanced Digital Marketing",
+    category: "Digital & Marketing",
+    categorySlug: "digital-marketing",
+    duration: "3 Months",
+    level: "Beginner to Pro",
+    image: "certificate-course-in-advance-digital-marketing",
     featured: true,
-    highlight: "Maharashtra State Government recognised IT literacy course essential for jobs and government exams.",
-    description: "MS-CIT (Maharashtra State Certificate in Information Technology) is the gold standard IT literacy certification course recognized across state departments, semi-government agencies, and corporate offices. At NCC Mulund, we provide 1:1 dedicated computer terminal access with official exam mock simulations, covering modern office software, collaborative web tools, and cyber safety.",
+    highlight: "Master SEO, Google Ads, Meta Ads, social media strategy, email campaigns, and live analytics.",
+    description: "Comprehensive digital marketing certification covering end-to-end online branding, search engine optimization, pay-per-click advertising, social media growth hacks, content marketing, and real-time Google Analytics tracking.",
     syllabus: [
-      "IT Literacy Fundamentals",
-      "Windows Navigation & File Operations",
-      "MS Word: Advanced Documents & Mail Merge",
-      "MS Excel: Data Calculation & Management",
-      "MS PowerPoint: Animated Presentations",
-      "MS Outlook: Scheduling & Email",
-      "Internet Services, Banking & Citizen Portals",
-      "Cyber Security & Digital Etiquette"
-    ],
-    icon: "Award"
+      {
+        module: "Module 1: Digital Marketing Fundamentals",
+        topics: [
+          "Introduction to Digital Marketing",
+          "Traditional vs Digital Marketing",
+          "Digital Marketing Channels",
+          "Customer Journey & Marketing Funnel"
+        ]
+      },
+      {
+        module: "Module 2: SEO",
+        topics: [
+          "Keyword Research",
+          "On-Page SEO",
+          "Off-Page SEO",
+          "Technical SEO Basics",
+          "Google Search Console"
+        ]
+      },
+      {
+        module: "Module 3: Social Media Marketing",
+        topics: [
+          "Instagram Marketing",
+          "Facebook Marketing",
+          "LinkedIn Marketing",
+          "Content Strategy",
+          "Social Media Analytics"
+        ]
+      },
+      {
+        module: "Module 4: Google Ads & Paid Advertising",
+        topics: [
+          "Google Ads Fundamentals",
+          "Search Campaigns",
+          "Display Advertising",
+          "Remarketing",
+          "Campaign Optimization"
+        ]
+      },
+      {
+        module: "Module 5: Email & Content Marketing",
+        topics: [
+          "Email Campaign Creation",
+          "Content Strategy",
+          "Copywriting Basics",
+          "Lead Generation"
+        ]
+      },
+      {
+        module: "Module 6: Analytics & Final Project",
+        topics: [
+          "Google Analytics Basics",
+          "Performance Tracking",
+          "ROI Measurement",
+          "Live Digital Marketing Project"
+        ]
+      }
+    ]
   },
   {
-    slug: "diploma-in-computer-management",
-    title: "Diploma in Computer Management",
-    categorySlug: "office-basics",
-    duration: "12 Months",
-    featured: false,
-    highlight: "Comprehensive 1-year career diploma covering Office, Tally ERP, Graphic Design, Web basics & Hardware.",
-    description: "A flagship 1-year integrated professional program designed to turn students into well-rounded computer administrators. The syllabus integrates advanced MS Office, corporate Tally ERP 9, CorelDraw and Photoshop creative tools, HTML web authoring, and essential hardware and networking diagnostics. Ideal for career starters looking for versatile office management skills.",
-    syllabus: [
-      "Computer Fundamentals & Operating Systems",
-      "Advanced MS Office (Word, Excel, PowerPoint)",
-      "Internet & Professional E-mail Workflow",
-      "Tally & Advanced Tally ERP 9 with GST",
-      "Hardware Fundamentals & Assembly",
-      "Networking Concepts & File Sharing",
-      "Graphic Design: CorelDraw & Photoshop",
-      "Web Designing Fundamentals (HTML, CSS, Animator)",
-      "Final Practical Capstone Project"
-    ],
-    icon: "Layers"
-  },
-  {
-    slug: "windows",
-    title: "Windows",
-    categorySlug: "office-basics",
-    duration: "Short Course",
-    featured: false,
-    highlight: "Fast-track module on Windows OS fundamentals, storage management, settings, and utilities.",
-    description: "Master the essentials of the Microsoft Windows environment. Learn filesystem organization, system settings customization, security updates, peripheral device management, and everyday operating shortcuts for fast productivity.",
-    syllabus: [
-      "Windows GUI & Taskbar Customization",
-      "File Explorer, Folders & Storage Management",
-      "Control Panel & System Settings",
-      "Task Manager, Utilities & Shortcut Keys"
-    ],
-    icon: "Monitor"
-  },
-  {
-    slug: "ms-word",
-    title: "Ms Word",
-    categorySlug: "office-basics",
-    duration: "Short Course",
-    featured: false,
-    highlight: "Professional document creation, formatting, tables, page layouts, and automated mail merge.",
-    description: "Learn to design executive letters, academic reports, and legal documentation. This course focuses on paragraph styling, table formatting, track changes, headers & footers, and large-scale automated mail merge workflows.",
-    syllabus: [
-      "Document Formatting & Typography",
-      "Tables, Headers, Footers & Page Breaks",
-      "Graphics, SmartArt & Watermarks",
-      "Mail Merge for Mass Communication",
-      "Reviewing, Proofing & Exporting to PDF"
-    ],
-    icon: "FileText"
-  },
-  {
-    slug: "ms-excel",
-    title: "Ms Excel",
-    categorySlug: "office-basics",
-    duration: "Short Course",
-    featured: false,
-    highlight: "Essential spreadsheet calculations, mathematical formulas, data sorting, and chart visuals.",
-    description: "Build a strong foundation in spreadsheet calculations and data handling. Master basic mathematical and statistical formulas, conditional formatting, sort & filter tools, and dynamic visual charts.",
-    syllabus: [
-      "Spreadsheet Navigation & Cell Referencing",
-      "Essential Formulas (SUM, AVERAGE, COUNT, IF)",
-      "Data Sorting, Filtering & Formatting",
-      "Chart Creation & Print Page Setup"
-    ],
-    icon: "FileSpreadsheet"
-  },
-  {
-    slug: "ms-power-point",
-    title: "Ms Power Point",
-    categorySlug: "office-basics",
-    duration: "Short Course",
-    featured: false,
-    highlight: "High-impact presentation decks with transitions, slide masters, audio-visuals, and animations.",
-    description: "Create engaging business pitches, educational slide decks, and seminar presentations. Learn slide master layouts, multimedia audio/video integration, motion animations, and presenter tools.",
-    syllabus: [
-      "Slide Master Layouts & Theme Styling",
-      "Typography, Icons & Infographic Design",
-      "Custom Animations & Smooth Transitions",
-      "Multimedia Integration & Slideshow Presentation"
-    ],
-    icon: "Presentation"
-  },
-  {
-    slug: "ms-access",
-    title: "Ms Access",
-    categorySlug: "office-basics",
-    duration: "Short Course",
-    featured: false,
-    highlight: "Relational database management, table creation, query designing, user forms, and report generation.",
-    description: "Understand desktop relational database architecture. Learn how to construct normalized tables, configure primary keys, query data across related entities, design interactive forms, and build print-ready executive reports.",
-    syllabus: [
-      "Database Fundamentals & Table Architecture",
-      "Relationships & Referential Integrity",
-      "Select, Update & Parameter Queries",
-      "Form Creation & Data Entry Interfaces",
-      "Formatted Report Generation"
-    ],
-    icon: "Table"
-  },
-  {
-    slug: "internet-and-e-mail",
-    title: "Internet & E-Mail",
-    categorySlug: "office-basics",
-    duration: "Short Course",
-    featured: false,
-    highlight: "Effective web research, secure digital browsing, email management, attachments, and cloud storage.",
-    description: "Gain confidence in everyday web utilities, modern cloud tools, secure banking protocols, and corporate email systems. Learn search operators, attachment management, digital signatures, and phishing awareness.",
-    syllabus: [
-      "Effective Search Engine Techniques",
-      "Corporate Email Services & Invoicing Attachments",
-      "Google Drive & Cloud Storage Sync",
-      "Online Banking Security & Two-Factor Authentication"
-    ],
-    icon: "Globe"
-  },
-  {
-    slug: "certificate-course-in-tally-erp-9",
-    title: "Certificate Course in Tally.ERP 9",
-    categorySlug: "accounting",
-    duration: "2 Months",
-    featured: false,
-    highlight: "Practical computerized bookkeeping, voucher entries, inventory management, and complete GST compliance.",
-    description: "Master India's most widely utilized accounting software through real-world company bookkeeping. This course covers everything from ledger configuration and multi-currency voucher entries to inventory stock tracking, bank reconciliations, and comprehensive GST/TDS returns calculation.",
-    syllabus: [
-      "Accounting Fundamentals & Company Creation",
-      "Voucher Entries & Cost Centres",
-      "Bill Wise Details & Voucher Numbering",
-      "Budgets & Bank Reconciliation (BRS)",
-      "Inventory Stock Groups & Units of Measure",
-      "Interest Calculation & Split Company Data",
-      "Excise Tax, Service Tax & TCS",
-      "Price Leveling & Payroll Processing",
-      "GST Setup: Party GSTN, Rate Setup, Tax Liability on Advance, GST in POS, TDS with GST"
-    ],
-    icon: "Calculator"
-  },
-  {
-    slug: "certificate-course-in-advanced-tally-erp-9",
-    title: "Certificate Course in Advanced Tally.ERP 9",
-    categorySlug: "accounting",
-    duration: "3 Months",
-    featured: false,
-    highlight: "Advanced financial statements, audit features, multi-location inventory, order processing, and tax finalization.",
-    description: "Step up to an expert accountant level. Dive into Tally Audit capabilities, purchase/sales order lifecycles, debit/credit note workflows, multi-tiered security levels, reorder level management, and end-of-year financial finalizations for corporate balance sheets.",
-    syllabus: [
-      "Advanced Invoicing & Tally Audit Features",
-      "Credit & Debit Notes / Delivery & Receipt Notes",
-      "Sales & Purchase Order Management",
-      "Financial Statements: P&L, Balance Sheet, Ratio Analysis",
-      "Inventory Books & Stock Registers",
-      "Data Migration, Backup & Security Tiers",
-      "Reorder Level & Physical Stock Adjustments",
-      "Year-End Finalization & Full GST Module"
-    ],
-    icon: "Calculator"
-  },
-  {
-    slug: "certificate-course-in-adv-tally-erp-9-with-prime",
-    title: "Certificate Course in Adv. Tally.ERP 9 with Prime",
-    categorySlug: "accounting",
-    duration: "4 Months",
+    slug: "certificate-course-in-data-analytics",
+    name: "Certificate Course in Data Analytics",
+    title: "Certificate Course in Data Analytics",
+    category: "Data & Analytics",
+    categorySlug: "data-analytics",
+    duration: "3-4 Months",
+    level: "Intermediate",
+    image: "certificate-course-in-data-science",
     featured: true,
-    highlight: "Industry-leading dual certification covering Tally.ERP 9 and the modern Tally Prime interface with e-Invoicing.",
-    description: "Equip yourself with the latest accounting platform trusted by over 2 million businesses. Learn both classic Tally.ERP 9 and modern Tally Prime, covering e-Invoicing, e-Way bills, automated GST returns, advanced multi-company consolidation, and payroll management with real balance sheets.",
+    highlight: "Transform raw data into actionable business intelligence using Advanced Excel, SQL, and Power BI dashboards.",
+    description: "Master the complete modern data analytics workflow. Learn data extraction using SQL queries, advanced data cleaning and pivot calculations in Excel, and interactive dashboard storytelling in Power BI and Tableau.",
     syllabus: [
-      "Tally Prime Navigation & GoTo Feature Mastery",
-      "Dual Architecture: ERP 9 & Prime Comparison",
-      "Advanced GST, E-Way Bill & E-Invoicing Generation",
-      "Multi-Godown Inventory & Stock Valuation",
-      "Payroll Processing: PF, ESIC & Professional Tax",
-      "Bank Reconciliation Automation",
-      "Audit Trails, Security Roles & Remote Access",
-      "Balance Sheet Finalization on Live Company Datasets"
-    ],
-    icon: "Calculator"
+      {
+        module: "Module 1: Introduction to Data Analytics",
+        topics: [
+          "Data Analytics Concepts",
+          "Types of Data",
+          "Data Collection",
+          "Data-Driven Decision Making"
+        ]
+      },
+      {
+        module: "Module 2: Microsoft Excel",
+        topics: [
+          "Excel Fundamentals",
+          "Formulas & Functions",
+          "VLOOKUP/XLOOKUP",
+          "Pivot Tables",
+          "Charts & Dashboards"
+        ]
+      },
+      {
+        module: "Module 3: SQL for Data Analysis",
+        topics: [
+          "Database Fundamentals",
+          "SELECT Queries",
+          "Filtering & Sorting",
+          "Joins",
+          "Aggregate Functions"
+        ]
+      },
+      {
+        module: "Module 4: Data Visualization",
+        topics: [
+          "Charts & Reports",
+          "Dashboard Design",
+          "Data Storytelling"
+        ]
+      },
+      {
+        module: "Module 5: Power BI/Tableau Basics",
+        topics: [
+          "Data Import",
+          "Data Cleaning",
+          "Dashboard Creation",
+          "Interactive Reports"
+        ]
+      },
+      {
+        module: "Module 6: Final Project",
+        topics: [
+          "Real Business Dataset Analysis",
+          "Dashboard Development",
+          "Insights & Presentation"
+        ]
+      }
+    ]
   },
   {
-    slug: "certificate-course-in-advance-excel",
-    title: "Certificate Course in Advance Excel",
-    categorySlug: "accounting",
-    duration: "1 Month",
+    slug: "certificate-course-in-cyber-security",
+    name: "Certificate Course in Cyber Security",
+    title: "Certificate Course in Cyber Security",
+    category: "IT & Hardware",
+    categorySlug: "it-hardware",
+    duration: "3 Months",
+    level: "Intermediate",
+    image: "adv-diploma-in-network-engineering",
+    featured: false,
+    highlight: "Understand cyber threats, network defense, ethical hacking basics, and web security best practices.",
+    description: "Learn fundamental cyber security concepts, threat intelligence, firewall configurations, vulnerability assessment, penetration testing basics, and Indian cyber laws to protect digital systems.",
+    syllabus: [
+      {
+        module: "Module 1: Cyber Security Fundamentals",
+        topics: [
+          "Introduction to Cyber Security",
+          "Types of Cyber Threats",
+          "Cyber Attacks",
+          "Security Principles"
+        ]
+      },
+      {
+        module: "Module 2: Network Security",
+        topics: [
+          "Networking Basics",
+          "Firewalls",
+          "VPN",
+          "Network Attacks"
+        ]
+      },
+      {
+        module: "Module 3: Ethical Hacking Fundamentals",
+        topics: [
+          "Reconnaissance",
+          "Vulnerability Assessment",
+          "Penetration Testing Basics"
+        ]
+      },
+      {
+        module: "Module 4: Web Security",
+        topics: [
+          "Common Web Vulnerabilities",
+          "Password Security",
+          "Authentication"
+        ]
+      },
+      {
+        module: "Module 5: Cyber Laws & Best Practices",
+        topics: [
+          "Cyber Laws",
+          "Data Privacy",
+          "Security Policies",
+          "Incident Response"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-ai-machine-learning",
+    name: "Certificate Course in AI & Machine Learning",
+    title: "Certificate Course in AI & Machine Learning",
+    category: "Data & Analytics",
+    categorySlug: "data-analytics",
+    duration: "3-4 Months",
+    level: "Advanced",
+    image: "certificate-course-in-ai-ml",
     featured: true,
-    highlight: "High-demand corporate Excel formulas: XLOOKUP, VLOOKUP, INDEX-MATCH, Pivot Tables, and Data Validation.",
-    description: "Designed for finance, operations, and business analysts. Master advanced logical, text, and date formulas, nested lookups, deep data validation selectors, dynamic Pivot Tables, What-If analysis, and automated calculation models that speed up daily corporate reporting.",
+    highlight: "Build intelligent predictive models using Python, ML algorithms, neural concepts, and generative AI tools.",
+    description: "Hands-on training in Artificial Intelligence and Machine Learning. Learn supervised and unsupervised algorithms, regression, decision trees, prompt engineering, and deploy practical AI solutions.",
     syllabus: [
-      "Advanced Logical Formulae (Nested IF, IFS, AND, OR)",
-      "Text, Date & Mathematical Functions",
-      "Mastering VLOOKUP, HLOOKUP & INDEX-MATCH",
-      "Data Validation & Dropdown Selector Building",
-      "AutoFilters, Advanced Filters & Slicers",
-      "Pivot Tables & Pivot Charts with Calculated Fields",
-      "Goal Seek, Data Tables & Solver",
-      "Named Ranges, Dynamic Arrays & Practical Assignments"
-    ],
-    icon: "FileSpreadsheet"
+      {
+        module: "Module 1: Introduction to Artificial Intelligence",
+        topics: [
+          "AI Concepts",
+          "Applications of AI",
+          "Types of AI"
+        ]
+      },
+      {
+        module: "Module 2: Python for AI",
+        topics: [
+          "Python Fundamentals",
+          "Variables & Data Types",
+          "Functions",
+          "Libraries"
+        ]
+      },
+      {
+        module: "Module 3: Machine Learning Fundamentals",
+        topics: [
+          "Supervised Learning",
+          "Unsupervised Learning",
+          "Training & Testing Data"
+        ]
+      },
+      {
+        module: "Module 4: Machine Learning Algorithms",
+        topics: [
+          "Linear Regression",
+          "Classification",
+          "Clustering",
+          "Decision Trees"
+        ]
+      },
+      {
+        module: "Module 5: AI Tools & Applications",
+        topics: [
+          "Generative AI",
+          "AI Automation",
+          "Prompt Engineering Basics"
+        ]
+      },
+      {
+        module: "Module 6: Final AI Project",
+        topics: [
+          "Final AI Project"
+        ]
+      }
+    ]
   },
   {
-    slug: "advance-excel-with-dashboard",
-    title: "Advance Excel with Dashboard",
-    categorySlug: "accounting",
-    duration: "2 Months",
-    featured: false,
-    highlight: "Transform raw data into interactive, dynamic executive KPI dashboards using advanced Excel visualization tools.",
-    description: "Learn how senior analysts convert massive datasets into clean visual business intelligence. Combine advanced formula engineering with form controls, dynamic chart ranges, conditional formatting heatmaps, and interconnected slicers for executive reporting.",
-    syllabus: [
-      "Advance Excel Formula Foundation",
-      "Interactive Form Controls & Slicers",
-      "Dynamic Charting & Waterfall/Gauge Visuals",
-      "KPI Card Design & Visual Hierarchy",
-      "Automating Dashboard Refresh & Data Feeds",
-      "Real-World Sales & Finance Dashboard Capstones"
-    ],
-    icon: "BarChart3"
-  },
-  {
-    slug: "certificate-course-in-adv-excel-with-mis-reports",
-    title: "Certificate Course in Adv. Excel with MIS Reports",
-    categorySlug: "accounting",
-    duration: "3 Months",
-    featured: false,
-    highlight: "Complete Management Information System (MIS) reporting, formula debugging, data security, and automation.",
-    description: "Become a proficient MIS Executive capable of generating weekly, monthly, and annual executive management reports. This course covers deep selector creation, array manipulation, workbook protection, error handling, audit formula tracing, and end-to-end dashboard architectures.",
-    syllabus: [
-      "Excel Architecture & Advanced UI Optimization",
-      "Deep Data Validation & Selector Frameworks",
-      "Advanced Worksheet Functions & Dynamic Arrays",
-      "Text & Date Manipulation Algorithms",
-      "Complex Multilayer Lookups & Error Handling",
-      "Pivot Analysis with Calculated Items",
-      "Workbook Security, Protection & Shared Collaboration",
-      "Comprehensive MIS Reporting & Dashboard Projects"
-    ],
-    icon: "FileSpreadsheet"
-  },
-  {
-    slug: "certificate-course-in-tableau",
-    title: "Certificate course in Tableau",
-    categorySlug: "accounting",
-    duration: "2 Months",
-    featured: false,
-    highlight: "Enterprise business intelligence, data preparation, interactive visual analytics, and Tableau storytelling.",
-    description: "Unlock actionable insights from large business datasets. Learn data extraction, calculated fields, parameters, interactive filters, dual-axis charts, geospatial mapping, and publication on Tableau Server for business stakeholders.",
-    syllabus: [
-      "Tableau Desktop Architecture & Data Connections",
-      "Data Preparation, Joins, Blending & Unions",
-      "Basic & Advanced Visualizations (Heatmaps, Treemaps, Dual-Axis)",
-      "Level of Detail (LOD) Calculations & Parameters",
-      "Geographic Mapping & Spatial Data",
-      "Building Interactive Storyboards & Dashboards",
-      "Tableau Server / Online Deployment Best Practices"
-    ],
-    icon: "BarChart3"
-  },
-  {
-    slug: "certificate-course-in-power-bi",
-    title: "Certificate Course in Power BI",
-    categorySlug: "accounting",
-    duration: "2 Months",
-    featured: false,
-    highlight: "Microsoft Power BI, Power Query transformation, DAX modeling, SQL connectivity, and live KPI dashboards.",
-    description: "Master the world's leading business analytics platform. Connect to SQL databases and Excel feeds, clean and shape dirty data with Power Query, model relationships, write powerful DAX measures, and publish live cloud-enabled executive reports.",
-    syllabus: [
-      "Introduction to Power BI & Ecosystem",
-      "SQL Server Database Fundamentals & Queries",
-      "Power Query ETL (Extract, Transform, Load)",
-      "Data Modeling & Relationship Management",
-      "DAX (Data Analysis Expressions) Measures & Calculated Columns",
-      "Visual Dashboards with Drill-Down & Bookmarks",
-      "Power BI Service Cloud Deployment & Gateway Scheduling"
-    ],
-    icon: "BarChart3"
-  },
-  {
-    slug: "certificate-course-in-share-market",
-    title: "Certificate Course in Share Market",
-    categorySlug: "accounting",
-    duration: "3 Months",
-    featured: false,
-    highlight: "Technical analysis, candlestick patterns, price action, intraday, swing trading, F&O, and risk management.",
-    description: "Gain practical, disciplined mastery over financial markets. Understand candlestick chart patterns, moving averages, RSI, MACD indicators, IPO valuation, intraday vs swing trading setups, Options & Futures strategies (Nifty & Bank Nifty), and automated Google Sheet tracking.",
-    syllabus: [
-      "Module 1: Fundamental vs Technical Analysis",
-      "Candlestick Patterns & Support/Resistance Levels",
-      "Technical Indicators: RSI, MACD, Moving Averages, Bollinger Bands",
-      "Intraday & Swing Trading Rules with Risk-Reward",
-      "IPO Strategy & Trading on Mobile/Desktop Platforms",
-      "Module 2: Google Sheet Algorithmic Strategy",
-      "Futures & Options (F&O) Trading, Call & Put Mechanics",
-      "Nifty & Bank Nifty Trading Strategies",
-      "Commodity & Currency Markets Overview"
-    ],
-    icon: "TrendingUp"
-  },
-  {
-    slug: "combo-course-with-ms-cit",
-    title: "Combo Course with MS-CIT",
-    categorySlug: "accounting",
-    duration: "6 Months",
-    featured: false,
-    highlight: "All-in-one career booster: MS-CIT + Advance Excel + Tally Prime GST + Typing + DTP / AI skills.",
-    description: "The ultimate value program for job seekers. Combines the government-recognised MS-CIT certificate with high-paying job skills: corporate Advance Excel, Tally ERP 9 with GST, certified English typing speed, and your choice of Graphic DTP or Artificial Intelligence tools.",
-    syllabus: [
-      "Government Recognised MS-CIT Curriculum",
-      "Advance Excel with Lookup, Pivot & Macros",
-      "Advance Tally ERP 9 with GST & Prime",
-      "English Typing Speed (30/40 WPM)",
-      "Specialized Elective: DTP (Corel/Photoshop) OR AI Tools",
-      "Mock Job Interviews & Resume Assistance"
-    ],
-    icon: "Award"
-  },
-  {
-    slug: "certificate-course-in-typing-english",
-    title: "Certificate Course in Typing (English)",
-    categorySlug: "accounting",
-    duration: "3 Months",
-    featured: false,
-    highlight: "Speed typing course targeting 30 WPM / 40 WPM with GCC-TBC exam preparation and finger posture.",
-    description: "Attain high-accuracy touch typing speed needed for Maharashtra Government clerical jobs, High Court examinations, and MNC data entry roles. Includes daily timed software exercises, ergonomic keyboard posture, and GCC-TBC pattern test drills.",
-    syllabus: [
-      "Home Row, Top Row & Bottom Row Touch Typing",
-      "Speed Building Drills & Accuracy Calibration",
-      "GCC-TBC English 30 WPM Exam Pattern",
-      "GCC-TBC English 40 WPM Exam Pattern",
-      "Speed Letter & Statement Formatting"
-    ],
-    icon: "Keyboard"
-  },
-  {
-    slug: "certificate-course-in-typing-marathi",
-    title: "Certificate Course in Typing (Marathi)",
-    categorySlug: "accounting",
-    duration: "3 Months",
-    featured: false,
-    highlight: "State recognized Marathi typing (30/40 WPM) for government recruitment, MPSC, and legal administration.",
-    description: "Master Marathi keyboard layouts (ISM / Unicode) with correct typing techniques. Essential for Maharashtra government recruitments, Mantralaya postings, collector office exams, and legal documentation.",
-    syllabus: [
-      "Marathi Keyboard Layouts & Font Standards",
-      "Touch Typing Practice on Marathi Unicode / ISM",
-      "Speed Building to 30 WPM & 40 WPM",
-      "Official Government Letter & Gazette Typing",
-      "GCC-TBC Marathi Exam Preparation"
-    ],
-    icon: "Keyboard"
-  },
-  {
-    slug: "certificate-course-in-c-c-plus-plus",
-    title: "Certificate Course in C, C++",
+    slug: "full-stack-mern-web-development",
+    name: "Full Stack MERN Web Development",
+    title: "Full Stack MERN Web Development",
+    category: "Programming",
     categorySlug: "programming",
-    duration: "3 Months",
-    featured: false,
-    highlight: "Core foundational programming: algorithms, memory pointers, data structures, and Object-Oriented OOP in C++.",
-    description: "The essential starting point for all aspiring software engineers and engineering students. Learn core algorithmic thinking, pointers, dynamic memory allocation, structures, and file operations in C, followed by Object-Oriented Programming (OOP), inheritance, polymorphism, and templates in C++.",
-    syllabus: [
-      "C: Syntax, Variables, Data Types & Operators",
-      "Control Structures: If-Else, Switch & Loops",
-      "Functions, Recursion & Arrays",
-      "Puppetting on Strings & String Functions",
-      "Structures, Unions & Typedefs",
-      "Pointers & Dynamic Memory Allocation",
-      "File Handling in C",
-      "C++: Classes, Objects & Constructors/Destructors",
-      "Function & Operator Overloading",
-      "Inheritance, Virtual Functions & Polymorphism"
-    ],
-    icon: "Code2"
-  },
-  {
-    slug: "certificate-course-in-adv-java",
-    title: "Certificate Course in Adv. Java",
-    categorySlug: "programming",
-    duration: "4 Months",
-    featured: false,
-    highlight: "Full enterprise Java path: Core Java OOP, Multithreading, JDBC, Servlets, JSP, and JavaBeans.",
-    description: "A comprehensive journey from Java basics to enterprise backend web development. Master Core Java fundamentals, Collections framework, Exception handling, Multi-threading, and JDBC, transitioning smoothly into Advance Java with Servlets, JSP, RMI, and MVC architecture.",
-    syllabus: [
-      "Core Java: OOP Concepts, Data Types & Control Flow",
-      "Classes, Inheritance, Packages & Interfaces",
-      "Exception Handling & Multithreaded Programming",
-      "Java Collections Framework & I/O Streams",
-      "AWT, Swing GUI & Event Handling",
-      "Advance Java: JDBC Database Connectivity",
-      "Servlets & JavaServer Pages (JSP)",
-      "JavaBeans, RMI & MVC Architecture"
-    ],
-    icon: "Coffee"
-  },
-  {
-    slug: "certificate-course-in-php",
-    title: "Certificate Course in PHP",
-    categorySlug: "programming",
-    duration: "2 Months",
-    featured: false,
-    highlight: "Server-side web development with PHP, MySQL database integration, form handling, and authentication.",
-    description: "Learn dynamic server-side web scripting. Set up local development environments with WAMP/XAMPP, write secure PHP backend scripts, handle user requests with GET/POST, manage sessions/cookies, and interact with MySQL relational databases.",
-    syllabus: [
-      "WAMP/XAMPP Server Setup & phpMyAdmin",
-      "PHP Syntax, Variables, Data Types & Operators",
-      "Control Structures, Arrays & Functions",
-      "Forms Processing, GET & POST Validation",
-      "Cookies, Session Management & Authentication",
-      "PHP + MySQL Database Connectivity (CRUD Operations)",
-      "Real-Time Web Application Project"
-    ],
-    icon: "Globe"
-  },
-  {
-    slug: "certificate-course-in-python",
-    title: "Certificate Course in Python",
-    categorySlug: "programming",
-    duration: "2 Months",
-    featured: false,
-    highlight: "Modern Python programming: data structures, OOP classes, lambda functions, modules, and file automation.",
-    description: "Python is the most versatile programming language in tech today. This course guides you through clean syntax, list comprehensions, dictionaries, object-oriented principles, lambda expressions, file operations, and foundational libraries used in automation and data science.",
-    syllabus: [
-      "Python Environment & Basic Syntax",
-      "Data Types, String Operations & Slicing",
-      "Conditional Logic & Loop Iteration",
-      "Functions, Scope & Lambda Functions",
-      "Object-Oriented Programming (Classes & Inheritance)",
-      "Polymorphism & Instance Methods",
-      "Modules, Packages & File Handling",
-      "Introduction to Python Automation"
-    ],
-    icon: "Braces"
-  },
-  {
-    slug: "diploma-in-oracle-and-sql-server",
-    title: "Diploma in Oracle & SQL Server",
-    categorySlug: "programming",
-    duration: "2 Months",
-    featured: false,
-    highlight: "Enterprise database architecture, complex SQL queries, Joins, PL/SQL stored procedures, and triggers.",
-    description: "Master two industry-standard relational database engines. Learn Data Definition Language (DDL), Data Manipulation Language (DML), complex multi-table Joins, Subqueries, Indexes, Views, Transactions, plus advanced PL/SQL programming with Stored Procedures, Functions, and Triggers.",
-    syllabus: [
-      "Relational Database Management Concepts",
-      "Oracle: SQL Commands & Data Querying",
-      "PL/SQL Programming: Procedures, Functions & Triggers",
-      "Overview of Database Administration (DBA)",
-      "SQL Server: Built-in Functions & Set Operators",
-      "Complex Joins, Subqueries & Common Table Expressions",
-      "Indexes, Views & Transaction Management"
-    ],
-    icon: "Database"
-  },
-  {
-    slug: "diploma-in-dot-net",
-    title: "Diploma in Dot Net",
-    categorySlug: "programming",
-    duration: "6 Months",
-    featured: false,
-    highlight: "Microsoft .NET framework development using C#, VB.NET, Windows Forms, and ASP.NET web applications.",
-    description: "Build robust enterprise desktop and web applications on the Microsoft .NET platform. Learn C# programming, Windows GUI interfaces, ADO.NET database operations, and modern web application building using ASP.NET.",
-    syllabus: [
-      ".NET Framework Architecture & CLR",
-      "Object-Oriented C# Console & GUI Applications",
-      "VB.NET Programming Fundamentals",
-      "ADO.NET Database Integration",
-      "ASP.NET Web Applications & State Management",
-      "Web Services & Deployment"
-    ],
-    icon: "Layers"
-  },
-  {
-    slug: "diploma-in-adv-software-programming",
-    title: "Diploma in Adv. Software Programming",
-    categorySlug: "programming",
-    duration: "12 Months",
-    featured: false,
-    highlight: "1-year intensive software developer track: C, C++, Core & Adv Java, SQL Server, C#, and ASP.NET.",
-    description: "A comprehensive 1-year developer curriculum tailored for high employability in IT services and software product companies. Covers procedural programming, OOP paradigms, enterprise Java, Microsoft .NET ecosystem, and enterprise SQL databases.",
-    syllabus: [
-      "Computing Fundamentals & Windows Environment",
-      "C & C++ Programming Foundations",
-      "Core Java & Advanced Java with JDBC/JSP",
-      "SQL Server Relational Database Architecture",
-      "C# Programming & Windows Applications",
-      "VB.NET & ASP.NET Web Development",
-      "Live Multi-Tier Project Development"
-    ],
-    icon: "Code2"
-  },
-  {
-    slug: "diploma-in-software-engineering",
-    title: "Diploma in Software Engineering",
-    categorySlug: "programming",
-    duration: "24 Months",
-    featured: false,
-    highlight: "2-year comprehensive software engineering program from front-end design to enterprise full-stack development.",
-    description: "Our most in-depth computer science diploma. Across 4 semesters, students master front-end web design, multimedia tools, server-side scripting, enterprise Java, Oracle database administration, Microsoft .NET development, and full-scale software engineering methodologies.",
-    syllabus: [
-      "Sem I: Fundamentals, Office, Photoshop, HTML, HTML5, CSS, JS, ASP, PHP",
-      "Sem II: C, C++, Core Java, Adv. Java, Oracle, SQL Server, C#, VB.Net, ASP.Net",
-      "Sem III: Advanced Frameworks, API Development & Cloud Deployments",
-      "Sem IV: Industrial Software Architecture & Capstone Internship Project"
-    ],
-    icon: "Cpu"
-  },
-  {
-    slug: "full-stack-with-mern-stack-web-development",
-    title: "Full Stack with MERN Stack Web Development",
-    categorySlug: "programming",
-    duration: "12 Months",
+    duration: "4-6 Months",
+    level: "Beginner to Pro",
+    image: "full-stack-with-mern-stack-web-development",
     featured: true,
-    highlight: "Modern full-stack web developer diploma: HTML5, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
-    description: "Become a modern full-stack web engineer. Build responsive single-page client applications with React.js, engineer robust RESTful API servers with Node.js and Express, store unstructured data in MongoDB, and deploy scalable cloud web applications.",
+    highlight: "Master MongoDB, Express.js, React.js, and Node.js with live full-stack responsive web apps.",
+    description: "End-to-end full stack development training. Build interactive frontends with HTML5, CSS3, ES6 JavaScript, and React, coupled with robust REST APIs in Node/Express and scalable MongoDB databases.",
     syllabus: [
-      "Front End: HTML5, CSS3, Modern JavaScript (ES6+)",
-      "Responsive UI with Bootstrap & Tailwind CSS",
-      "React.js: Components, Hooks, State & Routing",
-      "PHP & MySQL Full Stack Integration",
-      "Back End: Node.js Runtime & Express.js REST APIs",
-      "MongoDB Database: Schema Design & Mongoose",
-      "Authentication (JWT), Deployment & Git Workflow"
-    ],
-    icon: "Layers"
-  },
-  {
-    slug: "certificate-course-in-ai-ml",
-    title: "Certificate Course in AI-ML (Artificial Intelligence)",
-    categorySlug: "programming",
-    duration: "2 Months",
-    featured: true,
-    highlight: "Foundational AI, Machine Learning principles, generative AI tools, data science, and modern AI career paths.",
-    description: "Get ahead in the era of Artificial Intelligence. Understand how machine learning models work, explore real-world datasets, leverage generative AI tools like ChatGPT for daily and professional workflows, and learn about government initiatives and modern AI career opportunities.",
-    syllabus: [
-      "Fundamentals of AI & Impact on Society",
-      "Branches & Subfields of Artificial Intelligence",
-      "Generative AI Tools & Prompt Engineering",
-      "Foundations of Machine Learning & Model Training",
-      "Data Science Overview & Feature Engineering",
-      "Practical Applications of AI in Business & Daily Life",
-      "AI-ML Case Studies & Emerging Career Pathways",
-      "Government Programs & Initiatives in AI"
-    ],
-    icon: "Brain"
-  },
-  {
-    slug: "full-stack-development",
-    title: "Full Stack Development",
-    categorySlug: "programming",
-    duration: "Short Course",
-    featured: false,
-    highlight: "Fast-paced essential full stack overview covering client interfaces, server logic, and database integration.",
-    description: "A fast-track curriculum focused on connecting front-end web interfaces to server-side code and database persistence.",
-    syllabus: [
-      "Front-End Foundations (HTML/CSS/JS)",
-      "Server Scripting Essentials",
-      "Database CRUD Operations",
-      "End-to-End Project Build"
-    ],
-    icon: "Layers"
-  },
-  {
-    slug: "full-stack-java-development",
-    title: "Full Stack-Java Development",
-    categorySlug: "programming",
-    duration: "Short Course",
-    featured: false,
-    highlight: "End-to-end Java web development with Spring/Servlets backend and interactive web front-end.",
-    description: "Master Java-powered web systems connecting responsive HTML/JS interfaces with secure Java backend logic and relational database stores.",
-    syllabus: [
-      "Java OOP & Collections",
-      "Backend API Construction",
-      "Database Connectivity with JDBC",
-      "Front-End Integration"
-    ],
-    icon: "Coffee"
+      {
+        module: "Module 1: HTML5",
+        topics: [
+          "Website Structure",
+          "Forms",
+          "Tables",
+          "Semantic Tags"
+        ]
+      },
+      {
+        module: "Module 2: CSS3",
+        topics: [
+          "Styling",
+          "Flexbox",
+          "Grid",
+          "Responsive Design"
+        ]
+      },
+      {
+        module: "Module 3: JavaScript",
+        topics: [
+          "Variables",
+          "Functions",
+          "DOM",
+          "Events",
+          "ES6"
+        ]
+      },
+      {
+        module: "Module 4: React.js",
+        topics: [
+          "Components",
+          "Props & State",
+          "Hooks",
+          "Routing"
+        ]
+      },
+      {
+        module: "Module 5: Node.js & Express.js",
+        topics: [
+          "Backend Development",
+          "APIs",
+          "Server Management"
+        ]
+      },
+      {
+        module: "Module 6: MongoDB",
+        topics: [
+          "Database Fundamentals",
+          "CRUD Operations",
+          "Collections"
+        ]
+      },
+      {
+        module: "Module 7: Final Full Stack Project",
+        topics: [
+          "Final Full Stack Project"
+        ]
+      }
+    ]
   },
   {
     slug: "certificate-course-in-sap",
-    title: "Certificate course in SAP",
-    categorySlug: "programming",
-    duration: "Short Course",
+    name: "Certificate Course in SAP",
+    title: "Certificate Course in SAP",
+    category: "Accounting & Office",
+    categorySlug: "accounting-office",
+    duration: "2-3 Months",
+    level: "Intermediate",
+    image: "certificate-course-in-sap",
     featured: false,
-    highlight: "Enterprise Resource Planning (ERP) overview and hands-on SAP module walkthroughs.",
-    description: "Understand SAP enterprise ecosystem workflows, user interface navigation, master data management, and standard transactional processes.",
+    highlight: "Gain practical overview of SAP ERP architecture, module navigation, master data, and corporate reporting.",
+    description: "Understand core Enterprise Resource Planning (ERP) concepts through SAP. Learn transaction codes, financial postings, sales and procurement lifecycle tracking, and standard management reporting.",
     syllabus: [
-      "SAP Architecture & ERP Concept",
-      "Navigation & User Roles",
-      "Key Module Overviews (FICO/MM/SD)",
-      "Standard Business Transactions"
-    ],
-    icon: "Database"
-  },
-  {
-    slug: "scratch-programming",
-    title: "Scratch Programming",
-    categorySlug: "programming",
-    duration: "Short Course",
-    featured: false,
-    highlight: "Fun block-based coding for school students and beginners to build interactive games and animations.",
-    description: "An engaging introduction to computer programming for kids and beginners using visual drag-and-drop code blocks to create games and interactive stories.",
-    syllabus: [
-      "Visual Block Concepts",
-      "Sprites, Backgrounds & Motion",
-      "Events, Loops & Conditions",
-      "Building 2D Games & Stories"
-    ],
-    icon: "Code2"
-  },
-  {
-    slug: "c-cpp-oracle-sql-asp-vb-cs-html-wordpress",
-    title: "Modular IT Training (C / C++ / SQL / HTML / WP)",
-    categorySlug: "programming",
-    duration: "Short Course",
-    featured: false,
-    highlight: "Custom 1-on-1 modular training in specific technologies like C, C++, SQL Server, C#, HTML, or WordPress.",
-    description: "Select specific individual programming modules tailored to your university curriculum, hobby project, or immediate job requirement. Benefit from flexible 1-on-1 faculty guidance.",
-    syllabus: [
-      "Choose from C, C++, SQL Server, ASP.NET, VB.NET, C#, HTML5, or WordPress",
-      "Custom 1-on-1 syllabus mapping",
-      "Practical hands-on lab sessions"
-    ],
-    icon: "Code2"
-  },
-  {
-    slug: "diploma-in-desk-top-publishing-dtp",
-    title: "Diploma in Desk Top Publishing (DTP)",
-    categorySlug: "design",
-    duration: "3 Months",
-    featured: false,
-    highlight: "CorelDraw, Adobe Photoshop, page layouts, print typography, and commercial publishing projects.",
-    description: "Launch a career in print and publishing. Learn vector graphics in CorelDraw and raster photo manipulation in Photoshop to design business cards, brochures, banners, magazines, and prepress print files.",
-    syllabus: [
-      "CorelDraw: Vector Illustration, Logos & Print Collateral",
-      "Adobe Photoshop: Photo Editing, Retouching & Color Correction",
-      "Typography, Print Layouts & Prepress Guidelines",
-      "Color Profiles (CMYK vs RGB) & Commercial Projects"
-    ],
-    icon: "PenTool"
-  },
-  {
-    slug: "diploma-in-graphics-designing",
-    title: "Diploma in Graphics Designing",
-    categorySlug: "design",
-    duration: "6 Months",
-    featured: true,
-    highlight: "Master CorelDraw, Photoshop, Illustrator, InDesign, branding systems, and social media creative design.",
-    description: "Become a versatile commercial graphic designer. Master the industry quartet: CorelDraw for print, Photoshop for image editing, Illustrator for vector branding, and InDesign for multi-page editorial layouts.",
-    syllabus: [
-      "CorelDraw: Corporate Stationery & Vector Assets",
-      "Adobe Photoshop: Advanced Retouching & Compositions",
-      "Adobe Illustrator: Logo Design, Vector Art & Infographics",
-      "Adobe InDesign: Booklets, Magazines & Layouts",
-      "Brand Identity Systems & Portfolio Project"
-    ],
-    icon: "Palette"
-  },
-  {
-    slug: "diploma-in-web-designing",
-    title: "Diploma in Web Designing",
-    categorySlug: "design",
-    duration: "6 Months",
-    featured: false,
-    highlight: "Responsive website design: Photoshop UI mockups, HTML5, CSS3, JavaScript interactivity, and WordPress.",
-    description: "Learn to design beautiful, modern, mobile-friendly websites. Master UI mockup creation in Photoshop, semantic HTML5 markup, modern CSS layouts (Flexbox/Grid), JavaScript DOM effects, and dynamic WordPress CMS building.",
-    syllabus: [
-      "Web Design Principles & UI Mockups in Photoshop",
-      "Semantic HTML5 Markup & CSS3 Styling",
-      "Responsive Layouts (Flexbox, CSS Grid & Media Queries)",
-      "JavaScript Interactivity & DOM Manipulation",
-      "WordPress Theme Setup, Customization & Plugins",
-      "Live Website Deployment Project"
-    ],
-    icon: "Globe"
-  },
-  {
-    slug: "diploma-in-interior-designing",
-    title: "Diploma in Interior Designing",
-    categorySlug: "design",
-    duration: "12 Months",
-    featured: false,
-    highlight: "Complete CAD & 3D visualization: AutoCAD 2D/3D, 3D Max, Revit Architecture, V-Ray, and interior walk-throughs.",
-    description: "Turn architectural visions into photorealistic realities. Master technical floor plans in AutoCAD, BIM architectural modeling in Revit, detailed 3D interior staging in 3D Max, and hyper-realistic lighting renders using V-Ray.",
-    syllabus: [
-      "Photoshop for Architectural Presentation",
-      "AutoCAD 2D Drafting, Plans & Sections",
-      "AutoCAD 3D Modeling & Isometric Projections",
-      "3D Max Interior Modeling, Materials & Lighting",
-      "Autodesk Revit BIM Modeling & Wall Layouts",
-      "V-Ray Photorealistic Rendering & Camera Walkthroughs",
-      "Complete Interior Portfolio Project"
-    ],
-    icon: "Building2"
-  },
-  {
-    slug: "advance-diploma-in-autocad",
-    title: "Advance Diploma in AutoCad",
-    categorySlug: "design",
-    duration: "3 Months",
-    featured: false,
-    highlight: "2D drafting, isometric projections, 3D modeling, plotting, and architectural/civil/mechanical drawings.",
-    description: "Industry-standard Computer-Aided Design training for engineers, architects, and draughtsmen. Master all 2D drawing tools, dimension styling, layer standards, isometric projections, 3D solids, and multi-scale sheet plotting.",
-    syllabus: [
-      "AutoCAD Interface & Coordinate Systems",
-      "2D Drawing & Modification Commands",
-      "Isometric Drawings & Perspective Views",
-      "3D Solid & Surface Modeling",
-      "Dimensioning, Annotations & Layer Management",
-      "Plotting & Layouts for Interior, Civil, Mechanical & Piping"
-    ],
-    icon: "Ruler"
-  },
-  {
-    slug: "diploma-in-3d-max",
-    title: "Diploma in 3D Max",
-    categorySlug: "design",
-    duration: "3 Months",
-    featured: false,
-    highlight: "3D architectural modeling, material texturing, photorealistic lighting, cameras, and walk-through animations.",
-    description: "Create stunning 3D architectural visualisations and product renders with Autodesk 3ds Max. Learn polygon modeling, UV texturing, physical camera placements, realistic daylighting, and animated camera walk-throughs.",
-    syllabus: [
-      "Introduction to 3ds Max Interface & Viewports",
-      "Polygon & Spline Modeling Techniques",
-      "Material Creation, Shaders & UVW Mapping",
-      "Lighting: Photometric, Standard & Sun Systems",
-      "Camera Walkthrough Animation & Rendering Settings",
-      "Complete Architectural Project"
-    ],
-    icon: "Box"
-  },
-  {
-    slug: "diploma-in-revit",
-    title: "Diploma in Revit",
-    categorySlug: "design",
-    duration: "3 Months",
-    featured: false,
-    highlight: "BIM architectural design, wall framing, doors/windows schedules, ceiling plans, and interior modeling.",
-    description: "Master Building Information Modeling (BIM) using Autodesk Revit. Learn to generate synchronized 2D floor plans, 3D building models, schedule tables, interior wall modifications, and structural elevation views.",
-    syllabus: [
-      "BIM Concepts & Revit Interface",
-      "Basic Drawing & Editing Tools",
-      "Drawing & Modifying Walls, Floors & Slabs",
-      "Adding Doors, Windows & Custom Families",
-      "Ceiling Plans, Interior Components & Fixtures",
-      "Exterior Elevations & Architectural Schedules",
-      "Comprehensive Revit Capstone Project"
-    ],
-    icon: "Building2"
-  },
-  {
-    slug: "coreldraw-photoshop-illustrator-indesign-vray-sketchup",
-    title: "Individual Software Training (Corel/PS/AI/InDesign/V-Ray)",
-    categorySlug: "design",
-    duration: "Short Course",
-    featured: false,
-    highlight: "Focused short courses in CorelDraw, Photoshop, Illustrator, InDesign, V-Ray, or Google SketchUp.",
-    description: "Learn specific design and architectural modeling applications with targeted, hands-on faculty mentorship.",
-    syllabus: [
-      "Dedicated 1-on-1 software training",
-      "Targeted tool workflows & shortcuts",
-      "Portfolio-ready outputs"
-    ],
-    icon: "Palette"
-  },
-  {
-    slug: "adv-diploma-in-multimedia-and-animation",
-    title: "Adv. Diploma in Multimedia & Animation",
-    categorySlug: "animation",
-    duration: "12 Months",
-    featured: false,
-    highlight: "Comprehensive 1-year multimedia: Photoshop, Illustrator, After Effects, Premiere Pro, 3D Max, and Canva.",
-    description: "A powerhouse multimedia career program. Develop high-level creative skills across graphic branding, video editing, motion graphics, 2D/3D animation, and social media production for broadcasting and advertising studios.",
-    syllabus: [
-      "Graphic Design: CorelDraw, Photoshop & Illustrator",
-      "Editorial Publishing in Adobe InDesign",
-      "Motion Graphics & VFX in Adobe After Effects",
-      "Video Post-Production in Adobe Premiere Pro",
-      "3D Modeling & Animation in 3ds Max",
-      "Canva for Fast Social Content",
-      "Showreel & Portfolio Project"
-    ],
-    icon: "Sparkles"
-  },
-  {
-    slug: "after-effect",
-    title: "After Effect",
-    categorySlug: "animation",
-    duration: "Short Course",
-    featured: false,
-    highlight: "Motion graphics, keyframe animation, VFX compositing, title sequences, and cinematic transitions.",
-    description: "Learn Adobe After Effects from scratch. Master timeline keyframing, typography motion graphics, green screen keying, particle effects, visual masking, and dynamic video bumpers.",
-    syllabus: [
-      "Interface & Keyframe Animation Principles",
-      "Typography Animation & Title Sequences",
-      "Masking, Track Mattes & Chroma Keying",
-      "Particle Effects & Motion Tracking",
-      "Render Queue & Video Codecs"
-    ],
-    icon: "Sparkles"
-  },
-  {
-    slug: "adobe-premier",
-    title: "Adobe Premier",
-    categorySlug: "animation",
-    duration: "Short Course",
-    featured: false,
-    highlight: "Non-linear video editing, multi-track audio mixing, color grading with Lumetri, and YouTube exporting.",
-    description: "Master industry-standard video editing with Adobe Premiere Pro. Learn timeline trimming, multi-camera syncing, background audio cleaning, Lumetri color grading, and optimal web/social media exporting.",
-    syllabus: [
-      "Non-Linear Editing Workspace & Trimming",
-      "Audio Synchronization & Noise Reduction",
-      "Transitions, Titles & Speed Ramping",
-      "Lumetri Color Correction & Grading",
-      "Export Presets for YouTube, Reels & Broadcast"
-    ],
-    icon: "Film"
-  },
-  {
-    slug: "certificate-course-in-advance-digital-marketing",
-    title: "Certificate Course in Advance Digital Marketing",
-    categorySlug: "digital-marketing",
-    duration: "3 Months",
-    featured: false,
-    highlight: "Complete 360° digital growth: SEO, Google Ads, Meta Ads, Content Strategy, Analytics, and AI tools.",
-    description: "Launch your career as a high-earning digital marketer. Master on-page and off-page SEO, Google Search Console, Google Ads PPC, Facebook & Instagram Ads, email automation, WordPress blogging, and AI-powered campaign generation with ChatGPT.",
-    syllabus: [
-      "Digital Marketing Overview & Funnel Strategy",
-      "Content Marketing & Blogging on WordPress",
-      "Search Engine Optimization (SEO) & Keyword Research",
-      "Google Search Console & Google Analytics 4",
-      "Social Media Marketing (Facebook, Instagram, LinkedIn)",
-      "Email Marketing & Lead Generation Tactics",
-      "Bing Webmaster Tools & PPC Advertising",
-      "Google Ads (Search, Display, Video & Shopping Ads)",
-      "Affiliate & Influencer Marketing Frameworks",
-      "Online Reputation Management & WhatsApp Marketing",
-      "Google My Business (Local SEO) Setup",
-      "AI Tools & ChatGPT for Marketing Copywriting",
-      "Landing Page Optimization & Conversion Rate Techniques"
-    ],
-    icon: "Megaphone"
-  },
-  {
-    slug: "adv-diploma-in-hardware-engineering",
-    title: "Adv. Diploma in Hardware Engineering",
-    categorySlug: "hardware-networking",
-    duration: "3 Months",
-    featured: false,
-    highlight: "PC architecture, hardware assembly, BIOS setup, OS installation, diagnostics, and component troubleshooting.",
-    description: "Gain hands-on skills in computer hardware assembly and maintenance. Learn motherboard architectures, SMPS testing, RAM/SSD upgrades, disk partitioning, dual-boot setups, and virus remediation on physical PC units.",
-    syllabus: [
-      "Computer Architecture & Hardware Components",
-      "Storage Devices (HDD, NVMe SSD) & Partitioning",
-      "DOS Commands & BIOS/UEFI Configurations",
-      "Step-by-Step Computer Assembling & Teardown",
-      "Operating System & Driver Installation",
-      "Antivirus & Malware Troubleshooting",
-      "Preventive Maintenance & Repair Techniques"
-    ],
-    icon: "Cpu"
-  },
-  {
-    slug: "adv-diploma-in-network-engineering",
-    title: "Adv. Diploma in Network Engineering",
-    categorySlug: "hardware-networking",
-    duration: "3 Months",
-    featured: false,
-    highlight: "LAN setup, crimping RJ45, TCP/IP, router/switch configuration, Wi-Fi security, and server sharing.",
-    description: "Learn the fundamentals of modern enterprise networking. Practice RJ-45 cable crimping, configure subnetting and static/dynamic IP addresses, set up managed switches and wireless routers, and manage network printer and file sharing.",
-    syllabus: [
-      "Networking Standards, Topologies & OSI Model",
-      "Crimping & Cabling (CAT6, RJ-45, Patch Panels)",
-      "LAN, Router & Modem Installation",
-      "TCP/IP Protocol Suite, IPv4 Addressing & Subnetting",
-      "Switch Configuration & Peer-to-Peer Networking",
-      "File, Folder & Network Printer Sharing",
-      "Remote Desktop Administration",
-      "Wireless Security & Network Troubleshooting"
-    ],
-    icon: "Network"
-  },
-  {
-    slug: "adv-english-speaking-course",
-    title: "Adv. English Speaking Course",
-    categorySlug: "personality-english",
-    duration: "3 Months",
-    featured: false,
-    highlight: "Fluent conversational English, grammar clarity, public speaking, group discussions, and interview mastery.",
-    description: "Speak English with confidence, clarity, and grammatical precision. This interactive course features daily speaking exercises, voice and accent correction, professional email writing, group discussions, and mock job interview rounds.",
-    syllabus: [
-      "Fundamentals of Spoken Communication",
-      "Preparatory Grammar & Sentence Structure",
-      "Real-World Everyday English Conversations",
-      "Public Speaking & Stage Fear Removal",
-      "Group Discussions & Extempore Sessions",
-      "Voice & Accent Correction Drills",
-      "Email & Business Correspondence",
-      "Resume Writing & Job Interview Q&A"
-    ],
-    icon: "MessageCircle"
-  },
-  {
-    slug: "adv-personality-development-course",
-    title: "Adv. Personality Development Course",
-    categorySlug: "personality-english",
-    duration: "1 Month",
-    featured: false,
-    highlight: "Confidence building, executive body language, business etiquette, grooming, and interview preparation.",
-    description: "Transform your personal and professional presence. Learn non-verbal body language cues, professional grooming standards, effective conflict management, executive etiquette, and confident presentation delivery.",
-    syllabus: [
-      "Self-Assessment & Confidence Building",
-      "Business Etiquette & Corporate Manners",
-      "Body Language, Posture & Dress Code",
-      "Overcoming Stage Fright & Public Presentation",
-      "Professional Resume Writing & LinkedIn Presence",
-      "Mock Interview Sessions & Stress Management"
-    ],
-    icon: "UserCheck"
-  },
-  {
-    slug: "certificate-course-in-11th-computer-it",
-    title: "Certificate Course in 11th Computer IT",
-    categorySlug: "school-special",
-    duration: "As per syllabus",
-    featured: false,
-    highlight: "Maharashtra State Board 11th standard Information Technology syllabus coaching and practical lab training.",
-    description: "Complete academic coaching for 11th Standard IT students following the Maharashtra State Board syllabus. Includes comprehensive theoretical concepts, step-by-step practical coding, and exam-oriented problem-solving.",
-    syllabus: [
-      "Basics of Information Technology",
-      "Introduction to DBMS",
-      "HTML5 & CSS Web Development",
-      "Client-Side Scripting with JavaScript",
-      "Practical Lab Assignments & Board Exam Preparation"
-    ],
-    icon: "GraduationCap"
-  },
-  {
-    slug: "certificate-course-in-12th-computer-it",
-    title: "Certificate Course in 12th Computer IT",
-    categorySlug: "school-special",
-    duration: "As per syllabus",
-    featured: false,
-    highlight: "Maharashtra State Board 12th standard HSC IT coaching with practical exams and score optimization.",
-    description: "Target top marks in your 12th HSC Board Information Technology examination. In-depth training on advanced web designing, SEO principles, JavaScript logic, PHP back-end basics, and official Board practical journal completion.",
-    syllabus: [
-      "Advanced Web Designing (HTML5/CSS3)",
-      "Search Engine Optimization (SEO) Principles",
-      "Advanced Client-Side Scripting (JS)",
-      "Emerging Technologies (IoT, Cloud, 5G)",
-      "Server-Side Scripting with PHP",
-      "HSC Board Practical Journal Preparation & Test Series"
-    ],
-    icon: "GraduationCap"
+      {
+        module: "Module 1: Introduction to SAP",
+        topics: [
+          "ERP Concepts",
+          "SAP Overview",
+          "SAP Modules"
+        ]
+      },
+      {
+        module: "Module 2: SAP Navigation",
+        topics: [
+          "SAP Interface",
+          "Transactions",
+          "Master Data"
+        ]
+      },
+      {
+        module: "Module 3: Business Processes",
+        topics: [
+          "Finance Basics",
+          "Sales Basics",
+          "Procurement Basics"
+        ]
+      },
+      {
+        module: "Module 4: SAP Reporting",
+        topics: [
+          "Reports",
+          "Data Management",
+          "Business Processes"
+        ]
+      }
+    ]
   },
   {
     slug: "certificate-course-in-data-science",
+    name: "Certificate Course in Data Science",
     title: "Certificate Course in Data Science",
-    categorySlug: "school-special",
-    duration: "As per syllabus",
-    featured: false,
-    highlight: "Foundational data science, Python data manipulation, statistical analysis, and visual charts.",
-    description: "An introductory pathway into data science for ambitious students. Understand data collection, cleaning, statistical modeling, and visual storytelling using Python data libraries.",
+    category: "Data & Analytics",
+    categorySlug: "data-analytics",
+    duration: "4 Months",
+    level: "Intermediate to Pro",
+    image: "certificate-course-in-data-science",
+    featured: true,
+    highlight: "Harness Python, NumPy, Pandas, Matplotlib, and ML algorithms for complex statistical modelling.",
+    description: "Learn the end-to-end data science lifecycle from exploratory data analysis to predictive modelling. Work with real-world datasets, statistical distributions, and machine learning classifiers.",
     syllabus: [
-      "Introduction to Data Science & Analytics",
-      "Python Data Structures for Analytics",
-      "Data Cleaning & Exploration",
-      "Basic Statistical Analysis & Hypotheses",
-      "Visualizing Trends & Presenting Insights"
-    ],
-    icon: "BarChart3"
+      {
+        module: "Module 1: Introduction to Data Science",
+        topics: [
+          "Data Science Lifecycle",
+          "Data Collection",
+          "Data Analysis"
+        ]
+      },
+      {
+        module: "Module 2: Python Programming",
+        topics: [
+          "Python Fundamentals",
+          "NumPy",
+          "Pandas"
+        ]
+      },
+      {
+        module: "Module 3: Data Visualization",
+        topics: [
+          "Matplotlib",
+          "Data Charts",
+          "Data Insights"
+        ]
+      },
+      {
+        module: "Module 4: Machine Learning",
+        topics: [
+          "Regression",
+          "Classification",
+          "Clustering"
+        ]
+      },
+      {
+        module: "Module 5: Final Data Science Project",
+        topics: [
+          "Final Data Science Project"
+        ]
+      }
+    ]
   },
   {
     slug: "certificate-course-in-computer-science",
+    name: "Certificate Course in Computer Science",
     title: "Certificate Course in Computer Science",
-    categorySlug: "school-special",
-    duration: "As per syllabus",
+    category: "IT & Hardware",
+    categorySlug: "it-hardware",
+    duration: "3 Months",
+    level: "Beginner",
+    image: "certificate-course-in-computer-science",
     featured: false,
-    highlight: "Curriculum coaching for Junior College and University Computer Science subjects and practicals.",
-    description: "Structured academic tutoring for college and university computer science subjects, covering microprocessors, C++ programming, data structures, and computer organization.",
+    highlight: "Essential foundation in computer architecture, operating systems, networking, databases, and programming.",
+    description: "Solid foundational curriculum covering computer hardware and software basics, operating system commands, basic networking, database concepts, and cyber security hygiene.",
     syllabus: [
-      "Computer Architecture & Microprocessors",
-      "Object-Oriented Programming (C++)",
-      "Data Structures & Algorithmic Logic",
-      "Academic Lab Work & Project Guidance"
-    ],
-    icon: "GraduationCap"
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Introduction to Computers",
+          "Computer Hardware & Software",
+          "Operating Systems",
+          "Networking Fundamentals",
+          "Programming Basics",
+          "Databases",
+          "Cyber Security Basics",
+          "Computer Applications"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "diploma-in-computer-management",
+    name: "Diploma in Computer Management",
+    title: "Diploma in Computer Management",
+    category: "Accounting & Office",
+    categorySlug: "accounting-office",
+    duration: "6-12 Months",
+    level: "All Levels",
+    image: "diploma-in-computer-management",
+    featured: false,
+    highlight: "Comprehensive diploma in office automation, MS Office, IT management, networking, and practical administration.",
+    description: "Integrated long-term diploma covering desktop management, MS Office productivity tools, Internet communications, basic databases, LAN networking, and day-to-day IT desk administration.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Computer Fundamentals",
+          "Operating Systems",
+          "MS Office",
+          "Internet & Email",
+          "Database Basics",
+          "Computer Networking",
+          "IT Management",
+          "Project Work"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-coreldraw",
+    name: "Certificate Course in CorelDRAW",
+    title: "Certificate Course in CorelDRAW",
+    category: "Design & Multimedia",
+    categorySlug: "design-multimedia",
+    duration: "1.5-2 Months",
+    level: "Beginner to Pro",
+    image: "coreldraw-photoshop-illustrator-indesign-vray-sketchup",
+    featured: false,
+    highlight: "Master vector graphics, typography, logo drafting, brochures, visiting cards, and print offset layouts.",
+    description: "Hands-on vector design training in CorelDRAW. Learn Bézier curves, object shaping, typography, color separation, visiting card and flex banner layouts, and print-ready prepress exports.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "CorelDRAW Interface",
+          "Design Tools",
+          "Shapes & Objects",
+          "Text & Typography",
+          "Logo Design",
+          "Brochure Design",
+          "Visiting Card Design",
+          "Print Design"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-adobe-photoshop",
+    name: "Certificate Course in Adobe Photoshop",
+    title: "Certificate Course in Adobe Photoshop",
+    category: "Design & Multimedia",
+    categorySlug: "design-multimedia",
+    duration: "2 Months",
+    level: "Beginner to Pro",
+    image: "diploma-in-graphics-designing",
+    featured: true,
+    highlight: "Professional raster photo editing, retouching, masking, color grading, and creative social media posters.",
+    description: "Master the industry's premier photo editing application. Learn layer masks, non-destructive editing, portrait retouching, background manipulation, typography, and advertising graphics.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Photoshop Interface",
+          "Layers & Masks",
+          "Photo Editing",
+          "Retouching",
+          "Background Removal",
+          "Color Correction",
+          "Social Media Creatives",
+          "Poster Design",
+          "Final Portfolio"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-adobe-illustrator",
+    name: "Certificate Course in Adobe Illustrator",
+    title: "Certificate Course in Adobe Illustrator",
+    category: "Design & Multimedia",
+    categorySlug: "design-multimedia",
+    duration: "2 Months",
+    level: "Beginner to Pro",
+    image: "diploma-in-desk-top-publishing-dtp",
+    featured: false,
+    highlight: "Create vector brand logos, iconography, digital illustrations, typography layouts, and scalable branding assets.",
+    description: "Learn vector art creation using Adobe Illustrator. Master the Pen tool, shape builder, gradient meshes, logo design principles, brand style guides, and digital illustration techniques.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Illustrator Interface",
+          "Vector Graphics",
+          "Pen Tool",
+          "Shapes & Icons",
+          "Logo Design",
+          "Typography",
+          "Branding Design",
+          "Illustrations"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-adobe-indesign",
+    name: "Certificate Course in Adobe InDesign",
+    title: "Certificate Course in Adobe InDesign",
+    category: "Design & Multimedia",
+    categorySlug: "design-multimedia",
+    duration: "1.5 Months",
+    level: "Intermediate",
+    image: "diploma-in-desk-top-publishing-dtp",
+    featured: false,
+    highlight: "Design multi-page magazines, books, annual reports, corporate brochures, and print catalog publications.",
+    description: "Learn professional multi-page document publishing. Master master pages, paragraph and character styles, table formatting, interactive PDFs, and print production standards.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "InDesign Interface",
+          "Page Layout",
+          "Typography",
+          "Master Pages",
+          "Brochure Design",
+          "Magazine Design",
+          "Book Layout",
+          "Print Export"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "diploma-in-graphic-designing",
+    name: "Diploma in Graphic Designing",
+    title: "Diploma in Graphic Designing",
+    category: "Design & Multimedia",
+    categorySlug: "design-multimedia",
+    duration: "3-4 Months",
+    level: "Beginner to Pro",
+    image: "diploma-in-graphics-designing",
+    featured: true,
+    highlight: "Complete graphic design career diploma mastering Photoshop, Illustrator, CorelDRAW, and portfolio design.",
+    description: "Comprehensive graphic design diploma combining Photoshop raster editing, Illustrator vector art, CorelDRAW prepress, typography principles, advertising campaigns, and portfolio creation.",
+    syllabus: [
+      {
+        module: "Software",
+        topics: [
+          "Adobe Photoshop",
+          "Adobe Illustrator",
+          "CorelDRAW"
+        ]
+      },
+      {
+        module: "Core Design & Portfolio",
+        topics: [
+          "Design Principles",
+          "Typography",
+          "Branding",
+          "Logo Design",
+          "Social Media Design",
+          "Advertising Creatives",
+          "Print Design",
+          "Portfolio Development"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "diploma-in-web-designing",
+    name: "Diploma in Web Designing",
+    title: "Diploma in Web Designing",
+    category: "Programming",
+    categorySlug: "programming",
+    duration: "3-4 Months",
+    level: "Beginner to Pro",
+    image: "diploma-in-web-designing",
+    featured: false,
+    highlight: "Learn responsive front-end website authoring with HTML5, CSS3, JavaScript, Bootstrap, and live hosting.",
+    description: "Master modern front-end web design. Build mobile-responsive websites with semantic HTML, CSS Grid/Flexbox, interactive JavaScript widgets, Bootstrap components, and cPanel FTP deployment.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "HTML",
+          "CSS",
+          "JavaScript Basics",
+          "Responsive Design",
+          "Website Layout",
+          "Forms",
+          "Bootstrap Basics",
+          "Website Hosting",
+          "Live Website Project"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "diploma-in-interior-designing",
+    name: "Diploma in Interior Designing",
+    title: "Diploma in Interior Designing",
+    category: "CAD & 3D",
+    categorySlug: "cad-3d",
+    duration: "6 Months",
+    level: "Intermediate",
+    image: "diploma-in-interior-designing",
+    featured: false,
+    highlight: "Master space planning, furniture layout, architectural lighting, colour schemes, AutoCAD, and 3D visualization.",
+    description: "Practical career diploma in interior architecture. Learn residential and commercial room layouts, material selection, false ceiling plans, AutoCAD technical drafting, and 3D perspectives.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Fundamentals of Interior Design",
+          "Space Planning",
+          "Colour Theory",
+          "Furniture Design",
+          "Lighting Design",
+          "Residential Design",
+          "Commercial Design",
+          "AutoCAD Basics",
+          "3D Visualization"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "advanced-diploma-in-multimedia-animation",
+    name: "Advanced Diploma in Multimedia & Animation",
+    title: "Advanced Diploma in Multimedia & Animation",
+    category: "Design & Multimedia",
+    categorySlug: "design-multimedia",
+    duration: "6-12 Months",
+    level: "All Levels",
+    image: "adv-diploma-in-multimedia-and-animation",
+    featured: false,
+    highlight: "All-in-one multimedia diploma covering Photoshop, Illustrator, Premiere Pro, After Effects, and 2D/3D motion.",
+    description: "Complete professional media curriculum. Master graphic design, digital video editing in Premiere Pro, kinetic typography and visual effects in After Effects, and multimedia capstone projects.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Graphic Designing",
+          "Photoshop",
+          "Illustrator",
+          "Video Editing",
+          "Adobe Premiere Pro",
+          "After Effects",
+          "Animation Basics",
+          "Motion Graphics",
+          "Multimedia Projects"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-ms-office",
+    name: "Certificate Course in MS Office",
+    title: "Certificate Course in MS Office",
+    category: "Accounting & Office",
+    categorySlug: "accounting-office",
+    duration: "2 Months",
+    level: "Beginner",
+    image: "ms-word",
+    featured: false,
+    highlight: "Practical training in Microsoft Word documentation, Excel calculations & charts, and PowerPoint slide decks.",
+    description: "Master the complete Microsoft Office productivity suite. Learn formal document formatting, mail merge, financial and statistical Excel formulas, pivot tables, and boardroom presentations.",
+    syllabus: [
+      {
+        module: "Module 1: MS Word",
+        topics: [
+          "Documents",
+          "Formatting",
+          "Tables",
+          "Mail Merge"
+        ]
+      },
+      {
+        module: "Module 2: MS Excel",
+        topics: [
+          "Formulas",
+          "Functions",
+          "Charts"
+        ]
+      },
+      {
+        module: "Module 3: MS PowerPoint",
+        topics: [
+          "Presentations",
+          "Animations",
+          "Slide Design"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-ms-cit",
+    name: "Certificate Course in MS-CIT",
+    title: "Certificate Course in MS-CIT",
+    category: "Accounting & Office",
+    categorySlug: "accounting-office",
+    duration: "2 Months",
+    level: "Beginner",
+    image: "certificate-course-in-ms-cit",
+    featured: true,
+    highlight: "Maharashtra Government recognised IT literacy course essential for government jobs, exams, and office desks.",
+    description: "The official Maharashtra State Certificate in Information Technology (MS-CIT). Covers Windows navigation, MS Office suite, internet banking, cyber safety, digital government portals, and online citizen services.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Computer Fundamentals",
+          "Windows",
+          "MS Office",
+          "Internet",
+          "Email",
+          "Digital Services",
+          "Cyber Security Basics",
+          "Practical Computer Applications"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-advanced-tally-erp-9",
+    name: "Certificate Course in Advanced Tally ERP 9",
+    title: "Certificate Course in Advanced Tally ERP 9",
+    category: "Accounting & Office",
+    categorySlug: "accounting-office",
+    duration: "2 Months",
+    level: "Beginner to Pro",
+    image: "certificate-course-in-advanced-tally-erp-9",
+    featured: false,
+    highlight: "Master computerized accounting, GST billing, inventory stock control, payroll, and final financial reports.",
+    description: "Complete practical accounting training on Tally ERP 9. Learn ledger creation, purchase/sales voucher entries, GST calculation, inventory tracking, bank reconciliation, and balance sheet preparation.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Introduction to Tally",
+          "Company Creation",
+          "Accounting Fundamentals",
+          "Ledger Creation",
+          "Voucher Entries",
+          "GST",
+          "Inventory Management",
+          "Payroll",
+          "Financial Reports"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-advanced-tally-prime",
+    name: "Certificate Course in Advanced Tally Prime",
+    title: "Certificate Course in Advanced Tally Prime",
+    category: "Accounting & Office",
+    categorySlug: "accounting-office",
+    duration: "2 Months",
+    level: "Beginner to Pro",
+    image: "certificate-course-in-adv-tally-erp-9-with-prime",
+    featured: true,
+    highlight: "Learn latest Tally Prime interface, e-Invoicing, e-Way bills, GST reconciliation, banking, and MIS statements.",
+    description: "Master the modern Tally Prime platform for accounting and taxation. Learn multi-currency ledger management, GST return filings (GSTR-1, GSTR-3B), TDS computations, automated bank sync, and audit reports.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Tally Prime Interface",
+          "Company Management",
+          "Accounting",
+          "GST",
+          "Inventory",
+          "Payroll",
+          "Banking",
+          "Financial Statements",
+          "Practical Projects"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-advanced-excel",
+    name: "Certificate Course in Advanced Excel",
+    title: "Certificate Course in Advanced Excel",
+    category: "Accounting & Office",
+    categorySlug: "accounting-office",
+    duration: "1.5-2 Months",
+    level: "Intermediate",
+    image: "certificate-course-in-advance-excel",
+    featured: false,
+    highlight: "Master XLOOKUP, nested logic, Pivot Tables, conditional formatting, data validation, and business reports.",
+    description: "Advanced spreadsheet mastery for working professionals. Learn dynamic lookup formulas, complex nested logical conditions, interactive Pivot Tables, data cleaning methods, and automated reporting.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Advanced Formulas",
+          "Lookup Functions",
+          "Logical Functions",
+          "Pivot Tables",
+          "Charts",
+          "Data Validation",
+          "Conditional Formatting",
+          "Data Cleaning",
+          "Excel Reporting"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-advanced-excel-with-dashboard",
+    name: "Certificate Course in Advanced Excel with Dashboard",
+    title: "Certificate Course in Advanced Excel with Dashboard",
+    category: "Data & Analytics",
+    categorySlug: "data-analytics",
+    duration: "2 Months",
+    level: "Intermediate to Pro",
+    image: "advance-excel-with-dashboard",
+    featured: true,
+    highlight: "Build interactive executive KPI dashboards, slicers, pivot charts, dynamic summaries, and business analytics.",
+    description: "Learn to transform large corporate datasets into dynamic visual dashboards. Master advanced chart customization, timeline slicers, KPI scorecard development, and automated summary reports.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Advanced Excel Functions",
+          "Pivot Tables",
+          "Pivot Charts",
+          "Data Analysis",
+          "Dashboard Design",
+          "Interactive Dashboards",
+          "KPI Reporting",
+          "Business Reports"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-advanced-excel-with-mis-reports",
+    name: "Certificate Course in Advanced Excel with MIS Reports",
+    title: "Certificate Course in Advanced Excel with MIS Reports",
+    category: "Data & Analytics",
+    categorySlug: "data-analytics",
+    duration: "2 Months",
+    level: "Intermediate to Pro",
+    image: "certificate-course-in-adv-excel-with-mis-reports",
+    featured: false,
+    highlight: "Learn Management Information Systems (MIS) reporting, automated sales/HR/finance reports, and data analysis.",
+    description: "Specialized training in corporate MIS reporting. Learn automated daily/weekly/monthly report generation for sales, HR, operations, and finance using advanced formula structures and Pivot Tables.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "MIS Fundamentals",
+          "Data Management",
+          "Advanced Formulas",
+          "Pivot Tables",
+          "Automated Reports",
+          "Sales MIS",
+          "HR MIS",
+          "Financial MIS",
+          "Dashboard Reporting"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-html",
+    name: "Certificate Course in HTML",
+    title: "Certificate Course in HTML",
+    category: "Programming",
+    categorySlug: "programming",
+    duration: "1 Month",
+    level: "Beginner",
+    image: "c-cpp-oracle-sql-asp-vb-cs-html-wordpress",
+    featured: false,
+    highlight: "Learn semantic HTML5 markup, forms, tables, media embeds, page hierarchy, and website project structure.",
+    description: "Learn the foundational markup language of the web. Understand HTML elements, forms, input validation, multimedia integration, semantic tags, and build clean multi-page websites.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Introduction to HTML",
+          "Tags & Elements",
+          "Headings & Paragraphs",
+          "Links & Images",
+          "Tables",
+          "Forms",
+          "Semantic HTML",
+          "Website Project"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-wordpress",
+    name: "Certificate Course in WordPress",
+    title: "Certificate Course in WordPress",
+    category: "Programming",
+    categorySlug: "programming",
+    duration: "1.5 Months",
+    level: "Beginner to Pro",
+    image: "c-cpp-oracle-sql-asp-vb-cs-html-wordpress",
+    featured: false,
+    highlight: "Build custom business websites, blogs, and landing pages using WordPress themes, plugins, and hosting.",
+    description: "Learn no-code and low-code website creation with WordPress CMS. Master domain setup, theme customization, essential plugins, page builders, contact forms, and on-page SEO.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Introduction to WordPress",
+          "Domain & Hosting",
+          "Themes",
+          "Plugins",
+          "Pages & Posts",
+          "Menus",
+          "Contact Forms",
+          "Basic SEO",
+          "Website Creation"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-c-programming",
+    name: "Certificate Course in C Programming",
+    title: "Certificate Course in C Programming",
+    category: "Programming",
+    categorySlug: "programming",
+    duration: "2 Months",
+    level: "Beginner",
+    image: "certificate-course-in-c-c-plus-plus",
+    featured: false,
+    highlight: "Core procedural programming, memory management, pointers, arrays, loops, and algorithmic problem solving.",
+    description: "Master the foundational language of software engineering. Learn variable memory allocation, control flow, functions, arrays, pointers, structures, and file I/O handling.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Introduction to C",
+          "Variables & Data Types",
+          "Operators",
+          "Conditional Statements",
+          "Loops",
+          "Functions",
+          "Arrays",
+          "Pointers Basics",
+          "File Handling"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-c-plus-plus",
+    name: "Certificate Course in C++",
+    title: "Certificate Course in C++",
+    category: "Programming",
+    categorySlug: "programming",
+    duration: "2 Months",
+    level: "Intermediate",
+    image: "certificate-course-in-c-c-plus-plus",
+    featured: false,
+    highlight: "Object-Oriented Programming with classes, inheritance, polymorphism, encapsulation, and C++ STL structures.",
+    description: "Learn modern Object-Oriented Programming (OOP) in C++. Master classes, objects, constructor overloading, inheritance models, virtual functions, polymorphism, and memory management.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Introduction to C++",
+          "Variables & Data Types",
+          "Control Statements",
+          "Functions",
+          "Arrays",
+          "Object-Oriented Programming",
+          "Classes & Objects",
+          "Inheritance",
+          "Polymorphism"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-advanced-java",
+    name: "Certificate Course in Advanced Java",
+    title: "Certificate Course in Advanced Java",
+    category: "Programming",
+    categorySlug: "programming",
+    duration: "3 Months",
+    level: "Intermediate to Pro",
+    image: "certificate-course-in-adv-java",
+    featured: true,
+    highlight: "Enterprise Java, OOP concepts, Collections Framework, multithreading, exception handling, and JDBC.",
+    description: "Master Core and Advanced Java development. Learn object-oriented architecture, collection interfaces, multithreaded processing, JDBC database connectivity, and backend Java projects.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Java Fundamentals",
+          "Object-Oriented Programming",
+          "Classes & Objects",
+          "Exception Handling",
+          "Collections",
+          "Multithreading",
+          "JDBC",
+          "Database Connectivity",
+          "Java Projects"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-php",
+    name: "Certificate Course in PHP",
+    title: "Certificate Course in PHP",
+    category: "Programming",
+    categorySlug: "programming",
+    duration: "2 Months",
+    level: "Beginner to Pro",
+    image: "certificate-course-in-php",
+    featured: false,
+    highlight: "Server-side scripting with PHP, MySQL database integration, form handling, sessions, and dynamic CRUD apps.",
+    description: "Learn backend web programming with PHP and MySQL. Master form processing, session management, user authentication, SQL queries, CRUD database operations, and dynamic web portals.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "PHP Fundamentals",
+          "Variables",
+          "Functions",
+          "Forms",
+          "Arrays",
+          "Sessions & Cookies",
+          "MySQL Database",
+          "CRUD Operations",
+          "Dynamic Website Project"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-python",
+    name: "Certificate Course in Python",
+    title: "Certificate Course in Python",
+    category: "Programming",
+    categorySlug: "programming",
+    duration: "2.5 Months",
+    level: "Beginner to Pro",
+    image: "certificate-course-in-python",
+    featured: true,
+    highlight: "From Python basics to data structures, functions, file handling, automation scripts, and package ecosystem.",
+    description: "Master versatile Python programming. Learn clean syntax, lists, dictionaries, functions, modular architecture, file parsing, exception handling, and hands-on scripting projects.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Python Fundamentals",
+          "Variables & Data Types",
+          "Operators",
+          "Conditional Statements",
+          "Loops",
+          "Functions",
+          "Lists & Dictionaries",
+          "File Handling",
+          "Libraries Basics",
+          "Python Projects"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-sql",
+    name: "Certificate Course in SQL",
+    title: "Certificate Course in SQL",
+    category: "Data & Analytics",
+    categorySlug: "data-analytics",
+    duration: "1.5-2 Months",
+    level: "Beginner to Pro",
+    image: "diploma-in-oracle-and-sql-server",
+    featured: false,
+    highlight: "Relational database querying with SELECT, WHERE, ORDER BY, GROUP BY, complex JOINs, and subqueries.",
+    description: "Learn relational database management and querying in SQL. Write robust SELECT queries, table joins, aggregate groupings, subqueries, and manage real business schemas.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Database Fundamentals",
+          "SQL Commands",
+          "SELECT Queries",
+          "WHERE Clause",
+          "ORDER BY",
+          "GROUP BY",
+          "Joins",
+          "Subqueries",
+          "Database Projects"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-tableau",
+    name: "Certificate Course in Tableau",
+    title: "Certificate Course in Tableau",
+    category: "Data & Analytics",
+    categorySlug: "data-analytics",
+    duration: "2 Months",
+    level: "Intermediate",
+    image: "certificate-course-in-tableau",
+    featured: false,
+    highlight: "Visual analytics with Tableau, data connections, calculated fields, dynamic maps, and executive dashboards.",
+    description: "Master data visualization with Tableau. Connect to disparate data sources, write custom calculated fields, construct interactive visual charts, and publish executive storytelling dashboards.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Tableau Fundamentals",
+          "Data Connection",
+          "Data Preparation",
+          "Charts",
+          "Calculated Fields",
+          "Dashboards",
+          "Interactive Reports",
+          "Data Visualization Project"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-power-bi",
+    name: "Certificate Course in Power BI",
+    title: "Certificate Course in Power BI",
+    category: "Data & Analytics",
+    categorySlug: "data-analytics",
+    duration: "2 Months",
+    level: "Intermediate to Pro",
+    image: "certificate-course-in-power-bi",
+    featured: true,
+    highlight: "Business Intelligence with Power BI: Power Query ETL, data modelling, DAX formulas, and rich reports.",
+    description: "End-to-end Business Intelligence in Microsoft Power BI. Learn Power Query data transformation, relationship data modelling, DAX formulas, interactive visualizations, and automated dashboards.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Power BI Introduction",
+          "Data Import",
+          "Power Query",
+          "Data Cleaning",
+          "Data Modeling",
+          "DAX Basics",
+          "Visualizations",
+          "Dashboard Creation",
+          "Business Intelligence Project"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "diploma-in-dot-net",
+    name: "Diploma in .NET",
+    title: "Diploma in .NET",
+    category: "Programming",
+    categorySlug: "programming",
+    duration: "4-6 Months",
+    level: "Intermediate to Pro",
+    image: "diploma-in-dot-net",
+    featured: false,
+    highlight: "C# programming, OOP architecture, Windows desktop applications, ASP.NET web development, and ADO.NET.",
+    description: "Comprehensive Microsoft .NET software development diploma. Master C# language features, Object-Oriented design, Windows forms GUI apps, ASP.NET web apps, and SQL database integration.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Introduction to .NET",
+          "C# Programming",
+          "Object-Oriented Programming",
+          "Windows Applications",
+          "ASP.NET Basics",
+          "Database Connectivity",
+          "Web Applications",
+          "Final Project"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-sketchup",
+    name: "Certificate Course in SketchUp",
+    title: "Certificate Course in SketchUp",
+    category: "CAD & 3D",
+    categorySlug: "cad-3d",
+    duration: "1.5-2 Months",
+    level: "Beginner to Pro",
+    image: "diploma-in-interior-designing",
+    featured: false,
+    highlight: "3D architectural modelling, interior layouts, materials, textures, camera perspectives, and walkthroughs.",
+    description: "Learn intuitive 3D architectural and interior modelling in SketchUp. Construct room dimensions, apply realistic materials and textures, configure lighting setups, and produce 3D client visualizations.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "SketchUp Interface",
+          "Drawing Tools",
+          "3D Modelling",
+          "Components",
+          "Materials & Textures",
+          "Lighting Basics",
+          "Interior Modelling",
+          "3D Projects"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-adobe-after-effects",
+    name: "Certificate Course in Adobe After Effects",
+    title: "Certificate Course in Adobe After Effects",
+    category: "Design & Multimedia",
+    categorySlug: "design-multimedia",
+    duration: "2 Months",
+    level: "Intermediate",
+    image: "after-effect",
+    featured: false,
+    highlight: "Motion graphics, keyframe animation, kinetic text, visual effects compositing, and video intros.",
+    description: "Master visual effects and motion graphics in After Effects. Learn layer composition, graph editor keyframing, typography animation, green screen chroma keying, and motion tracking.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "After Effects Interface",
+          "Layers & Composition",
+          "Keyframes",
+          "Animation",
+          "Motion Graphics",
+          "Text Animation",
+          "Visual Effects",
+          "Video Compositing",
+          "Final Motion Graphics Project"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-adobe-premiere-pro",
+    name: "Certificate Course in Adobe Premiere Pro",
+    title: "Certificate Course in Adobe Premiere Pro",
+    category: "Design & Multimedia",
+    categorySlug: "design-multimedia",
+    duration: "2 Months",
+    level: "Beginner to Pro",
+    image: "adobe-premier",
+    featured: false,
+    highlight: "Non-linear video editing, timeline workflow, audio mixing, color correction, transitions, and 4K exports.",
+    description: "Professional video editing with Adobe Premiere Pro. Learn timeline sequencing, multi-camera editing, speed ramps, audio noise reduction, Lumetri Color grading, and social video formatting.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Video Editing Fundamentals",
+          "Timeline",
+          "Cutting & Trimming",
+          "Transitions",
+          "Audio Editing",
+          "Colour Correction",
+          "Titles",
+          "Effects",
+          "Exporting Videos",
+          "Final Video Project"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-autocad",
+    name: "Certificate Course in AutoCAD",
+    title: "Certificate Course in AutoCAD",
+    category: "CAD & 3D",
+    categorySlug: "cad-3d",
+    duration: "2 Months",
+    level: "Beginner to Pro",
+    image: "advance-diploma-in-autocad",
+    featured: true,
+    highlight: "2D drafting, floor plans, elevations, section views, layer management, dimensioning, and print plotting.",
+    description: "The industry standard for computer-aided design and technical drafting. Learn precision 2D geometric construction, architectural floor plans, engineering schematics, layers, and plotting to scale.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "AutoCAD Interface",
+          "Drawing Tools",
+          "Editing Tools",
+          "Layers",
+          "Dimensions",
+          "2D Drawings",
+          "Floor Plans",
+          "Technical Drawings",
+          "Printing & Plotting"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-3ds-max",
+    name: "Certificate Course in 3ds Max",
+    title: "Certificate Course in 3ds Max",
+    category: "CAD & 3D",
+    categorySlug: "cad-3d",
+    duration: "2-3 Months",
+    level: "Intermediate",
+    image: "diploma-in-3d-max",
+    featured: false,
+    highlight: "3D architectural visualization, polygonal modelling, material texturing, lighting rigs, and rendering.",
+    description: "Create photorealistic 3D environments and architectural models in 3ds Max. Learn polygon modelling, UVW mapping, physical camera setup, V-Ray/Arnold lighting, and high-resolution rendering.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Introduction to 3ds Max",
+          "3D Modelling",
+          "Materials",
+          "Texturing",
+          "Lighting",
+          "Camera Setup",
+          "Rendering",
+          "Interior Visualization",
+          "3D Project"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-revit",
+    name: "Certificate Course in Revit",
+    title: "Certificate Course in Revit",
+    category: "CAD & 3D",
+    categorySlug: "cad-3d",
+    duration: "2 Months",
+    level: "Intermediate",
+    image: "diploma-in-revit",
+    featured: false,
+    highlight: "Building Information Modelling (BIM), architectural elements, parametric families, 3D views, and documentation.",
+    description: "Learn Building Information Modelling (BIM) using Autodesk Revit. Construct intelligent 3D building models with walls, doors, windows, and structural components with automatic schedules and construction sheets.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Introduction to BIM",
+          "Revit Interface",
+          "Architectural Modelling",
+          "Walls & Floors",
+          "Doors & Windows",
+          "Structural Elements",
+          "3D Views",
+          "Documentation",
+          "Building Project"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-v-ray",
+    name: "Certificate Course in V-Ray",
+    title: "Certificate Course in V-Ray",
+    category: "CAD & 3D",
+    categorySlug: "cad-3d",
+    duration: "1.5 Months",
+    level: "Intermediate to Pro",
+    image: "diploma-in-3d-max",
+    featured: false,
+    highlight: "Photorealistic rendering engine mastery: physical lights, materials, global illumination, and camera setups.",
+    description: "Master photorealistic rendering in V-Ray. Learn physical camera exposure, HDRI environment lighting, realistic shader creation (glass, metal, wood), global illumination algorithms, and post-production tone mapping.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "V-Ray Introduction",
+          "Materials",
+          "Lighting",
+          "Camera Settings",
+          "Rendering",
+          "Interior Rendering",
+          "Exterior Rendering",
+          "Photorealistic Visualization"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "combo-course-with-ms-cit",
+    name: "Combo Course with MS-CIT",
+    title: "Combo Course with MS-CIT",
+    category: "Accounting & Office",
+    categorySlug: "accounting-office",
+    duration: "3 Months",
+    level: "Beginner",
+    image: "combo-course-with-ms-cit",
+    featured: false,
+    highlight: "Integrated dual certification package combining MS-CIT government syllabus with advanced office computing skills.",
+    description: "A high-value training combo that provides official MS-CIT certification along with deep-dive practical training in MS Word, Advanced Excel, PowerPoint, and digital communication tools.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "MS-CIT",
+          "Computer Fundamentals",
+          "MS Word",
+          "MS Excel",
+          "PowerPoint",
+          "Internet & Email",
+          "Digital Literacy",
+          "Practical Assignments"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-typing-english",
+    name: "Certificate Course in Typing – English",
+    title: "Certificate Course in Typing – English",
+    category: "Typing",
+    categorySlug: "typing",
+    duration: "2-3 Months",
+    level: "All Levels",
+    image: "certificate-course-in-typing-english",
+    featured: false,
+    highlight: "Touch typing mastery, home-row ergonomics, speed drills (30/40 WPM), and official GCC-TBC exam readiness.",
+    description: "Professional English touch-typing course. Learn touch-finger placement without looking at the keyboard, build rhythm, reduce errors, and train on official GCC-TBC speed and passage testing software.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Keyboard Familiarization",
+          "Finger Placement",
+          "Typing Techniques",
+          "Speed Building",
+          "Accuracy Improvement",
+          "Paragraph Typing",
+          "Professional Typing Practice"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-typing-marathi",
+    name: "Certificate Course in Typing – Marathi",
+    title: "Certificate Course in Typing – Marathi",
+    category: "Typing",
+    categorySlug: "typing",
+    duration: "2-3 Months",
+    level: "All Levels",
+    image: "certificate-course-in-typing-marathi",
+    featured: false,
+    highlight: "Marathi InScript and Remington keyboard typing, character codes, speed building, and government exam drills.",
+    description: "Master Marathi keyboard typing for Maharashtra government jobs and court clerk examinations. Practice Matras, conjunct characters, speed enhancement drills, and official passage formats.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Marathi Keyboard Layout",
+          "Typing Fundamentals",
+          "Speed Development",
+          "Accuracy Practice",
+          "Marathi Document Typing",
+          "Professional Practice"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-share-market",
+    name: "Certificate Course in Share Market",
+    title: "Certificate Course in Share Market",
+    category: "Personal Development",
+    categorySlug: "personal-development",
+    duration: "1.5-2 Months",
+    level: "Beginner to Pro",
+    image: "certificate-course-in-share-market",
+    featured: false,
+    highlight: "Stock market fundamentals, NSE/BSE trading, candlestick charts, technical indicators, and risk management.",
+    description: "Learn equity market investments and trading fundamentals. Understand Demat accounts, order types, fundamental financial ratios, candlestick chart patterns, support/resistance, and risk-reward strategies.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Introduction to Stock Market",
+          "NSE & BSE Basics",
+          "Types of Securities",
+          "Demat & Trading Account",
+          "Fundamental Analysis Basics",
+          "Technical Analysis Basics",
+          "Risk Management",
+          "Investment Strategies",
+          "Portfolio Basics"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-advanced-english-speaking",
+    name: "Certificate Course in Advanced English Speaking",
+    title: "Certificate Course in Advanced English Speaking",
+    category: "Personal Development",
+    categorySlug: "personal-development",
+    duration: "2 Months",
+    level: "All Levels",
+    image: "adv-english-speaking-course",
+    featured: false,
+    highlight: "Fluent spoken English, vocabulary building, pronunciation correction, group discussions, and interview skills.",
+    description: "Overcome hesitation and speak English fluently with confidence. Daily conversational practice, grammar for speaking, accent refinement, professional presentations, and HR interview simulations.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Spoken English Fundamentals",
+          "Grammar for Speaking",
+          "Vocabulary Building",
+          "Pronunciation",
+          "Daily Conversations",
+          "Interview Preparation",
+          "Group Discussions",
+          "Public Speaking",
+          "Presentation Skills"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-advanced-personality-development",
+    name: "Certificate Course in Advanced Personality Development",
+    title: "Certificate Course in Advanced Personality Development",
+    category: "Personal Development",
+    categorySlug: "personal-development",
+    duration: "1.5-2 Months",
+    level: "All Levels",
+    image: "adv-personality-development-course",
+    featured: false,
+    highlight: "Build self-confidence, body language, public speaking charisma, leadership qualities, and workplace etiquette.",
+    description: "Comprehensive personal transformation workshop. Develop executive presence, master body language, stage public speaking, assertiveness, corporate etiquette, time management, and interview readiness.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Self-Confidence",
+          "Communication Skills",
+          "Body Language",
+          "Public Speaking",
+          "Leadership Skills",
+          "Time Management",
+          "Interview Skills",
+          "Professional Etiquette",
+          "Goal Setting"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-11th-computer-it",
+    name: "Certificate Course in 11th Computer IT",
+    title: "Certificate Course in 11th Computer IT",
+    category: "Academic",
+    categorySlug: "academic",
+    duration: "Academic Year / 3-6 Months",
+    level: "Academic",
+    image: "certificate-course-in-11th-computer-it",
+    featured: false,
+    highlight: "Junior college standard 11th IT syllabus coaching with hands-on lab practicals, theory, and exam support.",
+    description: "Academic coaching for Maharashtra State Board 11th Standard Information Technology (Arts/Commerce/Science). Practical lab programming, web authoring basics, database theory, and exam preparation.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Computer Fundamentals",
+          "Programming Concepts",
+          "Web Technologies",
+          "Database Concepts",
+          "Networking",
+          "Practical Computer Applications",
+          "Academic Curriculum Support",
+          "Practical Assignments"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "certificate-course-in-12th-computer-it",
+    name: "Certificate Course in 12th Computer IT",
+    title: "Certificate Course in 12th Computer IT",
+    category: "Academic",
+    categorySlug: "academic",
+    duration: "Academic Year / 3-6 Months",
+    level: "Academic",
+    image: "certificate-course-in-12th-computer-it",
+    featured: false,
+    highlight: "HSC Board 12th Standard IT subject coaching with 100% practical lab training, board projects, and marks boost.",
+    description: "Score top marks in Maharashtra HSC Board 12th IT exam. Thorough guidance in advanced web development, PHP/database integration, cyber laws, digital marketing basics, board practical journals, and sample paper solving.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Advanced Computer Concepts",
+          "Programming",
+          "Database Management",
+          "Web Development Basics",
+          "Networking",
+          "IT Applications",
+          "Practical Projects",
+          "Exam Preparation"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "advanced-diploma-in-hardware-engineering",
+    name: "Advanced Diploma in Hardware Engineering",
+    title: "Advanced Diploma in Hardware Engineering",
+    category: "IT & Hardware",
+    categorySlug: "it-hardware",
+    duration: "6 Months",
+    level: "Beginner to Pro",
+    image: "adv-diploma-in-hardware-engineering",
+    featured: false,
+    highlight: "Computer assembly, motherboard & processor diagnostics, BIOS setup, OS installation, and hardware repair.",
+    description: "Hands-on PC hardware technician program. Learn computer assembly from scratch, component compatibility, power supply diagnostics, storage repair, BIOS configuration, OS installation, and peripheral troubleshooting.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Computer Hardware Fundamentals",
+          "Computer Assembly",
+          "Motherboard",
+          "Processor",
+          "RAM & Storage",
+          "BIOS & CMOS",
+          "Operating System Installation",
+          "Troubleshooting",
+          "Printer & Peripheral Devices",
+          "Hardware Maintenance"
+        ]
+      }
+    ]
+  },
+  {
+    slug: "advanced-diploma-in-network-engineering",
+    name: "Advanced Diploma in Network Engineering",
+    title: "Advanced Diploma in Network Engineering",
+    category: "IT & Hardware",
+    categorySlug: "it-hardware",
+    duration: "6 Months",
+    level: "Intermediate to Pro",
+    image: "adv-diploma-in-network-engineering",
+    featured: false,
+    highlight: "TCP/IP protocols, subnetting, routers & switches, LAN/WAN setup, Wi-Fi security, and network diagnostics.",
+    description: "Professional networking diploma. Master IP addressing (IPv4/IPv6), CIDR subnetting, router and switch configuration, crimping and structured cabling, Wi-Fi security policies, firewall rules, and practical LAN administration.",
+    syllabus: [
+      {
+        module: "Course Curriculum",
+        topics: [
+          "Networking Fundamentals",
+          "Network Devices",
+          "IP Addressing",
+          "Subnetting",
+          "LAN & WAN",
+          "Routing",
+          "Switching",
+          "Wireless Networking",
+          "Network Security",
+          "Troubleshooting",
+          "Practical Network Setup"
+        ]
+      }
+    ]
   }
 ];

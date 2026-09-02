@@ -151,7 +151,7 @@ export default function Navbar({ onOpenModal }) {
               className="h-9 sm:h-10 lg:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02] shrink-0"
               loading="eager"
             />
-            <span className="uppercase font-bold text-primary text-[14px] xs:text-[15px] sm:text-[17px] lg:text-[19px] xl:text-[20px] tracking-tight leading-none group-hover:text-primary-hover transition-colors whitespace-nowrap">
+            <span className="font-bold text-primary text-[14px] xs:text-[15px] sm:text-[17px] lg:text-[19px] xl:text-[20px] tracking-tight leading-none group-hover:text-primary-hover transition-colors whitespace-nowrap">
               National Computer Centre
             </span>
           </Link>

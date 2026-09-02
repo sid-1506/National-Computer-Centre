@@ -9,9 +9,12 @@ export default function CourseCard({
   reviewCount = '3',
   isOnline = false,
 }) {
+  const courseTitle = course.name || course.title;
+  const effectiveCategory = categoryName || course.category || course.categorySlug;
+
   return (
     <Link
-      to={isOnline ? `/courses/${course.slug}?mode=online` : `/courses/${course.slug}`}
+      to={isOnline ? `/online-courses/${course.slug}` : `/courses/${course.slug}`}
       className="course-card-hover group flex flex-col bg-white rounded-2xl border border-[#F1F5F9] overflow-hidden cursor-pointer
         shadow-[0_4px_20px_rgba(0,0,0,0.03)]
         h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0B6AA8] focus-visible:ring-offset-2"
@@ -20,8 +23,8 @@ export default function CourseCard({
       <div className="relative w-full h-[220px] sm:h-[240px] overflow-hidden bg-slate-50">
         <CourseThumbnail
           slug={course.slug}
-          title={course.title}
-          categoryName={categoryName}
+          title={courseTitle}
+          categoryName={effectiveCategory}
           className="course-thumb-img w-full h-full object-cover transition-transform duration-400 ease-out"
         />
       </div>

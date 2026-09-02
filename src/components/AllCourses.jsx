@@ -30,7 +30,7 @@ export default function AllCourses() {
       metaDesc.name = 'description';
       document.head.appendChild(metaDesc);
     }
-    metaDesc.content = 'Explore all 56 government-recognised and professional IT courses at National Computer Centre Mulund West. MS-CIT, Tally Prime, Advance Excel, MERN Full Stack, Python, AI-ML & more.';
+    metaDesc.content = 'Explore all 52 government-recognised and professional IT courses at National Computer Centre Mulund West. MS-CIT, Tally Prime, Advance Excel, MERN Full Stack, Python, AI-ML & more.';
   }, []);
 
   const filteredCourses = activeCategory === 'all'
@@ -56,7 +56,7 @@ export default function AllCourses() {
 
           {/* Eyebrow + heading */}
           <div className="text-center mb-8">
-            <span className="reveal-eyebrow eyebrow-chip mb-3 inline-block">Full Catalogue · 56 Courses</span>
+            <span className="reveal-eyebrow eyebrow-chip mb-3 inline-block">Full Catalogue · {courses.length} Courses</span>
             <h1 className="reveal-heading font-bold text-foreground" style={{ fontSize: 'clamp(2.2rem, 5vw, 3.4rem)', letterSpacing: '-0.01em', lineHeight: 1.15 }}>
               Our <span className="text-primary">Courses</span>
             </h1>

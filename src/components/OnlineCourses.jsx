@@ -64,7 +64,7 @@ export default function OnlineCourses() {
           {/* Eyebrow + heading */}
           <div className="text-center mb-8">
             <span className="reveal-eyebrow eyebrow-chip mb-3 inline-block">
-              Online Training · 56 Courses
+              Online Training · {courses.length} Courses
             </span>
             <h1
               className="reveal-heading font-bold text-foreground"

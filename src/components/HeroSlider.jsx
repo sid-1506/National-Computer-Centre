@@ -10,7 +10,8 @@ const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffec
 
 // Clean short display titles for typewriter headline
 const COURSE_NAMES = courses.map((c) => {
-  return c.title
+  const name = c.name || c.title || '';
+  return name
     .replace(/^Certificate Course in /i, '')
     .replace(/^Advanced Diploma in /i, 'Adv. Diploma in ')
     .replace(/^Diploma in /i, 'Diploma in ')
@@ -25,14 +26,14 @@ const BG_IMAGES = Array.from(
   new Set([
     classroomImg,
     getCourseImage('certificate-course-in-ms-cit'),
-    getCourseImage('full-stack-with-mern-stack-web-development'),
-    getCourseImage('certificate-course-in-adv-tally-erp-9-with-prime'),
-    getCourseImage('diploma-in-graphics-designing'),
+    getCourseImage('full-stack-mern-web-development'),
+    getCourseImage('certificate-course-in-advanced-tally-prime'),
+    getCourseImage('diploma-in-graphic-designing'),
     getCourseImage('certificate-course-in-python'),
-    getCourseImage('advance-excel-with-dashboard'),
-    getCourseImage('certificate-course-in-ai-ml'),
-    getCourseImage('diploma-in-3d-max'),
-    getCourseImage('adv-diploma-in-hardware-engineering'),
+    getCourseImage('certificate-course-in-advanced-excel-with-dashboard'),
+    getCourseImage('certificate-course-in-ai-machine-learning'),
+    getCourseImage('certificate-course-in-3ds-max'),
+    getCourseImage('advanced-diploma-in-hardware-engineering'),
   ])
 );
 

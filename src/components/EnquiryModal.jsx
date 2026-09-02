@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { X, ArrowRight, CheckCircle2 } from 'lucide-react';
-import { COURSES } from '../data/nccData';
+import { X, ArrowRight, CheckCircle2, ChevronDown } from 'lucide-react';
+import { courses, categories } from '../data/courses';
 
-export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT' }) {
+export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'Certificate Course in MS-CIT' }) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -11,6 +11,12 @@ export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT'
     timing: 'Morning (07:00 AM – 11:00 AM)',
   });
   const [submitted, setSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (defaultCourse) {
+      setFormData((prev) => ({ ...prev, course: defaultCourse }));
+    }
+  }, [defaultCourse]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -105,7 +111,7 @@ export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT'
                 required
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Your full name"
+                placeholder="e.g. Rahul Sharma"
                 className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-[15px] text-foreground focus:border-primary focus:outline-none transition-colors"
               />
             </div>
@@ -128,26 +134,36 @@ export default function EnquiryModal({ isOpen, onClose, defaultCourse = 'MS-CIT'
             </div>
 
             {/* Course */}
-            <div>
+            <div className="relative">
               <label htmlFor="modal-course" className="block text-[12px] font-semibold text-muted-foreground mb-1.5 uppercase tracking-wide">
                 Course Track *
               </label>
-              <select
-                id="modal-course"
-                name="course"
-                value={formData.course || defaultCourse}
-                onChange={handleChange}
-                className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-[15px] text-foreground focus:border-primary focus:outline-none cursor-pointer"
-              >
-                {COURSES.map((c) => (
-                  <option key={c.id} value={c.name}>
-                    {c.index} — {c.name} ({c.duration})
+              <div className="relative">
+                <select
+                  id="modal-course"
+                  name="course"
+                  value={formData.course || defaultCourse}
+                  onChange={handleChange}
+                  className="w-full rounded-lg border border-border bg-surface px-4 py-2.5 pr-8 text-[15px] text-foreground focus:border-primary focus:outline-none cursor-pointer appearance-none truncate"
+                >
+                  {categories.map((cat) => {
+                    const catCourses = courses.filter((c) => c.categorySlug === cat.slug);
+                    return (
+                      <optgroup key={cat.slug} label={cat.name}>
+                        {catCourses.map((c) => (
+                          <option key={c.slug} value={c.title || c.name}>
+                            {c.title || c.name} ({c.duration})
+                          </option>
+                        ))}
+                      </optgroup>
+                    );
+                  })}
+                  <option value="Anniversary Combo Offer (Up to 50% Off)">
+                    ★ 28th Anniversary Combo (Up to 50% Off)
                   </option>
-                ))}
-                <option value="Anniversary Combo Offer (Up to 50% Off)">
-                  ★ 28th Anniversary Combo (Up to 50% Off)
-                </option>
-              </select>
+                </select>
+                <ChevronDown className="w-4 h-4 text-muted-foreground absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+              </div>
             </div>
 
             {/* Timing */}
