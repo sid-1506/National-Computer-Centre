@@ -98,7 +98,7 @@ export const SLUG_TO_IMAGE_FILENAME = {
   'certificate-course-in-autocad': 'Autocad.jpg',
   'certificate-course-in-3ds-max': '3D max.jpg',
   'certificate-course-in-revit': 'Revit.jpg',
-  'certificate-course-in-v-ray': 'V-ray.jpg',
+  'certificate-course-in-v-ray': 'Vray.jpg',
 
   // Typing
   'certificate-course-in-typing-english': 'English Typing.png',

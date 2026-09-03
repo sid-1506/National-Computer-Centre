@@ -25,7 +25,7 @@ export default function CourseCard({
           slug={course.slug}
           title={courseTitle}
           categoryName={effectiveCategory}
-          className="course-thumb-img w-full h-full object-cover transition-transform duration-400 ease-out"
+          className="course-thumb-img w-full h-full transition-transform duration-400 ease-out"
         />
       </div>
 
