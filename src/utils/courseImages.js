@@ -101,7 +101,7 @@ export const SLUG_TO_IMAGE_FILENAME = {
   'certificate-course-in-v-ray': 'V-ray.jpg',
 
   // Typing
-  'certificate-course-in-typing-english': 'Marathi TYping.png',
+  'certificate-course-in-typing-english': 'English Typing.png',
   'certificate-course-in-typing-marathi': 'Marathi TYping.png',
 
   // Financial, Personal Development & IT
