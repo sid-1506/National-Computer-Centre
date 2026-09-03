@@ -1,91 +1,150 @@
-import fallbackImg from '../assets/courses/course-fallback.jpg';
-
-// Eagerly import all course images via Vite glob
-const courseImages = import.meta.glob('../assets/courses/*.jpg', {
+// Eagerly glob-import all course images via Vite glob
+const courseImages = import.meta.glob('../assets/courses/*.{jpg,jpeg,png,webp}', {
   eager: true,
   import: 'default',
 });
 
-// Mapping of course slugs to image file basenames (without .jpg extension)
-const SLUG_IMAGE_MAP = {
-  'certificate-course-in-advanced-digital-marketing': 'certificate-course-in-advance-digital-marketing',
-  'certificate-course-in-data-analytics': 'certificate-course-in-data-science',
-  'certificate-course-in-cyber-security': 'adv-diploma-in-network-engineering',
-  'certificate-course-in-ai-machine-learning': 'certificate-course-in-ai-ml',
-  'full-stack-mern-web-development': 'full-stack-with-mern-stack-web-development',
-  'certificate-course-in-sap': 'certificate-course-in-sap',
-  'certificate-course-in-data-science': 'certificate-course-in-data-science',
-  'certificate-course-in-computer-science': 'certificate-course-in-computer-science',
-  'diploma-in-computer-management': 'diploma-in-computer-management',
-  'certificate-course-in-coreldraw': 'coreldraw-photoshop-illustrator-indesign-vray-sketchup',
-  'certificate-course-in-adobe-photoshop': 'diploma-in-graphics-designing',
-  'certificate-course-in-adobe-illustrator': 'diploma-in-desk-top-publishing-dtp',
-  'certificate-course-in-adobe-indesign': 'diploma-in-desk-top-publishing-dtp',
-  'diploma-in-graphic-designing': 'diploma-in-graphics-designing',
-  'diploma-in-web-designing': 'diploma-in-web-designing',
-  'diploma-in-interior-designing': 'diploma-in-interior-designing',
-  'advanced-diploma-in-multimedia-animation': 'adv-diploma-in-multimedia-and-animation',
-  'certificate-course-in-ms-office': 'ms-word',
-  'certificate-course-in-ms-cit': 'certificate-course-in-ms-cit',
-  'certificate-course-in-advanced-tally-erp-9': 'certificate-course-in-advanced-tally-erp-9',
-  'certificate-course-in-advanced-tally-prime': 'certificate-course-in-adv-tally-erp-9-with-prime',
-  'certificate-course-in-advanced-excel': 'certificate-course-in-advance-excel',
-  'certificate-course-in-advanced-excel-with-dashboard': 'advance-excel-with-dashboard',
-  'certificate-course-in-advanced-excel-with-mis-reports': 'certificate-course-in-adv-excel-with-mis-reports',
-  'certificate-course-in-html': 'c-cpp-oracle-sql-asp-vb-cs-html-wordpress',
-  'certificate-course-in-wordpress': 'c-cpp-oracle-sql-asp-vb-cs-html-wordpress',
-  'certificate-course-in-c-programming': 'certificate-course-in-c-c-plus-plus',
-  'certificate-course-in-c-plus-plus': 'certificate-course-in-c-c-plus-plus',
-  'certificate-course-in-advanced-java': 'certificate-course-in-adv-java',
-  'certificate-course-in-php': 'certificate-course-in-php',
-  'certificate-course-in-python': 'certificate-course-in-python',
-  'certificate-course-in-sql': 'diploma-in-oracle-and-sql-server',
-  'certificate-course-in-tableau': 'certificate-course-in-tableau',
-  'certificate-course-in-power-bi': 'certificate-course-in-power-bi',
-  'diploma-in-dot-net': 'diploma-in-dot-net',
-  'certificate-course-in-sketchup': 'diploma-in-interior-designing',
-  'certificate-course-in-adobe-after-effects': 'after-effect',
-  'certificate-course-in-adobe-premiere-pro': 'adobe-premier',
-  'certificate-course-in-autocad': 'advance-diploma-in-autocad',
-  'certificate-course-in-3ds-max': 'diploma-in-3d-max',
-  'certificate-course-in-revit': 'diploma-in-revit',
-  'certificate-course-in-v-ray': 'diploma-in-3d-max',
-  'combo-course-with-ms-cit': 'combo-course-with-ms-cit',
-  'certificate-course-in-typing-english': 'certificate-course-in-typing-english',
-  'certificate-course-in-typing-marathi': 'certificate-course-in-typing-marathi',
-  'certificate-course-in-share-market': 'certificate-course-in-share-market',
-  'certificate-course-in-advanced-english-speaking': 'adv-english-speaking-course',
-  'certificate-course-in-advanced-personality-development': 'adv-personality-development-course',
-  'certificate-course-in-11th-computer-it': 'certificate-course-in-11th-computer-it',
-  'certificate-course-in-12th-computer-it': 'certificate-course-in-12th-computer-it',
-  'advanced-diploma-in-hardware-engineering': 'adv-diploma-in-hardware-engineering',
-  'advanced-diploma-in-network-engineering': 'adv-diploma-in-network-engineering',
+/**
+ * Normalise string for resilient key matching (lowercase, strip extension, strip spaces/dashes/underscores)
+ * @param {string} str
+ * @returns {string}
+ */
+export function normalizeKey(str) {
+  if (!str) return '';
+  return String(str)
+    .toLowerCase()
+    .replace(/\.[a-z0-9]+$/i, '') // strip file extension if present
+    .replace(/[\s\-_]/g, '');     // strip spaces, dashes, underscores
+}
+
+// Build lookup maps from the eagerly imported course images
+const imageByExactFilename = {};
+const imageByNormalizedKey = {};
+
+for (const [rawPath, imageModule] of Object.entries(courseImages)) {
+  const filename = rawPath.split('/').pop();
+  if (filename) {
+    imageByExactFilename[filename] = imageModule;
+    const norm = normalizeKey(filename);
+    if (norm && !imageByNormalizedKey[norm]) {
+      imageByNormalizedKey[norm] = imageModule;
+    }
+  }
+}
+
+/**
+ * Explicit slug -> image filename mapping.
+ * Each filename matches an actual file in src/assets/courses/.
+ */
+export const SLUG_TO_IMAGE_FILENAME = {
+  // Digital & Marketing
+  'certificate-course-in-advanced-digital-marketing': 'Digital mkt.jpeg',
+
+  // Data & Analytics & AI
+  'certificate-course-in-data-analytics': 'data-analytics.jpg',
+  'certificate-course-in-data-science': 'Data Science.webp',
+  'certificate-course-in-ai-machine-learning': 'ai-machine-learning.jpg',
+
+  // Cyber Security & IT
+  'certificate-course-in-cyber-security': 'cyber-security.jpg',
+
+  // SAP
+  'certificate-course-in-sap': 'SAP.jpg',
+
+  // Management & DTP & Design
+  'diploma-in-computer-management': 'Diploma in computer management.webp',
+  'certificate-course-in-coreldraw': 'coreldraw.jpg',
+  'certificate-course-in-adobe-photoshop': 'Photoshop.jpg',
+  'certificate-course-in-adobe-illustrator': 'illustrator.jpg',
+  'certificate-course-in-adobe-indesign': 'Indesign.webp',
+  'diploma-in-graphic-designing': 'Graphic designing.webp',
+
+  // Office & Fundamentals
+  'certificate-course-in-ms-office': 'MS-Office.jpg',
+  'certificate-course-in-ms-cit': 'ms-cit_2026_1.webp',
+  'combo-course-with-ms-cit': 'ms-cit_2026_1.webp',
+
+  // Accounting & Financials
+  'certificate-course-in-advanced-tally-erp-9': 'tally erp 9.jpg',
+  'certificate-course-in-advanced-tally-prime': 'Tally prime.jpg',
+  'certificate-course-in-advanced-excel': 'Excel.webp',
+  'certificate-course-in-advanced-excel-with-dashboard': 'Excel.webp',
+  'certificate-course-in-advanced-excel-with-mis-reports': 'Excel.webp',
+
+  // Programming & Web
+  'full-stack-mern-web-development': 'full-stack-mern.jpg',
+  'certificate-course-in-html': 'HTML.jpg',
+  'certificate-course-in-wordpress': 'wordpress.jpg',
+  'certificate-course-in-c-programming': 'C programming.jpg',
+  'certificate-course-in-c-plus-plus': 'c-plus-plus.jpg',
+  'certificate-course-in-advanced-java': 'advanced-java.jpg',
+  'certificate-course-in-php': 'PHP.jpg',
+  'certificate-course-in-python': 'python.jpg',
+  'diploma-in-dot-net': 'dot-net.jpg',
+  'certificate-course-in-computer-science': 'computer-science.jpg',
+  'diploma-in-web-designing': 'web-designing.jpg',
+  'diploma-in-interior-designing': 'interior-designing.jpg',
+  'advanced-diploma-in-multimedia-animation': 'multimedia-animation.jpg',
+
+  // Databases & Analytics & BI
+  'certificate-course-in-sql': 'SQL.jpg',
+  'certificate-course-in-tableau': 'Tablue.jpg',
+  'certificate-course-in-power-bi': 'Power BI.jpg',
+
+  // CAD, 3D & Animation & Video
+  'certificate-course-in-sketchup': 'Sketchup.jpg',
+  'certificate-course-in-adobe-after-effects': 'Adobe after effect.jpg',
+  'certificate-course-in-adobe-premiere-pro': 'adobe-premiere-pro.jpg',
+  'certificate-course-in-autocad': 'Autocad.jpg',
+  'certificate-course-in-3ds-max': '3D max.jpg',
+  'certificate-course-in-revit': 'Revit.jpg',
+  'certificate-course-in-v-ray': 'V-ray.jpg',
+
+  // Typing
+  'certificate-course-in-typing-english': 'Marathi TYping.png',
+  'certificate-course-in-typing-marathi': 'Marathi TYping.png',
+
+  // Financial, Personal Development & IT
+  'certificate-course-in-share-market': 'share-market.jpg',
+  'certificate-course-in-advanced-english-speaking': 'English Speaking.jpg',
+  'certificate-course-in-advanced-personality-development': 'personality-development.jpg',
+  'certificate-course-in-11th-computer-it': '11th-computer-it.jpg',
+  'certificate-course-in-12th-computer-it': '12th-computer-it.jpg',
+  'advanced-diploma-in-hardware-engineering': 'Hardware.jpg',
+  'advanced-diploma-in-network-engineering': 'network-engineering.jpg',
 };
 
 /**
- * Get course thumbnail URL by slug or image key with fallback
- * @param {string} slugOrImage
- * @returns {string} Image URL
+ * Get course thumbnail image URL by slug, title, or filename.
+ * Returns the resolved image URL if found, or null if no matching image exists.
+ *
+ * @param {string} slugOrName
+ * @returns {string|null} Image URL or null
  */
-export function getCourseImage(slugOrImage) {
-  if (!slugOrImage) return fallbackImg;
+export function getCourseImage(slugOrName) {
+  if (!slugOrName) return null;
 
-  // 1. Direct path check
-  const directPath = `../assets/courses/${slugOrImage}.jpg`;
-  if (courseImages[directPath]) {
-    return courseImages[directPath];
+  // 1. Explicit slug / key mapping check
+  const mappedFilename = SLUG_TO_IMAGE_FILENAME[slugOrName];
+  if (mappedFilename && imageByExactFilename[mappedFilename]) {
+    return imageByExactFilename[mappedFilename];
   }
 
-  // 2. Slug map check
-  const mappedFile = SLUG_IMAGE_MAP[slugOrImage];
-  if (mappedFile) {
-    const mappedPath = `../assets/courses/${mappedFile}.jpg`;
-    if (courseImages[mappedPath]) {
-      return courseImages[mappedPath];
-    }
+  // 2. Direct exact filename check (e.g. 'Excel.webp', 'Autocad.jpg')
+  if (imageByExactFilename[slugOrName]) {
+    return imageByExactFilename[slugOrName];
   }
 
-  return fallbackImg;
+  // 3. Direct path check (e.g. '../assets/courses/Excel.webp')
+  if (courseImages[slugOrName]) {
+    return courseImages[slugOrName];
+  }
+
+  // 4. Normalized key check
+  const normKey = normalizeKey(slugOrName);
+  if (normKey && imageByNormalizedKey[normKey]) {
+    return imageByNormalizedKey[normKey];
+  }
+
+  return null;
 }
-
-export { fallbackImg };

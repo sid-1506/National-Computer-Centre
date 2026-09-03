@@ -23,18 +23,22 @@ const COURSE_NAMES = courses.map((c) => {
 
 // Curated pool of high-quality background images for the 4s cycle
 const BG_IMAGES = Array.from(
-  new Set([
-    classroomImg,
-    getCourseImage('certificate-course-in-ms-cit'),
-    getCourseImage('full-stack-mern-web-development'),
-    getCourseImage('certificate-course-in-advanced-tally-prime'),
-    getCourseImage('diploma-in-graphic-designing'),
-    getCourseImage('certificate-course-in-python'),
-    getCourseImage('certificate-course-in-advanced-excel-with-dashboard'),
-    getCourseImage('certificate-course-in-ai-machine-learning'),
-    getCourseImage('certificate-course-in-3ds-max'),
-    getCourseImage('advanced-diploma-in-hardware-engineering'),
-  ])
+  new Set(
+    [
+      classroomImg,
+      getCourseImage('certificate-course-in-ms-cit'),
+      getCourseImage('certificate-course-in-advanced-tally-prime'),
+      getCourseImage('diploma-in-graphic-designing'),
+      getCourseImage('certificate-course-in-advanced-excel'),
+      getCourseImage('certificate-course-in-3ds-max'),
+      getCourseImage('advanced-diploma-in-hardware-engineering'),
+      getCourseImage('certificate-course-in-autocad'),
+      getCourseImage('certificate-course-in-adobe-photoshop'),
+      getCourseImage('certificate-course-in-advanced-digital-marketing'),
+      getCourseImage('certificate-course-in-power-bi'),
+      getCourseImage('diploma-in-computer-management'),
+    ].filter(Boolean)
+  )
 );
 
 export default function HeroSlider({ onOpenModal }) {
