@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
 import ScrollToTop from './components/ScrollToTop';
-import ScrollToTopFAB from './components/ScrollToTopFAB';
 
 import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
@@ -48,9 +47,6 @@ export default function App() {
 
         {/* Footer */}
         <Footer onOpenModal={handleOpenModal} />
-
-        {/* Scroll-to-Top Floating Progress FAB */}
-        <ScrollToTopFAB />
 
         {/* Quick Booking Modal */}
         <EnquiryModal
