@@ -62,7 +62,7 @@ export const SLUG_TO_IMAGE_FILENAME = {
   // Office & Fundamentals
   'certificate-course-in-ms-office': 'MS-Office.jpg',
   'certificate-course-in-ms-cit': 'ms-cit_2026_1.webp',
-  'combo-course-with-ms-cit': 'ms-cit_2026_1.webp',
+  'combo-course-with-ms-cit': 'Comboo with mscit.jpeg',
 
   // Accounting & Financials
   'certificate-course-in-advanced-tally-erp-9': 'tally erp 9.jpg',
