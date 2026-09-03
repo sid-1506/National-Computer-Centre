@@ -67,9 +67,9 @@ export const SLUG_TO_IMAGE_FILENAME = {
   // Accounting & Financials
   'certificate-course-in-advanced-tally-erp-9': 'tally erp 9.jpg',
   'certificate-course-in-advanced-tally-prime': 'Tally prime.jpg',
-  'certificate-course-in-advanced-excel': 'Excel.webp',
-  'certificate-course-in-advanced-excel-with-dashboard': 'Excel.webp',
-  'certificate-course-in-advanced-excel-with-mis-reports': 'Excel.webp',
+  'certificate-course-in-advanced-excel': 'advanced-excel.jpg',
+  'certificate-course-in-advanced-excel-with-dashboard': 'advanced-excel-dashboard.jpg',
+  'certificate-course-in-advanced-excel-with-mis-reports': 'advanced-excel-mis-reports.jpg',
 
   // Programming & Web
   'full-stack-mern-web-development': 'full-stack-mern.jpg',
