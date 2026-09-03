@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
 import ScrollToTop from './components/ScrollToTop';
-import SeoWarningPopup from './components/SeoWarningPopup';
 
 import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
@@ -29,9 +28,6 @@ export default function App() {
     <BrowserRouter>
       {/* Route change scroll-to-top handler */}
       <ScrollToTop />
-      
-      {/* Full-screen SEO Warning Overlay with Buzzer */}
-      <SeoWarningPopup />
       
       <div className="relative min-h-screen bg-white text-[#0F172A] font-sans antialiased flex flex-col justify-between overflow-x-hidden">
         {/* Sticky Navbar */}
