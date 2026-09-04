@@ -51,426 +51,6 @@ export const categories = [
 
 export const courses = [
   {
-    "slug": "certificate-course-in-ai-basics",
-    "name": "Certificate Course in AI Basics",
-    "title": "Certificate Course in AI Basics",
-    "category": "AI",
-    "categorySlug": "ai",
-    "duration": "1 Month",
-    "level": "Beginner",
-    "image": "certificate-course-in-ai-basics.jpg",
-    "featured": true,
-    "highlight": "What is AI, history & types of AI, how models work, prompting fundamentals, ethics & limitations, everyday AI use cases.",
-    "description": "Foundational Artificial Intelligence program for students and professionals. Understand how AI models work, core prompting techniques, ethical guidelines, and discover powerful ways to apply AI in daily personal and professional workflows.",
-    "syllabus": [
-      {
-        "module": "Module 1: What is Artificial Intelligence?",
-        "topics": [
-          "Introduction to AI & Core Concepts",
-          "Brief History & Evolution of AI",
-          "Narrow AI, General AI (AGI) & Super AI",
-          "AI vs Machine Learning vs Deep Learning"
-        ]
-      },
-      {
-        "module": "Module 2: How AI Models Work",
-        "topics": [
-          "Data, Training & Inference Intuition",
-          "Introduction to Neural Networks & Weights",
-          "Large Language Models (LLMs) & Transformers",
-          "Tokens, Context Windows & Temperature"
-        ]
-      },
-      {
-        "module": "Module 3: Prompting Fundamentals",
-        "topics": [
-          "Anatomy of an Effective Prompt",
-          "Role Prompting & System Instructions",
-          "Zero-Shot & Few-Shot Prompting",
-          "Handling Output Formats & Constraints"
-        ]
-      },
-      {
-        "module": "Module 4: Everyday AI Use Cases & Tools",
-        "topics": [
-          "Writing, Editing & Email Assistants",
-          "Smart Web Research & Synthesis",
-          "Personal Productivity Automation",
-          "Practical Daily Use Case Labs"
-        ]
-      },
-      {
-        "module": "Module 5: Ethics, Limitations & Safe AI",
-        "topics": [
-          "Hallucinations & Fact-Checking Workflows",
-          "Bias, Fairness & Intellectual Property",
-          "Data Privacy & Confidential Information",
-          "Future Trends & Lifelong AI Literacy"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-ai-tools-mastery",
-    "name": "Certificate Course in AI Tools Mastery",
-    "title": "Certificate Course in AI Tools Mastery",
-    "category": "AI",
-    "categorySlug": "ai",
-    "duration": "1.5 Months",
-    "level": "Beginner",
-    "image": "certificate-course-in-ai-tools-mastery.jpg",
-    "featured": true,
-    "highlight": "Hands-on with the most-used AI tools for text, image, video, audio, presentations, spreadsheets and productivity automation.",
-    "description": "Comprehensive practical course covering industry-leading AI tools. Master ChatGPT, Claude, Midjourney, ElevenLabs, Gamma, Copilot in Excel, and automation platforms to 10x your personal and team productivity.",
-    "syllabus": [
-      {
-        "module": "Module 1: Text & Research AI Engines",
-        "topics": [
-          "ChatGPT Plus & Advanced Reasoning",
-          "Claude 3.5 Sonnet for Writing & Coding",
-          "Perplexity AI for Verified Deep Search",
-          "Google Gemini Advanced & Workspace Integration"
-        ]
-      },
-      {
-        "module": "Module 2: Generative Image & Visual Studio",
-        "topics": [
-          "Midjourney v6.1 Masterclass",
-          "Ideogram for Typography & Posters",
-          "Canva Magic Studio & AI Graphic Design",
-          "Commercial Asset Licensing & Formats"
-        ]
-      },
-      {
-        "module": "Module 3: AI Video & Voice Generation",
-        "topics": [
-          "Runway Gen-3 & Kling AI Video Creation",
-          "ElevenLabs Ultra-Realistic Voice Cloning",
-          "HeyGen & Synthesia AI Avatars",
-          "CapCut AI Video Editing & Auto-Captions"
-        ]
-      },
-      {
-        "module": "Module 4: AI for Presentations & Data Spreadsheets",
-        "topics": [
-          "Gamma App for Instant Slide Decks",
-          "Copilot in Excel & Automated Formula Writing",
-          "Claude Artifacts for Visual Reports",
-          "Beautiful.ai & Executive Data Summaries"
-        ]
-      },
-      {
-        "module": "Module 5: Workflow Automation & Tool Stacking",
-        "topics": [
-          "Zapier AI & Make.com Auto-Triggers",
-          "Notion AI for Team Knowledge Hubs",
-          "Multi-Tool Cross-Platform Pipelines",
-          "Capstone Productivity Suite Project"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-chatgpt-prompt-engineering",
-    "name": "Certificate Course in ChatGPT & Prompt Engineering",
-    "title": "Certificate Course in ChatGPT & Prompt Engineering",
-    "category": "AI",
-    "categorySlug": "ai",
-    "duration": "1.5 Months",
-    "level": "Beginner to Intermediate",
-    "image": "certificate-course-in-chatgpt-prompt-engineering.jpg",
-    "featured": true,
-    "highlight": "GPT models, prompt patterns, system prompts, custom GPTs, data analysis with GPT, workflow automation.",
-    "description": "Master professional prompt engineering for GPT-4o and modern LLMs. Learn advanced prompting frameworks, build custom GPTs with knowledge bases, execute Python data analysis inside ChatGPT, and automate complex workflows.",
-    "syllabus": [
-      {
-        "module": "Module 1: GPT Architecture & Prompt Foundations",
-        "topics": [
-          "OpenAI GPT Models & Version Differences",
-          "Understanding Tokens, Context & Sampling Parameters",
-          "System Instructions vs User Prompts",
-          "Structuring Prompts for Zero Hallucination"
-        ]
-      },
-      {
-        "module": "Module 2: Advanced Prompting Frameworks",
-        "topics": [
-          "Chain-of-Thought (CoT) Prompting",
-          "ReAct (Reasoning + Acting) Framework",
-          "Few-Shot Learning with Exemplars",
-          "Role Framing & Perspective Simulation"
-        ]
-      },
-      {
-        "module": "Module 3: Building Custom GPTs & Actions",
-        "topics": [
-          "Custom GPT Configuration & Knowledge Injection",
-          "Configuring Custom Instructions & Capabilities",
-          "Connecting OpenAPI Schemas & REST APIs",
-          "Publishing & Managing Enterprise GPTs"
-        ]
-      },
-      {
-        "module": "Module 4: Advanced Data Analysis with ChatGPT",
-        "topics": [
-          "Uploading Datasets & Spreadsheets",
-          "Automated Python Code Execution in ChatGPT",
-          "Exploratory Data Analysis & Visual Charting",
-          "Statistical Synthesis & Executive Reports"
-        ]
-      },
-      {
-        "module": "Module 5: Workflow Automation & API Integration",
-        "topics": [
-          "Automating Repetitive Tasks with ChatGPT",
-          "OpenAI API Overview & Playground",
-          "Integrating GPT into Google Sheets & Docs",
-          "Capstone Prompt Engineering Project"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-claude-for-work-research",
-    "name": "Certificate Course in Claude for Work & Research",
-    "title": "Certificate Course in Claude for Work & Research",
-    "category": "AI",
-    "categorySlug": "ai",
-    "duration": "1 Month",
-    "level": "Beginner",
-    "image": "certificate-course-in-claude-for-work-research.jpg",
-    "featured": true,
-    "highlight": "Long-context work, document analysis, writing & editing, projects, structured research workflows, comparison with other assistants.",
-    "description": "Deep-dive into Anthropic Claude for enterprise research and high-stakes analysis. Learn to utilize the 200K token context window for massive documents, master Claude Projects and Artifacts, and refine business writing and research synthesis.",
-    "syllabus": [
-      {
-        "module": "Module 1: Claude Architecture & 200K Long-Context",
-        "topics": [
-          "Claude 3.5 Sonnet, Haiku & Opus Overview",
-          "Working with 200,000 Token Context Windows",
-          "Information Retrieval in Giant Documents (Needle in a Haystack)",
-          "Comparing Claude with ChatGPT & Gemini"
-        ]
-      },
-      {
-        "module": "Module 2: Deep Document & Financial Analysis",
-        "topics": [
-          "Analyzing 100+ Page PDFs & Annual Reports",
-          "Extracting Tabular Data & Financial Disclosures",
-          "Legal Contract & Regulatory Compliance Review",
-          "Academic Paper Synthesis & Literature Reviews"
-        ]
-      },
-      {
-        "module": "Module 3: Advanced Writing & Editorial Nuance",
-        "topics": [
-          "Calibrating Tone, Voice & Executive Register",
-          "Drafting Technical Documentation & Policy Manuals",
-          "Persuasive Proposals & Business Case Studies",
-          "Iterative Polishing & Anti-Jargon Editing"
-        ]
-      },
-      {
-        "module": "Module 4: Claude Projects & Artifacts",
-        "topics": [
-          "Setting Up Persistent Claude Projects",
-          "Building Contextual Knowledge Repositories",
-          "Interactive React & SVG Artifact Generation",
-          "Rapid Prototyping Without Coding Environments"
-        ]
-      },
-      {
-        "module": "Module 5: Structured Research Workflows",
-        "topics": [
-          "Hypothesis Testing & Cross-Referencing",
-          "Multi-Perspective Brainstorming & Counter-Arguments",
-          "Structuring Executive Research Briefs",
-          "Capstone Research Synthesis Project"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-lovable-ai-app-building",
-    "name": "Certificate Course in Lovable & AI App Building",
-    "title": "Certificate Course in Lovable & AI App Building",
-    "category": "AI",
-    "categorySlug": "ai",
-    "duration": "2 Months",
-    "level": "Beginner to Job-ready",
-    "image": "certificate-course-in-lovable-ai-app-building.jpg",
-    "featured": true,
-    "highlight": "Build real web apps with AI, prompt-to-app workflow, editing generated code, connecting backend & database, publishing a live site.",
-    "description": "Learn to design, generate, refine, and deploy full-stack web applications using Lovable and AI coding tools. Go from prompt idea to interactive React UI, connect Supabase backend and authentication, and publish live, production-grade web applications.",
-    "syllabus": [
-      {
-        "module": "Module 1: Prompt-to-App Architecture & Mindset",
-        "topics": [
-          "Introduction to Lovable & AI Full-Stack Paradigm",
-          "Writing Product Requirement Documents (PRDs) for AI",
-          "Mental Model of Modern Web Apps (Frontend, Backend, DB)",
-          "Setting Up Your Lovable Workspace & GitHub Sync"
-        ]
-      },
-      {
-        "module": "Module 2: UI Building & Component Iteration",
-        "topics": [
-          "Prompting Multi-Page Layouts & Responsive Views",
-          "Refining Component Logic & Styling via Chat",
-          "Tailwind CSS & Shadcn UI Customization",
-          "Form Validations & Client-Side State Management"
-        ]
-      },
-      {
-        "module": "Module 3: Inspecting & Editing Generated Code",
-        "topics": [
-          "Understanding the Generated React + Vite Codebase",
-          "Making Targeted Code Edits & Troubleshooting Errors",
-          "Using Git Branches & Version Control with Lovable",
-          "Debugging UI Bugs & State Anomalies"
-        ]
-      },
-      {
-        "module": "Module 4: Backend, Database & Authentication",
-        "topics": [
-          "Connecting Supabase PostgreSQL Database",
-          "Designing Relational Database Schemas & Tables",
-          "Implementing User Sign-Up, Login & Row Level Security (RLS)",
-          "Building Full CRUD (Create, Read, Update, Delete) Features"
-        ]
-      },
-      {
-        "module": "Module 5: APIs, Domain Setup & Live Launch",
-        "topics": [
-          "Integrating Third-Party APIs (Stripe, Weather, Maps)",
-          "Publishing to Production & Custom Domain Configuration",
-          "SEO Optimization, Performance & Mobile Responsiveness",
-          "Capstone Project: Launching a Live SaaS Web Application"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-ai-machine-learning",
-    "name": "Certificate Course in AI & Machine Learning",
-    "title": "Certificate Course in AI & Machine Learning",
-    "category": "AI",
-    "categorySlug": "ai",
-    "duration": "4 Months",
-    "level": "Career track",
-    "image": "certificate-course-in-ai-machine-learning.jpg",
-    "featured": true,
-    "highlight": "Python for ML, NumPy/Pandas, supervised & unsupervised learning, regression, classification, clustering, neural networks intro, model evaluation, capstone project.",
-    "description": "Comprehensive career track in Artificial Intelligence and Machine Learning. Master Python scientific computing, scikit-learn statistical modeling, deep learning intuition with neural networks, model evaluation metrics, and end-to-end predictive AI deployments.",
-    "syllabus": [
-      {
-        "module": "Module 1: Python for AI & Scientific Computing",
-        "topics": [
-          "Python Advanced Data Structures & OOP",
-          "NumPy Vectorization & Multi-Dimensional Arrays",
-          "Pandas Data Wrangling & Feature Engineering",
-          "Matplotlib & Seaborn Exploratory Data Visualization"
-        ]
-      },
-      {
-        "module": "Module 2: Supervised Learning (Regression & Classification)",
-        "topics": [
-          "Linear & Polynomial Regression",
-          "Logistic Regression & Decision Boundaries",
-          "Decision Trees, Random Forests & Ensemble Methods",
-          "Support Vector Machines (SVM) & Naive Bayes"
-        ]
-      },
-      {
-        "module": "Module 3: Unsupervised Learning & Dimensionality Reduction",
-        "topics": [
-          "K-Means & Hierarchical Clustering",
-          "Principal Component Analysis (PCA)",
-          "Anomaly & Fraud Detection Algorithms",
-          "Recommendation Systems & Collaborative Filtering"
-        ]
-      },
-      {
-        "module": "Module 4: Neural Networks & Deep Learning Intro",
-        "topics": [
-          "Biological vs Artificial Neurons & Perceptrons",
-          "Activation Functions (ReLU, Sigmoid, Softmax)",
-          "Backpropagation & Gradient Descent Optimization",
-          "Introduction to PyTorch & Neural Architecture Design"
-        ]
-      },
-      {
-        "module": "Module 5: Model Evaluation, MLOps & Capstone Project",
-        "topics": [
-          "Precision, Recall, F1-Score & ROC-AUC Curves",
-          "Cross-Validation & Hyperparameter Tuning (GridSearchCV)",
-          "Model Serialization (Pickle/ONNX) & REST API Deployment",
-          "Full End-to-End Industry Capstone Project Presentation"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-generative-ai-for-designers-marketers",
-    "name": "Certificate Course in Generative AI for Designers & Marketers",
-    "title": "Certificate Course in Generative AI for Designers & Marketers",
-    "category": "AI",
-    "categorySlug": "ai",
-    "duration": "1.5 Months",
-    "level": "Creative track",
-    "image": "certificate-course-in-generative-ai-for-designers-marketers.jpg",
-    "featured": true,
-    "highlight": "AI image and video generation, brand-consistent creatives, ad copy, content pipelines, AI in design workflow.",
-    "description": "Specialized creative track for graphic designers, marketers, and art directors. Master commercial AI visual generation, maintain brand consistency across campaigns, generate cinematic AI video, write high-converting ad copy, and integrate AI into your creative pipeline.",
-    "syllabus": [
-      {
-        "module": "Module 1: AI Visual Direction & Prompt Craft",
-        "topics": [
-          "Midjourney v6.1 Photographic Prompting & Lighting",
-          "Aspect Ratios, Styling Parameters (--s, --c, --w)",
-          "Leonardo AI & Stable Diffusion ControlNets",
-          "Creating Commercial Quality Stock Photos & Moodboards"
-        ]
-      },
-      {
-        "module": "Module 2: Brand Consistency & Character Rigging",
-        "topics": [
-          "Maintaining Consistent Characters Across Prompts",
-          "Style Reference (--sref) & Omni-Reference Techniques",
-          "Brand Color Palette Ingestion & Logo Integration",
-          "Upscaling, Inpainting & Generative Fill in Photoshop"
-        ]
-      },
-      {
-        "module": "Module 3: AI Video Generation & Motion Graphics",
-        "topics": [
-          "Runway Gen-3 Alpha & Motion Brush Direction",
-          "Kling AI & Luma Dream Machine Camera Controls",
-          "Text-to-Video, Image-to-Video & Camera Orbit Keyframing",
-          "AI Voiceovers & Audio FX with ElevenLabs"
-        ]
-      },
-      {
-        "module": "Module 4: AI Ad Copy & Campaign Collateral",
-        "topics": [
-          "Crafting High-Converting Meta & Google Ad Copy",
-          "Brand Storytelling & Product Launch Scripts",
-          "Automated Banner Variations & A/B Creative Testing",
-          "Social Media Carousel & Video Ad Content Pipelines"
-        ]
-      },
-      {
-        "module": "Module 5: End-to-End Creative Pipeline & Delivery",
-        "topics": [
-          "Integrating AI with Figma, Photoshop & Premiere Pro",
-          "Client Deliverables & Commercial Asset Rights",
-          "Streamlining Creative Agency Turnaround Times",
-          "Capstone Project: Full Multichannel AI Ad Campaign Launch"
-        ]
-      }
-    ]
-  },
-  {
     "slug": "certificate-course-in-advanced-digital-marketing",
     "name": "Certificate Course in Advanced Digital Marketing",
     "title": "Certificate Course in Advanced Digital Marketing",
@@ -665,6 +245,126 @@ export const courses = [
           "Data Privacy",
           "Security Policies",
           "Incident Response"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-ai-machine-learning",
+    "name": "Certificate Course in AI & Machine Learning",
+    "title": "Certificate Course in AI & Machine Learning",
+    "category": "AI",
+    "categorySlug": "ai",
+    "duration": "4 Months",
+    "level": "Career track",
+    "image": "certificate-course-in-ai-machine-learning.jpg",
+    "featured": true,
+    "highlight": "Python for ML, NumPy/Pandas, supervised & unsupervised learning, regression, classification, clustering, neural networks intro, model evaluation, capstone project.",
+    "description": "Comprehensive career track in Artificial Intelligence and Machine Learning. Master Python scientific computing, scikit-learn statistical modeling, deep learning intuition with neural networks, model evaluation metrics, and end-to-end predictive AI deployments.",
+    "syllabus": [
+      {
+        "module": "Module 1: Python for AI & Scientific Computing",
+        "topics": [
+          "Python Advanced Data Structures & OOP",
+          "NumPy Vectorization & Multi-Dimensional Arrays",
+          "Pandas Data Wrangling & Feature Engineering",
+          "Matplotlib & Seaborn Exploratory Data Visualization"
+        ]
+      },
+      {
+        "module": "Module 2: Supervised Learning (Regression & Classification)",
+        "topics": [
+          "Linear & Polynomial Regression",
+          "Logistic Regression & Decision Boundaries",
+          "Decision Trees, Random Forests & Ensemble Methods",
+          "Support Vector Machines (SVM) & Naive Bayes"
+        ]
+      },
+      {
+        "module": "Module 3: Unsupervised Learning & Dimensionality Reduction",
+        "topics": [
+          "K-Means & Hierarchical Clustering",
+          "Principal Component Analysis (PCA)",
+          "Anomaly & Fraud Detection Algorithms",
+          "Recommendation Systems & Collaborative Filtering"
+        ]
+      },
+      {
+        "module": "Module 4: Neural Networks & Deep Learning Intro",
+        "topics": [
+          "Biological vs Artificial Neurons & Perceptrons",
+          "Activation Functions (ReLU, Sigmoid, Softmax)",
+          "Backpropagation & Gradient Descent Optimization",
+          "Introduction to PyTorch & Neural Architecture Design"
+        ]
+      },
+      {
+        "module": "Module 5: Model Evaluation, MLOps & Capstone Project",
+        "topics": [
+          "Precision, Recall, F1-Score & ROC-AUC Curves",
+          "Cross-Validation & Hyperparameter Tuning (GridSearchCV)",
+          "Model Serialization (Pickle/ONNX) & REST API Deployment",
+          "Full End-to-End Industry Capstone Project Presentation"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-ai-basics",
+    "name": "Certificate Course in AI Basics",
+    "title": "Certificate Course in AI Basics",
+    "category": "AI",
+    "categorySlug": "ai",
+    "duration": "1 Month",
+    "level": "Beginner",
+    "image": "certificate-course-in-ai-basics.jpg",
+    "featured": true,
+    "highlight": "What is AI, history & types of AI, how models work, prompting fundamentals, ethics & limitations, everyday AI use cases.",
+    "description": "Foundational Artificial Intelligence program for students and professionals. Understand how AI models work, core prompting techniques, ethical guidelines, and discover powerful ways to apply AI in daily personal and professional workflows.",
+    "syllabus": [
+      {
+        "module": "Module 1: What is Artificial Intelligence?",
+        "topics": [
+          "Introduction to AI & Core Concepts",
+          "Brief History & Evolution of AI",
+          "Narrow AI, General AI (AGI) & Super AI",
+          "AI vs Machine Learning vs Deep Learning"
+        ]
+      },
+      {
+        "module": "Module 2: How AI Models Work",
+        "topics": [
+          "Data, Training & Inference Intuition",
+          "Introduction to Neural Networks & Weights",
+          "Large Language Models (LLMs) & Transformers",
+          "Tokens, Context Windows & Temperature"
+        ]
+      },
+      {
+        "module": "Module 3: Prompting Fundamentals",
+        "topics": [
+          "Anatomy of an Effective Prompt",
+          "Role Prompting & System Instructions",
+          "Zero-Shot & Few-Shot Prompting",
+          "Handling Output Formats & Constraints"
+        ]
+      },
+      {
+        "module": "Module 4: Everyday AI Use Cases & Tools",
+        "topics": [
+          "Writing, Editing & Email Assistants",
+          "Smart Web Research & Synthesis",
+          "Personal Productivity Automation",
+          "Practical Daily Use Case Labs"
+        ]
+      },
+      {
+        "module": "Module 5: Ethics, Limitations & Safe AI",
+        "topics": [
+          "Hallucinations & Fact-Checking Workflows",
+          "Bias, Fairness & Intellectual Property",
+          "Data Privacy & Confidential Information",
+          "Future Trends & Lifelong AI Literacy"
         ]
       }
     ]
@@ -1867,6 +1567,1014 @@ export const courses = [
     ]
   },
   {
+    "slug": "certificate-course-in-civil-draftsman",
+    "name": "Certificate Course in Civil Draftsman",
+    "title": "Certificate Course in Civil Draftsman",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "3-4 Months",
+    "level": "Beginner to Pro",
+    "image": "draughtman civil.jpeg",
+    "featured": true,
+    "highlight": "Civil architectural planning, AutoCAD 2D drafting, structural detailing, plumbing/electrical layouts, and BBS.",
+    "description": "Professional training for aspiring civil draftsmen. Learn architectural drafting principles, AutoCAD 2D construction drawings, municipal approval blueprints, structural column/beam detailing, plumbing layouts, and bar bending schedules.",
+    "syllabus": [
+      {
+        "module": "Module 1: Civil Engineering Drawing Fundamentals & BIS Standards",
+        "topics": [
+          "Introduction to civil engineering drawings, Scales, Paper sizes (A0-A4)",
+          "Standard line types, Lettering, Conventional civil materials representation",
+          "Building terminology: Plinth, DPC, Lintel, Sill, Parapet, Coping, Sunshade",
+          "Bureau of Indian Standards (BIS / SP 27 & IS 962) drawing norms"
+        ]
+      },
+      {
+        "module": "Module 2: AutoCAD 2D for Civil Engineers & Draftsmen",
+        "topics": [
+          "AutoCAD setup for civil projects (Units: Architectural/Metric, Limits, Snaps)",
+          "Layer management (Walls, Doors, Windows, Text, Dimensions, Hatch)",
+          "Precision drafting with Object Snaps, Ortho, Dynamic Input",
+          "Blocks creation (Furniture, Sanitary fixtures, Doors, Windows, Trees)",
+          "Hatching patterns for brickwork, concrete, plaster, wood and earth"
+        ]
+      },
+      {
+        "module": "Module 3: Architectural Planning & Building By-laws (Vastu Basics)",
+        "topics": [
+          "Principles of architectural planning: Aspect, Prospect, Privacy, Circulation",
+          "Building Bye-Laws: Floor Space Index (FSI), Setbacks, Ground Coverage, Room Sizes",
+          "Orientation of rooms according to climate and basic Vastu principles",
+          "Residential building layouts: 1BHK, 2BHK, 3BHK bungalows and row houses"
+        ]
+      },
+      {
+        "module": "Module 4: Residential & Commercial Floor Plans, Elevations, Sections",
+        "topics": [
+          "Detailed floor plan generation with wall thickness, door/window schedules",
+          "Front, Rear, and Side Architectural Elevations",
+          "Cross Sections and Longitudinal Sections passing through staircase and toilets",
+          "Roof layouts, Terrace drainage plans, and Compound wall details"
+        ]
+      },
+      {
+        "module": "Module 5: Structural Detailing (Footing, Column, Beam, Slab, Staircase)",
+        "topics": [
+          "Foundation details: Isolated, Combined, Raft footings and Plinth beam layout",
+          "Column schedule, Cross-sections, and Tie reinforcement",
+          "Plinth & Floor Beam reinforcement detailing (Main, Anchor, Stirrups)",
+          "One-way and Two-way slab reinforcement detailing and Crank bars",
+          "Dog-legged and Open-well staircase detailed reinforcement drawings"
+        ]
+      },
+      {
+        "module": "Module 6: Plumbing, Drainage, Electrical & Sanitation Layouts",
+        "topics": [
+          "Water supply pipe routing (Internal & External, Overhead/Underground tanks)",
+          "Sanitary drainage layouts, Inspection chambers, Septic tank details",
+          "Rainwater harvesting layout and Terrace slopes",
+          "Electrical conduit layout, Switchboard positions, Light & Power points"
+        ]
+      },
+      {
+        "module": "Module 7: Submission Drawings & Municipal Approval Plans",
+        "topics": [
+          "Key Plan, Location Plan, and Site Plan drafting",
+          "Municipal Corporation submission drawing format & Color coding conventions",
+          "Calculation of Built-up area, Carpet area, and Super Built-up area",
+          "Title block preparation, Scale setting, Plotting and PDF printing to scale"
+        ]
+      },
+      {
+        "module": "Module 8: Quantity Estimation Basics & Bar Bending Schedules (BBS)",
+        "topics": [
+          "Basics of quantity takeoff from civil drawings (Excavation, Concrete, Masonry)",
+          "Bar Bending Schedule (BBS) calculation for Footings, Columns, Beams & Slabs",
+          "Preparation of cutting length, Hook allowances, and Steel weight tables"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-mechanical-draftsman",
+    "name": "Certificate Course in Mechanical Draftsman",
+    "title": "Certificate Course in Mechanical Draftsman",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "3-4 Months",
+    "level": "Beginner to Pro",
+    "image": "Draughtsman (.jpeg",
+    "featured": true,
+    "highlight": "Engineering orthographic/isometric drawings, GD&T, machine parts drafting, BOM, and production drawings.",
+    "description": "Comprehensive mechanical drafting course. Learn engineering projection standards, AutoCAD 2D/3D drafting, GD&T symbols, fasteners, power transmission components, assembly layouts, BOM generation, and manufacturing workshop drawings.",
+    "syllabus": [
+      {
+        "module": "Module 1: Engineering Drawing Fundamentals, Orthographic & Isometric Projections",
+        "topics": [
+          "Drawing standards, Sheet layouts, Lettering, Scales, and Dimensioning methods",
+          "First Angle vs Third Angle projection methods and standard symbols",
+          "Orthographic projections of points, lines, planes, and solid primitives",
+          "Isometric views and Isometric drafting techniques",
+          "Sectional views: Full section, Half section, Revolved section, Removed section"
+        ]
+      },
+      {
+        "module": "Module 2: AutoCAD 2D/3D for Mechanical Drafting",
+        "topics": [
+          "Mechanical template setup, Layers, Text styles, Dimension styles",
+          "Precision drafting using Coordinates, Polar tracking, Object snap tracking",
+          "Parametric geometric and dimensional constraints in AutoCAD",
+          "3D solid modeling basics: Extrude, Revolve, Sweep, Loft, Boolean operations",
+          "Generating 2D drawing views from 3D models (VIEWBASE, SECTIONVIEW)"
+        ]
+      },
+      {
+        "module": "Module 3: Dimensioning, Tolerancing & GD&T (Geometric Dimensioning & Tolerancing)",
+        "topics": [
+          "Limits, Fits and Tolerances (Clearance, Transition, Interference fits as per ISO)",
+          "Hole basis and Shaft basis systems",
+          "Geometric Dimensioning & Tolerancing (GD&T) fundamentals (ASME Y14.5)",
+          "Datums, Feature control frames, Form, Orientation, Location, and Runout tolerances",
+          "Maximum Material Condition (MMC) and Least Material Condition (LMC)"
+        ]
+      },
+      {
+        "module": "Module 4: Machine Components Drafting (Nut-Bolt, Keys, Cotter, Shaft, Coupling)",
+        "topics": [
+          "Standard threaded fasteners: Bolts, Nuts, Studs, Washers, Screws",
+          "Keys, Keyways, Splines, Cotter and Knuckle joints",
+          "Shafts, Bearings (Bush, Ball, Roller), and Bearing housings",
+          "Couplings: Muff, Flange, Flexible, and Universal couplings",
+          "Gears (Spur, Helical, Bevel) and Pulleys drafting"
+        ]
+      },
+      {
+        "module": "Module 5: Assembly & Disassembly Drawings with Bill of Materials (BOM)",
+        "topics": [
+          "Techniques for preparing mechanical assembly drawings from detail parts",
+          "Part numbering, Leader lines, and Balloon callouts",
+          "Bill of Materials (BOM) / Parts List structure (Part No, Material, Qty)",
+          "Assembly projects: Machine Vice, Screw Jack, Plummer Block, Tailstock"
+        ]
+      },
+      {
+        "module": "Module 6: Sheet Metal & Piping Layouts",
+        "topics": [
+          "Sheet metal development: Parallel line, Radial line, and Triangulation methods",
+          "Transition pieces, Cones, Cylinders, Ducts, and Bends development",
+          "Piping components, Flanges, Valves, Fittings, and Piping Isometric drawings"
+        ]
+      },
+      {
+        "module": "Module 7: Production/Manufacturing Drawings & Surface Roughness Symbols",
+        "topics": [
+          "Shop-floor working drawings preparation and Machining allowances",
+          "Surface roughness / texture symbols (Ra values, Lay symbols, Machining method)",
+          "Welding symbols and fabrication drawing standards",
+          "Heat treatment and material finishing specifications on drawings",
+          "Drawing release, Revision blocks, and Archival plotting"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-delcam-powershape-powermill",
+    "name": "Certificate Course in Delcam – PowerShape + PowerMill",
+    "title": "Certificate Course in Delcam – PowerShape + PowerMill",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "3-4 Months",
+    "level": "Intermediate to Pro",
+    "image": "delcam.jpeg",
+    "featured": true,
+    "highlight": "Mold/Die CAD preparation with PowerShape & 3-axis to 5-axis high-speed CAM milling with PowerMill.",
+    "description": "Industry-standard Mold & Die design and CNC manufacturing program. Use Autodesk PowerShape for CAD modeling, surface repair, electrode creation, and parting surfaces. Use Autodesk PowerMill for advanced 3-axis to 5-axis high-speed CNC milling toolpaths and simulation.",
+    "syllabus": [
+      {
+        "module": "Module 1: PowerShape Interface, Solid & Surface Hybrid Modeling",
+        "topics": [
+          "Autodesk PowerShape interface, Workspace, Levels, and Workplanes",
+          "Hybrid modeling philosophy: Direct solid modeling combined with flexible surfaces",
+          "Surface generation: Extrude, Revolve, Swept, Coons patch, Fillet surfaces",
+          "Curve manipulation, Morphing, and Wireframe geometry tools"
+        ]
+      },
+      {
+        "module": "Module 2: Direct Modeling & CAD Repair for CAM Preparation",
+        "topics": [
+          "Importing external CAD models (STEP, IGES, Parasolid, CATIA, NX)",
+          "Faulty geometry identification, Surface untrimming, and Gap stitching",
+          "Direct modification: Move face, Replace face, Offset face, Draft modification",
+          "Core & Cavity splitting basics, Run-off surfaces, and Parting line generation",
+          "Electrode design module basics for EDM spark erosion"
+        ]
+      },
+      {
+        "module": "Module 3: PowerMill Introduction, Setup, Stock/Block Definition & Workplanes",
+        "topics": [
+          "PowerMill interface, Project tree, Toolpath explorer, and View manipulation",
+          "Importing CAD models into PowerMill and positioning with Workplanes",
+          "Block definition: Box, Cylinder, Triangle mesh, and Extruded boundaries",
+          "Tool definition: End Mill, Ball Nose, Bull Nose (Tip Radiused), Tapered cutters",
+          "Tool holder assembly configuration and Gauge length verification"
+        ]
+      },
+      {
+        "module": "Module 4: 2.5D & 3D Area Clearance Roughing Strategies",
+        "topics": [
+          "Model Area Clearance roughing strategies (Raster, Offset, Vortex)",
+          "Vortex high-efficiency roughing with constant engagement angle",
+          "Stepdown, Stepover, Tolerance, and Machining Stock allowances",
+          "Lead in/out, Links, and Ramp entry moves (Helical, Zigzag)",
+          "Toolpath calculation, Safe Z heights, and Rapid feed moves"
+        ]
+      },
+      {
+        "module": "Module 5: Semi-Finishing & High-Speed Finishing Strategies (Constant Z, Raster, 3D Offset, Steep & Shallow)",
+        "topics": [
+          "Raster finishing for shallow surfaces and flat areas",
+          "Constant Z finishing for steep and vertical walls",
+          "Steep and Shallow combined finishing strategies",
+          "3D Offset finishing and Spiral finishing for uniform surface texture",
+          "Optimized Constant Z finishing for complex mold cavities"
+        ]
+      },
+      {
+        "module": "Module 6: Rest Machining, Corner Finishing & Pencil Milling",
+        "topics": [
+          "Stock Models creation, Updating stock, and Rest roughing",
+          "Corner finishing toolpaths (Pencil milling, Multi-pencil, Along/Across corners)",
+          "Boundary creation: User-defined, Selected surface, Shallow, Rest, Silhouette",
+          "Surface finish improvement techniques for hardened die steels"
+        ]
+      },
+      {
+        "module": "Module 7: Collision & Gouge Checking, Tool Holder Simulation",
+        "topics": [
+          "Tool and holder collision checking against model and unmachined stock",
+          "Shank and Holder profile clearances and Overhang optimization",
+          "Gouge avoidance: Tilting tool, Trimming toolpaths, and Skipping gouges",
+          "Dynamic Machine Simulation and ViewMILL realistic stock removal animation"
+        ]
+      },
+      {
+        "module": "Module 8: NC Program Generation, Feed Rate Optimization & G-Code Post-Processing",
+        "topics": [
+          "Creating NC Programs and assigning machine post-processors (Option Files)",
+          "Controller support: FANUC, Siemens Sinumerik, Heidenhain, Mitsubishi, Haas",
+          "Toolpath point distribution and Feed rate optimization for high-speed machining",
+          "Generating final G-code and Machine setup documentation sheets"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-mastercam",
+    "name": "Certificate Course in Mastercam",
+    "title": "Certificate Course in Mastercam",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "2-3 Months",
+    "level": "Beginner to Pro",
+    "image": "Mastercam.jpeg",
+    "featured": true,
+    "highlight": "Master 2D/3D CNC programming, mill-turn toolpaths, multi-axis machining, and G-code simulation.",
+    "description": "Industry-standard CAM programming course covering 2D/3D wireframe modeling, high-speed milling, turning cycles, multi-axis machining, machine simulation, and post-processor verification.",
+    "syllabus": [
+      {
+        "module": "Module 1: Introduction to CAD/CAM & Mastercam Interface",
+        "topics": [
+          "Basics of CNC/VMC Machining and Coordinate Systems (G54-G59)",
+          "Mastercam GUI, Viewports, planes and levels",
+          "Geometry import (STEP, IGES, Parasolid, DXF)",
+          "Machine definition and Control Definition selection"
+        ]
+      },
+      {
+        "module": "Module 2: 2D Geometry Creation & Wireframe Modeling",
+        "topics": [
+          "Line, Arc, Spline, Rectangle and Polygon creation",
+          "Trimming, Extending, Offsetting, Rotating, Mirroring and Scaling",
+          "Drafting and Dimensioning 2D parts",
+          "Bounding box creation and stock boundary definition"
+        ]
+      },
+      {
+        "module": "Module 3: 2D Milling Toolpaths (Contour, Pocketing, Drilling, Facing)",
+        "topics": [
+          "Facing operations & parameters (Zigzag, One-way, Dynamic)",
+          "2D Contour toolpaths (Chaining, Lead In/Out, Depth cuts, Multi-passes)",
+          "Standard & Dynamic pocketing toolpaths with entry methods",
+          "Drill cycles: Spot, Peck, Chip break, Tapping, Boring",
+          "Tool library setup, Speeds, Feeds and Coolant settings"
+        ]
+      },
+      {
+        "module": "Module 4: 3D Surface Modeling & 3D High-Speed Machining (HSM)",
+        "topics": [
+          "Basic surface creation (Extrude, Revolve, Loft, Ruled, Fillet)",
+          "3D Surface Roughing: OptiRough, Parallel, Radial roughing",
+          "3D Finishing toolpaths: Equal Scallop, Waterline, Raster, Hybrid",
+          "High-Speed Machining (HSM) corner rounding and micro-lifts",
+          "Check surfaces, Drive surfaces and containment boundaries"
+        ]
+      },
+      {
+        "module": "Module 5: Lathe/Turning Operations & Toolpaths",
+        "topics": [
+          "Lathe interface, Stock definition, Chuck & Jaws setup",
+          "Facing, OD/ID Roughing and Finishing cycles",
+          "Grooving toolpaths (Single-point, Multiple, Face groove)",
+          "Threading toolpaths and Thread cycle parameters",
+          "Parting-off / Cut-off operations and Bar feed setup"
+        ]
+      },
+      {
+        "module": "Module 6: 4-Axis & 5-Axis Multiaxis Machining Basics",
+        "topics": [
+          "Rotary 4-axis indexing and continuous toolpaths",
+          "Introduction to 5-axis simultaneous machining concepts",
+          "Multi-surface 5-axis toolpaths (Swarf, Flowline, Curve)",
+          "Collision avoidance strategies and Tool axis control"
+        ]
+      },
+      {
+        "module": "Module 7: Toolpath Verification, Machine Simulation & G-Code Post-Processing",
+        "topics": [
+          "Backplot toolpath preview & cycle time estimation",
+          "Verify module for 3D solid material removal inspection",
+          "Full machine tool simulation and gouge detection",
+          "Post-processing NC programs (FANUC, Siemens Sinumerik, Haas)",
+          "Editing G-code / M-code and DNC transfer setup"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-solidworks",
+    "name": "Certificate Course in SOLIDWORKS",
+    "title": "Certificate Course in SOLIDWORKS",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "2.5-3 Months",
+    "level": "Beginner to Pro",
+    "image": "solid works.jpeg",
+    "featured": true,
+    "highlight": "3D CAD mechanical modeling, advanced assemblies, sheet metal, weldments, simulation, and photorealistic rendering.",
+    "description": "Industry-standard 3D CAD design covering parametric parts, complex lofts, mate configurations, production drawings with GD&T, sheet metal flat patterns, structural weldments, FEA stress analysis, and PhotoView 360 rendering.",
+    "syllabus": [
+      {
+        "module": "Module 1: Introduction, UI & Sketching Fundamentals",
+        "topics": [
+          "SOLIDWORKS interface, FeatureManager Design Tree, Heads-up view toolbar",
+          "2D sketching entities (Line, Circle, Arc, Spline, Slot, Polygon)",
+          "Smart Dimensioning, Geometric Relations and fully defined sketches",
+          "Sketch tools: Offset, Mirror, Trim, Extend, Sketch Patterns"
+        ]
+      },
+      {
+        "module": "Module 2: Part Modeling (Extrude, Revolve, Sweep, Loft, Rib, Fillet)",
+        "topics": [
+          "Extruded Boss/Base & Extruded Cut with end conditions",
+          "Revolved Boss/Base & Revolved Cut",
+          "Swept Boss/Base with Guide Curves and Lofted features",
+          "Reference geometry: Planes, Axes, Coordinate Systems",
+          "Ribs, Shelling, Draft angles, Fillets (Constant, Variable, Full Round)"
+        ]
+      },
+      {
+        "module": "Module 3: Advanced Part Modeling & Configuration Management",
+        "topics": [
+          "Multi-body part modeling & Boolean operations (Combine, Split)",
+          "Design Tables with Microsoft Excel integration",
+          "Configuration Manager: Part states, Dimensions & Suppressed features",
+          "Equations and Global Variables for parametric design automation"
+        ]
+      },
+      {
+        "module": "Module 4: Assembly Modeling, Mates & Exploded Views",
+        "topics": [
+          "Standard Mates (Coincident, Parallel, Perpendicular, Tangent, Concentric)",
+          "Advanced Mates (Profile Center, Width, Symmetric, Distance/Angle limits)",
+          "Mechanical Mates (Cam, Gear, Rack & Pinion, Screw, Universal Joint)",
+          "Exploded Views, Explode Lines, and Smart Fasteners from Toolbox",
+          "Interference Detection, Clearance Verification and Physical Dynamics"
+        ]
+      },
+      {
+        "module": "Module 5: Drafting & 2D Engineering Drawings with GD&T",
+        "topics": [
+          "Standard drawing templates, Sheet formats and Scale settings",
+          "Standard views, Projected views, Auxiliary, Section, and Detail views",
+          "Model Items annotation, Smart Dimensions and Centerlines",
+          "GD&T: Datums, Form, Orientation, Location and Runout tolerances",
+          "Bill of Materials (BOM) creation and Auto-Ballooning"
+        ]
+      },
+      {
+        "module": "Module 6: Sheet Metal & Weldment Design",
+        "topics": [
+          "Base Flange, Edge Flange, Miter Flange, Hem, Jog and Swept Flange",
+          "Unfold, Fold, Rip, Corner Relief and Flattened Sheet Metal DXF",
+          "Weldment structural members and custom profiles (ISO/ANSI)",
+          "Corner Treatments (End Miter, Butts), Gussets, End Caps, Weld Beads",
+          "Cut List generation for structural fabrication"
+        ]
+      },
+      {
+        "module": "Module 7: Surface Modeling Basics",
+        "topics": [
+          "Extruded, Revolved, Swept, Lofted and Boundary surfaces",
+          "Trim Surface, Untrim Surface, Knit Surface, Extend Surface",
+          "Thickening surfaces and Creating solid bodies from closed surface quilts"
+        ]
+      },
+      {
+        "module": "Module 8: Simulation Express (FEA Stress Analysis) & Photoview 360 Rendering",
+        "topics": [
+          "SimulationXpress: Fixture definition, Force/Pressure application",
+          "Material selection, Meshing, Factor of Safety (FOS) calculation",
+          "Stress (von Mises) and Displacement report generation",
+          "PhotoView 360 / Visualize: Materials, Decals, Scene lighting & High-Res renders"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-solid-edge",
+    "name": "Certificate Course in Solid Edge",
+    "title": "Certificate Course in Solid Edge",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "2-3 Months",
+    "level": "Beginner to Pro",
+    "image": "solid edge.jpeg",
+    "featured": false,
+    "highlight": "Synchronous technology modeling, fast parametric design, sheet metal, assemblies, frames, and drafting.",
+    "description": "Learn Siemens Solid Edge with unique Synchronous Technology. Combine the speed and flexibility of direct modeling with parametric control for mechanical parts, complex sheet metal flat patterns, assemblies, frame weldments, and 2D drafting.",
+    "syllabus": [
+      {
+        "module": "Module 1: Solid Edge Interface & Synchronous Technology vs Ordered Modeling",
+        "topics": [
+          "Solid Edge user interface, Prompt bar, PathFinder, Steering Wheel",
+          "Understanding Synchronous Technology vs Traditional History-based (Ordered) modeling",
+          "Direct editing concepts, Live Rules, and Face Relate commands",
+          "Starting environments and template setup (ISO, ANSI, DIN)"
+        ]
+      },
+      {
+        "module": "Module 2: 2D Sketching & Profile Creation",
+        "topics": [
+          "Sketching planes, Coincident plane locking (F3), QuickPick tool",
+          "Drawing commands: Line, Circle, Arc, Curve, Rectangle, Fillet",
+          "IntelliSketch geometric relationships (Tangent, Parallel, Concentric, Horizontal/Vertical)",
+          "Driving vs Driven dimensions and Smart Dimensioning"
+        ]
+      },
+      {
+        "module": "Module 3: Solid Modeling – Parts & Features",
+        "topics": [
+          "Synchronous feature generation: Extrude, Revolve using the Steering Wheel",
+          "Holes, Thread, Chamfer, Round (Fillet), Thin Wall (Shell), Draft",
+          "Patterning: Rectangular, Circular, and Pattern Along Curve",
+          "Multi-body modeling, Boolean operations (Add, Subtract, Intersect)"
+        ]
+      },
+      {
+        "module": "Module 4: Sheet Metal Design (Bends, Flanges, Punch, Cutouts, Flat Patterns)",
+        "topics": [
+          "Sheet Metal environment and Material Thickness tables",
+          "Base Contour Flange, Flange, Lofted Flange, Hem",
+          "Bend, Unbend, Rebend, Normal Cutout, and Corner Relief",
+          "Deformable features: Louvers, Dimples, Beads, Gussets",
+          "Generating flat patterns and exporting DXF for CNC laser/punch cutting"
+        ]
+      },
+      {
+        "module": "Module 5: Assembly Design & Dynamic Motion Simulation",
+        "topics": [
+          "Assembly PathFinder, Drag-and-drop component placement",
+          "Assembly relationships: FlashFit, Mate, Planar Align, Axial Align, Connect, Angle",
+          "Exploded views creation and animation playback",
+          "Interference checking, Motion simulation, and Physical properties analysis"
+        ]
+      },
+      {
+        "module": "Module 6: 2D Engineering Drawings, Drafting, Sectioning & BOM",
+        "topics": [
+          "Drafting environment, Drawing sheets, Title blocks, Drawing View Wizard",
+          "Principal views, Auxiliary views, Section views, Broken-out section views",
+          "Dimensioning, GD&T symbols, Surface finish symbols, Welding symbols",
+          "Parts List (BOM) generation, Auto-ballooning, and Callouts"
+        ]
+      },
+      {
+        "module": "Module 7: Frame Design & Weldments",
+        "topics": [
+          "Frame design environment and Structural profile cross-sections",
+          "Routing path definition, Miter joints, Butt joints, End caps",
+          "Weldment environment: Bead placement, Fillet welds, Groove welds, and Cut Lists"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-staad-pro",
+    "name": "Certificate Course in STAAD.Pro",
+    "title": "Certificate Course in STAAD.Pro",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "2-3 Months",
+    "level": "Intermediate to Pro",
+    "image": "staad. pro.jpeg",
+    "featured": true,
+    "highlight": "Civil structural analysis & design, RCC framing, steel truss design, wind/seismic loads, and IS code compliance.",
+    "description": "Professional structural engineering analysis and design software training in Bentley STAAD.Pro. Model 3D frames, assign material specifications, apply dead, live, wind (IS 875), and seismic (IS 1893) loads, perform FEA analysis, and design RCC/Steel members as per IS codes.",
+    "syllabus": [
+      {
+        "module": "Module 1: Introduction to Structural Engineering Concepts & STAAD GUI",
+        "topics": [
+          "Overview of structural engineering, Loads, Equilibrium, and Structural idealization",
+          "STAAD.Pro interface, Menus, Toolbars, Page Control, and Data Area",
+          "STAAD input editor (.STD file structure) and syntax basics",
+          "Global vs Local coordinate systems in space frame analysis"
+        ]
+      },
+      {
+        "module": "Module 2: Geometry Generation (Nodes, Beams, Plates, Snap Node Grid)",
+        "topics": [
+          "Creating structural nodes and coordinate entry",
+          "Beam modeling: Add Beam command, Snap Node/Beam grid",
+          "Translational Repeat and Circular Repeat for multi-story building frames",
+          "Plate/Shell element modeling (Meshing, Plate Cursor, Quad/Triangular plates)",
+          "Geometry verification: Duplicate nodes, Orphan nodes, Zero-length members"
+        ]
+      },
+      {
+        "module": "Module 3: Member Properties, Materials, Specifications & Supports",
+        "topics": [
+          "Property definition: Prismatic sections (Rectangular, Circular, T-beam)",
+          "Standard Steel section tables (Indian ISMC, ISMB, ISA, Tube, Pipe)",
+          "Material properties assignment (Concrete grade M20/M25/M30, Steel Fe415/Fe500)",
+          "Member specifications: Beam release (Moment release), Member offsets, Truss specification",
+          "Support conditions: Fixed, Pinned, Enforced, Roller, Foundation springs"
+        ]
+      },
+      {
+        "module": "Module 4: Load & Load Combinations (Dead, Live, Wind as per IS 875, Seismic as per IS 1893)",
+        "topics": [
+          "Dead load calculations and Selfweight command",
+          "Live load application (Member load: UDL, UVL, Concentrated load, Floor load)",
+          "Wind load definition as per IS 875 (Part 3) with wind intensity calculations",
+          "Seismic load definition as per IS 1893 (Equivalent static method, Zone factor, R, I)",
+          "Generating automatic load combinations as per Limit State method"
+        ]
+      },
+      {
+        "module": "Module 5: Structural Analysis (Linear Static, P-Delta)",
+        "topics": [
+          "Perform Analysis command and analysis engine execution",
+          "Post-processing mode: Displacement diagram, Node deflection values",
+          "Bending Moment (Mz, My) and Shear Force (Fy, Fz) diagrams",
+          "Axial force diagrams, Reactions at supports, and Summary reports",
+          "Introduction to second-order P-Delta analysis for tall structures"
+        ]
+      },
+      {
+        "module": "Module 6: Concrete Design (Beams, Columns, Slabs as per IS 456)",
+        "topics": [
+          "Design parameters setup: Code IS 456, Fck, Fy, Clear Cover, Max/Min bar sizes",
+          "Design commands: DESIGN BEAM, DESIGN COLUMN, TAKE OFF",
+          "Interpreting concrete design output: Longitudinal steel, Shear stirrups",
+          "Column interaction diagrams and reinforcement percentage checks"
+        ]
+      },
+      {
+        "module": "Module 7: Steel Design (Trusses, Steel Frames as per IS 800)",
+        "topics": [
+          "Steel design parameters as per IS 800 (Limit State & Working Stress)",
+          "Design commands: CHECK CODE, SELECT OPTIMIZED SECTION",
+          "Steel ratio checks, Slenderness ratio limitations, and Allowable stress verification",
+          "Truss analysis, Tension members, and Compression struts design"
+        ]
+      },
+      {
+        "module": "Module 8: Foundation Design Basics & Report Generation",
+        "topics": [
+          "Support reactions export to STAAD Foundation",
+          "Isolated footing and Combined footing design basics",
+          "Customizing printable calculation reports, Exporting diagrams, and Bill of quantities"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-catia-v5",
+    "name": "Certificate Course in CATIA V5",
+    "title": "Certificate Course in CATIA V5",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "3-4 Months",
+    "level": "Beginner to Pro",
+    "image": "catia.jpeg",
+    "featured": true,
+    "highlight": "Automotive & Aerospace grade 3D part design, Generative Shape Design (GSD), assembly, drafting, and DMU kinematics.",
+    "description": "Master Dassault Systèmes CATIA V5. Widely utilized in aerospace and automotive industries for robust mechanical part design, complex surface styling, assembly architecture, generative drafting, sheet metal, and DMU kinematic mechanisms.",
+    "syllabus": [
+      {
+        "module": "Module 1: CATIA V5 Architecture & Sketcher Workbench",
+        "topics": [
+          "CATIA V5 user interface, Specification Tree, Compass usage",
+          "Profile creation (Line, Circle, Spline, Profile, Ellipse, Conic)",
+          "Constraint toolbar: Geometrical constraints and Dimensional constraints",
+          "Sketch operations: Corner, Chamfer, Trim, Mirror, Symmetry, Project 3D elements",
+          "Sketch Analysis tool for checking open loops and diagnosing profiles"
+        ]
+      },
+      {
+        "module": "Module 2: Part Design (Solid Features, Dress-Up, Boolean Operations)",
+        "topics": [
+          "Sketch-based features: Pad, Pocket, Shaft, Groove, Hole",
+          "Advanced features: Rib, Slot, Stiffener, Multi-sections Solid, Removed Multi-sections",
+          "Dress-up features: Edge Fillet, Variable Fillet, Chamfer, Draft, Shell, Thickness",
+          "Transformation features: Translation, Rotation, Symmetry, Mirror, Rectangular/Circular Pattern",
+          "Boolean Operations: Assemble, Add, Remove, Intersect, Union Trim"
+        ]
+      },
+      {
+        "module": "Module 3: Wireframe & Surface Design (Generative Shape Design - GSD)",
+        "topics": [
+          "Wireframe geometry: Points, Lines, Planes, Circles, Splines, Helix, Projections",
+          "Basic surfaces: Extrude, Revolve, Sphere, Cylinder, Offset, Swept Surface",
+          "Advanced surfaces: Multi-sections Surface, Blend, Fill, Boundary",
+          "Surface operations: Join, Split, Trim, Boundary, Disassemble",
+          "Solid-Surface integration: Split, Thick Surface, Close Surface, Sew Surface"
+        ]
+      },
+      {
+        "module": "Module 4: Assembly Design Workbench & Kinematics Basics",
+        "topics": [
+          "Product structure, Component insertion (Existing Component, New Part)",
+          "Constraints: Coincidence, Contact, Offset, Angle, Fix Component",
+          "Manipulation toolbar, Compass movement, Snap and Smart Move",
+          "Assembly analysis: Clash & Clearance analysis, Sectioning",
+          "Catalog Browser and Standard mechanical components"
+        ]
+      },
+      {
+        "module": "Module 5: Generative Drafting & Engineering Drawing Standards",
+        "topics": [
+          "Drafting workbench, Sheet setup, Scale, Projection methods (First / Third angle)",
+          "Generating views: Front, Top, Left, Isometric, Offset Section, Aligned Section",
+          "Detail views, Breakout views, Clipping views",
+          "Dimensioning tools, GD&T symbols, Datum indicators, Text annotations",
+          "Bill of Material (BOM) generation and Title block creation"
+        ]
+      },
+      {
+        "module": "Module 6: Generative Sheet Metal Design",
+        "topics": [
+          "Sheet Metal Parameters (Thickness, Bend Radius, K-Factor)",
+          "Wall, Wall on Edge, Flange, Hem, Tear Drop",
+          "Extrusion, Cutout, Hole, Corner Relief",
+          "Folding & Unfolding operations, Flat pattern view generation"
+        ]
+      },
+      {
+        "module": "Module 7: DMU Kinematics & Digital Mockup Simulation",
+        "topics": [
+          "Digital Mockup (DMU) Kinematics workbench overview",
+          "Joint types: Revolute, Prismatic, Cylindrical, Spherical, Planar, Gear joint",
+          "Fixed part definition and Mechanism creation",
+          "Command assignment, Simulation with commands, Replay mechanism",
+          "Clash detection during dynamic mechanism movement"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-unigraphics-ug-nx",
+    "name": "Certificate Course in Unigraphics / UG NX",
+    "title": "Certificate Course in Unigraphics / UG NX",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "3-4 Months",
+    "level": "Beginner to Pro",
+    "image": "unigraphics.jpeg",
+    "featured": true,
+    "highlight": "Advanced parametric CAD modeling, complex surfacing, assemblies, sheet metal, and NX CAM manufacturing.",
+    "description": "Comprehensive training in Siemens NX (Unigraphics) covering parametric 3D modeling, advanced Class-A style freeform surfacing, large assembly design, detailed engineering drafting with GD&T, sheet metal, and integrated NX CAM toolpaths.",
+    "syllabus": [
+      {
+        "module": "Module 1: UG NX Interface, Navigation & Sketching",
+        "topics": [
+          "Siemens NX UI, Role setup, Resource Bar and Part Navigator",
+          "Direct Sketch environment and Inferred Constraints",
+          "Geometric Constraints (Coincident, Tangent, Perpendicular, Collinear)",
+          "Dimensional constraints and fully defined sketch status"
+        ]
+      },
+      {
+        "module": "Module 2: Solid Modeling & Parametric Feature Design",
+        "topics": [
+          "Base features: Extrude, Revolve, Sweep along Guide",
+          "Dress-up features: Hole, Edge Blend, Chamfer, Draft, Shell",
+          "Boolean Operations (Unite, Subtract, Intersect)",
+          "Pattern Feature & Pattern Face (Linear, Circular, Along Curve)",
+          "Feature grouping, Reordering, and Suppress/Unsuppress"
+        ]
+      },
+      {
+        "module": "Module 3: Advanced Surfacing & Freeform Modeling",
+        "topics": [
+          "Through Curves, Through Curve Mesh, Swept surfaces",
+          "Studio Surface, Section Surface and Law Extensions",
+          "Surface continuity analysis (G0, G1, G2 curvature analysis)",
+          "Sewing, Patching, Trimming, and Thickening sheet bodies"
+        ]
+      },
+      {
+        "module": "Module 4: Assembly Design (Top-down & Bottom-up)",
+        "topics": [
+          "Bottom-up assembly approach: Adding components and Touch/Align constraints",
+          "Top-down assembly modeling: Inter-part expressions and WAVE Geometry Linker",
+          "Exploded Views and Sequences creation",
+          "Assembly Clearance analysis and Interference checks"
+        ]
+      },
+      {
+        "module": "Module 5: Drafting & Detailing (GD&T, Section Views, BOM)",
+        "topics": [
+          "Drawing sheet configuration and Standard title blocks",
+          "Orthographic projections, Isometric views, Detail views",
+          "Simple, Stepped, Offset, and Revolved Section Views",
+          "Geometric Dimensioning & Tolerancing (GD&T) feature control frames",
+          "Automated Parts List (BOM) and Balloon Callouts generation"
+        ]
+      },
+      {
+        "module": "Module 6: Sheet Metal Design",
+        "topics": [
+          "NX Sheet Metal environment and Material Thickness standards",
+          "Base Tab, Flange, Contour Flange, Lofted Flange",
+          "Bend, Unbend, Rebend and Corner relief definitions",
+          "Dimple, Louver, Normal Cutout and Flat Pattern export (DXF)"
+        ]
+      },
+      {
+        "module": "Module 7: NX CAM – 2.5D to 3D Milling, Turning & Post-Processing",
+        "topics": [
+          "Manufacturing environment, MCS & Workpiece setup",
+          "Planar Mill and Cavity Mill for roughing",
+          "Z-Level, Contour Area and Streamline finishing strategies",
+          "Lathe Turning operations and Boring toolpaths",
+          "Toolpath simulation, CLSF generation and Post-processing"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-primavera-p6",
+    "name": "Certificate Course in Primavera P6",
+    "title": "Certificate Course in Primavera P6",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "2-3 Months",
+    "level": "Beginner to Pro",
+    "image": "primavera.jpeg",
+    "featured": true,
+    "highlight": "Enterprise project planning, EPS, OBS, WBS, CPM scheduling, resource allocation, and S-curves.",
+    "description": "Master Oracle Primavera P6 for enterprise construction, EPC, oil & gas, and manufacturing projects. Learn EPS/OBS configuration, WBS decomposition, CPM scheduling, resource optimization, baseline tracking, EVA, and management S-curve reports.",
+    "syllabus": [
+      {
+        "module": "Module 1: Project Management Principles & Primavera P6 Navigation",
+        "topics": [
+          "Project management lifecycle in large-scale EPC and infrastructure industries",
+          "Primavera P6 architecture, Navigation, Menus, Toolbars, and Activity layout customization",
+          "User Preferences, Admin Preferences, and Currency settings",
+          "Project Calendars (Global, Project, Resource calendars, Shifts & Non-working days)"
+        ]
+      },
+      {
+        "module": "Module 2: Enterprise Project Structure (EPS) & Organizational Breakdown (OBS)",
+        "topics": [
+          "Creating and structuring the Enterprise Project Structure (EPS)",
+          "Creating Organizational Breakdown Structure (OBS) and linking OBS to EPS nodes",
+          "User security profiles and Responsible Manager assignment",
+          "Project creation, Project codes, and Project-level properties"
+        ]
+      },
+      {
+        "module": "Module 3: Work Breakdown Structure (WBS) & Activity Definition",
+        "topics": [
+          "Developing multi-level Work Breakdown Structure (WBS)",
+          "Adding activities and activity naming conventions",
+          "Activity types: Task Dependent, Resource Dependent, Level of Effort, Start/Finish Milestone",
+          "Activity percent complete types: Duration, Physical, Units",
+          "Activity Codes, Steps, Notebook topics, and Document references"
+        ]
+      },
+      {
+        "module": "Module 4: Relationship Types, Leads/Lags & Critical Path Method (CPM)",
+        "topics": [
+          "Predecessors and Successors assignment",
+          "Relationship types: FS, SS, FF, SF with Lead and Lag times",
+          "Scheduling the project (F9) and Critical Path Method (CPM) calculation",
+          "Early Start/Finish, Late Start/Finish, Total Float, and Free Float",
+          "Constraints management: Must Finish By, Mandatory Start/Finish, As Late As Possible"
+        ]
+      },
+      {
+        "module": "Module 5: Resource Management (Labor, Non-labor, Material) & Cost Accounting",
+        "topics": [
+          "Creating Resource Dictionary: Labor, Non-labor, and Material resources",
+          "Resource units/time, Max units, Price/Unit, and Shift calendars",
+          "Assigning resources to activities and calculating budgeted costs",
+          "Expenses addition (Permits, Consulting fees, Lump-sum items)",
+          "Resource Usage Profile, Resource Usage Spreadsheet, and Leveling"
+        ]
+      },
+      {
+        "module": "Module 6: Baseline Planning, Project Updating & Schedule Variance",
+        "topics": [
+          "Creating and maintaining Project Baselines (Initial, What-if, Approved)",
+          "Assigning Project Baseline and User Baselines",
+          "Progress update methods: Data Date concept, Applying actual dates, Remaining durations",
+          "Tracking actual units, costs, and physical percentage of completion",
+          "Schedule variance analysis and Gantt bar comparison"
+        ]
+      },
+      {
+        "module": "Module 7: Earned Value Analysis (EVA), S-Curve Generation & Management Reporting",
+        "topics": [
+          "Earned Value parameters: Planned Value (PV), Earned Value (EV), Actual Cost (AC)",
+          "Cost Variance (CV), Schedule Variance (SV), CPI, and SPI performance indices",
+          "Generating cumulative Cash Flow curves and Progress S-Curves",
+          "P6 Report Wizard: Tabular reports, Time-distributed reports, and PDF export"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-msp-microsoft-project",
+    "name": "Certificate Course in MSP – Microsoft Project",
+    "title": "Certificate Course in MSP – Microsoft Project",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "1.5-2 Months",
+    "level": "Beginner to Pro",
+    "image": "micr proj training.jpeg",
+    "featured": false,
+    "highlight": "Project scheduling, WBS, Gantt charts, resource leveling, budget baselines, and EVM tracking.",
+    "description": "Industry-standard project management software training in Microsoft Project (MSP). Learn project initiation, Work Breakdown Structures (WBS), task dependencies, critical path schedules, resource allocation, cost control, baselines, and EVM reports.",
+    "syllabus": [
+      {
+        "module": "Module 1: Project Management Concepts & MSP Interface Overview",
+        "topics": [
+          "Core project management concepts (PMBOK framework: Scope, Time, Cost)",
+          "Microsoft Project interface, Ribbon, Views, Tables, Filters, and Timeline",
+          "Project Options configuration and default calculation settings",
+          "Setting up a new project file (Start Date vs Finish Date scheduling)"
+        ]
+      },
+      {
+        "module": "Module 2: Creating a Project, Calendars & Work Breakdown Structure (WBS)",
+        "topics": [
+          "Creating and customizing Calendars (Standard, Night shift, 24 Hours, Holidays)",
+          "Assigning base calendars to projects and resources",
+          "Work Breakdown Structure (WBS) creation and WBS code customisation",
+          "Summary tasks, Subtasks, Milestones, and Task outline numbering"
+        ]
+      },
+      {
+        "module": "Module 3: Task Management, Dependencies & Network Diagrams",
+        "topics": [
+          "Task types: Fixed Units, Fixed Duration, Fixed Work",
+          "Task dependencies: Finish-to-Start (FS), Start-to-Start (SS), Finish-to-Finish (FF), Start-to-Finish (SF)",
+          "Lead time and Lag time application",
+          "Task constraints and Deadlines management",
+          "Critical Path Method (CPM) identification and Network Diagram view"
+        ]
+      },
+      {
+        "module": "Module 4: Resource Sheet Setup, Allocation & Resource Leveling",
+        "topics": [
+          "Resource types: Work, Material, Cost resources",
+          "Setting up the Resource Sheet, Standard rates, Overtime rates, Cost per use",
+          "Assigning resources to tasks and effort-driven scheduling calculations",
+          "Identifying Resource Overallocation in Resource Usage view",
+          "Manual and Automatic Resource Leveling techniques"
+        ]
+      },
+      {
+        "module": "Module 5: Cost Management, Budgeting & Baseline Setting",
+        "topics": [
+          "Fixed task costs, Accrual methods (Start, Prorated, End)",
+          "Creating and assigning top-level Project Budget resources",
+          "Setting, maintaining, and clearing Baselines (up to 11 baselines)",
+          "Interim plans and baseline comparison in Tracking Gantt view"
+        ]
+      },
+      {
+        "module": "Module 6: Project Tracking, Variance Analysis & Earned Value Management (EVM)",
+        "topics": [
+          "Updating project progress: % Complete, Actual Start/Finish, Remaining Duration",
+          "Schedule variance analysis (Gantt Slippage, Float/Slack calculations)",
+          "Earned Value Management (EVM) parameters: Planned Value (PV), Earned Value (EV), Actual Cost (AC)",
+          "Performance indices: Cost Performance Index (CPI) and Schedule Performance Index (SPI)",
+          "Estimate at Completion (EAC) and Variance at Completion (VAC)"
+        ]
+      },
+      {
+        "module": "Module 7: Custom Reports, Visual Reports & Dashboards",
+        "topics": [
+          "Built-in dashboard reports: Project Overview, Cost Overview, Milestone Report",
+          "Creating custom tabular, chart, and comparison reports",
+          "Visual Reports export to Microsoft Excel and Microsoft Visio",
+          "Exporting project data and creating executive stakeholder presentations"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-pdms",
+    "name": "Certificate Course in PDMS (Plant Design Management System)",
+    "title": "Certificate Course in PDMS",
+    "category": "CAD CAM",
+    "categorySlug": "cad-cam",
+    "duration": "2.5-3 Months",
+    "level": "Intermediate to Pro",
+    "image": "pdms.jpeg",
+    "featured": true,
+    "highlight": "Oil & gas piping design, equipment modeling, pipe routing, clash detection, structures, and Isodraft.",
+    "description": "Industry-standard plant engineering software training in AVEVA PDMS. Master 3D equipment modeling, piping specifications, pipe routing, clash detection, structural steel design, HVAC routing, and automatic isometric drawing generation (Isodraft).",
+    "syllabus": [
+      {
+        "module": "Module 1: Introduction to Plant Engineering & PDMS Architecture",
+        "topics": [
+          "Overview of Process Plant Engineering, EPC lifecycle, and P&ID diagrams",
+          "PDMS database hierarchy: World, Site, Zone, Equipment, Sub-equipment",
+          "PDMS Design module interface, 3D graphical views, and Command Line syntax",
+          "Coordinate systems and positioning tools in plant design"
+        ]
+      },
+      {
+        "module": "Module 2: Equipment Modeling Workbench (Pumps, Heat Exchangers, Vessels, Tanks)",
+        "topics": [
+          "Equipment primitives: Box, Cylinder, Cone, Dish, Snout, Pyramid",
+          "Modeling Horizontal and Vertical Pressure Vessels",
+          "Modeling Shell & Tube Heat Exchangers, Centrifugal Pumps, and Storage Tanks",
+          "Creating Nozzles (NOZZ), orientation, ratings, and elevation setting",
+          "Equipment manipulation, copying, rotating, and position attributes"
+        ]
+      },
+      {
+        "module": "Module 3: Pipe Routing & Piping Modeling (Pipe Specs, Flanges, Valves, Fittings)",
+        "topics": [
+          "Piping hierarchy: Pipe and Branch creation",
+          "Piping Specifications selection (Pipe spec, Material grade, Ratings)",
+          "Connecting Branch Head and Branch Tail to equipment nozzles",
+          "Routing piping components: Elbows, Tees, Reducers, Flanges, Valves, Gaskets",
+          "Sloped piping, Piping insulation, and Valve operating access"
+        ]
+      },
+      {
+        "module": "Module 4: Clash Detection, Consistency Checking & Clearance Verification",
+        "topics": [
+          "Data consistency checking and resolving branch connectivity errors",
+          "PDMS Clasher utility setup (Hard clash, Soft clash, Insulation clash)",
+          "Running clash checks between piping, equipment, and structural members",
+          "Clash report generation and collaborative design resolution"
+        ]
+      },
+      {
+        "module": "Module 5: Structural Modeling (Beams, Columns, Framework, Platforms, Ladders)",
+        "topics": [
+          "Structural module hierarchy: Structure, Framework, Sub-framework",
+          "Section catalogs (Universal Beams, Columns, Channels, Angles)",
+          "Modeling Pipe racks, Building columns, and Secondary steel supports",
+          "Access platforms, Walkways, Handrails, and Stair/Ladder modeling"
+        ]
+      },
+      {
+        "module": "Module 6: HVAC & Cable Tray Routing Basics",
+        "topics": [
+          "HVAC module overview and standard ducting components",
+          "Duct routing, In-line dampers, Diffusers, and Bends",
+          "Cable Tray routing for electrical and instrumentation distribution"
+        ]
+      },
+      {
+        "module": "Module 7: Isometric Drawing Generation (Isodraft) & 2D Drawing Production (Draft)",
+        "topics": [
+          "Isodraft module introduction and Option file selection",
+          "Generating Piping Isometric drawings with automatic BOM",
+          "Draft module: Creating drawing sheets, Plan views, Section views, and Elevations",
+          "Annotating 2D plant drawings, Dimensioning, and Title block management"
+        ]
+      }
+    ]
+  },
+  {
     "slug": "combo-course-with-ms-cit",
     "name": "Combo Course with MS-CIT",
     "title": "Combo Course with MS-CIT",
@@ -2147,6 +2855,306 @@ export const courses = [
           "Network Security",
           "Troubleshooting",
           "Practical Network Setup"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-ai-tools-mastery",
+    "name": "Certificate Course in AI Tools Mastery",
+    "title": "Certificate Course in AI Tools Mastery",
+    "category": "AI",
+    "categorySlug": "ai",
+    "duration": "1.5 Months",
+    "level": "Beginner",
+    "image": "certificate-course-in-ai-tools-mastery.jpg",
+    "featured": true,
+    "highlight": "Hands-on with the most-used AI tools for text, image, video, audio, presentations, spreadsheets and productivity automation.",
+    "description": "Comprehensive practical course covering industry-leading AI tools. Master ChatGPT, Claude, Midjourney, ElevenLabs, Gamma, Copilot in Excel, and automation platforms to 10x your personal and team productivity.",
+    "syllabus": [
+      {
+        "module": "Module 1: Text & Research AI Engines",
+        "topics": [
+          "ChatGPT Plus & Advanced Reasoning",
+          "Claude 3.5 Sonnet for Writing & Coding",
+          "Perplexity AI for Verified Deep Search",
+          "Google Gemini Advanced & Workspace Integration"
+        ]
+      },
+      {
+        "module": "Module 2: Generative Image & Visual Studio",
+        "topics": [
+          "Midjourney v6.1 Masterclass",
+          "Ideogram for Typography & Posters",
+          "Canva Magic Studio & AI Graphic Design",
+          "Commercial Asset Licensing & Formats"
+        ]
+      },
+      {
+        "module": "Module 3: AI Video & Voice Generation",
+        "topics": [
+          "Runway Gen-3 & Kling AI Video Creation",
+          "ElevenLabs Ultra-Realistic Voice Cloning",
+          "HeyGen & Synthesia AI Avatars",
+          "CapCut AI Video Editing & Auto-Captions"
+        ]
+      },
+      {
+        "module": "Module 4: AI for Presentations & Data Spreadsheets",
+        "topics": [
+          "Gamma App for Instant Slide Decks",
+          "Copilot in Excel & Automated Formula Writing",
+          "Claude Artifacts for Visual Reports",
+          "Beautiful.ai & Executive Data Summaries"
+        ]
+      },
+      {
+        "module": "Module 5: Workflow Automation & Tool Stacking",
+        "topics": [
+          "Zapier AI & Make.com Auto-Triggers",
+          "Notion AI for Team Knowledge Hubs",
+          "Multi-Tool Cross-Platform Pipelines",
+          "Capstone Productivity Suite Project"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-chatgpt-prompt-engineering",
+    "name": "Certificate Course in ChatGPT & Prompt Engineering",
+    "title": "Certificate Course in ChatGPT & Prompt Engineering",
+    "category": "AI",
+    "categorySlug": "ai",
+    "duration": "1.5 Months",
+    "level": "Beginner to Intermediate",
+    "image": "certificate-course-in-chatgpt-prompt-engineering.jpg",
+    "featured": true,
+    "highlight": "GPT models, prompt patterns, system prompts, custom GPTs, data analysis with GPT, workflow automation.",
+    "description": "Master professional prompt engineering for GPT-4o and modern LLMs. Learn advanced prompting frameworks, build custom GPTs with knowledge bases, execute Python data analysis inside ChatGPT, and automate complex workflows.",
+    "syllabus": [
+      {
+        "module": "Module 1: GPT Architecture & Prompt Foundations",
+        "topics": [
+          "OpenAI GPT Models & Version Differences",
+          "Understanding Tokens, Context & Sampling Parameters",
+          "System Instructions vs User Prompts",
+          "Structuring Prompts for Zero Hallucination"
+        ]
+      },
+      {
+        "module": "Module 2: Advanced Prompting Frameworks",
+        "topics": [
+          "Chain-of-Thought (CoT) Prompting",
+          "ReAct (Reasoning + Acting) Framework",
+          "Few-Shot Learning with Exemplars",
+          "Role Framing & Perspective Simulation"
+        ]
+      },
+      {
+        "module": "Module 3: Building Custom GPTs & Actions",
+        "topics": [
+          "Custom GPT Configuration & Knowledge Injection",
+          "Configuring Custom Instructions & Capabilities",
+          "Connecting OpenAPI Schemas & REST APIs",
+          "Publishing & Managing Enterprise GPTs"
+        ]
+      },
+      {
+        "module": "Module 4: Advanced Data Analysis with ChatGPT",
+        "topics": [
+          "Uploading Datasets & Spreadsheets",
+          "Automated Python Code Execution in ChatGPT",
+          "Exploratory Data Analysis & Visual Charting",
+          "Statistical Synthesis & Executive Reports"
+        ]
+      },
+      {
+        "module": "Module 5: Workflow Automation & API Integration",
+        "topics": [
+          "Automating Repetitive Tasks with ChatGPT",
+          "OpenAI API Overview & Playground",
+          "Integrating GPT into Google Sheets & Docs",
+          "Capstone Prompt Engineering Project"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-claude-for-work-research",
+    "name": "Certificate Course in Claude for Work & Research",
+    "title": "Certificate Course in Claude for Work & Research",
+    "category": "AI",
+    "categorySlug": "ai",
+    "duration": "1 Month",
+    "level": "Beginner",
+    "image": "certificate-course-in-claude-for-work-research.jpg",
+    "featured": true,
+    "highlight": "Long-context work, document analysis, writing & editing, projects, structured research workflows, comparison with other assistants.",
+    "description": "Deep-dive into Anthropic Claude for enterprise research and high-stakes analysis. Learn to utilize the 200K token context window for massive documents, master Claude Projects and Artifacts, and refine business writing and research synthesis.",
+    "syllabus": [
+      {
+        "module": "Module 1: Claude Architecture & 200K Long-Context",
+        "topics": [
+          "Claude 3.5 Sonnet, Haiku & Opus Overview",
+          "Working with 200,000 Token Context Windows",
+          "Information Retrieval in Giant Documents (Needle in a Haystack)",
+          "Comparing Claude with ChatGPT & Gemini"
+        ]
+      },
+      {
+        "module": "Module 2: Deep Document & Financial Analysis",
+        "topics": [
+          "Analyzing 100+ Page PDFs & Annual Reports",
+          "Extracting Tabular Data & Financial Disclosures",
+          "Legal Contract & Regulatory Compliance Review",
+          "Academic Paper Synthesis & Literature Reviews"
+        ]
+      },
+      {
+        "module": "Module 3: Advanced Writing & Editorial Nuance",
+        "topics": [
+          "Calibrating Tone, Voice & Executive Register",
+          "Drafting Technical Documentation & Policy Manuals",
+          "Persuasive Proposals & Business Case Studies",
+          "Iterative Polishing & Anti-Jargon Editing"
+        ]
+      },
+      {
+        "module": "Module 4: Claude Projects & Artifacts",
+        "topics": [
+          "Setting Up Persistent Claude Projects",
+          "Building Contextual Knowledge Repositories",
+          "Interactive React & SVG Artifact Generation",
+          "Rapid Prototyping Without Coding Environments"
+        ]
+      },
+      {
+        "module": "Module 5: Structured Research Workflows",
+        "topics": [
+          "Hypothesis Testing & Cross-Referencing",
+          "Multi-Perspective Brainstorming & Counter-Arguments",
+          "Structuring Executive Research Briefs",
+          "Capstone Research Synthesis Project"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-lovable-ai-app-building",
+    "name": "Certificate Course in Lovable & AI App Building",
+    "title": "Certificate Course in Lovable & AI App Building",
+    "category": "AI",
+    "categorySlug": "ai",
+    "duration": "2 Months",
+    "level": "Beginner to Job-ready",
+    "image": "certificate-course-in-lovable-ai-app-building.jpg",
+    "featured": true,
+    "highlight": "Build real web apps with AI, prompt-to-app workflow, editing generated code, connecting backend & database, publishing a live site.",
+    "description": "Learn to design, generate, refine, and deploy full-stack web applications using Lovable and AI coding tools. Go from prompt idea to interactive React UI, connect Supabase backend and authentication, and publish live, production-grade web applications.",
+    "syllabus": [
+      {
+        "module": "Module 1: Prompt-to-App Architecture & Mindset",
+        "topics": [
+          "Introduction to Lovable & AI Full-Stack Paradigm",
+          "Writing Product Requirement Documents (PRDs) for AI",
+          "Mental Model of Modern Web Apps (Frontend, Backend, DB)",
+          "Setting Up Your Lovable Workspace & GitHub Sync"
+        ]
+      },
+      {
+        "module": "Module 2: UI Building & Component Iteration",
+        "topics": [
+          "Prompting Multi-Page Layouts & Responsive Views",
+          "Refining Component Logic & Styling via Chat",
+          "Tailwind CSS & Shadcn UI Customization",
+          "Form Validations & Client-Side State Management"
+        ]
+      },
+      {
+        "module": "Module 3: Inspecting & Editing Generated Code",
+        "topics": [
+          "Understanding the Generated React + Vite Codebase",
+          "Making Targeted Code Edits & Troubleshooting Errors",
+          "Using Git Branches & Version Control with Lovable",
+          "Debugging UI Bugs & State Anomalies"
+        ]
+      },
+      {
+        "module": "Module 4: Backend, Database & Authentication",
+        "topics": [
+          "Connecting Supabase PostgreSQL Database",
+          "Designing Relational Database Schemas & Tables",
+          "Implementing User Sign-Up, Login & Row Level Security (RLS)",
+          "Building Full CRUD (Create, Read, Update, Delete) Features"
+        ]
+      },
+      {
+        "module": "Module 5: APIs, Domain Setup & Live Launch",
+        "topics": [
+          "Integrating Third-Party APIs (Stripe, Weather, Maps)",
+          "Publishing to Production & Custom Domain Configuration",
+          "SEO Optimization, Performance & Mobile Responsiveness",
+          "Capstone Project: Launching a Live SaaS Web Application"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "certificate-course-in-generative-ai-for-designers-marketers",
+    "name": "Certificate Course in Generative AI for Designers & Marketers",
+    "title": "Certificate Course in Generative AI for Designers & Marketers",
+    "category": "AI",
+    "categorySlug": "ai",
+    "duration": "1.5 Months",
+    "level": "Creative track",
+    "image": "certificate-course-in-generative-ai-for-designers-marketers.jpg",
+    "featured": true,
+    "highlight": "AI image and video generation, brand-consistent creatives, ad copy, content pipelines, AI in design workflow.",
+    "description": "Specialized creative track for graphic designers, marketers, and art directors. Master commercial AI visual generation, maintain brand consistency across campaigns, generate cinematic AI video, write high-converting ad copy, and integrate AI into your creative pipeline.",
+    "syllabus": [
+      {
+        "module": "Module 1: AI Visual Direction & Prompt Craft",
+        "topics": [
+          "Midjourney v6.1 Photographic Prompting & Lighting",
+          "Aspect Ratios, Styling Parameters (--s, --c, --w)",
+          "Leonardo AI & Stable Diffusion ControlNets",
+          "Creating Commercial Quality Stock Photos & Moodboards"
+        ]
+      },
+      {
+        "module": "Module 2: Brand Consistency & Character Rigging",
+        "topics": [
+          "Maintaining Consistent Characters Across Prompts",
+          "Style Reference (--sref) & Omni-Reference Techniques",
+          "Brand Color Palette Ingestion & Logo Integration",
+          "Upscaling, Inpainting & Generative Fill in Photoshop"
+        ]
+      },
+      {
+        "module": "Module 3: AI Video Generation & Motion Graphics",
+        "topics": [
+          "Runway Gen-3 Alpha & Motion Brush Direction",
+          "Kling AI & Luma Dream Machine Camera Controls",
+          "Text-to-Video, Image-to-Video & Camera Orbit Keyframing",
+          "AI Voiceovers & Audio FX with ElevenLabs"
+        ]
+      },
+      {
+        "module": "Module 4: AI Ad Copy & Campaign Collateral",
+        "topics": [
+          "Crafting High-Converting Meta & Google Ad Copy",
+          "Brand Storytelling & Product Launch Scripts",
+          "Automated Banner Variations & A/B Creative Testing",
+          "Social Media Carousel & Video Ad Content Pipelines"
+        ]
+      },
+      {
+        "module": "Module 5: End-to-End Creative Pipeline & Delivery",
+        "topics": [
+          "Integrating AI with Figma, Photoshop & Premiere Pro",
+          "Client Deliverables & Commercial Asset Rights",
+          "Streamlining Creative Agency Turnaround Times",
+          "Capstone Project: Full Multichannel AI Ad Campaign Launch"
         ]
       }
     ]
@@ -2515,1014 +3523,6 @@ export const courses = [
           "Tracking Lead Attribution and Conversion Rates in GA4",
           "Content Refreshing and Historical Optimization Techniques",
           "Content Marketing ROI Calculation and Portfolio Presentation"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-mastercam",
-    "name": "Certificate Course in Mastercam",
-    "title": "Certificate Course in Mastercam",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "2-3 Months",
-    "level": "Beginner to Pro",
-    "image": "Mastercam.jpeg",
-    "featured": true,
-    "highlight": "Master 2D/3D CNC programming, mill-turn toolpaths, multi-axis machining, and G-code simulation.",
-    "description": "Industry-standard CAM programming course covering 2D/3D wireframe modeling, high-speed milling, turning cycles, multi-axis machining, machine simulation, and post-processor verification.",
-    "syllabus": [
-      {
-        "module": "Module 1: Introduction to CAD/CAM & Mastercam Interface",
-        "topics": [
-          "Basics of CNC/VMC Machining and Coordinate Systems (G54-G59)",
-          "Mastercam GUI, Viewports, planes and levels",
-          "Geometry import (STEP, IGES, Parasolid, DXF)",
-          "Machine definition and Control Definition selection"
-        ]
-      },
-      {
-        "module": "Module 2: 2D Geometry Creation & Wireframe Modeling",
-        "topics": [
-          "Line, Arc, Spline, Rectangle and Polygon creation",
-          "Trimming, Extending, Offsetting, Rotating, Mirroring and Scaling",
-          "Drafting and Dimensioning 2D parts",
-          "Bounding box creation and stock boundary definition"
-        ]
-      },
-      {
-        "module": "Module 3: 2D Milling Toolpaths (Contour, Pocketing, Drilling, Facing)",
-        "topics": [
-          "Facing operations & parameters (Zigzag, One-way, Dynamic)",
-          "2D Contour toolpaths (Chaining, Lead In/Out, Depth cuts, Multi-passes)",
-          "Standard & Dynamic pocketing toolpaths with entry methods",
-          "Drill cycles: Spot, Peck, Chip break, Tapping, Boring",
-          "Tool library setup, Speeds, Feeds and Coolant settings"
-        ]
-      },
-      {
-        "module": "Module 4: 3D Surface Modeling & 3D High-Speed Machining (HSM)",
-        "topics": [
-          "Basic surface creation (Extrude, Revolve, Loft, Ruled, Fillet)",
-          "3D Surface Roughing: OptiRough, Parallel, Radial roughing",
-          "3D Finishing toolpaths: Equal Scallop, Waterline, Raster, Hybrid",
-          "High-Speed Machining (HSM) corner rounding and micro-lifts",
-          "Check surfaces, Drive surfaces and containment boundaries"
-        ]
-      },
-      {
-        "module": "Module 5: Lathe/Turning Operations & Toolpaths",
-        "topics": [
-          "Lathe interface, Stock definition, Chuck & Jaws setup",
-          "Facing, OD/ID Roughing and Finishing cycles",
-          "Grooving toolpaths (Single-point, Multiple, Face groove)",
-          "Threading toolpaths and Thread cycle parameters",
-          "Parting-off / Cut-off operations and Bar feed setup"
-        ]
-      },
-      {
-        "module": "Module 6: 4-Axis & 5-Axis Multiaxis Machining Basics",
-        "topics": [
-          "Rotary 4-axis indexing and continuous toolpaths",
-          "Introduction to 5-axis simultaneous machining concepts",
-          "Multi-surface 5-axis toolpaths (Swarf, Flowline, Curve)",
-          "Collision avoidance strategies and Tool axis control"
-        ]
-      },
-      {
-        "module": "Module 7: Toolpath Verification, Machine Simulation & G-Code Post-Processing",
-        "topics": [
-          "Backplot toolpath preview & cycle time estimation",
-          "Verify module for 3D solid material removal inspection",
-          "Full machine tool simulation and gouge detection",
-          "Post-processing NC programs (FANUC, Siemens Sinumerik, Haas)",
-          "Editing G-code / M-code and DNC transfer setup"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-unigraphics-ug-nx",
-    "name": "Certificate Course in Unigraphics / UG NX",
-    "title": "Certificate Course in Unigraphics / UG NX",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "3-4 Months",
-    "level": "Beginner to Pro",
-    "image": "unigraphics.jpeg",
-    "featured": true,
-    "highlight": "Advanced parametric CAD modeling, complex surfacing, assemblies, sheet metal, and NX CAM manufacturing.",
-    "description": "Comprehensive training in Siemens NX (Unigraphics) covering parametric 3D modeling, advanced Class-A style freeform surfacing, large assembly design, detailed engineering drafting with GD&T, sheet metal, and integrated NX CAM toolpaths.",
-    "syllabus": [
-      {
-        "module": "Module 1: UG NX Interface, Navigation & Sketching",
-        "topics": [
-          "Siemens NX UI, Role setup, Resource Bar and Part Navigator",
-          "Direct Sketch environment and Inferred Constraints",
-          "Geometric Constraints (Coincident, Tangent, Perpendicular, Collinear)",
-          "Dimensional constraints and fully defined sketch status"
-        ]
-      },
-      {
-        "module": "Module 2: Solid Modeling & Parametric Feature Design",
-        "topics": [
-          "Base features: Extrude, Revolve, Sweep along Guide",
-          "Dress-up features: Hole, Edge Blend, Chamfer, Draft, Shell",
-          "Boolean Operations (Unite, Subtract, Intersect)",
-          "Pattern Feature & Pattern Face (Linear, Circular, Along Curve)",
-          "Feature grouping, Reordering, and Suppress/Unsuppress"
-        ]
-      },
-      {
-        "module": "Module 3: Advanced Surfacing & Freeform Modeling",
-        "topics": [
-          "Through Curves, Through Curve Mesh, Swept surfaces",
-          "Studio Surface, Section Surface and Law Extensions",
-          "Surface continuity analysis (G0, G1, G2 curvature analysis)",
-          "Sewing, Patching, Trimming, and Thickening sheet bodies"
-        ]
-      },
-      {
-        "module": "Module 4: Assembly Design (Top-down & Bottom-up)",
-        "topics": [
-          "Bottom-up assembly approach: Adding components and Touch/Align constraints",
-          "Top-down assembly modeling: Inter-part expressions and WAVE Geometry Linker",
-          "Exploded Views and Sequences creation",
-          "Assembly Clearance analysis and Interference checks"
-        ]
-      },
-      {
-        "module": "Module 5: Drafting & Detailing (GD&T, Section Views, BOM)",
-        "topics": [
-          "Drawing sheet configuration and Standard title blocks",
-          "Orthographic projections, Isometric views, Detail views",
-          "Simple, Stepped, Offset, and Revolved Section Views",
-          "Geometric Dimensioning & Tolerancing (GD&T) feature control frames",
-          "Automated Parts List (BOM) and Balloon Callouts generation"
-        ]
-      },
-      {
-        "module": "Module 6: Sheet Metal Design",
-        "topics": [
-          "NX Sheet Metal environment and Material Thickness standards",
-          "Base Tab, Flange, Contour Flange, Lofted Flange",
-          "Bend, Unbend, Rebend and Corner relief definitions",
-          "Dimple, Louver, Normal Cutout and Flat Pattern export (DXF)"
-        ]
-      },
-      {
-        "module": "Module 7: NX CAM – 2.5D to 3D Milling, Turning & Post-Processing",
-        "topics": [
-          "Manufacturing environment, MCS & Workpiece setup",
-          "Planar Mill and Cavity Mill for roughing",
-          "Z-Level, Contour Area and Streamline finishing strategies",
-          "Lathe Turning operations and Boring toolpaths",
-          "Toolpath simulation, CLSF generation and Post-processing"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-solidworks",
-    "name": "Certificate Course in SOLIDWORKS",
-    "title": "Certificate Course in SOLIDWORKS",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "2.5-3 Months",
-    "level": "Beginner to Pro",
-    "image": "solid works.jpeg",
-    "featured": true,
-    "highlight": "3D CAD mechanical modeling, advanced assemblies, sheet metal, weldments, simulation, and photorealistic rendering.",
-    "description": "Industry-standard 3D CAD design covering parametric parts, complex lofts, mate configurations, production drawings with GD&T, sheet metal flat patterns, structural weldments, FEA stress analysis, and PhotoView 360 rendering.",
-    "syllabus": [
-      {
-        "module": "Module 1: Introduction, UI & Sketching Fundamentals",
-        "topics": [
-          "SOLIDWORKS interface, FeatureManager Design Tree, Heads-up view toolbar",
-          "2D sketching entities (Line, Circle, Arc, Spline, Slot, Polygon)",
-          "Smart Dimensioning, Geometric Relations and fully defined sketches",
-          "Sketch tools: Offset, Mirror, Trim, Extend, Sketch Patterns"
-        ]
-      },
-      {
-        "module": "Module 2: Part Modeling (Extrude, Revolve, Sweep, Loft, Rib, Fillet)",
-        "topics": [
-          "Extruded Boss/Base & Extruded Cut with end conditions",
-          "Revolved Boss/Base & Revolved Cut",
-          "Swept Boss/Base with Guide Curves and Lofted features",
-          "Reference geometry: Planes, Axes, Coordinate Systems",
-          "Ribs, Shelling, Draft angles, Fillets (Constant, Variable, Full Round)"
-        ]
-      },
-      {
-        "module": "Module 3: Advanced Part Modeling & Configuration Management",
-        "topics": [
-          "Multi-body part modeling & Boolean operations (Combine, Split)",
-          "Design Tables with Microsoft Excel integration",
-          "Configuration Manager: Part states, Dimensions & Suppressed features",
-          "Equations and Global Variables for parametric design automation"
-        ]
-      },
-      {
-        "module": "Module 4: Assembly Modeling, Mates & Exploded Views",
-        "topics": [
-          "Standard Mates (Coincident, Parallel, Perpendicular, Tangent, Concentric)",
-          "Advanced Mates (Profile Center, Width, Symmetric, Distance/Angle limits)",
-          "Mechanical Mates (Cam, Gear, Rack & Pinion, Screw, Universal Joint)",
-          "Exploded Views, Explode Lines, and Smart Fasteners from Toolbox",
-          "Interference Detection, Clearance Verification and Physical Dynamics"
-        ]
-      },
-      {
-        "module": "Module 5: Drafting & 2D Engineering Drawings with GD&T",
-        "topics": [
-          "Standard drawing templates, Sheet formats and Scale settings",
-          "Standard views, Projected views, Auxiliary, Section, and Detail views",
-          "Model Items annotation, Smart Dimensions and Centerlines",
-          "GD&T: Datums, Form, Orientation, Location and Runout tolerances",
-          "Bill of Materials (BOM) creation and Auto-Ballooning"
-        ]
-      },
-      {
-        "module": "Module 6: Sheet Metal & Weldment Design",
-        "topics": [
-          "Base Flange, Edge Flange, Miter Flange, Hem, Jog and Swept Flange",
-          "Unfold, Fold, Rip, Corner Relief and Flattened Sheet Metal DXF",
-          "Weldment structural members and custom profiles (ISO/ANSI)",
-          "Corner Treatments (End Miter, Butts), Gussets, End Caps, Weld Beads",
-          "Cut List generation for structural fabrication"
-        ]
-      },
-      {
-        "module": "Module 7: Surface Modeling Basics",
-        "topics": [
-          "Extruded, Revolved, Swept, Lofted and Boundary surfaces",
-          "Trim Surface, Untrim Surface, Knit Surface, Extend Surface",
-          "Thickening surfaces and Creating solid bodies from closed surface quilts"
-        ]
-      },
-      {
-        "module": "Module 8: Simulation Express (FEA Stress Analysis) & Photoview 360 Rendering",
-        "topics": [
-          "SimulationXpress: Fixture definition, Force/Pressure application",
-          "Material selection, Meshing, Factor of Safety (FOS) calculation",
-          "Stress (von Mises) and Displacement report generation",
-          "PhotoView 360 / Visualize: Materials, Decals, Scene lighting & High-Res renders"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-catia-v5",
-    "name": "Certificate Course in CATIA V5",
-    "title": "Certificate Course in CATIA V5",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "3-4 Months",
-    "level": "Beginner to Pro",
-    "image": "catia.jpeg",
-    "featured": true,
-    "highlight": "Automotive & Aerospace grade 3D part design, Generative Shape Design (GSD), assembly, drafting, and DMU kinematics.",
-    "description": "Master Dassault Systèmes CATIA V5. Widely utilized in aerospace and automotive industries for robust mechanical part design, complex surface styling, assembly architecture, generative drafting, sheet metal, and DMU kinematic mechanisms.",
-    "syllabus": [
-      {
-        "module": "Module 1: CATIA V5 Architecture & Sketcher Workbench",
-        "topics": [
-          "CATIA V5 user interface, Specification Tree, Compass usage",
-          "Profile creation (Line, Circle, Spline, Profile, Ellipse, Conic)",
-          "Constraint toolbar: Geometrical constraints and Dimensional constraints",
-          "Sketch operations: Corner, Chamfer, Trim, Mirror, Symmetry, Project 3D elements",
-          "Sketch Analysis tool for checking open loops and diagnosing profiles"
-        ]
-      },
-      {
-        "module": "Module 2: Part Design (Solid Features, Dress-Up, Boolean Operations)",
-        "topics": [
-          "Sketch-based features: Pad, Pocket, Shaft, Groove, Hole",
-          "Advanced features: Rib, Slot, Stiffener, Multi-sections Solid, Removed Multi-sections",
-          "Dress-up features: Edge Fillet, Variable Fillet, Chamfer, Draft, Shell, Thickness",
-          "Transformation features: Translation, Rotation, Symmetry, Mirror, Rectangular/Circular Pattern",
-          "Boolean Operations: Assemble, Add, Remove, Intersect, Union Trim"
-        ]
-      },
-      {
-        "module": "Module 3: Wireframe & Surface Design (Generative Shape Design - GSD)",
-        "topics": [
-          "Wireframe geometry: Points, Lines, Planes, Circles, Splines, Helix, Projections",
-          "Basic surfaces: Extrude, Revolve, Sphere, Cylinder, Offset, Swept Surface",
-          "Advanced surfaces: Multi-sections Surface, Blend, Fill, Boundary",
-          "Surface operations: Join, Split, Trim, Boundary, Disassemble",
-          "Solid-Surface integration: Split, Thick Surface, Close Surface, Sew Surface"
-        ]
-      },
-      {
-        "module": "Module 4: Assembly Design Workbench & Kinematics Basics",
-        "topics": [
-          "Product structure, Component insertion (Existing Component, New Part)",
-          "Constraints: Coincidence, Contact, Offset, Angle, Fix Component",
-          "Manipulation toolbar, Compass movement, Snap and Smart Move",
-          "Assembly analysis: Clash & Clearance analysis, Sectioning",
-          "Catalog Browser and Standard mechanical components"
-        ]
-      },
-      {
-        "module": "Module 5: Generative Drafting & Engineering Drawing Standards",
-        "topics": [
-          "Drafting workbench, Sheet setup, Scale, Projection methods (First / Third angle)",
-          "Generating views: Front, Top, Left, Isometric, Offset Section, Aligned Section",
-          "Detail views, Breakout views, Clipping views",
-          "Dimensioning tools, GD&T symbols, Datum indicators, Text annotations",
-          "Bill of Material (BOM) generation and Title block creation"
-        ]
-      },
-      {
-        "module": "Module 6: Generative Sheet Metal Design",
-        "topics": [
-          "Sheet Metal Parameters (Thickness, Bend Radius, K-Factor)",
-          "Wall, Wall on Edge, Flange, Hem, Tear Drop",
-          "Extrusion, Cutout, Hole, Corner Relief",
-          "Folding & Unfolding operations, Flat pattern view generation"
-        ]
-      },
-      {
-        "module": "Module 7: DMU Kinematics & Digital Mockup Simulation",
-        "topics": [
-          "Digital Mockup (DMU) Kinematics workbench overview",
-          "Joint types: Revolute, Prismatic, Cylindrical, Spherical, Planar, Gear joint",
-          "Fixed part definition and Mechanism creation",
-          "Command assignment, Simulation with commands, Replay mechanism",
-          "Clash detection during dynamic mechanism movement"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-civil-draftsman",
-    "name": "Certificate Course in Civil Draftsman",
-    "title": "Certificate Course in Civil Draftsman",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "3-4 Months",
-    "level": "Beginner to Pro",
-    "image": "draughtman civil.jpeg",
-    "featured": true,
-    "highlight": "Civil architectural planning, AutoCAD 2D drafting, structural detailing, plumbing/electrical layouts, and BBS.",
-    "description": "Professional training for aspiring civil draftsmen. Learn architectural drafting principles, AutoCAD 2D construction drawings, municipal approval blueprints, structural column/beam detailing, plumbing layouts, and bar bending schedules.",
-    "syllabus": [
-      {
-        "module": "Module 1: Civil Engineering Drawing Fundamentals & BIS Standards",
-        "topics": [
-          "Introduction to civil engineering drawings, Scales, Paper sizes (A0-A4)",
-          "Standard line types, Lettering, Conventional civil materials representation",
-          "Building terminology: Plinth, DPC, Lintel, Sill, Parapet, Coping, Sunshade",
-          "Bureau of Indian Standards (BIS / SP 27 & IS 962) drawing norms"
-        ]
-      },
-      {
-        "module": "Module 2: AutoCAD 2D for Civil Engineers & Draftsmen",
-        "topics": [
-          "AutoCAD setup for civil projects (Units: Architectural/Metric, Limits, Snaps)",
-          "Layer management (Walls, Doors, Windows, Text, Dimensions, Hatch)",
-          "Precision drafting with Object Snaps, Ortho, Dynamic Input",
-          "Blocks creation (Furniture, Sanitary fixtures, Doors, Windows, Trees)",
-          "Hatching patterns for brickwork, concrete, plaster, wood and earth"
-        ]
-      },
-      {
-        "module": "Module 3: Architectural Planning & Building By-laws (Vastu Basics)",
-        "topics": [
-          "Principles of architectural planning: Aspect, Prospect, Privacy, Circulation",
-          "Building Bye-Laws: Floor Space Index (FSI), Setbacks, Ground Coverage, Room Sizes",
-          "Orientation of rooms according to climate and basic Vastu principles",
-          "Residential building layouts: 1BHK, 2BHK, 3BHK bungalows and row houses"
-        ]
-      },
-      {
-        "module": "Module 4: Residential & Commercial Floor Plans, Elevations, Sections",
-        "topics": [
-          "Detailed floor plan generation with wall thickness, door/window schedules",
-          "Front, Rear, and Side Architectural Elevations",
-          "Cross Sections and Longitudinal Sections passing through staircase and toilets",
-          "Roof layouts, Terrace drainage plans, and Compound wall details"
-        ]
-      },
-      {
-        "module": "Module 5: Structural Detailing (Footing, Column, Beam, Slab, Staircase)",
-        "topics": [
-          "Foundation details: Isolated, Combined, Raft footings and Plinth beam layout",
-          "Column schedule, Cross-sections, and Tie reinforcement",
-          "Plinth & Floor Beam reinforcement detailing (Main, Anchor, Stirrups)",
-          "One-way and Two-way slab reinforcement detailing and Crank bars",
-          "Dog-legged and Open-well staircase detailed reinforcement drawings"
-        ]
-      },
-      {
-        "module": "Module 6: Plumbing, Drainage, Electrical & Sanitation Layouts",
-        "topics": [
-          "Water supply pipe routing (Internal & External, Overhead/Underground tanks)",
-          "Sanitary drainage layouts, Inspection chambers, Septic tank details",
-          "Rainwater harvesting layout and Terrace slopes",
-          "Electrical conduit layout, Switchboard positions, Light & Power points"
-        ]
-      },
-      {
-        "module": "Module 7: Submission Drawings & Municipal Approval Plans",
-        "topics": [
-          "Key Plan, Location Plan, and Site Plan drafting",
-          "Municipal Corporation submission drawing format & Color coding conventions",
-          "Calculation of Built-up area, Carpet area, and Super Built-up area",
-          "Title block preparation, Scale setting, Plotting and PDF printing to scale"
-        ]
-      },
-      {
-        "module": "Module 8: Quantity Estimation Basics & Bar Bending Schedules (BBS)",
-        "topics": [
-          "Basics of quantity takeoff from civil drawings (Excavation, Concrete, Masonry)",
-          "Bar Bending Schedule (BBS) calculation for Footings, Columns, Beams & Slabs",
-          "Preparation of cutting length, Hook allowances, and Steel weight tables"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-mechanical-draftsman",
-    "name": "Certificate Course in Mechanical Draftsman",
-    "title": "Certificate Course in Mechanical Draftsman",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "3-4 Months",
-    "level": "Beginner to Pro",
-    "image": "Draughtsman (.jpeg",
-    "featured": true,
-    "highlight": "Engineering orthographic/isometric drawings, GD&T, machine parts drafting, BOM, and production drawings.",
-    "description": "Comprehensive mechanical drafting course. Learn engineering projection standards, AutoCAD 2D/3D drafting, GD&T symbols, fasteners, power transmission components, assembly layouts, BOM generation, and manufacturing workshop drawings.",
-    "syllabus": [
-      {
-        "module": "Module 1: Engineering Drawing Fundamentals, Orthographic & Isometric Projections",
-        "topics": [
-          "Drawing standards, Sheet layouts, Lettering, Scales, and Dimensioning methods",
-          "First Angle vs Third Angle projection methods and standard symbols",
-          "Orthographic projections of points, lines, planes, and solid primitives",
-          "Isometric views and Isometric drafting techniques",
-          "Sectional views: Full section, Half section, Revolved section, Removed section"
-        ]
-      },
-      {
-        "module": "Module 2: AutoCAD 2D/3D for Mechanical Drafting",
-        "topics": [
-          "Mechanical template setup, Layers, Text styles, Dimension styles",
-          "Precision drafting using Coordinates, Polar tracking, Object snap tracking",
-          "Parametric geometric and dimensional constraints in AutoCAD",
-          "3D solid modeling basics: Extrude, Revolve, Sweep, Loft, Boolean operations",
-          "Generating 2D drawing views from 3D models (VIEWBASE, SECTIONVIEW)"
-        ]
-      },
-      {
-        "module": "Module 3: Dimensioning, Tolerancing & GD&T (Geometric Dimensioning & Tolerancing)",
-        "topics": [
-          "Limits, Fits and Tolerances (Clearance, Transition, Interference fits as per ISO)",
-          "Hole basis and Shaft basis systems",
-          "Geometric Dimensioning & Tolerancing (GD&T) fundamentals (ASME Y14.5)",
-          "Datums, Feature control frames, Form, Orientation, Location, and Runout tolerances",
-          "Maximum Material Condition (MMC) and Least Material Condition (LMC)"
-        ]
-      },
-      {
-        "module": "Module 4: Machine Components Drafting (Nut-Bolt, Keys, Cotter, Shaft, Coupling)",
-        "topics": [
-          "Standard threaded fasteners: Bolts, Nuts, Studs, Washers, Screws",
-          "Keys, Keyways, Splines, Cotter and Knuckle joints",
-          "Shafts, Bearings (Bush, Ball, Roller), and Bearing housings",
-          "Couplings: Muff, Flange, Flexible, and Universal couplings",
-          "Gears (Spur, Helical, Bevel) and Pulleys drafting"
-        ]
-      },
-      {
-        "module": "Module 5: Assembly & Disassembly Drawings with Bill of Materials (BOM)",
-        "topics": [
-          "Techniques for preparing mechanical assembly drawings from detail parts",
-          "Part numbering, Leader lines, and Balloon callouts",
-          "Bill of Materials (BOM) / Parts List structure (Part No, Material, Qty)",
-          "Assembly projects: Machine Vice, Screw Jack, Plummer Block, Tailstock"
-        ]
-      },
-      {
-        "module": "Module 6: Sheet Metal & Piping Layouts",
-        "topics": [
-          "Sheet metal development: Parallel line, Radial line, and Triangulation methods",
-          "Transition pieces, Cones, Cylinders, Ducts, and Bends development",
-          "Piping components, Flanges, Valves, Fittings, and Piping Isometric drawings"
-        ]
-      },
-      {
-        "module": "Module 7: Production/Manufacturing Drawings & Surface Roughness Symbols",
-        "topics": [
-          "Shop-floor working drawings preparation and Machining allowances",
-          "Surface roughness / texture symbols (Ra values, Lay symbols, Machining method)",
-          "Welding symbols and fabrication drawing standards",
-          "Heat treatment and material finishing specifications on drawings",
-          "Drawing release, Revision blocks, and Archival plotting"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-msp-microsoft-project",
-    "name": "Certificate Course in MSP – Microsoft Project",
-    "title": "Certificate Course in MSP – Microsoft Project",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "1.5-2 Months",
-    "level": "Beginner to Pro",
-    "image": "micr proj training.jpeg",
-    "featured": false,
-    "highlight": "Project scheduling, WBS, Gantt charts, resource leveling, budget baselines, and EVM tracking.",
-    "description": "Industry-standard project management software training in Microsoft Project (MSP). Learn project initiation, Work Breakdown Structures (WBS), task dependencies, critical path schedules, resource allocation, cost control, baselines, and EVM reports.",
-    "syllabus": [
-      {
-        "module": "Module 1: Project Management Concepts & MSP Interface Overview",
-        "topics": [
-          "Core project management concepts (PMBOK framework: Scope, Time, Cost)",
-          "Microsoft Project interface, Ribbon, Views, Tables, Filters, and Timeline",
-          "Project Options configuration and default calculation settings",
-          "Setting up a new project file (Start Date vs Finish Date scheduling)"
-        ]
-      },
-      {
-        "module": "Module 2: Creating a Project, Calendars & Work Breakdown Structure (WBS)",
-        "topics": [
-          "Creating and customizing Calendars (Standard, Night shift, 24 Hours, Holidays)",
-          "Assigning base calendars to projects and resources",
-          "Work Breakdown Structure (WBS) creation and WBS code customisation",
-          "Summary tasks, Subtasks, Milestones, and Task outline numbering"
-        ]
-      },
-      {
-        "module": "Module 3: Task Management, Dependencies & Network Diagrams",
-        "topics": [
-          "Task types: Fixed Units, Fixed Duration, Fixed Work",
-          "Task dependencies: Finish-to-Start (FS), Start-to-Start (SS), Finish-to-Finish (FF), Start-to-Finish (SF)",
-          "Lead time and Lag time application",
-          "Task constraints and Deadlines management",
-          "Critical Path Method (CPM) identification and Network Diagram view"
-        ]
-      },
-      {
-        "module": "Module 4: Resource Sheet Setup, Allocation & Resource Leveling",
-        "topics": [
-          "Resource types: Work, Material, Cost resources",
-          "Setting up the Resource Sheet, Standard rates, Overtime rates, Cost per use",
-          "Assigning resources to tasks and effort-driven scheduling calculations",
-          "Identifying Resource Overallocation in Resource Usage view",
-          "Manual and Automatic Resource Leveling techniques"
-        ]
-      },
-      {
-        "module": "Module 5: Cost Management, Budgeting & Baseline Setting",
-        "topics": [
-          "Fixed task costs, Accrual methods (Start, Prorated, End)",
-          "Creating and assigning top-level Project Budget resources",
-          "Setting, maintaining, and clearing Baselines (up to 11 baselines)",
-          "Interim plans and baseline comparison in Tracking Gantt view"
-        ]
-      },
-      {
-        "module": "Module 6: Project Tracking, Variance Analysis & Earned Value Management (EVM)",
-        "topics": [
-          "Updating project progress: % Complete, Actual Start/Finish, Remaining Duration",
-          "Schedule variance analysis (Gantt Slippage, Float/Slack calculations)",
-          "Earned Value Management (EVM) parameters: Planned Value (PV), Earned Value (EV), Actual Cost (AC)",
-          "Performance indices: Cost Performance Index (CPI) and Schedule Performance Index (SPI)",
-          "Estimate at Completion (EAC) and Variance at Completion (VAC)"
-        ]
-      },
-      {
-        "module": "Module 7: Custom Reports, Visual Reports & Dashboards",
-        "topics": [
-          "Built-in dashboard reports: Project Overview, Cost Overview, Milestone Report",
-          "Creating custom tabular, chart, and comparison reports",
-          "Visual Reports export to Microsoft Excel and Microsoft Visio",
-          "Exporting project data and creating executive stakeholder presentations"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-pdms",
-    "name": "Certificate Course in PDMS (Plant Design Management System)",
-    "title": "Certificate Course in PDMS",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "2.5-3 Months",
-    "level": "Intermediate to Pro",
-    "image": "pdms.jpeg",
-    "featured": true,
-    "highlight": "Oil & gas piping design, equipment modeling, pipe routing, clash detection, structures, and Isodraft.",
-    "description": "Industry-standard plant engineering software training in AVEVA PDMS. Master 3D equipment modeling, piping specifications, pipe routing, clash detection, structural steel design, HVAC routing, and automatic isometric drawing generation (Isodraft).",
-    "syllabus": [
-      {
-        "module": "Module 1: Introduction to Plant Engineering & PDMS Architecture",
-        "topics": [
-          "Overview of Process Plant Engineering, EPC lifecycle, and P&ID diagrams",
-          "PDMS database hierarchy: World, Site, Zone, Equipment, Sub-equipment",
-          "PDMS Design module interface, 3D graphical views, and Command Line syntax",
-          "Coordinate systems and positioning tools in plant design"
-        ]
-      },
-      {
-        "module": "Module 2: Equipment Modeling Workbench (Pumps, Heat Exchangers, Vessels, Tanks)",
-        "topics": [
-          "Equipment primitives: Box, Cylinder, Cone, Dish, Snout, Pyramid",
-          "Modeling Horizontal and Vertical Pressure Vessels",
-          "Modeling Shell & Tube Heat Exchangers, Centrifugal Pumps, and Storage Tanks",
-          "Creating Nozzles (NOZZ), orientation, ratings, and elevation setting",
-          "Equipment manipulation, copying, rotating, and position attributes"
-        ]
-      },
-      {
-        "module": "Module 3: Pipe Routing & Piping Modeling (Pipe Specs, Flanges, Valves, Fittings)",
-        "topics": [
-          "Piping hierarchy: Pipe and Branch creation",
-          "Piping Specifications selection (Pipe spec, Material grade, Ratings)",
-          "Connecting Branch Head and Branch Tail to equipment nozzles",
-          "Routing piping components: Elbows, Tees, Reducers, Flanges, Valves, Gaskets",
-          "Sloped piping, Piping insulation, and Valve operating access"
-        ]
-      },
-      {
-        "module": "Module 4: Clash Detection, Consistency Checking & Clearance Verification",
-        "topics": [
-          "Data consistency checking and resolving branch connectivity errors",
-          "PDMS Clasher utility setup (Hard clash, Soft clash, Insulation clash)",
-          "Running clash checks between piping, equipment, and structural members",
-          "Clash report generation and collaborative design resolution"
-        ]
-      },
-      {
-        "module": "Module 5: Structural Modeling (Beams, Columns, Framework, Platforms, Ladders)",
-        "topics": [
-          "Structural module hierarchy: Structure, Framework, Sub-framework",
-          "Section catalogs (Universal Beams, Columns, Channels, Angles)",
-          "Modeling Pipe racks, Building columns, and Secondary steel supports",
-          "Access platforms, Walkways, Handrails, and Stair/Ladder modeling"
-        ]
-      },
-      {
-        "module": "Module 6: HVAC & Cable Tray Routing Basics",
-        "topics": [
-          "HVAC module overview and standard ducting components",
-          "Duct routing, In-line dampers, Diffusers, and Bends",
-          "Cable Tray routing for electrical and instrumentation distribution"
-        ]
-      },
-      {
-        "module": "Module 7: Isometric Drawing Generation (Isodraft) & 2D Drawing Production (Draft)",
-        "topics": [
-          "Isodraft module introduction and Option file selection",
-          "Generating Piping Isometric drawings with automatic BOM",
-          "Draft module: Creating drawing sheets, Plan views, Section views, and Elevations",
-          "Annotating 2D plant drawings, Dimensioning, and Title block management"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-primavera-p6",
-    "name": "Certificate Course in Primavera P6",
-    "title": "Certificate Course in Primavera P6",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "2-3 Months",
-    "level": "Beginner to Pro",
-    "image": "primavera.jpeg",
-    "featured": true,
-    "highlight": "Enterprise project planning, EPS, OBS, WBS, CPM scheduling, resource allocation, and S-curves.",
-    "description": "Master Oracle Primavera P6 for enterprise construction, EPC, oil & gas, and manufacturing projects. Learn EPS/OBS configuration, WBS decomposition, CPM scheduling, resource optimization, baseline tracking, EVA, and management S-curve reports.",
-    "syllabus": [
-      {
-        "module": "Module 1: Project Management Principles & Primavera P6 Navigation",
-        "topics": [
-          "Project management lifecycle in large-scale EPC and infrastructure industries",
-          "Primavera P6 architecture, Navigation, Menus, Toolbars, and Activity layout customization",
-          "User Preferences, Admin Preferences, and Currency settings",
-          "Project Calendars (Global, Project, Resource calendars, Shifts & Non-working days)"
-        ]
-      },
-      {
-        "module": "Module 2: Enterprise Project Structure (EPS) & Organizational Breakdown (OBS)",
-        "topics": [
-          "Creating and structuring the Enterprise Project Structure (EPS)",
-          "Creating Organizational Breakdown Structure (OBS) and linking OBS to EPS nodes",
-          "User security profiles and Responsible Manager assignment",
-          "Project creation, Project codes, and Project-level properties"
-        ]
-      },
-      {
-        "module": "Module 3: Work Breakdown Structure (WBS) & Activity Definition",
-        "topics": [
-          "Developing multi-level Work Breakdown Structure (WBS)",
-          "Adding activities and activity naming conventions",
-          "Activity types: Task Dependent, Resource Dependent, Level of Effort, Start/Finish Milestone",
-          "Activity percent complete types: Duration, Physical, Units",
-          "Activity Codes, Steps, Notebook topics, and Document references"
-        ]
-      },
-      {
-        "module": "Module 4: Relationship Types, Leads/Lags & Critical Path Method (CPM)",
-        "topics": [
-          "Predecessors and Successors assignment",
-          "Relationship types: FS, SS, FF, SF with Lead and Lag times",
-          "Scheduling the project (F9) and Critical Path Method (CPM) calculation",
-          "Early Start/Finish, Late Start/Finish, Total Float, and Free Float",
-          "Constraints management: Must Finish By, Mandatory Start/Finish, As Late As Possible"
-        ]
-      },
-      {
-        "module": "Module 5: Resource Management (Labor, Non-labor, Material) & Cost Accounting",
-        "topics": [
-          "Creating Resource Dictionary: Labor, Non-labor, and Material resources",
-          "Resource units/time, Max units, Price/Unit, and Shift calendars",
-          "Assigning resources to activities and calculating budgeted costs",
-          "Expenses addition (Permits, Consulting fees, Lump-sum items)",
-          "Resource Usage Profile, Resource Usage Spreadsheet, and Leveling"
-        ]
-      },
-      {
-        "module": "Module 6: Baseline Planning, Project Updating & Schedule Variance",
-        "topics": [
-          "Creating and maintaining Project Baselines (Initial, What-if, Approved)",
-          "Assigning Project Baseline and User Baselines",
-          "Progress update methods: Data Date concept, Applying actual dates, Remaining durations",
-          "Tracking actual units, costs, and physical percentage of completion",
-          "Schedule variance analysis and Gantt bar comparison"
-        ]
-      },
-      {
-        "module": "Module 7: Earned Value Analysis (EVA), S-Curve Generation & Management Reporting",
-        "topics": [
-          "Earned Value parameters: Planned Value (PV), Earned Value (EV), Actual Cost (AC)",
-          "Cost Variance (CV), Schedule Variance (SV), CPI, and SPI performance indices",
-          "Generating cumulative Cash Flow curves and Progress S-Curves",
-          "P6 Report Wizard: Tabular reports, Time-distributed reports, and PDF export"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-solid-edge",
-    "name": "Certificate Course in Solid Edge",
-    "title": "Certificate Course in Solid Edge",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "2-3 Months",
-    "level": "Beginner to Pro",
-    "image": "solid edge.jpeg",
-    "featured": false,
-    "highlight": "Synchronous technology modeling, fast parametric design, sheet metal, assemblies, frames, and drafting.",
-    "description": "Learn Siemens Solid Edge with unique Synchronous Technology. Combine the speed and flexibility of direct modeling with parametric control for mechanical parts, complex sheet metal flat patterns, assemblies, frame weldments, and 2D drafting.",
-    "syllabus": [
-      {
-        "module": "Module 1: Solid Edge Interface & Synchronous Technology vs Ordered Modeling",
-        "topics": [
-          "Solid Edge user interface, Prompt bar, PathFinder, Steering Wheel",
-          "Understanding Synchronous Technology vs Traditional History-based (Ordered) modeling",
-          "Direct editing concepts, Live Rules, and Face Relate commands",
-          "Starting environments and template setup (ISO, ANSI, DIN)"
-        ]
-      },
-      {
-        "module": "Module 2: 2D Sketching & Profile Creation",
-        "topics": [
-          "Sketching planes, Coincident plane locking (F3), QuickPick tool",
-          "Drawing commands: Line, Circle, Arc, Curve, Rectangle, Fillet",
-          "IntelliSketch geometric relationships (Tangent, Parallel, Concentric, Horizontal/Vertical)",
-          "Driving vs Driven dimensions and Smart Dimensioning"
-        ]
-      },
-      {
-        "module": "Module 3: Solid Modeling – Parts & Features",
-        "topics": [
-          "Synchronous feature generation: Extrude, Revolve using the Steering Wheel",
-          "Holes, Thread, Chamfer, Round (Fillet), Thin Wall (Shell), Draft",
-          "Patterning: Rectangular, Circular, and Pattern Along Curve",
-          "Multi-body modeling, Boolean operations (Add, Subtract, Intersect)"
-        ]
-      },
-      {
-        "module": "Module 4: Sheet Metal Design (Bends, Flanges, Punch, Cutouts, Flat Patterns)",
-        "topics": [
-          "Sheet Metal environment and Material Thickness tables",
-          "Base Contour Flange, Flange, Lofted Flange, Hem",
-          "Bend, Unbend, Rebend, Normal Cutout, and Corner Relief",
-          "Deformable features: Louvers, Dimples, Beads, Gussets",
-          "Generating flat patterns and exporting DXF for CNC laser/punch cutting"
-        ]
-      },
-      {
-        "module": "Module 5: Assembly Design & Dynamic Motion Simulation",
-        "topics": [
-          "Assembly PathFinder, Drag-and-drop component placement",
-          "Assembly relationships: FlashFit, Mate, Planar Align, Axial Align, Connect, Angle",
-          "Exploded views creation and animation playback",
-          "Interference checking, Motion simulation, and Physical properties analysis"
-        ]
-      },
-      {
-        "module": "Module 6: 2D Engineering Drawings, Drafting, Sectioning & BOM",
-        "topics": [
-          "Drafting environment, Drawing sheets, Title blocks, Drawing View Wizard",
-          "Principal views, Auxiliary views, Section views, Broken-out section views",
-          "Dimensioning, GD&T symbols, Surface finish symbols, Welding symbols",
-          "Parts List (BOM) generation, Auto-ballooning, and Callouts"
-        ]
-      },
-      {
-        "module": "Module 7: Frame Design & Weldments",
-        "topics": [
-          "Frame design environment and Structural profile cross-sections",
-          "Routing path definition, Miter joints, Butt joints, End caps",
-          "Weldment environment: Bead placement, Fillet welds, Groove welds, and Cut Lists"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-staad-pro",
-    "name": "Certificate Course in STAAD.Pro",
-    "title": "Certificate Course in STAAD.Pro",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "2-3 Months",
-    "level": "Intermediate to Pro",
-    "image": "staad. pro.jpeg",
-    "featured": true,
-    "highlight": "Civil structural analysis & design, RCC framing, steel truss design, wind/seismic loads, and IS code compliance.",
-    "description": "Professional structural engineering analysis and design software training in Bentley STAAD.Pro. Model 3D frames, assign material specifications, apply dead, live, wind (IS 875), and seismic (IS 1893) loads, perform FEA analysis, and design RCC/Steel members as per IS codes.",
-    "syllabus": [
-      {
-        "module": "Module 1: Introduction to Structural Engineering Concepts & STAAD GUI",
-        "topics": [
-          "Overview of structural engineering, Loads, Equilibrium, and Structural idealization",
-          "STAAD.Pro interface, Menus, Toolbars, Page Control, and Data Area",
-          "STAAD input editor (.STD file structure) and syntax basics",
-          "Global vs Local coordinate systems in space frame analysis"
-        ]
-      },
-      {
-        "module": "Module 2: Geometry Generation (Nodes, Beams, Plates, Snap Node Grid)",
-        "topics": [
-          "Creating structural nodes and coordinate entry",
-          "Beam modeling: Add Beam command, Snap Node/Beam grid",
-          "Translational Repeat and Circular Repeat for multi-story building frames",
-          "Plate/Shell element modeling (Meshing, Plate Cursor, Quad/Triangular plates)",
-          "Geometry verification: Duplicate nodes, Orphan nodes, Zero-length members"
-        ]
-      },
-      {
-        "module": "Module 3: Member Properties, Materials, Specifications & Supports",
-        "topics": [
-          "Property definition: Prismatic sections (Rectangular, Circular, T-beam)",
-          "Standard Steel section tables (Indian ISMC, ISMB, ISA, Tube, Pipe)",
-          "Material properties assignment (Concrete grade M20/M25/M30, Steel Fe415/Fe500)",
-          "Member specifications: Beam release (Moment release), Member offsets, Truss specification",
-          "Support conditions: Fixed, Pinned, Enforced, Roller, Foundation springs"
-        ]
-      },
-      {
-        "module": "Module 4: Load & Load Combinations (Dead, Live, Wind as per IS 875, Seismic as per IS 1893)",
-        "topics": [
-          "Dead load calculations and Selfweight command",
-          "Live load application (Member load: UDL, UVL, Concentrated load, Floor load)",
-          "Wind load definition as per IS 875 (Part 3) with wind intensity calculations",
-          "Seismic load definition as per IS 1893 (Equivalent static method, Zone factor, R, I)",
-          "Generating automatic load combinations as per Limit State method"
-        ]
-      },
-      {
-        "module": "Module 5: Structural Analysis (Linear Static, P-Delta)",
-        "topics": [
-          "Perform Analysis command and analysis engine execution",
-          "Post-processing mode: Displacement diagram, Node deflection values",
-          "Bending Moment (Mz, My) and Shear Force (Fy, Fz) diagrams",
-          "Axial force diagrams, Reactions at supports, and Summary reports",
-          "Introduction to second-order P-Delta analysis for tall structures"
-        ]
-      },
-      {
-        "module": "Module 6: Concrete Design (Beams, Columns, Slabs as per IS 456)",
-        "topics": [
-          "Design parameters setup: Code IS 456, Fck, Fy, Clear Cover, Max/Min bar sizes",
-          "Design commands: DESIGN BEAM, DESIGN COLUMN, TAKE OFF",
-          "Interpreting concrete design output: Longitudinal steel, Shear stirrups",
-          "Column interaction diagrams and reinforcement percentage checks"
-        ]
-      },
-      {
-        "module": "Module 7: Steel Design (Trusses, Steel Frames as per IS 800)",
-        "topics": [
-          "Steel design parameters as per IS 800 (Limit State & Working Stress)",
-          "Design commands: CHECK CODE, SELECT OPTIMIZED SECTION",
-          "Steel ratio checks, Slenderness ratio limitations, and Allowable stress verification",
-          "Truss analysis, Tension members, and Compression struts design"
-        ]
-      },
-      {
-        "module": "Module 8: Foundation Design Basics & Report Generation",
-        "topics": [
-          "Support reactions export to STAAD Foundation",
-          "Isolated footing and Combined footing design basics",
-          "Customizing printable calculation reports, Exporting diagrams, and Bill of quantities"
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "certificate-course-in-delcam-powershape-powermill",
-    "name": "Certificate Course in Delcam – PowerShape + PowerMill",
-    "title": "Certificate Course in Delcam – PowerShape + PowerMill",
-    "category": "CAD CAM",
-    "categorySlug": "cad-cam",
-    "duration": "3-4 Months",
-    "level": "Intermediate to Pro",
-    "image": "delcam.jpeg",
-    "featured": true,
-    "highlight": "Mold/Die CAD preparation with PowerShape & 3-axis to 5-axis high-speed CAM milling with PowerMill.",
-    "description": "Industry-standard Mold & Die design and CNC manufacturing program. Use Autodesk PowerShape for CAD modeling, surface repair, electrode creation, and parting surfaces. Use Autodesk PowerMill for advanced 3-axis to 5-axis high-speed CNC milling toolpaths and simulation.",
-    "syllabus": [
-      {
-        "module": "Module 1: PowerShape Interface, Solid & Surface Hybrid Modeling",
-        "topics": [
-          "Autodesk PowerShape interface, Workspace, Levels, and Workplanes",
-          "Hybrid modeling philosophy: Direct solid modeling combined with flexible surfaces",
-          "Surface generation: Extrude, Revolve, Swept, Coons patch, Fillet surfaces",
-          "Curve manipulation, Morphing, and Wireframe geometry tools"
-        ]
-      },
-      {
-        "module": "Module 2: Direct Modeling & CAD Repair for CAM Preparation",
-        "topics": [
-          "Importing external CAD models (STEP, IGES, Parasolid, CATIA, NX)",
-          "Faulty geometry identification, Surface untrimming, and Gap stitching",
-          "Direct modification: Move face, Replace face, Offset face, Draft modification",
-          "Core & Cavity splitting basics, Run-off surfaces, and Parting line generation",
-          "Electrode design module basics for EDM spark erosion"
-        ]
-      },
-      {
-        "module": "Module 3: PowerMill Introduction, Setup, Stock/Block Definition & Workplanes",
-        "topics": [
-          "PowerMill interface, Project tree, Toolpath explorer, and View manipulation",
-          "Importing CAD models into PowerMill and positioning with Workplanes",
-          "Block definition: Box, Cylinder, Triangle mesh, and Extruded boundaries",
-          "Tool definition: End Mill, Ball Nose, Bull Nose (Tip Radiused), Tapered cutters",
-          "Tool holder assembly configuration and Gauge length verification"
-        ]
-      },
-      {
-        "module": "Module 4: 2.5D & 3D Area Clearance Roughing Strategies",
-        "topics": [
-          "Model Area Clearance roughing strategies (Raster, Offset, Vortex)",
-          "Vortex high-efficiency roughing with constant engagement angle",
-          "Stepdown, Stepover, Tolerance, and Machining Stock allowances",
-          "Lead in/out, Links, and Ramp entry moves (Helical, Zigzag)",
-          "Toolpath calculation, Safe Z heights, and Rapid feed moves"
-        ]
-      },
-      {
-        "module": "Module 5: Semi-Finishing & High-Speed Finishing Strategies (Constant Z, Raster, 3D Offset, Steep & Shallow)",
-        "topics": [
-          "Raster finishing for shallow surfaces and flat areas",
-          "Constant Z finishing for steep and vertical walls",
-          "Steep and Shallow combined finishing strategies",
-          "3D Offset finishing and Spiral finishing for uniform surface texture",
-          "Optimized Constant Z finishing for complex mold cavities"
-        ]
-      },
-      {
-        "module": "Module 6: Rest Machining, Corner Finishing & Pencil Milling",
-        "topics": [
-          "Stock Models creation, Updating stock, and Rest roughing",
-          "Corner finishing toolpaths (Pencil milling, Multi-pencil, Along/Across corners)",
-          "Boundary creation: User-defined, Selected surface, Shallow, Rest, Silhouette",
-          "Surface finish improvement techniques for hardened die steels"
-        ]
-      },
-      {
-        "module": "Module 7: Collision & Gouge Checking, Tool Holder Simulation",
-        "topics": [
-          "Tool and holder collision checking against model and unmachined stock",
-          "Shank and Holder profile clearances and Overhang optimization",
-          "Gouge avoidance: Tilting tool, Trimming toolpaths, and Skipping gouges",
-          "Dynamic Machine Simulation and ViewMILL realistic stock removal animation"
-        ]
-      },
-      {
-        "module": "Module 8: NC Program Generation, Feed Rate Optimization & G-Code Post-Processing",
-        "topics": [
-          "Creating NC Programs and assigning machine post-processors (Option Files)",
-          "Controller support: FANUC, Siemens Sinumerik, Heidenhain, Mitsubishi, Haas",
-          "Toolpath point distribution and Feed rate optimization for high-speed machining",
-          "Generating final G-code and Machine setup documentation sheets"
         ]
       }
     ]
