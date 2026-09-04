@@ -6,7 +6,6 @@ export default function CourseCard({
   course,
   categoryName = '',
   showRating = true,
-  reviewCount = '3',
   isOnline = false,
 }) {
   const courseTitle = course.name || course.title;
@@ -32,18 +31,13 @@ export default function CourseCard({
       {/* Card Body with ~24px padding */}
       <div className="p-6 flex-grow flex flex-col justify-between">
         <div>
-          {/* Optional Star Rating Row for Popular Variant */}
+          {/* Star Rating Row */}
           {showRating && (
-            <div className="flex items-center justify-between mb-3.5">
-              <div className="flex items-center gap-1.5">
-                <div className="flex items-center gap-0.5">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="w-4 h-4 fill-[#FF9C08] text-[#FF9C08]" />
-                  ))}
-                </div>
-                <span className="text-[13px] text-[#64748B] font-medium">
-                  ({reviewCount} Reviews)
-                </span>
+            <div className="flex items-center mb-3.5">
+              <div className="flex items-center gap-0.5">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star key={i} className="w-4 h-4 fill-[#FF9C08] text-[#FF9C08]" />
+                ))}
               </div>
             </div>
           )}

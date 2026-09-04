@@ -99,7 +99,6 @@ export default function MostPopularCourses() {
                 course={course}
                 categoryName={getCategoryName(course.categorySlug)}
                 showRating={true}
-                reviewCount="275"
               />
             </div>
           ))}
