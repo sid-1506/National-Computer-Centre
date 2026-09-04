@@ -1,5 +1,10 @@
 // Eagerly glob-import all course images via Vite glob
-const courseImages = import.meta.glob('../assets/courses/*.{jpg,jpeg,png,webp}', {
+const courseImages = import.meta.glob('../assets/courses/*.{jpg,jpeg,png,webp,JPEG,JPG,PNG,WEBP}', {
+  eager: true,
+  import: 'default',
+});
+
+const cadCamImages = import.meta.glob('../assets/Cad cam/*.{jpg,jpeg,png,webp,JPEG,JPG,PNG,WEBP}', {
   eager: true,
   import: 'default',
 });
@@ -20,8 +25,9 @@ export function normalizeKey(str) {
 // Build lookup maps from the eagerly imported course images
 const imageByExactFilename = {};
 const imageByNormalizedKey = {};
+const allImageImports = { ...courseImages, ...cadCamImages };
 
-for (const [rawPath, imageModule] of Object.entries(courseImages)) {
+for (const [rawPath, imageModule] of Object.entries(allImageImports)) {
   const filename = rawPath.split('/').pop();
   if (filename) {
     imageByExactFilename[filename] = imageModule;
@@ -34,16 +40,31 @@ for (const [rawPath, imageModule] of Object.entries(courseImages)) {
 
 /**
  * Explicit slug -> image filename mapping.
- * Each filename matches an actual file in src/assets/courses/.
+ * Filenames match files in src/assets/courses/ or src/assets/Cad cam/.
  */
 export const SLUG_TO_IMAGE_FILENAME = {
+  // AI
+  'certificate-course-in-ai-basics': 'certificate-course-in-ai-basics.jpg',
+  'certificate-course-in-ai-tools-mastery': 'certificate-course-in-ai-tools-mastery.jpg',
+  'certificate-course-in-chatgpt-prompt-engineering': 'certificate-course-in-chatgpt-prompt-engineering.jpg',
+  'certificate-course-in-claude-for-work-research': 'certificate-course-in-claude-for-work-research.jpg',
+  'certificate-course-in-lovable-ai-app-building': 'certificate-course-in-lovable-ai-app-building.jpg',
+  'certificate-course-in-ai-machine-learning': 'certificate-course-in-ai-machine-learning.jpg',
+  'certificate-course-in-generative-ai-for-designers-marketers': 'certificate-course-in-generative-ai-for-designers-marketers.jpg',
+
   // Digital & Marketing
   'certificate-course-in-advanced-digital-marketing': 'Digital mkt.jpeg',
+  'certificate-course-in-seo': 'certificate-course-in-seo.jpg',
+  'certificate-course-in-social-media-marketing': 'certificate-course-in-social-media-marketing.jpg',
+  'certificate-course-in-email-marketing-automation': 'certificate-course-in-email-marketing-automation.jpg',
+  'certificate-course-in-google-ads-paid-advertising': 'certificate-course-in-google-ads-paid-advertising.jpg',
+  'certificate-course-in-content-marketing': 'certificate-course-in-content-marketing.jpg',
 
-  // Data & Analytics & AI
+  // Computer Science & Data Analytics
+  'certificate-course-in-data-analyst': 'certificate-course-in-data-analyst.jpg',
+  'certificate-course-in-business-analyst': 'certificate-course-in-business-analyst.jpg',
   'certificate-course-in-data-analytics': 'data-analytics.jpg',
   'certificate-course-in-data-science': 'Data Science.webp',
-  'certificate-course-in-ai-machine-learning': 'ai-machine-learning.jpg',
 
   // Cyber Security & IT
   'certificate-course-in-cyber-security': 'cyber-security.jpg',
@@ -91,7 +112,7 @@ export const SLUG_TO_IMAGE_FILENAME = {
   'certificate-course-in-tableau': 'Tablue.jpg',
   'certificate-course-in-power-bi': 'Power BI.jpg',
 
-  // CAD, 3D & Animation & Video
+  // AutoCAD & 3D & Animation & Video
   'certificate-course-in-sketchup': 'Sketchup.jpg',
   'certificate-course-in-adobe-after-effects': 'Adobe after effect.jpg',
   'certificate-course-in-adobe-premiere-pro': 'adobe-premiere-pro.jpg',
@@ -99,6 +120,20 @@ export const SLUG_TO_IMAGE_FILENAME = {
   'certificate-course-in-3ds-max': '3D max.jpg',
   'certificate-course-in-revit': 'Revit.jpg',
   'certificate-course-in-v-ray': 'Vray.jpg',
+
+  // CAD CAM
+  'certificate-course-in-mastercam': 'Mastercam.jpeg',
+  'certificate-course-in-unigraphics-ug-nx': 'unigraphics.jpeg',
+  'certificate-course-in-solidworks': 'solid works.jpeg',
+  'certificate-course-in-catia-v5': 'catia.jpeg',
+  'certificate-course-in-civil-draftsman': 'draughtman civil.jpeg',
+  'certificate-course-in-mechanical-draftsman': 'Draughtsman (.jpeg',
+  'certificate-course-in-msp-microsoft-project': 'micr proj training.jpeg',
+  'certificate-course-in-pdms': 'pdms.jpeg',
+  'certificate-course-in-primavera-p6': 'primavera.jpeg',
+  'certificate-course-in-solid-edge': 'solid edge.jpeg',
+  'certificate-course-in-staad-pro': 'staad. pro.jpeg',
+  'certificate-course-in-delcam-powershape-powermill': 'delcam.jpeg',
 
   // Typing
   'certificate-course-in-typing-english': 'English Typing.png',
@@ -135,9 +170,9 @@ export function getCourseImage(slugOrName) {
     return imageByExactFilename[slugOrName];
   }
 
-  // 3. Direct path check (e.g. '../assets/courses/Excel.webp')
-  if (courseImages[slugOrName]) {
-    return courseImages[slugOrName];
+  // 3. Direct path check
+  if (allImageImports[slugOrName]) {
+    return allImageImports[slugOrName];
   }
 
   // 4. Normalized key check
@@ -148,3 +183,4 @@ export function getCourseImage(slugOrName) {
 
   return null;
 }
+
