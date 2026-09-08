@@ -1,12 +1,14 @@
 import { useEffect, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { categories, courses } from '../data/courses';
+import { categories, courses, resolveCategorySlug } from '../data/courses';
 import CourseCard from './CourseCard';
+import CategoryFilterPills from './CategoryFilterPills';
 import { useSectionReveal } from '../hooks/useMotionReveal';
 
 export default function OnlineCourses() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const activeCategory = searchParams.get('category') || 'all';
+  const rawCategory = searchParams.get('category') || 'all';
+  const activeCategory = resolveCategorySlug(rawCategory);
   const heroRef = useRef(null);
   const gridRef = useRef(null);
 
@@ -23,6 +25,7 @@ export default function OnlineCourses() {
   };
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
     document.title = 'Online Courses | National Computer Centre';
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
@@ -82,35 +85,13 @@ export default function OnlineCourses() {
           </div>
 
           {/* Category filter pills */}
-          <div className="reveal-item overflow-x-auto scrollbar-hide">
-            <div className="flex items-center gap-2 whitespace-nowrap pb-1 justify-center flex-wrap min-w-max mx-auto">
-              <button
-                onClick={() => handleFilterChange('all')}
-                className={`px-4 py-2 rounded-full text-[13px] font-semibold transition-all duration-200 cursor-pointer ${
-                  activeCategory === 'all'
-                    ? 'bg-primary text-white shadow-sm'
-                    : 'bg-white border border-border text-foreground hover:border-primary hover:text-primary'
-                }`}
-              >
-                All ({courses.length})
-              </button>
-              {categories.map((cat) => {
-                const count = courses.filter((c) => c.categorySlug === cat.slug).length;
-                return (
-                  <button
-                    key={cat.slug}
-                    onClick={() => handleFilterChange(cat.slug)}
-                    className={`px-4 py-2 rounded-full text-[13px] font-semibold transition-all duration-200 cursor-pointer ${
-                      activeCategory === cat.slug
-                        ? 'bg-primary text-white shadow-sm'
-                        : 'bg-white border border-border text-foreground hover:border-primary hover:text-primary'
-                    }`}
-                  >
-                    {cat.name} ({count})
-                  </button>
-                );
-              })}
-            </div>
+          <div className="reveal-item">
+            <CategoryFilterPills
+              activeCategory={activeCategory}
+              onSelectCategory={handleFilterChange}
+              showCounts={true}
+              courses={courses}
+            />
           </div>
         </div>
       </section>

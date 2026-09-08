@@ -1,7 +1,8 @@
 import { useState, useRef, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { categories, courses } from '../data/courses';
+import { categories, courses, resolveCategorySlug } from '../data/courses';
 import CourseCard from './CourseCard';
+import CategoryFilterPills from './CategoryFilterPills';
 import { useSectionReveal } from '../hooks/useMotionReveal';
 
 export default function OurCoursesSection() {
@@ -13,9 +14,10 @@ export default function OurCoursesSection() {
 
   useSectionReveal(sectionRef);
 
-  const filteredCourses = activeCategory === 'all'
+  const resolvedCategory = resolveCategorySlug(activeCategory);
+  const filteredCourses = resolvedCategory === 'all'
     ? courses
-    : courses.filter((c) => c.categorySlug === activeCategory);
+    : courses.filter((c) => c.categorySlug === resolvedCategory);
 
   const getCategoryName = (slug) => {
     const cat = categories.find((c) => c.slug === slug);
@@ -106,39 +108,14 @@ export default function OurCoursesSection() {
           </div>
         </div>
 
-        {/* Compact Centered Category Filter Pills Row (Max-w-5xl, smaller font, hairline border, no edge cut) */}
+        {/* Category Filter Pills */}
         <div className="reveal-item max-w-5xl mx-auto mb-8 sm:mb-10 px-2 sm:px-4">
-          <div className="flex items-center justify-start md:justify-center flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible scrollbar-hide py-1 px-2 sm:px-3 gap-2 sm:gap-2.5 snap-x snap-mandatory scroll-smooth w-full">
-            {/* All Pill */}
-            <button
-              onClick={() => handleCategorySelect('all')}
-              className={`rounded-full px-3.5 sm:px-4.5 py-1.5 sm:py-2 text-[13px] sm:text-[14px] font-medium whitespace-nowrap border transition-all duration-200 cursor-pointer snap-start shrink-0 btn-hover ${
-                activeCategory === 'all'
-                  ? 'bg-[#0B6AA8] border-[#0B6AA8] text-white shadow-xs'
-                  : 'bg-white text-[#1E293B] border-slate-200/90 hover:border-[#0B6AA8] hover:text-[#0B6AA8]'
-              }`}
-            >
-              All
-            </button>
-
-            {/* Category Pills */}
-            {categories.map((cat) => {
-              const isActive = activeCategory === cat.slug;
-              return (
-                <button
-                  key={cat.slug}
-                  onClick={() => handleCategorySelect(cat.slug)}
-                  className={`rounded-full px-3.5 sm:px-4.5 py-1.5 sm:py-2 text-[13px] sm:text-[14px] font-medium whitespace-nowrap border transition-all duration-200 cursor-pointer snap-start shrink-0 btn-hover ${
-                    isActive
-                      ? 'bg-[#0B6AA8] border-[#0B6AA8] text-white shadow-xs'
-                      : 'bg-white text-[#1E293B] border-slate-200/90 hover:border-[#0B6AA8] hover:text-[#0B6AA8]'
-                  }`}
-                >
-                  {cat.name}
-                </button>
-              );
-            })}
-          </div>
+          <CategoryFilterPills
+            activeCategory={activeCategory}
+            onSelectCategory={handleCategorySelect}
+            showCounts={false}
+            wrapDesktop={true}
+          />
         </div>
 
         {/* Course Carousel */}
