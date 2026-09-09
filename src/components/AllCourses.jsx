@@ -75,6 +75,7 @@ export default function AllCourses() {
               onSelectCategory={handleFilterChange}
               showCounts={true}
               courses={courses}
+              wrapDesktop={true}
             />
           </div>
         </div>

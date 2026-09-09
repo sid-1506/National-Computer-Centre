@@ -91,6 +91,7 @@ export default function OnlineCourses() {
               onSelectCategory={handleFilterChange}
               showCounts={true}
               courses={courses}
+              wrapDesktop={true}
             />
           </div>
         </div>
