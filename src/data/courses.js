@@ -2674,11 +2674,11 @@ export const courses = [
       {
         "module": "Module 1: Course Bundle Packages",
         "topics": [
-          "MS-CIT (₹6000)",
-          "Advance Excel (₹6000)",
-          "Advance Tally ERP.9 with GST (₹8000)",
-          "English Typing (₹4000)",
-          "DTP OR AI/Artificial Intelligence (₹12000)"
+          "MS-CIT",
+          "Advance Excel",
+          "Advance Tally ERP.9 with GST",
+          "English Typing",
+          "DTP OR AI/Artificial Intelligence"
         ]
       }
     ]
