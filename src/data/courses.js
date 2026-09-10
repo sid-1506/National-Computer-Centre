@@ -80,60 +80,58 @@ export const courses = [
     "description": "Comprehensive digital marketing certification covering end-to-end online branding, search engine optimization, pay-per-click advertising, social media growth hacks, content marketing, and real-time Google Analytics tracking.",
     "syllabus": [
       {
-        "module": "Module 1: Digital Marketing Fundamentals",
+        "module": "Module 1: Digital Marketing Overview & Web Creation",
         "topics": [
-          "Introduction to Digital Marketing",
-          "Traditional vs Digital Marketing",
-          "Digital Marketing Channels",
-          "Customer Journey & Marketing Funnel"
+          "Digital Marketing Overview",
+          "Content Marketing",
+          "Creating Blog",
+          "Creating WordPress",
+          "Landing Page",
+          "Design Graphics"
         ]
       },
       {
-        "module": "Module 2: SEO",
+        "module": "Module 2: Search Engine Optimization & Web Analytics",
         "topics": [
-          "Keyword Research",
-          "On-Page SEO",
-          "Off-Page SEO",
-          "Technical SEO Basics",
-          "Google Search Console"
+          "Search Engine Optimization",
+          "Google Search Console",
+          "Google Analytics",
+          "Bing Webmaster Tools",
+          "Google Tag Manager"
         ]
       },
       {
-        "module": "Module 3: Social Media Marketing",
+        "module": "Module 3: Social Media, Video & Email Marketing",
         "topics": [
-          "Instagram Marketing",
-          "Facebook Marketing",
-          "LinkedIn Marketing",
-          "Content Strategy",
-          "Social Media Analytics"
+          "Social Media Marketing",
+          "Email Marketing",
+          "Video Marketing",
+          "Mobile Marketing",
+          "WhatsApp Marketing",
+          "Influencer Marketing",
+          "Webinar Marketing"
         ]
       },
       {
-        "module": "Module 4: Google Ads & Paid Advertising",
+        "module": "Module 4: Search Engine & Paid Advertising (PPC)",
         "topics": [
-          "Google Ads Fundamentals",
-          "Search Campaigns",
-          "Display Advertising",
-          "Remarketing",
-          "Campaign Optimization"
+          "Google AdWords",
+          "Bing PPC",
+          "Google AdSense",
+          "Lead & Traffic Generation",
+          "Ad Forum Marketing"
         ]
       },
       {
-        "module": "Module 5: Email & Content Marketing",
+        "module": "Module 5: Online Business, AI & Monetization",
         "topics": [
-          "Email Campaign Creation",
-          "Content Strategy",
-          "Copywriting Basics",
-          "Lead Generation"
-        ]
-      },
-      {
-        "module": "Module 6: Analytics & Final Project",
-        "topics": [
-          "Google Analytics Basics",
-          "Performance Tracking",
-          "ROI Measurement",
-          "Live Digital Marketing Project"
+          "Affiliate Marketing",
+          "Online Reputation Management",
+          "Google My Business",
+          "Freelancing Technique",
+          "Digital Marketing Agency",
+          "Make Money Online",
+          "ChatGPT-AI"
         ]
       }
     ]
@@ -279,48 +277,29 @@ export const courses = [
     "description": "Comprehensive career track in Artificial Intelligence and Machine Learning. Master Python scientific computing, scikit-learn statistical modeling, deep learning intuition with neural networks, model evaluation metrics, and end-to-end predictive AI deployments.",
     "syllabus": [
       {
-        "module": "Module 1: Python for AI & Scientific Computing",
+        "module": "Module 1: Artificial Intelligence Fundamentals",
         "topics": [
-          "Python Advanced Data Structures & OOP",
-          "NumPy Vectorization & Multi-Dimensional Arrays",
-          "Pandas Data Wrangling & Feature Engineering",
-          "Matplotlib & Seaborn Exploratory Data Visualization"
+          "Fundamentals of Artificial Intelligence",
+          "AI and Society",
+          "Fields of AI",
+          "AI Tools for Students"
         ]
       },
       {
-        "module": "Module 2: Supervised Learning (Regression & Classification)",
+        "module": "Module 2: Machine Learning & Data Science",
         "topics": [
-          "Linear & Polynomial Regression",
-          "Logistic Regression & Decision Boundaries",
-          "Decision Trees, Random Forests & Ensemble Methods",
-          "Support Vector Machines (SVM) & Naive Bayes"
+          "Foundation of Machine Learning",
+          "What is Data and Data Science",
+          "Using AI and ML in Daily & Professional Life",
+          "AI-ML Case Studies"
         ]
       },
       {
-        "module": "Module 3: Unsupervised Learning & Dimensionality Reduction",
+        "module": "Module 3: AI Applications & Career Opportunities",
         "topics": [
-          "K-Means & Hierarchical Clustering",
-          "Principal Component Analysis (PCA)",
-          "Anomaly & Fraud Detection Algorithms",
-          "Recommendation Systems & Collaborative Filtering"
-        ]
-      },
-      {
-        "module": "Module 4: Neural Networks & Deep Learning Intro",
-        "topics": [
-          "Biological vs Artificial Neurons & Perceptrons",
-          "Activation Functions (ReLU, Sigmoid, Softmax)",
-          "Backpropagation & Gradient Descent Optimization",
-          "Introduction to PyTorch & Neural Architecture Design"
-        ]
-      },
-      {
-        "module": "Module 5: Model Evaluation, MLOps & Capstone Project",
-        "topics": [
-          "Precision, Recall, F1-Score & ROC-AUC Curves",
-          "Cross-Validation & Hyperparameter Tuning (GridSearchCV)",
-          "Model Serialization (Pickle/ONNX) & REST API Deployment",
-          "Full End-to-End Industry Capstone Project Presentation"
+          "AI Tools and Applications",
+          "New Age AI Careers",
+          "Government Initiatives and Programs in AI and ML"
         ]
       }
     ]
@@ -399,62 +378,23 @@ export const courses = [
     "description": "End-to-end full stack development training. Build interactive frontends with HTML5, CSS3, ES6 JavaScript, and React, coupled with robust REST APIs in Node/Express and scalable MongoDB databases.",
     "syllabus": [
       {
-        "module": "Module 1: HTML5",
+        "module": "Module 1: Front End Technologies",
         "topics": [
-          "Website Structure",
-          "Forms",
-          "Tables",
-          "Semantic Tags"
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "PHP",
+          "Bootstrap",
+          "React.js",
+          "Angular.js",
+          "MySQL"
         ]
       },
       {
-        "module": "Module 2: CSS3",
+        "module": "Module 2: Back End Technologies",
         "topics": [
-          "Styling",
-          "Flexbox",
-          "Grid",
-          "Responsive Design"
-        ]
-      },
-      {
-        "module": "Module 3: JavaScript",
-        "topics": [
-          "Variables",
-          "Functions",
-          "DOM",
-          "Events",
-          "ES6"
-        ]
-      },
-      {
-        "module": "Module 4: React.js",
-        "topics": [
-          "Components",
-          "Props & State",
-          "Hooks",
-          "Routing"
-        ]
-      },
-      {
-        "module": "Module 5: Node.js & Express.js",
-        "topics": [
-          "Backend Development",
-          "APIs",
-          "Server Management"
-        ]
-      },
-      {
-        "module": "Module 6: MongoDB",
-        "topics": [
-          "Database Fundamentals",
-          "CRUD Operations",
-          "Collections"
-        ]
-      },
-      {
-        "module": "Module 7: Final Full Stack Project",
-        "topics": [
-          "Final Full Stack Project"
+          "Node.js & Express.js",
+          "MongoDB"
         ]
       }
     ]
@@ -601,16 +541,34 @@ export const courses = [
     "description": "Integrated long-term diploma covering desktop management, MS Office productivity tools, Internet communications, basic databases, LAN networking, and day-to-day IT desk administration.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Office Automation & Internet",
         "topics": [
-          "Computer Fundamentals",
-          "Operating Systems",
-          "MS Office",
-          "Internet & Email",
-          "Database Basics",
-          "Computer Networking",
-          "IT Management",
-          "Project Work"
+          "Fundamentals",
+          "Windows",
+          "MS Office (Word, Excel, PowerPoint)",
+          "Internet & E-mail"
+        ]
+      },
+      {
+        "module": "Module 2: Financial Accounting",
+        "topics": [
+          "Tally",
+          "Adv. Tally ERP9"
+        ]
+      },
+      {
+        "module": "Module 3: Hardware & Networking",
+        "topics": [
+          "Hardware Fundamentals",
+          "Networking Concepts"
+        ]
+      },
+      {
+        "module": "Module 4: Graphic & Web Designing",
+        "topics": [
+          "CorelDraw",
+          "Photoshop",
+          "Web Designing (HTML, Animator)"
         ]
       }
     ]
@@ -742,24 +700,18 @@ export const courses = [
     "description": "Comprehensive graphic design diploma combining Photoshop raster editing, Illustrator vector art, CorelDRAW prepress, typography principles, advertising campaigns, and portfolio creation.",
     "syllabus": [
       {
-        "module": "Software",
+        "module": "Module 1: Design Software",
         "topics": [
-          "Adobe Photoshop",
-          "Adobe Illustrator",
-          "CorelDRAW"
+          "CorelDraw",
+          "Photoshop",
+          "Illustrator",
+          "InDesign"
         ]
       },
       {
-        "module": "Core Design & Portfolio",
+        "module": "Module 2: Project Work",
         "topics": [
-          "Design Principles",
-          "Typography",
-          "Branding",
-          "Logo Design",
-          "Social Media Design",
-          "Advertising Creatives",
-          "Print Design",
-          "Portfolio Development"
+          "Project"
         ]
       }
     ]
@@ -778,17 +730,18 @@ export const courses = [
     "description": "Master modern front-end web design. Build mobile-responsive websites with semantic HTML, CSS Grid/Flexbox, interactive JavaScript widgets, Bootstrap components, and cPanel FTP deployment.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Web Design & Frontend",
         "topics": [
-          "HTML",
+          "Photoshop",
+          "HTML5",
           "CSS",
-          "JavaScript Basics",
-          "Responsive Design",
-          "Website Layout",
-          "Forms",
-          "Bootstrap Basics",
-          "Website Hosting",
-          "Live Website Project"
+          "JavaScript"
+        ]
+      },
+      {
+        "module": "Module 2: CMS & Project",
+        "topics": [
+          "WordPress Project"
         ]
       }
     ]
@@ -807,17 +760,19 @@ export const courses = [
     "description": "Practical career diploma in interior architecture. Learn residential and commercial room layouts, material selection, false ceiling plans, AutoCAD technical drafting, and 3D perspectives.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Design & CAD Software",
         "topics": [
-          "Fundamentals of Interior Design",
-          "Space Planning",
-          "Colour Theory",
-          "Furniture Design",
-          "Lighting Design",
-          "Residential Design",
-          "Commercial Design",
-          "AutoCAD Basics",
-          "3D Visualization"
+          "Photoshop",
+          "AutoCAD",
+          "3D Max",
+          "Revit",
+          "V-Ray"
+        ]
+      },
+      {
+        "module": "Module 2: Project Work",
+        "topics": [
+          "Project"
         ]
       }
     ]
@@ -836,17 +791,28 @@ export const courses = [
     "description": "Complete professional media curriculum. Master graphic design, digital video editing in Premiere Pro, kinetic typography and visual effects in After Effects, and multimedia capstone projects.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Graphic Design & Digital Art",
         "topics": [
-          "Graphic Designing",
+          "CorelDraw",
           "Photoshop",
           "Illustrator",
-          "Video Editing",
-          "Adobe Premiere Pro",
+          "InDesign",
+          "Canva"
+        ]
+      },
+      {
+        "module": "Module 2: Animation & Video Editing",
+        "topics": [
+          "Animator",
           "After Effects",
-          "Animation Basics",
-          "Motion Graphics",
-          "Multimedia Projects"
+          "Adobe Premiere",
+          "3D Max"
+        ]
+      },
+      {
+        "module": "Module 3: Portfolio & Project",
+        "topics": [
+          "Project"
         ]
       }
     ]
@@ -905,16 +871,17 @@ export const courses = [
     "description": "The official Maharashtra State Certificate in Information Technology (MS-CIT). Covers Windows navigation, MS Office suite, internet banking, cyber safety, digital government portals, and online citizen services.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Computer Fundamentals & Operating System",
         "topics": [
-          "Computer Fundamentals",
-          "Windows",
-          "MS Office",
-          "Internet",
-          "Email",
-          "Digital Services",
-          "Cyber Security Basics",
-          "Practical Computer Applications"
+          "Fundamentals",
+          "Windows"
+        ]
+      },
+      {
+        "module": "Module 2: MS Office & Internet",
+        "topics": [
+          "MS Office (Word, Excel, PowerPoint, MS Outlook)",
+          "Internet & E-mail"
         ]
       }
     ]
@@ -933,17 +900,31 @@ export const courses = [
     "description": "Complete practical accounting training on Tally ERP 9. Learn ledger creation, purchase/sales voucher entries, GST calculation, inventory tracking, bank reconciliation, and balance sheet preparation.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Advanced Accounting & Inventory Features",
         "topics": [
-          "Introduction to Tally",
-          "Company Creation",
-          "Accounting Fundamentals",
-          "Ledger Creation",
-          "Voucher Entries",
-          "GST",
-          "Inventory Management",
-          "Payroll",
-          "Financial Reports"
+          "Invoicing",
+          "Tally Audit Features",
+          "Credit & Debit Note",
+          "Delivery/Receipt Note",
+          "Sales/Purchase Order",
+          "Printing Reports (Books & Registers, Financial Statements, Inventory Books & Registers, Statements of Inventory)",
+          "Data Migrating",
+          "Security Level",
+          "Reorder Level",
+          "Physical Stock",
+          "Finalization"
+        ]
+      },
+      {
+        "module": "Module 2: Goods & Services Tax (GST) & TDS",
+        "topics": [
+          "Update Party GSTN",
+          "Update Rate Setup",
+          "Tax Liability on Advance received from customer",
+          "GST in POS",
+          "GST on Price Based Stock Item",
+          "Packing & Forwarding Charges in Sales",
+          "TDS Entry with GST"
         ]
       }
     ]
@@ -962,17 +943,30 @@ export const courses = [
     "description": "Master the modern Tally Prime platform for accounting and taxation. Learn multi-currency ledger management, GST return filings (GSTR-1, GSTR-3B), TDS computations, automated bank sync, and audit reports.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Advanced Tally Features & Operations",
         "topics": [
-          "Tally Prime Interface",
-          "Company Management",
-          "Accounting",
-          "GST",
-          "Inventory",
-          "Payroll",
-          "Banking",
-          "Financial Statements",
-          "Practical Projects"
+          "Invoicing",
+          "Tally Audit Features",
+          "Credit & Debit Note",
+          "Delivery/Receipt Note",
+          "Sales/Purchase Order",
+          "Data Migrating",
+          "Security Level",
+          "Reorder Level",
+          "Physical Stock",
+          "Finalization"
+        ]
+      },
+      {
+        "module": "Module 2: GST Implementation & Tally Prime",
+        "topics": [
+          "Update Party GSTN",
+          "Update Rate Setup",
+          "Tax Liability on Advance received from customer",
+          "GST in POS",
+          "GST on Price Based Stock Item",
+          "Packing & Forwarding Charges in Sales",
+          "Tally Prime"
         ]
       }
     ]
@@ -991,17 +985,28 @@ export const courses = [
     "description": "Advanced spreadsheet mastery for working professionals. Learn dynamic lookup formulas, complex nested logical conditions, interactive Pivot Tables, data cleaning methods, and automated reporting.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Advanced Formulas & Functions",
         "topics": [
-          "Advanced Formulas",
-          "Lookup Functions",
-          "Logical Functions",
-          "Pivot Tables",
-          "Charts",
+          "Basic Excel",
+          "Logical Formulae",
+          "Text Formulae",
+          "VLOOKUP",
+          "HLOOKUP",
+          "Date Functions",
+          "Math Functions"
+        ]
+      },
+      {
+        "module": "Module 2: Data Analysis, Reporting & Tools",
+        "topics": [
           "Data Validation",
-          "Conditional Formatting",
-          "Data Cleaning",
-          "Excel Reporting"
+          "AutoFilters",
+          "Pivot Table",
+          "Goal Seek",
+          "Subtotal",
+          "Chart",
+          "Name Range",
+          "Assignments"
         ]
       }
     ]
@@ -1048,17 +1053,27 @@ export const courses = [
     "description": "Specialized training in corporate MIS reporting. Learn automated daily/weekly/monthly report generation for sales, HR, operations, and finance using advanced formula structures and Pivot Tables.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Excel Fundamentals & Advanced Operations",
         "topics": [
-          "MIS Fundamentals",
-          "Data Management",
-          "Advanced Formulas",
+          "Excel Overview",
+          "Excel's User Interface",
+          "Cell Reference",
+          "Naming Manager",
+          "Data Validation in depth (creation of Selector)",
+          "Worksheet Functions",
+          "Arrays",
+          "Manipulating with Text",
+          "Lookups"
+        ]
+      },
+      {
+        "module": "Module 2: MIS Reporting, Security & Dashboard",
+        "topics": [
           "Pivot Tables",
-          "Automated Reports",
-          "Sales MIS",
-          "HR MIS",
-          "Financial MIS",
-          "Dashboard Reporting"
+          "Excel Tips",
+          "Excel Security & Sharing Workbook",
+          "Error Types & Debugging",
+          "Dashboard Design & Build"
         ]
       }
     ]
@@ -1134,16 +1149,17 @@ export const courses = [
     "description": "Master the foundational language of software engineering. Learn variable memory allocation, control flow, functions, arrays, pointers, structures, and file I/O handling.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: C Programming Fundamentals",
         "topics": [
           "Introduction to C",
-          "Variables & Data Types",
-          "Operators",
-          "Conditional Statements",
+          "Declaring Variables",
+          "Control Structures",
           "Loops",
           "Functions",
           "Arrays",
-          "Pointers Basics",
+          "Pointers & Strings",
+          "Structures",
+          "Pointers",
           "File Handling"
         ]
       }
@@ -1163,17 +1179,18 @@ export const courses = [
     "description": "Learn modern Object-Oriented Programming (OOP) in C++. Master classes, objects, constructor overloading, inheritance models, virtual functions, polymorphism, and memory management.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: C++ Object-Oriented Programming",
         "topics": [
           "Introduction to C++",
-          "Variables & Data Types",
-          "Control Statements",
-          "Functions",
-          "Arrays",
-          "Object-Oriented Programming",
           "Classes & Objects",
+          "Functions",
+          "Function Overloading",
+          "Operator Overloading",
+          "Constructor",
+          "Destructor",
           "Inheritance",
-          "Polymorphism"
+          "Virtual Functions",
+          "Static Function"
         ]
       }
     ]
@@ -1192,17 +1209,34 @@ export const courses = [
     "description": "Master Core and Advanced Java development. Learn object-oriented architecture, collection interfaces, multithreaded processing, JDBC database connectivity, and backend Java projects.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Core Java",
         "topics": [
-          "Java Fundamentals",
-          "Object-Oriented Programming",
-          "Classes & Objects",
+          "Overview of Java",
+          "OOPS Concepts",
+          "Data Types",
+          "Variables and Arrays",
+          "Operators",
+          "Control Statements",
+          "Classes",
+          "Inheritance",
+          "Packages & Interfaces",
           "Exception Handling",
-          "Collections",
-          "Multithreading",
+          "Multithreaded Programming",
+          "Introduction to I/O",
+          "Applet Class",
+          "Event Handling",
+          "Introducing AWT"
+        ]
+      },
+      {
+        "module": "Module 2: Advance Java",
+        "topics": [
+          "Swing",
           "JDBC",
-          "Database Connectivity",
-          "Java Projects"
+          "Networking",
+          "RMI",
+          "Java Beans",
+          "Servlet & JSP"
         ]
       }
     ]
@@ -1221,17 +1255,19 @@ export const courses = [
     "description": "Learn backend web programming with PHP and MySQL. Master form processing, session management, user authentication, SQL queries, CRUD database operations, and dynamic web portals.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: PHP & MySQL Development",
         "topics": [
-          "PHP Fundamentals",
-          "Variables",
-          "Functions",
-          "Forms",
-          "Arrays",
-          "Sessions & Cookies",
-          "MySQL Database",
-          "CRUD Operations",
-          "Dynamic Website Project"
+          "Introduction to PHP & phpMyAdmin",
+          "WAMP Server Installation",
+          "PHP + MySQL Syntax",
+          "PHP Variables",
+          "PHP Operators",
+          "PHP if..else",
+          "Arrays in PHP",
+          "Loops in PHP",
+          "PHP Functions",
+          "PHP Forms",
+          "GET & POST Methods in PHP"
         ]
       }
     ]
@@ -1250,18 +1286,18 @@ export const courses = [
     "description": "Master versatile Python programming. Learn clean syntax, lists, dictionaries, functions, modular architecture, file parsing, exception handling, and hands-on scripting projects.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Python Programming",
         "topics": [
-          "Python Fundamentals",
-          "Variables & Data Types",
-          "Operators",
-          "Conditional Statements",
+          "Data Types",
+          "String Operations",
+          "If Condition",
           "Loops",
           "Functions",
-          "Lists & Dictionaries",
-          "File Handling",
-          "Libraries Basics",
-          "Python Projects"
+          "Classes",
+          "Lambda Functions",
+          "Inheritance",
+          "Instance Methods",
+          "Polymorphism"
         ]
       }
     ]
@@ -1280,17 +1316,27 @@ export const courses = [
     "description": "Learn relational database management and querying in SQL. Write robust SELECT queries, table joins, aggregate groupings, subqueries, and manage real business schemas.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Oracle",
         "topics": [
-          "Database Fundamentals",
           "SQL Commands",
-          "SELECT Queries",
-          "WHERE Clause",
-          "ORDER BY",
-          "GROUP BY",
+          "PL/SQL",
+          "Procedures",
+          "Functions",
+          "Triggers",
+          "Overview of DBA"
+        ]
+      },
+      {
+        "module": "Module 2: SQL Server",
+        "topics": [
+          "Data Query Language",
+          "Built-in Functions",
+          "Set Operators",
           "Joins",
-          "Subqueries",
-          "Database Projects"
+          "Sub-queries",
+          "Indexes",
+          "Views",
+          "Transaction Management"
         ]
       }
     ]
@@ -1309,16 +1355,21 @@ export const courses = [
     "description": "Master data visualization with Tableau. Connect to disparate data sources, write custom calculated fields, construct interactive visual charts, and publish executive storytelling dashboards.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Data Connection & Visualizations",
         "topics": [
-          "Tableau Fundamentals",
-          "Data Connection",
-          "Data Preparation",
-          "Charts",
-          "Calculated Fields",
-          "Dashboards",
-          "Interactive Reports",
-          "Data Visualization Project"
+          "Introduction to Tableau",
+          "Data Connection and Preparation",
+          "Basic Visualization",
+          "Advanced Visualization"
+        ]
+      },
+      {
+        "module": "Module 2: Calculations, Server & Analytics",
+        "topics": [
+          "Calculations and Analytics",
+          "Data Interactivity",
+          "Tableau Server and Tableau Online",
+          "Best Practices and Case Studies"
         ]
       }
     ]
@@ -1337,17 +1388,24 @@ export const courses = [
     "description": "End-to-end Business Intelligence in Microsoft Power BI. Learn Power Query data transformation, relationship data modelling, DAX formulas, interactive visualizations, and automated dashboards.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Power BI Fundamentals & Data Modeling",
         "topics": [
-          "Power BI Introduction",
-          "Data Import",
+          "Introduction to Power BI",
+          "SQL Server Introduction",
           "Power Query",
-          "Data Cleaning",
-          "Data Modeling",
-          "DAX Basics",
-          "Visualizations",
-          "Dashboard Creation",
-          "Business Intelligence Project"
+          "Data Sources",
+          "Data Modeling"
+        ]
+      },
+      {
+        "module": "Module 2: Visualizations, DAX & Dashboard Deployment",
+        "topics": [
+          "Data Visualization",
+          "Data Analysis (DAX)",
+          "Logical Functions",
+          "Creating Dashboard",
+          "Power BI Service",
+          "Power BI Integration"
         ]
       }
     ]
@@ -1366,16 +1424,12 @@ export const courses = [
     "description": "Comprehensive Microsoft .NET software development diploma. Master C# language features, Object-Oriented design, Windows forms GUI apps, ASP.NET web apps, and SQL database integration.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: .NET Application Development",
         "topics": [
-          "Introduction to .NET",
-          "C# Programming",
-          "Object-Oriented Programming",
-          "Windows Applications",
-          "ASP.NET Basics",
-          "Database Connectivity",
-          "Web Applications",
-          "Final Project"
+          "OOPS Concepts",
+          "C# (Console & GUI Application)",
+          "VB.NET (Console & GUI Application)",
+          "ASP.NET (Web Application)"
         ]
       }
     ]
@@ -1481,17 +1535,23 @@ export const courses = [
     "description": "The industry standard for computer-aided design and technical drafting. Learn precision 2D geometric construction, architectural floor plans, engineering schematics, layers, and plotting to scale.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: 2D & Isometric Drafting",
         "topics": [
-          "AutoCAD Interface",
-          "Drawing Tools",
-          "Editing Tools",
-          "Layers",
-          "Dimensions",
+          "AutoCAD (2D, Isometric & 3D)",
+          "All Commands",
           "2D Drawings",
-          "Floor Plans",
-          "Technical Drawings",
-          "Printing & Plotting"
+          "Isometric Drawings",
+          "Dimensions",
+          "Dimension Style",
+          "Limits",
+          "Layers"
+        ]
+      },
+      {
+        "module": "Module 2: 3D Drawings & Plotting",
+        "topics": [
+          "3D Drawings",
+          "Plotting (Interior, Civil, Mechanical, Electrical, Piping)"
         ]
       }
     ]
@@ -1510,17 +1570,21 @@ export const courses = [
     "description": "Create photorealistic 3D environments and architectural models in 3ds Max. Learn polygon modelling, UVW mapping, physical camera setup, V-Ray/Arnold lighting, and high-resolution rendering.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: 3D Modeling, Texturing & Lighting",
         "topics": [
-          "Introduction to 3ds Max",
-          "3D Modelling",
-          "Materials",
+          "Introduction to 3D Max",
+          "Modelling",
           "Texturing",
-          "Lighting",
-          "Camera Setup",
+          "Lighting"
+        ]
+      },
+      {
+        "module": "Module 2: Rendering, Animation & Projects",
+        "topics": [
           "Rendering",
-          "Interior Visualization",
-          "3D Project"
+          "Camera Walkthrough",
+          "Animation",
+          "Projects"
         ]
       }
     ]
@@ -1539,17 +1603,21 @@ export const courses = [
     "description": "Learn Building Information Modelling (BIM) using Autodesk Revit. Construct intelligent 3D building models with walls, doors, windows, and structural components with automatic schedules and construction sheets.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Architectural Modeling & Tools",
         "topics": [
-          "Introduction to BIM",
-          "Revit Interface",
-          "Architectural Modelling",
-          "Walls & Floors",
-          "Doors & Windows",
-          "Structural Elements",
-          "3D Views",
-          "Documentation",
-          "Building Project"
+          "Introduction to Revit",
+          "Basic Drawing & Editing Tools",
+          "Drawing & Modifying Walls",
+          "Floors",
+          "Adding Doors & Windows"
+        ]
+      },
+      {
+        "module": "Module 2: Plans, Design & Project",
+        "topics": [
+          "Ceiling Plan",
+          "Interior & Exterior",
+          "Project"
         ]
       }
     ]
@@ -2601,19 +2669,16 @@ export const courses = [
     "image": "combo-course-with-ms-cit",
     "featured": false,
     "highlight": "Integrated dual certification package combining MS-CIT government syllabus with advanced office computing skills.",
-    "description": "A high-value training combo that provides official MS-CIT certification along with deep-dive practical training in MS Word, Advanced Excel, PowerPoint, and digital communication tools.",
+    "description": "High-value career combo course bundling official MS-CIT, Advance Excel, Advance Tally ERP.9 with GST, English Typing, and DTP or Artificial Intelligence.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Course Bundle Packages",
         "topics": [
-          "MS-CIT",
-          "Computer Fundamentals",
-          "MS Word",
-          "MS Excel",
-          "PowerPoint",
-          "Internet & Email",
-          "Digital Literacy",
-          "Practical Assignments"
+          "MS-CIT (₹6000)",
+          "Advance Excel (₹6000)",
+          "Advance Tally ERP.9 with GST (₹8000)",
+          "English Typing (₹4000)",
+          "DTP OR AI/Artificial Intelligence (₹12000)"
         ]
       }
     ]
@@ -2632,15 +2697,10 @@ export const courses = [
     "description": "Professional English touch-typing course. Learn touch-finger placement without looking at the keyboard, build rhythm, reduce errors, and train on official GCC-TBC speed and passage testing software.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: English Typing Certification",
         "topics": [
-          "Keyboard Familiarization",
-          "Finger Placement",
-          "Typing Techniques",
-          "Speed Building",
-          "Accuracy Improvement",
-          "Paragraph Typing",
-          "Professional Typing Practice"
+          "English Typing",
+          "30 WPM / 40 WPM"
         ]
       }
     ]
@@ -2659,14 +2719,10 @@ export const courses = [
     "description": "Master Marathi keyboard typing for Maharashtra government jobs and court clerk examinations. Practice Matras, conjunct characters, speed enhancement drills, and official passage formats.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Marathi Typing Certification",
         "topics": [
-          "Marathi Keyboard Layout",
-          "Typing Fundamentals",
-          "Speed Development",
-          "Accuracy Practice",
-          "Marathi Document Typing",
-          "Professional Practice"
+          "Marathi Typing",
+          "30 WPM / 40 WPM"
         ]
       }
     ]
@@ -2685,17 +2741,26 @@ export const courses = [
     "description": "Learn equity market investments and trading fundamentals. Understand Demat accounts, order types, fundamental financial ratios, candlestick chart patterns, support/resistance, and risk-reward strategies.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Technical & Fundamental Study",
         "topics": [
-          "Introduction to Stock Market",
-          "NSE & BSE Basics",
-          "Types of Securities",
-          "Demat & Trading Account",
-          "Fundamental Analysis Basics",
-          "Technical Analysis Basics",
-          "Risk Management",
-          "Investment Strategies",
-          "Portfolio Basics"
+          "Intro to Technical & Fundamental Study",
+          "Candlestick Patterns",
+          "Indicators",
+          "Intraday, Short Term & Long Term Investment",
+          "Swing & Momentum Trading",
+          "IPO Strategy",
+          "Trading on Mobile App & Desktop"
+        ]
+      },
+      {
+        "module": "Module 2: Derivatives & Trading Strategies",
+        "topics": [
+          "Google Sheet Strategy",
+          "Future & Option Trading",
+          "Call & Put",
+          "Nifty & Bank Nifty",
+          "Commodity Trading",
+          "Currency Trading"
         ]
       }
     ]
@@ -2714,17 +2779,31 @@ export const courses = [
     "description": "Overcome hesitation and speak English fluently with confidence. Daily conversational practice, grammar for speaking, accent refinement, professional presentations, and HR interview simulations.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Communication & Grammar",
         "topics": [
-          "Spoken English Fundamentals",
-          "Grammar for Speaking",
-          "Vocabulary Building",
-          "Pronunciation",
-          "Daily Conversations",
-          "Interview Preparation",
-          "Group Discussions",
+          "Basics of Communication",
+          "Preparatory Grammar for the Real World",
+          "Voice & Accent Correction",
+          "Phrases & Proverbs",
+          "Reading Skills (Newspapers, Magazines, Books)"
+        ]
+      },
+      {
+        "module": "Module 2: Professional Speaking & Correspondence",
+        "topics": [
           "Public Speaking",
-          "Presentation Skills"
+          "Group Discussion",
+          "Email & Business Correspondence",
+          "Spell Check & Writing Presentation"
+        ]
+      },
+      {
+        "module": "Module 3: Interview Preparation & Practice",
+        "topics": [
+          "Interview Skills",
+          "Resume Writing",
+          "Interview Q&A",
+          "Mock Sessions"
         ]
       }
     ]
@@ -2743,17 +2822,23 @@ export const courses = [
     "description": "Comprehensive personal transformation workshop. Develop executive presence, master body language, stage public speaking, assertiveness, corporate etiquette, time management, and interview readiness.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Personality Development",
         "topics": [
-          "Self-Confidence",
-          "Communication Skills",
-          "Body Language",
-          "Public Speaking",
-          "Leadership Skills",
-          "Time Management",
-          "Interview Skills",
-          "Professional Etiquette",
-          "Goal Setting"
+          "Manners & Etiquette",
+          "Confidence Building & Presentation Skills",
+          "Body Language & Dress Code",
+          "Finding Mistakes",
+          "Look & Mannerism"
+        ]
+      },
+      {
+        "module": "Module 2: Interview Skills",
+        "topics": [
+          "Resume Writing",
+          "Interview Q&A",
+          "Mock Sessions",
+          "Preparation",
+          "Feeling Confident"
         ]
       }
     ]
@@ -2772,16 +2857,11 @@ export const courses = [
     "description": "Academic coaching for Maharashtra State Board 11th Standard Information Technology (Arts/Commerce/Science). Practical lab programming, web authoring basics, database theory, and exam preparation.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: 11th Computer IT Curriculum",
         "topics": [
-          "Computer Fundamentals",
-          "Programming Concepts",
-          "Web Technologies",
-          "Database Concepts",
-          "Networking",
-          "Practical Computer Applications",
-          "Academic Curriculum Support",
-          "Practical Assignments"
+          "Fundamentals",
+          "Windows",
+          "As per syllabus"
         ]
       }
     ]
@@ -2800,16 +2880,11 @@ export const courses = [
     "description": "Score top marks in Maharashtra HSC Board 12th IT exam. Thorough guidance in advanced web development, PHP/database integration, cyber laws, digital marketing basics, board practical journals, and sample paper solving.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: 12th Computer IT Curriculum",
         "topics": [
-          "Advanced Computer Concepts",
-          "Programming",
-          "Database Management",
-          "Web Development Basics",
-          "Networking",
-          "IT Applications",
-          "Practical Projects",
-          "Exam Preparation"
+          "Fundamentals",
+          "Windows",
+          "As per syllabus"
         ]
       }
     ]
@@ -2828,18 +2903,21 @@ export const courses = [
     "description": "Hands-on PC hardware technician program. Learn computer assembly from scratch, component compatibility, power supply diagnostics, storage repair, BIOS configuration, OS installation, and peripheral troubleshooting.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Computer Architecture & Components",
         "topics": [
-          "Computer Hardware Fundamentals",
-          "Computer Assembly",
-          "Motherboard",
-          "Processor",
-          "RAM & Storage",
-          "BIOS & CMOS",
-          "Operating System Installation",
-          "Troubleshooting",
-          "Printer & Peripheral Devices",
-          "Hardware Maintenance"
+          "Computer Architecture and its Parts",
+          "Storage Devices",
+          "Different Types of Computer Components"
+        ]
+      },
+      {
+        "module": "Module 2: Assembly, Formatting & Installation",
+        "topics": [
+          "DOS",
+          "Windows",
+          "Assembling Computers",
+          "Partitioning & Formatting Hard Disk",
+          "Installation of Software and Antivirus"
         ]
       }
     ]
@@ -2858,19 +2936,28 @@ export const courses = [
     "description": "Professional networking diploma. Master IP addressing (IPv4/IPv6), CIDR subnetting, router and switch configuration, crimping and structured cabling, Wi-Fi security policies, firewall rules, and practical LAN administration.",
     "syllabus": [
       {
-        "module": "Course Curriculum",
+        "module": "Module 1: Network Setup, Cabling & Protocols",
         "topics": [
-          "Networking Fundamentals",
-          "Network Devices",
-          "IP Addressing",
-          "Subnetting",
-          "LAN & WAN",
-          "Routing",
-          "Switching",
-          "Wireless Networking",
-          "Network Security",
-          "Troubleshooting",
-          "Practical Network Setup"
+          "Networking Standards & Topologies",
+          "Crimping and Cabling",
+          "LAN and Modem Identification & Installation",
+          "Network Settings",
+          "TCP/IP",
+          "Switch Networking",
+          "Peer to Peer Networking"
+        ]
+      },
+      {
+        "module": "Module 2: Network Administration, Sharing & Troubleshooting",
+        "topics": [
+          "Remote Accessing",
+          "Desktop Accessing",
+          "Internet Server Installation",
+          "Internet Sharing",
+          "Files and Folder Sharing",
+          "Client and Printer Sharing",
+          "Wireless Networking Theory",
+          "Networking Troubleshooting"
         ]
       }
     ]
