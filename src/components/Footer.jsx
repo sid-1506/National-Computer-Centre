@@ -24,10 +24,10 @@ export default function Footer({ onOpenModal }) {
   return (
     <footer className="bg-white pt-16 sm:pt-20 pb-8 border-t border-slate-100 w-full overflow-x-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 box-border">
-        
+
         {/* 4-Column Grid matching Disha screenshot 2 & HTML */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 mb-12">
-          
+
           {/* Column 1: Logo & Blurb */}
           <div className="flex flex-col gap-5">
             <Link to="/" aria-label="National Computer Centre Home">
@@ -130,6 +130,12 @@ export default function Footer({ onOpenModal }) {
                   className="hover:text-[#0B6AA8] transition-colors"
                 >
                   Info@nationalcomputercentre.com
+                </a> <br></br>
+                <a
+                  href="mailto:nationalcomputer1998@gmail.com"
+                  className="hover:text-[#0B6AA8] transition-colors"
+                >
+                  nationalcomputer1998@gmail.com
                 </a>
               </p>
 
@@ -140,6 +146,12 @@ export default function Footer({ onOpenModal }) {
                   className="hover:text-[#0B6AA8] transition-colors"
                 >
                   {BUSINESS_INFO.phone.display}
+                </a> <br></br>
+                <a
+                  href="tel:+919820615699"
+                  className="hover:text-[#0B6AA8] transition-colors"
+                >
+                  +91 98206 15699
                 </a>
               </p>
 

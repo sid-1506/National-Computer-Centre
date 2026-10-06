@@ -120,9 +120,8 @@ export default function ContactPage() {
                           setFormData({ ...formData, name: e.target.value });
                           if (errors.name) setErrors({ ...errors, name: '' });
                         }}
-                        className={`w-full rounded-lg border px-4 py-2.5 text-[15px] text-foreground bg-surface placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors ${
-                          errors.name ? 'border-primary' : 'border-border'
-                        }`}
+                        className={`w-full rounded-lg border px-4 py-2.5 text-[15px] text-foreground bg-surface placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors ${errors.name ? 'border-primary' : 'border-border'
+                          }`}
                       />
                       {errors.name && <p className="mt-1 text-xs text-primary font-medium">{errors.name}</p>}
                     </div>
@@ -142,9 +141,8 @@ export default function ContactPage() {
                           setFormData({ ...formData, phone: val });
                           if (errors.phone) setErrors({ ...errors, phone: '' });
                         }}
-                        className={`w-full rounded-lg border px-4 py-2.5 text-[15px] text-foreground bg-surface placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors ${
-                          errors.phone ? 'border-primary' : 'border-border'
-                        }`}
+                        className={`w-full rounded-lg border px-4 py-2.5 text-[15px] text-foreground bg-surface placeholder:text-muted-foreground focus:outline-none focus:border-primary transition-colors ${errors.phone ? 'border-primary' : 'border-border'
+                          }`}
                       />
                       {errors.phone && <p className="mt-1 text-xs text-primary font-medium">{errors.phone}</p>}
                     </div>
@@ -276,10 +274,13 @@ export default function ContactPage() {
                     +91 98211 15699 (Mobile / WhatsApp)
                   </a>
                   <a href="tel:+919820615699" className="block text-foreground font-semibold hover:text-primary transition-colors">
-                    +91 98206 15699 (Director Direct)
+                    +91 98206 15699 (Mobile / WhatsApp)
                   </a>
                   <a href="mailto:Info@nationalcomputercentre.com" className="block text-foreground font-semibold hover:text-primary transition-colors pt-1">
                     Info@nationalcomputercentre.com
+                  </a>
+                  <a href="mailto:nationalcomputer1998@gmail.com" className="block text-foreground font-semibold hover:text-primary transition-colors pt-1">
+                    nationalcomputer1998@gmail.com
                   </a>
                 </div>
               </div>
