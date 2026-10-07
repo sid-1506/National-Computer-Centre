@@ -276,11 +276,11 @@ export default function ContactPage() {
                   <a href="tel:+919820615699" className="block text-foreground font-semibold hover:text-primary transition-colors">
                     +91 98206 15699 (Mobile / WhatsApp)
                   </a>
-                  <a href="mailto:Info@nationalcomputercentre.com" className="block text-foreground font-semibold hover:text-primary transition-colors pt-1">
-                    Info@nationalcomputercentre.com
-                  </a>
                   <a href="mailto:nationalcomputer1998@gmail.com" className="block text-foreground font-semibold hover:text-primary transition-colors pt-1">
                     nationalcomputer1998@gmail.com
+                  </a>
+                  <a href="mailto:Info@nationalcomputercentre.com" className="block text-foreground font-semibold hover:text-primary transition-colors pt-1">
+                    Info@nationalcomputercentre.com
                   </a>
                 </div>
               </div>
